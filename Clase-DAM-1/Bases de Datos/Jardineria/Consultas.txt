@@ -1,0 +1,165 @@
+*-/. Obtener el nombre del cliente con mayor límite de crédito. (Límite de compra)
+--. SELECT NombreCliente 
+	FROM Clientes WHERE LimiteCredito LIKE (SELECT MAX(LimiteCredito) FROM Clientes);
+
+*-/. Obtener el nombre, apellido 1 y cargo de los empleados que no representen a ningún cliente.
+--. SELECT Empleados.CodigoEmpleado, Empleados.Nombre, Empleados.Apellido1, Empleados.Puesto 
+	FROM Empleados WHERE Empleados.CodigoEmpleado NOT IN (SELECT Empleados.CodigoEmpleado
+	FROM Empleados, Clientes WHERE Empleados.CodigoEmpleado = CodigoEmpleadoRepVentas);
+
+*-/. Sacar un listado con el nombre de cada cliente y el nombre y apellidos de su responsable de ventas. (Representante)
+--. SELECT Clientes.NombreContacto, Empleados.Nombre, Empleados.Apellido1 
+	FROM Empleados,Clientes WHERE Empleados.CodigoEmpleado = Clientes.CodigoEmpleadoRepVentas;
+
+*-. Mostrar el nombre de los clientes que no hayan realizado pagos junto con el nombre de sus representantes de venta. 
+--. SELECT Clientes.NombreCliente, Empleados.Nombre
+	FROM Clientes, Empleados WHERE Clientes.CodigoCliente NOT IN (SELECT Pagos.CodigoCliente 
+	FROM Pagos, Clientes WHERE Clientes.CodigoCliente = Pagos.CodigoCliente) 
+	AND Empleados.CodigoEmpleado = Clientes.CodigoEmpleadoRepVentas;
+
+*-/. Mostrar cuanto se ha gastado cada cliente, indicando codigo, nombre y apellido.
+--. SELECT Clientes.CodigoCliente, Clientes.NombreCliente, SUM(Pagos.Cantidad)
+	FROM Clientes, Pagos  WHERE Pagos.CodigoCliente = Clientes.CodigoCliente GROUP BY Clientes.CodigoCliente;
+
+*-/. Mostrar cuanto se ha gastado cada cliente, indicando codigo, nombre y apellido.
+--. SELECT Clientes.CodigoCliente, Clientes.NombreCliente, SUM(Pagos.Cantidad)
+	FROM Clientes, Pagos  WHERE Pagos.CodigoCliente = Clientes.CodigoCliente 
+	GROUP BY Clientes.CodigoCliente HAVING SUM(Pagos.Cantidad) > 10000;
+
+*-/. Mostrar Nombre del Cliente, Nombre del representante y ciudad.
+--. SELECT Clientes.NombreCliente, Empleados.Nombre, Oficinas.Ciudad
+	FROM Empleados, Clientes, Oficinas WHERE Clientes.CodigoEmpleadoRepVentas = CodigoEmpleado 
+	AND Oficinas.CodigoOficina = Empleados.CodigoOficina;
+--. SELECT Clientes.NombreCliente, Empleados.Nombre, Oficinas.Ciudad
+	FROM Oficinas NATURAL JOIN Empleados JOIN Clientes ON(Clientes.CodigoEmpleadoRepVentas = CodigoEmpleado);
+
+*-/. Mostrar las ventas totales de los productos que hayan facturado mas de 3000¤. 
+	Se mostrara el: Nombre, Unidades Vendidas, Total facturado y total facturado con impuestos.
+--. SELECT Productos.CodigoProducto, Productos.Nombre, SUM(DetallePedidos.Cantidad) AS 'Unidades Vendidas', 
+	SUM(DetallePedidos.Cantidad * DetallePedidos.PrecioUnidad) AS 'Total', 
+	SUM(DetallePedidos.Cantidad *  DetallePedidos.PrecioUnidad)*1.21 AS 'Total con IVA' 
+	FROM DetallePedidos, Productos
+	WHERE Productos.CodigoProducto = DetallePedidos.CodigoProducto 
+	GROUP BY DetallePedidos.CodigoProducto 
+	HAVING (SUM(DetallePedidos.Cantidad * DetallePedidos.PrecioUnidad)*1.21) > 3000;
+--. SELECT Productos.CodigoProducto, Productos.Nombre, SUM(DetallePedidos.Cantidad) AS 'Unidades Vendidas', 
+	SUM(DetallePedidos.Cantidad * DetallePedidos.PrecioUnidad) AS 'Total', 
+	SUM(DetallePedidos.Cantidad *  DetallePedidos.PrecioUnidad)*1.21 AS 'Total con IVA' 
+	FROM DetallePedidos NATURAL LEFT JOIN Productos 
+	GROUP BY DetallePedidos.CodigoProducto 
+	HAVING (SUM(DetallePedidos.Cantidad * DetallePedidos.PrecioUnidad)*1.21) > 3000;
+
+*-/. Mostrar la direccion de las oficinas que tengan clientes en fuenlabrada.
+	(Pero tiene que aparecer el campo direccion en una sola columna)
+--. SELECT CONCAT(LineaDireccion1,'  Nº ', LineaDireccion2,', ', Ciudad,', ', Pais) AS 'Direccion Completa' 
+	FROM Oficinas WHERE CodigoOficina IN (SELECT Empleados.CodigoOficina 
+	FROM Empleados, Clientes 
+	WHERE Empleados.CodigoEmpleado = CodigoEmpleadoRepVentas AND Clientes.Ciudad="Fuenlabrada"); 
+--. SELECT CONCAT(LineaDireccion1,'  Nº ', LineaDireccion2,', ', Ciudad,', ', Pais) AS 'Direccion Completa' 
+	FROM Oficinas WHERE CodigoOficina IN (SELECT Empleados.CodigoOficina 
+	FROM Empleados JOIN Clientes ON (Empleados.CodigoEmpleado = CodigoEmpleadoRepVentas)
+	WHERE Clientes.Ciudad="Fuenlabrada");
+
+*-. Mostrar el coste de los pedidos de cada cliente.
+--. SELECT Clientes.NombreCliente, SUM(Pagos.Cantidad) AS 'Coste total' 
+	FROM Pagos, Clientes WHERE Pagos.CodigoCliente = Clientes.CodigoCliente 
+	GROUP BY Pagos.CodigoCliente;
+--. SELECT Clientes.NombreCliente, SUM(Pagos.Cantidad) AS 'Coste total' 
+	FROM Pagos JOIN Clientes USING(CodigoCliente) 
+	GROUP BY Pagos.CodigoCliente;
+
+*-/. Mostrar los clientes qie no hayan hecho pedidos.
+--. SELECT Clientes.NombreCliente, Pedidos.CodigoPedido
+	FROM Clientes NATURAL LEFT JOIN Pedidos WHERE Pedidos.CodigoPedido IS NULL;
+
+*-/*. Crear usuario: Admin -> Permisos completos en Jardineria
+--. CREATE USER IF NOT EXISTS Admin IDENTIFIED WITH mysql_native_password BY 'lptieh?129';
+--. GRANT ALL ON jardineria.* TO admin;
+--. SHOW PRIVILEGIE //Mirar privilegios
+--. SHOW GRANT FOR admin // Mirar permisos de grant
+
+*-/*. Crear usuario: Cliente (Generico) -> 
+--. CREATE USER IF NOT EXISTS clienteGen IDENTIFIED WITH mysql_native_password BY 'clienteGen?129';
+--. GRANT SELECT, INSERT, UPDATE ON Jardineria.Pagos TO clienteGen;
+--. GRANT SELECT, INSERT, UPDATE ON Jardineria.Pedidos TO clienteGen;
+
+*-. Crear usuario: Cliente (Concreto) -> Editar su perfil, hacer pagos o pedidos ...
+--. CREATE VIEW Cliente7 AS SELECT * FROM Clientes WHERE CodigoCliente = 7;
+--. CREATE USER Beruga IDENTIFIED BY 'Beruga';
+--. GRANT SELECT, UPDATE ON Jardineria.Clientes TO Beruga;
+
+*-. Crear usuario: Empleado (Generico) -> 
+*-. Crear usuario: Empleado (Concreto) -> Editar su perfil
+*-. Crear usuarui: Anonimo -> 
+
+*-/. Mostrar la informacion del cliente que mas se ha gastado en un pedido.
+--. SELECT Clientes.NombreCliente FROM Clientes JOIN Pedidos USING (CodigoCliente) 
+	WHERE CodigoPedido = (SELECT CodigoPedido 
+	FROM DetallePedidos GROUP BY CodigoPedido 
+	ORDER BY SUM(Cantidad * PrecioUnidad )DESC LIMIT 1);
+
+*-/. Mostrar nombre y apellidos de cada empleado y jefe
+--. SELECT CONCAT(Empleados.Nombre,' - ', Empleados.Apellido1,' ', Empleados.Apellido2) 
+	AS 'Nombre completo', Empleados.CodigoEmpleado, Empleados.CodigoJefe, Jefe.Nombre
+	FROM Empleados AS Jefe RIGHT JOIN Empleados  ON (Empleados.CodigoJefe = Jefe.CodigoEmpleado);
+
+*-. Mostrar solo empleados Jefes de alguien
+--. SELECT CONCAT(Nombre,' - ', Apellido1,' ', Apellido2)
+	AS 'Nombre completo', CodigoEmpleado
+	FROM Empleados WHERE CodigoEmpleado NOT IN (SELECT Empleados.CodigoEmpleado
+	FROM Empleados LEFT JOIN Empleados AS Jefe ON (Jefe.CodigoJefe=Empleados.CodigoEmpleado)
+	WHERE Jefe.CodigoJefe IS NULL);
+*-/. Cuantos clientes tienen ciudad que empiezan por M
+--. SELECT COUNT(*) FROM Clientes WHERE Ciudad LIKE 'M%';
+
+*-. Mostrar nombre, apellidos y cargo de aquellos que no sean representantes de ventas.
+--. SELECT 
+
+*-. Sacar el numero de clientes que tiene la empresa.
+--.
+
+*-. Numero de pedido, Codigo cliente, fecha requerida y fecha de entrega de los pedidos que 
+	hayan sido entregados a tiempo
+--.
+
+*-. Muestra un listado de los 20 codigos de productos mas pedidos ordenados por los que mas se piden.
+--.
+
+*-. Muestra el numero de pedido, codigo cliente fecha requerida y fecha de entrega de los pedidos
+	culla fecha de entrega, ha sido al menos 2 dias antes de la fecha requerida.
+--. 
+
+*-. Obtener el nombre de los clientes a los que no se les haya entregado a tiempo el pedido.
+--.
+
+*-. Muestra un listado de clientes indicando el nombre del clientes y cuantos pedidos ha realizado
+--. 
+
+*-. Muestra la media de unidades en stock de los productos agrupados por gama. 
+--.
+
+*-. Muestra los clientes que residan en la misma ciudad donde haya una ofincina indicando donde esta la oficina.
+--.
+
+*-. Muestra los clientes que residan en ciudades donde no hay oficinas ordenado por ciudad donde residen.
+--.
+
+*-. Muestra los clientes que han pedido mas de 200 unidades de cualquier producto.
+--.
+
+AUTOCOMMIT
+TRANSTACTION
+ROLLBACK
+
+
+Producto cartesiano, Es la union de dos o mas tablas las cuales dan como resultado todas las comibaciones posibles de sus filas. 
+
+
+SELECT * 
+	FROM Clientes WHERE cid IN (select SELECT cid FROM acciones);
+SELECT nombre telefono 
+	FROM Clientes RIGHT JOIN acciones USING (cid);
+SELECT Clientes.nombre acciones.cantidad 
+	FROM Clientes RIGHT JOIN acciones USING (cid) 
+	WHERE acciones.cantidad = (SELECT MIN(Cantidad) FROM acciones;
+

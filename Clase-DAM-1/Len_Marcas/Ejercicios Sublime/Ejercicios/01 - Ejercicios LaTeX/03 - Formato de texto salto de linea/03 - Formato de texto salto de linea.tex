@@ -1,0 +1,61 @@
+% ┌---------------------------------------------┐
+% | Titulo:	03-Formato de texto, salto de linea |
+% | Autor:	Jaimito                             |
+% | Fecha: 	15/12/2016                          |
+% └---------------------------------------------┘
+\documentclass[10pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+% ┌-----------------------------------------┐
+% | Prueba del salto de línea y comentarios |
+% └-----------------------------------------┘
+\chapter{Saltos de línea}
+ La primera línea del documento \\
+ La segunda línea del documento
+\chapter{Saltos en el documento}
+
+	\section{Saltos verticales}
+	 Los saltos verciales empezando por el pequeño \smallskip \\
+	 Continuamos con el mediano \medskip \\
+	 Acabamos con el grande \bigskip \\
+	 A continuación un salto personalizado \vspace{1cm} \\
+	 Y vemos los saltos 
+	
+	\section{Saltos horizontales}
+	 Los saltos horizontales de una línea a \hspace{1.2in} 1.2 pulgadas
+\chapter{centrado}
+ El texto centrado queda así:
+	\begin{center}
+	 Con 10 cañones por banda, \\
+	 viento en popa a toda vela \\
+	 no corta el mar sino vuela \\
+ 	 un velero bergatín \vspace{2cm}\\ 
+ 	 
+ 	 "Canción del pirata" \\
+ 	 Espronceda
+		
+	\end{center}
+	 Ahora un texto centrado sin más
+	\begin{center}
+	 En la lona gime el viento y alza en blanco movimiento olas de plata 
+	 y azul. Navega velero mío sin temor, que ni tormenta ni enemigo ni 
+	 bonanza, tu rumbo a torcer alcanza y a doblegar tu valor.
+ 	 "Canción del pirata" \\
+ 	 Espronceda
+		
+	\end{center}
+	\section{Tipos de letra}
+	 El tipo de letra {
+	 	\em en cursiva
+	 } y ahora normal. Lo siguiente es probar 
+	 en seriff {
+	 	\sf letras en seriff {
+	 		\em solo en cursiva {
+	 			\bf negrita y cursiva	 		
+	 		}
+	 	}
+	 } y ahora normal
+\end{document}

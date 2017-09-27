@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página con script</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	 function saludo(){
+	 	alert("MI PAGINA TE SALUDA");
+	 }
+
+	 function dentroParrafo(){
+	 	alert("Dentro del párrafo");
+	 }
+
+	 function escribeNombre(){
+	 	var p;
+
+	 	p = document.getElementById("miParrafo");
+	 	//p.innerHTML += " y me llamo papa";
+	 	p.style.fontSize = "20pt";
+	 	p.style.backgroundColor = "red";
+	 	p.style.color = "orange";
+	 }
+
+	 function cambiaTamaño(){
+	 	var p;
+	 	p = document.getElementById("miParrafo");
+	 	p.style.fontSize = "10pt";
+	 	p.style.color = "black";
+	 	p.style.backgroundColor = "white";
+	 }
+	</script>
+</head>
+<body>
+	<p id="miParrafo" onclick="saludo()" onmouseover="escribeNombre()" onmouseleave="cambiaTamaño()">
+		Mi página con script
+	</p>
+</body>
+</html>

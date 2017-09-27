@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Párrafos con ID</title>
+	<meta charset="utf-8">
+	<base href="Imagenes/">
+	<link rel="stylesheet" type="text/css" href="../CSS/23 - parrafos.css">
+	<script type="text/javascript">
+		function CambiarParrafo() {
+			var p;
+			p = document.getElementsByTagName('p');
+			p[0].innerHTML += "Y VIENTO";
+		}
+	</script>
+</head>
+<body>
+	<p id="parrafo1" align="center"> 
+		La primavera ha empezado el 21 de marzo con mucho frío
+	</p>
+	<img src="primavera.jpg" id="imagen1" onclick="CambiarParrafo()">
+	<p id="parrafo1" align="center">
+		Todavía queda mucho para el 21 de junio que empieza el verano y ya no hay clases por fin
+	</p>
+	<img src="verano.jpg" id="imagen2">
+</body>
+</html>

@@ -1,0 +1,13 @@
+h1{
+	background-color: green;
+	font-size: 24pt;
+	font-weight: bold;
+	color: white;
+}
+
+hr{
+	border-width: 5px;
+	width: 80%;
+	border-color: red;
+	border-style: dotted;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio reprografia 2</title>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Alta.css" title="Alta">
+	<link rel="stylesheet" type="text/css" href="Media.css" title="Media">
+	<link rel="stylesheet" type="text/css" href="Baja.css" title="Baja">
+
+	<meta http-equiv="default-type" content="Alta">
+	<meta name="author" content="DAM Software">
+	<meta name="description" content="Reprografía digital para particulares y empresas">
+	<meta name="keywords" content="impresión, digital, marco, copia, blanco, negro, escala, fotografía.">	
+	<base href="Imagenes_g/">
+	<base target="_blank">
+
+	<script type="text/javascript">
+		function cambiarTamanio(ancho, alto){
+			var p;
+			p = document.getElementsByTagName("img");
+			p[0].style.width = ancho + "px";
+			p[1].style.width = ancho + "px";
+			p[0].style.height = alto + "px";
+			p[1].style.height = alto + "px";
+		}
+		function tamanioImagen(imge){
+			alert("Ancho " + imge.width + " Alto " + imge.height);
+		}
+
+	</script>
+</head>
+<body>
+	<img src="Escarlata.jpg" id="Imagen1" onclick="tamanioImagen(this)">
+	<a href="http://www.fonditos.com/animales/pajaros/ave_escarlata-03410-1024x768.php?o=27">
+		<p>Ave escarlata</p>
+	</a>
+
+	<img src="Orca.jpg" id="Imagen2" onclick="tamanioImagen(this)">
+	<a href="http://www.elmundodelosanimales.net/ballenas%20y%20orcas/ballenas.orcas.html">
+		<p>Ballena Orca</p>
+	</a>
+
+	<p onclick = "cambiarTamanio(500,400)">Imagenes a 500x400</p>
+	<p onclick = "cambiarTamanio(300,200)">Imagenes a 300x200</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adivina la serie</title>
+	<meta charset="utf-8">
+	<base href="../">
+	
+	<link rel="stylesheet" type="text/css" href="CSS/00 - Series 2.css">
+	<script type="text/javascript" src="JavaScript/00 - Series 2.js">
+	</script>
+</head>
+<body>
+	<h1>Adivina la Serie</h1>
+	<div>
+		<div>
+			<img src="Imagenes/serie1.jpg" id="imagen1">
+			<p id="res1a" onclick="correccion('a', 1,  this)">
+				Flash
+			</p>
+			<p id="res1e" onclick="correccion('e', 1,  this)">
+				Agents of S.H.I.E.L.D.
+			</p>
+		</div>
+		<div>
+			<img src="Imagenes/serie2.jpg" id="imagen2" class="imagen">
+			<p id="res2e" class="res2" onclick="correccion('e', 2, this)">
+				Camelot
+			</p>
+			<p id="res2a" class="res2" onclick="correccion('a', 2, this)">
+				Vikings
+			</p>
+		</div>
+		<div>
+			<img src="Imagenes/serie3.jpg" id="imagen3">
+			<p id="res3a" onclick="correccion('a', 3, this)">
+				Game of Thrones
+			</p>
+			<p id="res3e" onclick="correccion('e', 3, this)">
+				Toledo
+			</p>
+		</div>
+		<p>
+			Preguntas: 
+			Correctas: <span id="a">0</span> 
+			Errores :<span id="e">0</span>
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Juego</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
+	<script type="text/javascript" src="../JS/Funciones.js">
+	</script>
+</head>
+<body>
+		<div>
+			<img src="../Imagenes/Limon.png">
+			<a href="Normas.html"> Inicio</a>
+			<a href="Juego.html"> Juego</a>
+			<a href="Acerca_de.html"> Acerca de...</a>
+		</div>
+
+		<p id="titulo">Juego</p>
+		<p class="nmarcador">Marcador actual</p>
+		<p id="total1" class="marcador">0</p> 
+		<p class="nmarcador">Tirada actual</p>
+		<p id="total2" class="marcador">0</p> 
+
+		<br>
+
+		<img src="../Imagenes/Fresa.png" id="Fresa">
+		<img src="../Imagenes/Limon.png" id="Limon">
+		<img src="../Imagenes/Sandia.png" id="Sandia">
+
+		<p>
+			<button onclick="reiniciar('total')">Reiniciar</button>
+			<button onclick="guardar()">Guardar tirada</button>
+			<button onclick="jugar()">Jugar</button>
+			<br>
+			<button onclick="jugarCam1(1)">Cambiar 1</button>
+			<button onclick="jugarCam1(2)">Cambiar 2</button>
+			<button onclick="jugarCam1(3)">Cambiar 3</button>	
+		</p>	
+</body>
+</html>

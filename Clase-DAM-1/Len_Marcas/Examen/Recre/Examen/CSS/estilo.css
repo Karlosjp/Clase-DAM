@@ -1,0 +1,38 @@
+body{
+	margin-left: 30%;
+	margin-right: 30%;
+}
+img{
+	width: 40px;
+	height: 35px;
+}
+
+div{
+	background-color: green;
+	text-align: center;
+	font-size: 20pt;
+}
+
+p button{
+	background-color: grey;
+}
+
+.autor{
+	text-align: center;
+}
+
+.marcador{
+	text-align: right;
+	width: 10%;
+	background-color: orange;
+}
+
+p.nmarcador{
+	width: 10%;
+	text-align: center;
+}
+
+#titulo{
+	font-weight: bold;
+	font-size: 20pt;
+}
