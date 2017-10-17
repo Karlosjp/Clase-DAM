@@ -44,7 +44,7 @@ print (struct TQueue *b)
     {
         i %= N;
 
-        printf("%c", b->buffer[i]);
+        printf("Caracter %i -> %c\n", i, b->buffer[i]);
     }
 
     printf("\n\n");
