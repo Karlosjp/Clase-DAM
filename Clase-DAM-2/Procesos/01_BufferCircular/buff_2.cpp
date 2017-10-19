@@ -3,6 +3,7 @@
 
 #define N 8
 
+#define LONGITUD(x) ((x)->head - (x)->summit)
 struct TQueue
 {
     char buffer[N];
@@ -16,23 +17,21 @@ struct TQueue buffer = {{""},0,0};
 bool
 push(struct TQueue *b, unsigned char c)
 {
-    bool correccion = true;
+    if(LONGITUD(b) >= N)
+        return false;
 
-    b->summit %= N;
+    b->buffer[(b->summit++) % N] = c;
 
-    if(b->summit >= N)
-        correccion = false;
-
-    b->buffer[b->summit++] = c;
-
-    return correccion;
+    return true;
 }
 
 void
 pop(struct TQueue *b)
 {
+    if(LONGITUD(b) == 0)
+        return;
+
     b->head++;
-    b->head %= N;
 }
 
 void
@@ -40,12 +39,9 @@ print (struct TQueue *b)
 {
     printf("\n");
     printf("Head: %i, Summit: %i\n", b->head, b->summit);
-    for(int i = b->head; i != b->summit; i++ )
-    {
-        i %= N;
 
-        printf("Caracter %i -> %c\n", i, b->buffer[i]);
-    }
+    for(int i = b->head; i > b->summit; i++ )
+        printf("Caracter %i -> %c\n", i, b->buffer[i % N]);
 
     printf("\n\n");
 }
