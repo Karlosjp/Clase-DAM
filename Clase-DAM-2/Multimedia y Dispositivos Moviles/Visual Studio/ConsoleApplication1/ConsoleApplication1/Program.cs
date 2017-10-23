@@ -20,7 +20,7 @@ namespace ConsoleApplication1
             Console.ReadKey();
 
             foreach(int numero in tabla)
-                Console.WriteLine(tabla);
+                Console.WriteLine(numero);
 
             Console.ReadKey();
 
