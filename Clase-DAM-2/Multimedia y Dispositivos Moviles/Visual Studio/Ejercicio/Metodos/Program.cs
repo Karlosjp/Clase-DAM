@@ -8,23 +8,54 @@ namespace Metodos
 {
     class Program
     {
+        static public Boolean vacio(string lectura)
+        {
+            bool aux = false;
+
+            if (lectura == "")
+                aux = true;
+
+            return aux;
+        }
+
         static public string pideEntero()
         {
+            string lectura;
+
             Console.WriteLine("Escribe un numero entero. Ej --> 3");
-            return Console.ReadLine();
+            lectura = Console.ReadLine();
+
+            if (vacio(lectura))
+            {
+                Console.WriteLine("Campo vacio");
+                lectura = null;
+            }
+
+            return null;
+
         }
 
         static public string pideReal()
         {
+            string lectura;
+
             Console.WriteLine("Escribe un numero entero. Ej --> 3,47");
-            return Console.ReadLine();
+            lectura = Console.ReadLine();
+
+            if (vacio(lectura))
+            {
+                Console.WriteLine("Campo vacio");
+                lectura = null;
+            }
+
+            return null;
         }
 
         static void Main(string[] args)
         {
             Metodos met = new Metodos();
 
-            string nAlmacen;
+            string nAlmacen, lectura1, lectura2;
             int opcion = 0;
 
             do
@@ -38,49 +69,81 @@ namespace Metodos
                 Console.WriteLine("6.- ejercicio F.");
                 Console.WriteLine("0.- Salir.");
 
-                opcion = Int32.Parse(Console.ReadLine());
+                lectura1 = Console.ReadLine();
 
-                switch (opcion)
+                if (lectura1 != null)
                 {
-                    case 1:
-                        Console.WriteLine("El numero es --> " + met.ejercicioA(pideReal()));
-                        break;
-                    case 2:
-                        met.ejercicioB(pideReal(), out nAlmacen);
+                    opcion = Int32.Parse(lectura1);
 
-                        Console.WriteLine("El resultado es --> " + nAlmacen);
-                        break;
-                    case 3:
-                        nAlmacen = pideReal();
+                    switch (opcion)
+                    {
+                        case 1:
+                            lectura1 = pideReal();
 
-                        met.ejercicioC(ref nAlmacen);
+                            if (lectura1 != null)
+                                Console.WriteLine("El numero es --> " + met.ejercicioA(lectura1));
+                            break;
+                        case 2:
+                            lectura1 = pideReal();
 
-                        Console.WriteLine("El resultado es --> " + nAlmacen);
-                        break;
-                    case 4:
-                        Console.WriteLine(met.ejercicioD(pideReal(), pideEntero()));               
-                        break;
-                    case 5:
-                        met.ejercicioE(pideReal(), pideEntero(), out nAlmacen);
+                            if (lectura1 != null)
+                            {
+                                met.ejercicioB(lectura1, out nAlmacen);
+                                Console.WriteLine("El resultado es --> " + nAlmacen);
+                            }
+                            break;
+                        case 3:
+                            nAlmacen = pideReal();
 
-                        Console.WriteLine("El resultado es --> " + nAlmacen);
-                        break;
-                    case 6:
-                        nAlmacen = pideReal();
+                            if (nAlmacen != null)
+                            {
+                                met.ejercicioC(ref nAlmacen);
 
-                        met.ejercicioF(ref nAlmacen, pideEntero());
+                                Console.WriteLine("El resultado es --> " + nAlmacen);
+                            }
+                            break;
+                        case 4:
+                            lectura1 = pideReal();
+                            lectura2 = pideEntero();
 
-                        Console.WriteLine("El resultado es --> " + nAlmacen);
-                        break;
-                    case 0:
-                        Console.WriteLine("Adios.");
-                        Thread.Sleep(2000);
-                        break;
-                    default:
-                        Console.WriteLine("Opcion " + opcion + " no existe.");
-                        Console.ReadKey();
-                        break;              
+                            if (lectura1 != null && lectura2 != null)
+                                Console.WriteLine(met.ejercicioD(lectura1, lectura2));
+                            break;
+                        case 5:
+                            lectura1 = pideReal();
+                            lectura2 = pideEntero();
+
+                            if (lectura1 != null && lectura2 != null)
+                            {
+                                met.ejercicioE(lectura1, lectura2, out nAlmacen);
+
+                                Console.WriteLine("El resultado es --> " + nAlmacen);
+                            }
+                            break;
+                        case 6:
+                            nAlmacen = pideReal();
+                            lectura2 = pideEntero();
+
+                            if (nAlmacen != null && lectura2 != null)
+                            {
+                                met.ejercicioF(ref nAlmacen, lectura2);
+
+                                Console.WriteLine("El resultado es --> " + nAlmacen);
+                            }
+                            break;
+                        case 0:
+                            Console.WriteLine("Adios.");
+
+                            Thread.Sleep(2000);
+                            break;
+                        default:
+                            Console.WriteLine("Opcion " + opcion + " no existe.");
+                            Console.ReadKey();
+                            break;
+                    }
                 }
+                else
+                    Console.WriteLine("Campo vacio");
             } while (opcion != 0);
         }
     }
