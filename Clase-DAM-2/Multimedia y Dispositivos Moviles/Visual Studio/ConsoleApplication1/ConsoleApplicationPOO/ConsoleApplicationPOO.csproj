@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63A73EF1-9A69-484B-A0DC-7A2B424312F5}</ProjectGuid>
+    <ProjectGuid>{762DF1C5-212A-4A72-BBAD-1E57F2AB1EC0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Metodos</RootNamespace>
-    <AssemblyName>Metodos</AssemblyName>
+    <RootNamespace>ConsoleApplicationPOO</RootNamespace>
+    <AssemblyName>ConsoleApplicationPOO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Truncar.cs" />
+    <Compile Include="Fecha.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
