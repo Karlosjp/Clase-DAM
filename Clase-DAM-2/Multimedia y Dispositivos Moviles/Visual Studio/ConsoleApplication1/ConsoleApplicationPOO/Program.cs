@@ -25,7 +25,11 @@ namespace ConsoleApplicationPOO
             Fecha aux;
             for(int i = 0; i < fechas.Length - 1; i++)
             {
-                for(intj=0)
+                for(int j=0; j < fechas.Length; j++)
+                {
+                    if (fechas[i].getAnho() > fechas[j].getAnho())
+                        ;
+                }
             }
         }
 

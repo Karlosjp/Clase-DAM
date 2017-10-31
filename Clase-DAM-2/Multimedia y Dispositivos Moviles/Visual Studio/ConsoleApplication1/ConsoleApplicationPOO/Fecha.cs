@@ -26,7 +26,7 @@ namespace ConsoleApplicationPOO
             this.anho = anho;
         }
 
-        // Geters and Seters
+        // Seters
         public void setDia(int dia)
         {
             this.dia = dia;
@@ -40,6 +40,22 @@ namespace ConsoleApplicationPOO
         public void setAnho(int anho)
         {
             this.anho = anho;
+        }
+
+        // Geters
+        public int getDia()
+        {
+            return dia;
+        }
+
+        public int getMes()
+        {
+            return mes;
+        }
+
+        public int getAnho()
+        {
+            return anho;
         }
 
         // Metodos

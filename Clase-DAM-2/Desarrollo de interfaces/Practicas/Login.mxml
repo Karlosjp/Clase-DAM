@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.formats.Float;
+			
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			import mx.formatters.NumberBase;
+			import mx.preloaders.DownloadProgressBar;
+			
+			var login:Boolean = false;
+			var num1:Number, num2:Number;
+
+			protected function bLogin_clickHandler(event:MouseEvent):void
+			{
+				if(tiLogin.text != "")
+					if(tiLogin.text == tiPass.text){
+						bLogin.enabled = false;
+						bLogout.enabled = true;
+						login = true;
+						tiLogin.text = "";
+						tiPass.text = "";
+						
+						if(rbCalculadora.selected)
+							pCalculadora.enabled = true;
+						else if(rbPitagoras.selected)
+							pPitagoras.enabled = true;
+					}
+					else
+						Alert.show('Usuario y Contraseña incorrectos','Error', mx.controls.Alert.OK);
+				else
+					Alert.show('No puede haber campos vacios','Error', mx.controls.Alert.OK);
+			}
+			
+			protected function bLogout_clickHandler(event:MouseEvent):void
+			{
+				if(login)
+					Alert.show('Salir','¿Quieres desconectarte?', Alert.OK | Alert.CANCEL, this, exit_app);
+			}
+			
+			protected function exit_app(event:CloseEvent):void{
+				if (event.detail == Alert.OK){
+					login = false;
+					pPitagoras.enabled = false;
+					pCalculadora.enabled = false;
+					bLogin.enabled = true;
+					bLogout.enabled = false;
+				}
+			}
+			
+			protected function rbCalculadora_clickHandler(event:MouseEvent):void
+			{
+				if(login){
+					if(pCalculadora.enabled)
+						pPitagoras.enabled = false;
+					else{
+						pPitagoras.enabled = false;
+						pCalculadora.enabled = true;
+					}
+				}
+			}
+			
+			protected function rbPitagoras_clickHandler(event:MouseEvent):void
+			{
+				if(login){
+					if(pPitagoras.enabled)
+						pCalculadora.enabled = false;
+					else{
+						pCalculadora.enabled = false;
+						pPitagoras.enabled = true;
+					}
+				}
+			}
+			
+			protected function bReiniciar_clickHandler(event:MouseEvent):void
+			{
+				tiCateto1.text = "";
+				tiCateto2.text = "";
+				tiHipotenusa.text = "";
+			}
+			
+			protected function iTriangulo_clickHandler(event:MouseEvent):void
+			{
+				var hip:Number;
+
+				num1 = Number(tiCateto1.text);
+				num2 = Number(tiCateto2.text);
+				
+			    hip = num1 * num1 + num2 * num2;
+				
+				tiHipotenusa.text = hip.toString(10);
+			}	
+			
+			 protected function b1_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b1.label;
+			}
+			
+			protected function b2_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b2.label;
+				
+			}
+			
+			protected function b3_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b3.label;
+			}
+			
+			protected function b4_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b4.label;
+			}
+			
+			protected function b5_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b5.label;
+			}
+			
+			protected function b6_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b6.label;
+			}
+			
+			protected function b7_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b7.label;
+			}
+			
+			protected function b8_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b8.label;
+			}
+			
+			protected function b9_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b9.label;
+			}
+			
+			protected function b0_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += b0.label;
+			} 
+			
+			protected function bEntre_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += " " + bEntre.label + " ";
+			} 
+			
+			protected function bIgual_clickHandler(event:MouseEvent):void
+			{
+				// Terminar
+				var cadena:String, calculo:Array, resultado:int;
+				cadena = tiSecuencias.text;
+				calculo = cadena.split(' ',cadena.length);
+				switch(calculo[1])
+				{
+					case '+':
+					{
+						resultado = Number(calculo[0]) + Number(calculo[2]);
+						break;
+					}
+					case '-':
+					{
+						resultado = Number(calculo[0]) - Number(calculo[2]);
+						break;
+					}
+					case '/':
+					{
+						resultado = Number(calculo[0]) / Number(calculo[2]);
+						break;
+					}
+					case '*':
+					{
+						resultado = Number(calculo[0]) * Number(calculo[2]);
+						break;
+					}
+						
+					default:
+					{
+						break;
+					}
+				}
+				
+				bC_clickHandler(event);
+				tiResultado.text = resultado.toString();
+			} 
+			
+			protected function bC_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text = "";
+				tiResultado.text = "";
+			} 
+			
+			protected function bPor_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += " " + bPor.label + " ";
+			} 
+			
+			protected function bMenos_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += " " + bMenos.label + " ";
+			} 
+			
+			protected function bMas_clickHandler(event:MouseEvent):void
+			{
+				tiSecuencias.text += " " + bMas.label + " ";
+			} 			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="opcion"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Panel id="pLogin" x="99" y="78" width="281" height="179" fontWeight="normal" title="Acceso">
+		<s:RadioButton id="rbPitagoras" x="167" y="62" label="Pitágoras"
+					   click="rbPitagoras_clickHandler(event)" fontSize="15" groupName="opcion"/>
+		<s:RadioButton id="rbCalculadora" x="167" y="38" label="Calculadora"
+					   click="rbCalculadora_clickHandler(event)" fontSize="14" groupName="opcion"
+					   selected="true"/>
+		<s:Label x="167" y="15" width="55" height="16" fontSize="16" fontWeight="normal"
+				 text="Activar:"/>
+		<s:Button id="bLogin" x="52" y="106" width="85" height="30" label="Login"
+				  click="bLogin_clickHandler(event)" fontSize="16"/>
+		<s:Button id="bLogout" x="150" y="106" width="85" height="30" label="Logout"
+				  click="bLogout_clickHandler(event)" enabled="false" fontSize="16"/>
+		<s:TextInput id="tiLogin" x="13" y="14" width="139" height="30" prompt="Login"/>
+		<s:TextInput id="tiPass" x="13" y="52" width="139" height="31" displayAsPassword="true"
+					 prompt="Password"/>
+	</s:Panel>
+	<s:Panel id="pCalculadora" x="397" y="78" width="283" height="392"
+			 enabled="false" title="Calculadora sencilla">
+		<s:TextInput id="tiSecuencias" x="10" y="4" width="261" height="30" editable="false"
+					 textAlign="right"/>
+		<s:TextInput id="tiResultado" x="10" y="38" width="261" height="45" editable="false"
+					 textAlign="right"/>
+		<s:Button id="bEntre" x="208" y="287" width="61" height="61" label="/" 
+				  click="bEntre_clickHandler(event)" fontSize="23"/>
+		<s:Button id="bIgual" x="142" y="287" width="61" height="61" label="=" 
+				  click="bIgual_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b0" x="76" y="287" width="61" height="61" label="0"
+				  click="b0_clickHandler(event)" fontSize="23"/>
+		<s:Button id="bC" x="10" y="287" width="61" height="61" label="C" 
+				  click="bC_clickHandler(event)" fontSize="23"/>
+		<s:Button id="bPor" x="208" y="221" width="61" height="61" label="*" 
+				  click="bPor_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b9" x="142" y="221" width="61" height="61" label="9"
+				  click="b9_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b8" x="76" y="221" width="61" height="61" label="8"
+				  click="b8_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b7" x="10" y="221" width="61" height="61" label="7"
+				  click="b7_clickHandler(event)" fontSize="23"/>
+		<s:Button id="bMenos" x="208" y="155" width="61" height="61" label="-"
+				  click="bMenos_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b6" x="142" y="155" width="61" height="61" label="6"
+				  click="b6_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b5" x="76" y="155" width="61" height="61" label="5"
+				  click="b5_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b4" x="10" y="155" width="61" height="61" label="4"
+				  click="b4_clickHandler(event)" fontSize="23"/>
+		<s:Button id="bMas" x="208" y="89" width="61" height="61" label="+" 
+				  click="bMas_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b3" x="142" y="89" width="61" height="61" label="3"
+				  click="b3_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b2" x="76" y="89" width="61" height="61" label="2"
+				  click="b2_clickHandler(event)" fontSize="23"/>
+		<s:Button id="b1" x="10" y="89" width="61" height="61" label="1"
+				  click="b1_clickHandler(event)" fontSize="23"/>
+	</s:Panel>
+	<s:Panel id="pPitagoras" x="98" y="275" width="280" height="195" enabled="false" title="Teorema de Pitágoras">
+		<s:TextInput id="tiCateto1" x="167" y="10" width="100" height="40" prompt="Cateto a"/>
+		<s:TextInput id="tiCateto2" x="167" y="60" width="100" height="40" prompt="Cateto b"/>
+		<s:TextInput id="tiHipotenusa" x="167" y="110" width="100" height="40" editable="false"
+					 prompt="Hipotenusa c"/>
+		<s:Button id="bReiniciar" x="167" y="-26" width="100" label="Reiniciar"
+				  click="bReiniciar_clickHandler(event)"/>
+		<s:Image id="iTriangulo" x="10" y="10" width="149" height="140"
+				 click="iTriangulo_clickHandler(event)" source="@Embed('../imagenes/Triangulo.jpg')"/>
+	</s:Panel>
+</s:Application>
