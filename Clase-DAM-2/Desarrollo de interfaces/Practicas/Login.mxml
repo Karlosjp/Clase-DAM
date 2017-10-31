@@ -13,7 +13,6 @@
 			import mx.preloaders.DownloadProgressBar;
 			
 			var login:Boolean = false;
-			var num1:Number, num2:Number;
 
 			protected function bLogin_clickHandler(event:MouseEvent):void
 			{
@@ -84,15 +83,8 @@
 			}
 			
 			protected function iTriangulo_clickHandler(event:MouseEvent):void
-			{
-				var hip:Number;
-
-				num1 = Number(tiCateto1.text);
-				num2 = Number(tiCateto2.text);
-				
-			    hip = num1 * num1 + num2 * num2;
-				
-				tiHipotenusa.text = hip.toString(10);
+			{				
+				tiHipotenusa.text = Math.sqrt(Math.pow(parseFloat(tiCateto1.text),2) + Math.pow(parseFloat(tiCateto2.text),2)).toString(10);
 			}	
 			
 			 protected function b1_clickHandler(event:MouseEvent):void
@@ -103,7 +95,6 @@
 			protected function b2_clickHandler(event:MouseEvent):void
 			{
 				tiSecuencias.text += b2.label;
-				
 			}
 			
 			protected function b3_clickHandler(event:MouseEvent):void
