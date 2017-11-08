@@ -1,0 +1,6 @@
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\bin\Debug\ConsoleApplicationPOO.exe.config
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\bin\Debug\ConsoleApplicationPOO.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\bin\Debug\ConsoleApplicationPOO.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\obj\Debug\ConsoleApplicationPOO.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\obj\Debug\ConsoleApplicationPOO.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplicationPOO\obj\Debug\ConsoleApplicationPOO.csprojResolveAssemblyReference.cache

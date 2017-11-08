@@ -3,3 +3,4 @@ C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visu
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\ConsoleApplication1\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache

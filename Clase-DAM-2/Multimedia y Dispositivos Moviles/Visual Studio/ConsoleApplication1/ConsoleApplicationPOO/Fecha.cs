@@ -61,18 +61,23 @@ namespace ConsoleApplicationPOO
         // Metodos
         public bool Bisiesto()
         {
-            bool bisi = false;
+            return (anho % 4 == 0);
+        }
 
-            if (anho % 4 == 0)
-                bisi = true;
-
-            return bisi;
+        public string EscribirFecha()
+        {
+            return "Dia: " + dia + " Mes: " + mes + " Año: " + anho;
         }
 
         public void AMes()
         {
-            mes++;
-            mes %= 12;
+            if (mes < 12)
+                mes++;
+            else
+            {
+                mes = 1;
+                mes++;
+            }
         }
 
         public int DiasAnho()
