@@ -38,6 +38,9 @@
             this.rBIV = new System.Windows.Forms.RadioButton();
             this.rBSoId = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dTPFecha = new System.Windows.Forms.DateTimePicker();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,12 +56,17 @@
             // 
             // cBOrigen
             // 
+            this.cBOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBOrigen.FormattingEnabled = true;
+            this.cBOrigen.Items.AddRange(new object[] {
+            "MADRID",
+            "BARCELONA",
+            "VALENCIA"});
             this.cBOrigen.Location = new System.Drawing.Point(173, 77);
             this.cBOrigen.Name = "cBOrigen";
             this.cBOrigen.Size = new System.Drawing.Size(121, 28);
-            this.cBOrigen.TabIndex = 1;
+            this.cBOrigen.TabIndex = 3;
             // 
             // cBDestino
             // 
@@ -71,6 +79,7 @@
             // 
             // cBBilletes
             // 
+            this.cBBilletes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBBilletes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBBilletes.FormattingEnabled = true;
             this.cBBilletes.Items.AddRange(new object[] {
@@ -140,6 +149,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rBIV);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Location = new System.Drawing.Point(107, 241);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
@@ -147,11 +157,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // dTPFecha
+            // 
+            this.dTPFecha.CustomFormat = "dddd:dd MMMM:MM yyyy ";
+            this.dTPFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPFecha.Location = new System.Drawing.Point(93, 415);
+            this.dTPFecha.Name = "dTPFecha";
+            this.dTPFecha.Size = new System.Drawing.Size(200, 20);
+            this.dTPFecha.TabIndex = 10;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, " +
+                "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, " +
+                "",
+            "patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, " +
+                "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, ",
+            "patata, pepe, pepa, fresa, "});
+            this.listBox1.Location = new System.Drawing.Point(422, 95);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(143, 160);
+            this.listBox1.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(485, 378);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 627);
+            this.ClientSize = new System.Drawing.Size(743, 660);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dTPFecha);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rBSoId);
             this.Controls.Add(this.label4);
@@ -161,8 +219,11 @@
             this.Controls.Add(this.cBDestino);
             this.Controls.Add(this.cBOrigen);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Tag = "";
+            this.Text = "Mi primer form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -182,6 +243,9 @@
         private System.Windows.Forms.RadioButton rBIV;
         private System.Windows.Forms.RadioButton rBSoId;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dTPFecha;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
