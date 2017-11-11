@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace CadenaTv
@@ -18,17 +19,20 @@ namespace CadenaTv
             Console.WriteLine("5. Mostrar programacion diaria");
             Console.WriteLine("6. Mostrar contenido por dia");
         }
+
         static void Main(string[] args)
         {
-            string[] tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
+            Semana sm = new Semana();
             int opcion;
             do
             {
+                opciones();
                 opcion = Int32.Parse(Console.ReadLine());
 
                 switch (opcion)
                 {
                     case 1:
+                        sm.NuevoPrograma();
                         break;
                     case 2:
                         break;

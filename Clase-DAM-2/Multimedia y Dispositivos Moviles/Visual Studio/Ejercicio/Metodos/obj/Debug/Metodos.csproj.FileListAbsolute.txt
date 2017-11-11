@@ -4,3 +4,9 @@ C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visu
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\bin\Debug\Metodos.pdb
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\obj\Debug\Metodos.exe
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\obj\Debug\Metodos.pdb
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\bin\Debug\Metodos.exe.config
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\obj\Debug\Metodos.exe
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\obj\Debug\Metodos.pdb
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\bin\Debug\Metodos.exe
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\bin\Debug\Metodos.pdb
+Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Metodos\obj\Debug\Metodos.csprojResolveAssemblyReference.cache

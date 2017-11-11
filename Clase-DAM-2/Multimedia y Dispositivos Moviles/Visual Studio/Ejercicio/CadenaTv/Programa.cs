@@ -15,6 +15,9 @@ namespace CadenaTv
         // constructores
         public Programa()
         {
+            nombre = "";
+            contenido = "";
+            duracion = 0;
             hInicio = 8;
             hFin = 10;
         }

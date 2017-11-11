@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiaSemana.cs" />
+    <Compile Include="Dia.cs" />
+    <Compile Include="CrearPrograma.cs" />
+    <Compile Include="EliminarPrograma.cs" />
+    <Compile Include="ModificarPrograma.cs" />
+    <Compile Include="MostrarProgramacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semana.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
