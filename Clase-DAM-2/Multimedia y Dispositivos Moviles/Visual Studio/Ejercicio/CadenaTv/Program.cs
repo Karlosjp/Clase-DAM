@@ -35,12 +35,15 @@ namespace CadenaTv
                         sm.NuevoPrograma();
                         break;
                     case 2:
+                        sm.BorrarPrograma();
                         break;
                     case 3:
+                        sm.ModDuracion();
                         break;
                     case 4:
                         break;
                     case 5:
+                        sm.MostrarPDiaria();
                         break;
                     case 6:
                         break;

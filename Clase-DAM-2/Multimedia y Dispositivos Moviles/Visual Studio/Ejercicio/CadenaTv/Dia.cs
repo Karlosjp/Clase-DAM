@@ -10,7 +10,7 @@ namespace CadenaTv
     {
         private string nombreDia;
 
-        static private Programa prorPh = new Programa(8,10);
+        static private Programa prorPh = new Programa(08,10);
         static private Programa prorMt = new Programa(10,14);
         static private Programa prorMd = new Programa(14,16);
         static private Programa prorTd = new Programa(16,20);
@@ -24,6 +24,10 @@ namespace CadenaTv
             return nombreDia;
         }
 
+        public Programa[] GetProgramas()
+        {
+            return programacion;
+        }
         // Constructor
         public Dia()
         {
@@ -36,11 +40,16 @@ namespace CadenaTv
         }
 
         // Metodos
-        public void AnadirPrograma(Programa pro)
+        public void ModificarPrograma(Programa pro)
         {
             for (int i = 0; i < programacion.Length; i++)
-                if (programacion[i].getHInicio() == pro.getHInicio())
+                if (programacion[i].GetHInicio() == pro.GetHInicio())
                     programacion[i] = pro;
+        }
+
+        public void ModDuracionPrograma(Programa pro)
+        {
+
         }
     }
 }

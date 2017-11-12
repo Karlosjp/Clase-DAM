@@ -15,69 +15,72 @@ namespace CadenaTv
         // constructores
         public Programa()
         {
-            nombre = "";
-            contenido = "";
+            nombre = "Ninguno";
+            contenido = "Ninguno";
             duracion = 0;
-            hInicio = 8;
-            hFin = 10;
+            hInicio = 0;
+            hFin = 0;
         }
 
         public Programa(int i, int f)
         {
             hInicio = i;
             hFin = f;
+            nombre = "Ninguno";
+            contenido = "Ninguno";
+            duracion = 0;
         }
     
         // Seters
-        public void setNombre(string n)
+        public void SetNombre(string n)
         {
             nombre = n;
         }
 
-        public void setContenido(string c)
+        public void SetContenido(string c)
         {
             contenido = c;
         }
 
-        public void setDuracion(int d)
+        public void SetDuracion(int d)
         {
             duracion = d;
         }
-
-        public void setHInicio(int i)
+        
+        public void SetHInicio(int i)
         {
             hInicio = i;
         }
-
-        public void setHFin(int f)
+        
+        public void SetHFin(int f)
         {
             hFin = f;
         }
-
+        
         // Geters
-        public int getHInicio()
+        public int GetHInicio()
         {
             return hInicio;
         }
-        
-        public int getHFin()
-        {
-            return hFin;
-        }
 
-        public string getNombre()
+        public string GetNombre()
         {
             return nombre;
         }
 
-        public string getContenido()
+        public string GetContenido()
         {
             return contenido;
         }
 
-        public int getDuracion()
+        public int GetDuracion()
         {
             return duracion;
+        }
+
+        public int GetHFin()
+        {
+            return hFin;
         }
     }
 }
