@@ -46,8 +46,7 @@
     <Compile Include="Dia.cs" />
     <Compile Include="CrearPrograma.cs" />
     <Compile Include="EliminarPrograma.cs" />
-    <Compile Include="GModificarDatos.cs" />
-    <Compile Include="GMostrarDatos.cs" />
+    <Compile Include="GeneralDatos.cs" />
     <Compile Include="ModificarPrograma.cs" />
     <Compile Include="MostrarProgramacion.cs" />
     <Compile Include="Program.cs" />

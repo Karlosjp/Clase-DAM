@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CadenaTv
 {
-    class CrearPrograma : GModificarDatos
+    class CrearPrograma : GeneralDatos
     {
         private string contenido;
 

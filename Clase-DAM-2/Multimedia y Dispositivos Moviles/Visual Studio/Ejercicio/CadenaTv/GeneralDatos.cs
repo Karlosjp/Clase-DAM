@@ -7,10 +7,12 @@ using System.Globalization;
 
 namespace CadenaTv
 {
-    class GModificarDatos
+    class GeneralDatos
     {
         protected TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
         protected Programa nPrograma = new Programa();
+        protected Dia[] semana;
+        protected Programa[] pro;
 
         protected string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
                          tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CadenaTv
 {
-    class ModificarPrograma : GModificarDatos
+    class ModificarPrograma : GeneralDatos
     {
         private int minDescontar = 0;
 

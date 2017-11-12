@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CadenaTv
 {
-    class EliminarPrograma : GModificarDatos
+    class EliminarPrograma : GeneralDatos
     {
         // Metodos
         public void Borrar()
