@@ -41,7 +41,15 @@
             this.dTPFecha = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -138,7 +146,7 @@
             // rBSoId
             // 
             this.rBSoId.AutoSize = true;
-            this.rBSoId.Location = new System.Drawing.Point(274, 208);
+            this.rBSoId.Location = new System.Drawing.Point(6, 53);
             this.rBSoId.Name = "rBSoId";
             this.rBSoId.Size = new System.Drawing.Size(63, 17);
             this.rBSoId.TabIndex = 8;
@@ -149,8 +157,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rBIV);
+            this.groupBox1.Controls.Add(this.rBSoId);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBox1.Location = new System.Drawing.Point(107, 241);
+            this.groupBox1.Location = new System.Drawing.Point(85, 218);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 9;
@@ -189,29 +198,97 @@
             "patata, pepe, pepa, fresa, ",
             "patata, pepe, pepa, fresa, ",
             "patata, pepe, pepa, fresa, "});
-            this.listBox1.Location = new System.Drawing.Point(422, 95);
+            this.listBox1.Location = new System.Drawing.Point(307, 237);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(143, 160);
             this.listBox1.TabIndex = 11;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(485, 378);
+            this.textBox1.Location = new System.Drawing.Point(307, 415);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(340, 20);
             this.textBox1.TabIndex = 12;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(294, 49);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(388, 158);
+            this.tabControl1.TabIndex = 13;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(380, 132);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage2.Size = new System.Drawing.Size(380, 132);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(380, 132);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(380, 132);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(72, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 38);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 660);
+            this.ClientSize = new System.Drawing.Size(694, 467);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dTPFecha);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rBSoId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -224,8 +301,10 @@
             this.Name = "Form1";
             this.Tag = "";
             this.Text = "Mi primer form";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +325,13 @@
         private System.Windows.Forms.DateTimePicker dTPFecha;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

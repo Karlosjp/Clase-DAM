@@ -1,0 +1,6 @@
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\bin\Debug\Examen.exe.config
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\bin\Debug\Examen.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\bin\Debug\Examen.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\obj\Debug\Examen.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\obj\Debug\Examen.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Examen\obj\Debug\Examen.pdb
