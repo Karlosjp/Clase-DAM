@@ -54,6 +54,6 @@ public class GestionProductos {
 
 	public void imprimir() {
 		for (int i = 0; i < prod.length; i++)
-			System.out.println("Nombre: " + prod[i].getNombre() + ". Precio: " + prod[i].getPrecio());
+			System.out.println(prod[i].escribir());
 	}
 }

@@ -18,12 +18,8 @@ public class Producto {
 		precio = p;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public double getPrecio() {
-		return precio;
+	public String escribir() {
+		return "Nombre: " + nombre + ". Precio: " + precio;
 	}
 
 	public void modPrecioPorcentaje(double mod) {
