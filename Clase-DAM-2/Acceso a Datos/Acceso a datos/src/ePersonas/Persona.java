@@ -11,18 +11,31 @@ public class Persona {
 	}
 
 	public String getNombre() {
-		return "Nombre: " + nombre;
+		return nombre;
 	}
 
 	public String getApellido() {
-		return "Apellido: " + apellido;
+		return apellido;
 	}
 
-	public String getEdad() {
-		return "Edad: " + edad;
+	public int getEdad() {
+		return edad;
 	}
+
+	public void setNombre(String n) {
+		this.nombre = n;
+	}
+
+	public void setApellido(String a) {
+		this.apellido = a;
+	}
+
+	public void setEdad(int e) {
+		this.edad = e;
+	}
+
 	public String imprimir() {
-		return "Nombre: " + nombre + "Apellido: " + apellido + " edad: " + edad;
+		return "Nombre: " + nombre + "\tApellido: " + apellido + "\tedad: " + edad;
 	}
 
 	public void vaciar() {

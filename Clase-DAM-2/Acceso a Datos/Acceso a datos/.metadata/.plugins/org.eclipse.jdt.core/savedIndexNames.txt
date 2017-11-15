@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+Z:\Git\Clase-DAM\Clase-DAM-2\Acceso a Datos\Acceso a datos\.metadata\.plugins\org.eclipse.jdt.core

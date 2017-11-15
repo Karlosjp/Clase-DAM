@@ -13,7 +13,9 @@ public class MainPersona {
 	}
 
 	public static void main(String[] args) {
-		Persona[] personas = new Persona[5];
+		Persona[] personas = {new Persona("Carlos","Jaquez",26),
+				new Persona("Pepe","Jimenez",30),new Persona("Laura","Marcos",32),
+				new Persona("Luisa","Fernandez",20),new Persona("Lenna","Brerz",26)};
 		Metodos met = new Metodos();
 		Scanner scan = new Scanner(System.in);
 
