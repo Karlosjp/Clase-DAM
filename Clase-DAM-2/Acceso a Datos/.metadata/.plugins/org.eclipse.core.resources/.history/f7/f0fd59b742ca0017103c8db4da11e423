@@ -1,0 +1,37 @@
+package ePersonas;
+
+public class Persona {
+	private String nombre, apellido;
+	private int edad;
+
+	public Persona(String nombre, String apellido, int edad) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+	public String imprimir() {
+		return "Nombre: " + nombre + "Apellido: " + apellido + " edad: " + edad;
+	}
+	
+	public String imprimirfichero() {
+		return nombre + "\n" + apellido + "\n" + edad+ "\n";
+	}
+
+	public void vaciar() {
+		nombre = "";
+		apellido = "";
+		edad = 0;
+	}
+}
