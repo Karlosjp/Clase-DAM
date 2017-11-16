@@ -13,19 +13,20 @@ public class Metodos {
 	public void escribirFichero(Persona[] personal) {
 		try {
 			File fichero = new File("Personal.txt");
-			FileWriter escribirFichero = new FileWriter(fichero);
-			BufferedWriter escribirBuffer = new BufferedWriter(escribirFichero);
+			if (!fichero.exists()) {
+				FileWriter escribirFichero = new FileWriter(fichero);
+				BufferedWriter escribirBuffer = new BufferedWriter(escribirFichero);
 
-			for (int i = 0; i < personal.length; i++) {
-				escribirBuffer.write(personal[i].getNombre());
-				escribirBuffer.newLine();
-				escribirBuffer.write(personal[i].getApellido());
-				escribirBuffer.newLine();
-				escribirBuffer.write(String.valueOf(personal[i].getEdad()));
-				escribirBuffer.newLine();
+				for (int i = 0; i < personal.length; i++) {
+					escribirBuffer.write(personal[i].getNombre());
+					escribirBuffer.newLine();
+					escribirBuffer.write(personal[i].getApellido());
+					escribirBuffer.newLine();
+					escribirBuffer.write(String.valueOf(personal[i].getEdad()));
+					escribirBuffer.newLine();
+				}
+				escribirBuffer.close();
 			}
-
-			escribirBuffer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

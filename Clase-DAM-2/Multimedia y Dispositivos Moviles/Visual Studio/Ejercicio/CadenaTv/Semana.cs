@@ -8,16 +8,21 @@ namespace CadenaTv
 {
     class Semana
     {
-        static private Dia lunes = new Dia("Lunes");
-        static private Dia martes = new Dia("Martes");
-        static private Dia miercoles = new Dia("Miercoles");
-        static private Dia jueves = new Dia("Jueves");
-        static private Dia viernes = new Dia("Viernes");
-
-        Dia[] semana = { lunes, martes, miercoles, jueves, viernes };
-
         private GeneralDatos gp = new GeneralDatos();
 
+        private Dia[] semana;
+
+        // Constructores
+        public Semana()
+        {
+            semana = new Dia[5];
+            for (int i = 0; i < semana.Length; i++)
+                semana[i] = new Dia(gp.GetDiasSemana(i));
+        }
+
+        public Semana(Dia[] semana) { this.semana = semana; }
+
+        // Metodos
         public void NuevoPrograma()
         {
             gp.IntroduceDia();
@@ -74,7 +79,6 @@ namespace CadenaTv
                 if (string.Equals(semana[i].GetDia(), gp.GetDia()))
                     semana[i].MostrarContenidos(gp.GetContenido());
         }
-
 
         public void MostrarProgramacion()
         {
