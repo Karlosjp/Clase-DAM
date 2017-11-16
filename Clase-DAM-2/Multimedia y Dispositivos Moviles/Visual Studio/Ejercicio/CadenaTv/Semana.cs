@@ -16,7 +16,7 @@ namespace CadenaTv
         public Semana()
         {
             semana = new Dia[5];
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
                 semana[i] = new Dia();
         }
 

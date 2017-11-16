@@ -9,7 +9,7 @@ namespace CadenaTv
 {
     class GeneralDatos
     {
-        static private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
+        private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
                          tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
 
         private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
@@ -26,10 +26,9 @@ namespace CadenaTv
 
         public string [] GetContenido() { return tContenido; }
 
-        public Programa GetPrograma()
-        {
-            return auxPrograma;
-        }
+        public string[] GetDiasSemana() { return diasSemana; }
+
+        public Programa GetPrograma() { return auxPrograma; }
 
         // Metodos
         public void IntroduceDia()
