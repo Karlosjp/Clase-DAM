@@ -26,7 +26,7 @@ namespace CadenaTv
 
         public string [] GetContenido() { return tContenido; }
 
-        public string[] GetDiasSemana() { return diasSemana; }
+        public string GetDiasSemana(int d) { return diasSemana[d]; }
 
         public Programa GetPrograma() { return auxPrograma; }
 

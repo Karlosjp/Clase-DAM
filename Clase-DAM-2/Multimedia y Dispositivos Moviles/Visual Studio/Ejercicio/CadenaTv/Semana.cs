@@ -16,15 +16,13 @@ namespace CadenaTv
         public Semana()
         {
             semana = new Dia[5];
-            for (int i = 0; i < 5; i++)
-                semana[i] = new Dia();
+            for (int i = 0; i < semana.Length; i++)
+                semana[i] = new Dia(gp.GetDiasSemana(i));
         }
 
-        public Semana(Dia[] semana)
-        {
-            this.semana = semana;
-        }
+        public Semana(Dia[] semana) { this.semana = semana; }
 
+        // Metodos
         public void NuevoPrograma()
         {
             gp.IntroduceDia();

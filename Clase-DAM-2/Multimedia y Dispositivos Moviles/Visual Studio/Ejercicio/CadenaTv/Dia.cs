@@ -13,23 +13,26 @@ namespace CadenaTv
         private Programa[] programacion;
 
         //Geters
-        public string GetDia()
-        {
-            return nombreDia;
-        }
+        public string GetDia() { return nombreDia; }
 
-        public Programa[] GetProgramas()
-        {
-            return programacion;
-        }
+        public Programa[] GetProgramas() { return programacion; }
 
         // Constructor
         public Dia()
         {
             nombreDia = "";
-            programacion = new Programa[4];
+            programacion = new Programa[5];
 
-            for (int i = 0; i <programacion.Length; i++)
+            for (int i = 0; i < programacion.Length; i++)
+                programacion[i] = new Programa();
+        }
+
+        public Dia(string d)
+        {
+            this.nombreDia = d;
+            programacion = new Programa[5];
+
+            for (int i = 0; i < programacion.Length; i++)
                 programacion[i] = new Programa();
         }
 
