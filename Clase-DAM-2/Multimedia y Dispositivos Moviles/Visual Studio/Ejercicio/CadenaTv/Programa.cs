@@ -30,7 +30,7 @@ namespace CadenaTv
             contenido = "Ninguno";
             duracion = 0;
         }
-    
+
         // Seters
         public void SetNombre(string n)
         {
@@ -46,17 +46,17 @@ namespace CadenaTv
         {
             duracion = d;
         }
-        
+
         public void SetHInicio(int i)
         {
             hInicio = i;
         }
-        
+
         public void SetHFin(int f)
         {
             hFin = f;
         }
-        
+
         // Geters
         public int GetHInicio()
         {
@@ -81,6 +81,39 @@ namespace CadenaTv
         public int GetHFin()
         {
             return hFin;
+        }
+
+        // Metodos
+        public string Escribir()
+        {
+            return hInicio + ":00 -- " + hFin + ":00\t" + nombre + "\t" + contenido + "\t   --\t" + duracion + " min";
+        }
+
+        public bool ComprobarDuracion(int d)
+        {
+            bool resD = false;
+
+            if (d > 0 && d <= DMaxMinutos())
+            {
+                resD = true;
+                duracion -= d;
+            }
+
+            return resD;
+        }
+
+        public int DMaxMinutos()
+        {
+            return (hInicio - hFin) * 60;
+        }
+
+        public void Borrar()
+        {
+            nombre = "";
+            contenido = "";
+            duracion = 0;
+            hInicio = 0;
+            hFin = 0;
         }
     }
 }

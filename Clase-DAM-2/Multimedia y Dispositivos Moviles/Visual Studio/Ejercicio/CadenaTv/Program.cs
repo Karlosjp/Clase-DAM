@@ -41,11 +41,13 @@ namespace CadenaTv
                         sm.ModDuracion();
                         break;
                     case 4:
+                        sm.MostrarProgramacion();
                         break;
                     case 5:
-                        sm.MostrarPDiaria();
+                        sm.MostrarProgDiaria();
                         break;
                     case 6:
+                        sm.MostrarContenidos();
                         break;
                     case 0:
                         Console.WriteLine("Adios");
@@ -53,6 +55,8 @@ namespace CadenaTv
                     default:
                         break;
                 }
+
+                Console.WriteLine();
             } while (opcion != 0);
         }
     }

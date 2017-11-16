@@ -9,23 +9,21 @@ namespace CadenaTv
 {
     class GeneralDatos
     {
-        protected TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-        protected Programa nPrograma = new Programa();
-        protected Dia[] semana;
-        protected Programa[] pro;
+        private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+        private Programa nPrograma = new Programa();
 
-        protected string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
+        private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
                          tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
 
-        protected string dia;
+        private string diaElegido;
 
-        protected int[] horario = { 8, 10, 14, 16, 20, 24 };
+        private int[] horario = { 8, 10, 14, 16, 20, 24 };
 
         // Geters
-        public string GetDia()
-        {
-            return dia;
-        }
+        public string GetDia(){return diaElegido;}
+
+        public int GetHora(){return nPrograma.GetHInicio();}
+        public string [] GetContenido() { return tContenido; }
 
         public Programa GetPrograma()
         {
@@ -33,14 +31,14 @@ namespace CadenaTv
         }
 
         // Metodos
-        protected void IntroduceDia()
+        public void IntroduceDia()
         {
             bool aux = false;
 
             do
             {
                 Console.WriteLine("¿Que dia es el programa? (Lunes, Martes, Miercoles, Jueves, Viernes).");
-                dia = ti.ToTitleCase(Console.ReadLine());
+                diaElegido = ti.ToTitleCase(Console.ReadLine());
 
                 if (comprobarDia())
                 {
@@ -52,7 +50,7 @@ namespace CadenaTv
             } while (!aux);
         }
 
-        protected void IntroduceHora()
+        public void IntroduceHora()
         {
             bool aux = false;
 
@@ -71,46 +69,86 @@ namespace CadenaTv
             } while (!aux);
         }
 
-        protected void horaFin()
+        public void IntroducirContenido()
         {
-            for (int i = 0; i < horario.Length; i++)
-                if (nPrograma.GetHInicio() == horario[i])
-                    nPrograma.SetHFin(horario[i + 1]);
+            bool aux = false;
+
+            do
+            {
+                Console.WriteLine("Contenido del programa: (Informativo, Entretenimiento, Concurso, Pelicula, Serie).");
+                nPrograma.SetContenido(ti.ToTitleCase(Console.ReadLine()));
+
+                if (comprobarConenido())
+                {
+                    aux = true;
+                    Console.WriteLine("Contenido correcto.");
+                }
+                else
+                    Console.WriteLine("Contenido incorrecto.");
+            } while (!aux);
         }
 
-        protected bool comprobarDuracion()
+        public void IntroducirDuracion()
+        {
+            bool aux = false;
+
+            do
+            {
+                Console.WriteLine("Duracion en minutos desde las: " + nPrograma.GetHInicio() + ":00 hasta las: " + nPrograma.GetHFin() + ":00.");
+                nPrograma.SetDuracion(Int32.Parse(Console.ReadLine()));
+
+                if (comprobarDuracion())
+                {
+                    aux = true;
+                    Console.WriteLine("Duracion correcta.");
+                }
+                else
+                    Console.WriteLine("Duracion incorrecta.");
+            } while (!aux);
+        }
+
+        public void IntroducirNombre()
+        {
+            bool aux = false;
+
+            do
+            {
+                Console.WriteLine("Nombre del programa: ");
+                nPrograma.SetNombre(ti.ToTitleCase(Console.ReadLine()));
+
+                if (comprobarNombre())
+                {
+                    aux = true;
+                    Console.WriteLine("Nombre correcto.");
+                }
+                else
+                    Console.WriteLine("Nombre incorrecto.");
+            } while (!aux);
+        }
+
+        // Metodos privados
+        private bool comprobarConenido()
+        {
+            bool resC = false;
+
+            for (int i = 0; i < tContenido.Length; i++)
+                if (string.Equals(tContenido[i], nPrograma.GetContenido()))
+                    resC = true;
+
+            return resC;
+        }
+
+        private bool comprobarNombre()
         {
             bool resD = false;
 
-            if (nPrograma.GetDuracion() > 0 && nPrograma.GetDuracion() <= dMinutos())
+            if (!(nPrograma.GetNombre() == ""))
                 resD = true;
 
             return resD;
         }
 
-        protected int dMinutos()
-        {
-            int minutos = 0;
-
-            for (int i = 0; i < horario.Length - 1; i++)
-                if (horario[i] == nPrograma.GetHInicio())
-                    minutos = (horario[i + 1] - horario[i]) * 60;
-
-            return minutos;
-        }
-
-        protected bool comprobarDia()
-        {
-            bool resD = false;
-
-            for (int i = 0; i < diasSemana.Length; i++)
-                if (string.Equals(diasSemana[i], dia))
-                    resD = true;
-
-            return resD;
-        }
-
-        protected bool comprobarHora()
+        private bool comprobarHora()
         {
             bool resH = false;
 
@@ -120,5 +158,34 @@ namespace CadenaTv
 
             return resH;
         }
+
+        private bool comprobarDuracion()
+        {
+            bool resD = false;
+
+            if (nPrograma.GetDuracion() > 0 && nPrograma.GetDuracion() <= nPrograma.DMaxMinutos())
+                resD = true;
+
+            return resD;
+        }
+
+        private bool comprobarDia()
+        {
+            bool resD = false;
+
+            for (int i = 0; i < diasSemana.Length; i++)
+                if (string.Equals(diasSemana[i], diaElegido))
+                    resD = true;
+
+            return resD;
+        }
+
+        private void horaFin()
+        {
+            for (int i = 0; i < horario.Length; i++)
+                if (nPrograma.GetHInicio() == horario[i])
+                    nPrograma.SetHFin(horario[i + 1]);
+        }
     }
 }
+

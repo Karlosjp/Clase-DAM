@@ -16,45 +16,72 @@ namespace CadenaTv
 
         Dia[] semana = { lunes, martes, miercoles, jueves, viernes };
 
-        private CrearPrograma cp = new CrearPrograma();
-        private EliminarPrograma ep = new EliminarPrograma();
-        private ModificarPrograma mp = new ModificarPrograma();
-        private MostrarProgramacion mosPro = new MostrarProgramacion();
-        
-        private string[] tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
+        private GeneralDatos gp = new GeneralDatos();
 
         public void NuevoPrograma()
         {
-            cp.Crear();
+            gp.IntroduceDia();
+            gp.IntroducirNombre();
+            gp.IntroduceHora();
+            gp.IntroducirContenido();
+            gp.IntroducirDuracion();
 
             for (int i = 0; i < semana.Length; i++)
-                if (string.Equals(semana[i].GetDia(), cp.GetDia()))
-                    semana[i].ModificarPrograma(cp.GetPrograma());
+                if (string.Equals(semana[i].GetDia(), gp.GetDia()))
+                    semana[i].CrearPrograma(gp.GetPrograma());
 
             Console.WriteLine("Programa introducido.");
         }
 
         public void BorrarPrograma()
         {
-            ep.Borrar();
-            
+            gp.IntroduceDia();
+            gp.IntroduceHora();
+
             for (int i = 0; i < semana.Length; i++)
-                if (string.Equals(semana[i].GetDia(), ep.GetDia()))
-                    semana[i].ModificarPrograma(ep.GetPrograma());
+                if (string.Equals(semana[i].GetDia(), gp.GetDia()))
+                    semana[i].Borrar(gp.GetHora());
 
             Console.WriteLine("Programa borrado.");
         }
 
         public void ModDuracion()
         {
-            mp.Descontar(semana);
+            gp.IntroduceDia();
+            gp.IntroduceHora();
+
+            for (int i = 0; i < semana.Length; i++)
+                if (string.Equals(semana[i].GetDia(), gp.GetDia()))
+                    semana[i].DescontarMin(gp.GetHora());
 
             Console.WriteLine("Duracion modificada.");
         }
 
-        public void MostrarPDiaria()
+        public void MostrarProgDiaria()
         {
-            mosPro.MosProgDiaria(semana);
+            gp.IntroduceDia();
+
+            for (int i = 0; i < semana.Length; i++)
+                if (string.Equals(semana[i].GetDia(), gp.GetDia()))
+                    semana[i].MostrarProgramacion();
+        }
+
+        public void MostrarContenidos()
+        {
+            gp.IntroduceDia();
+
+            for (int i = 0; i < semana.Length; i++)
+                if (string.Equals(semana[i].GetDia(), gp.GetDia()))
+                    semana[i].MostrarContenidos(gp.GetContenido());
+        }
+
+
+        public void MostrarProgramacion()
+        {
+            Console.WriteLine(" Horario:\tNombre:\tContenido:\tDuración:");
+
+            for (int i = 0; i < semana.Length; i++)
+                semana[i].MostrarProgramacion();
         }
     }
 }
