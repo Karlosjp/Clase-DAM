@@ -9,11 +9,11 @@ namespace CadenaTv
 {
     class GeneralDatos
     {
-        private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-        private Programa nPrograma = new Programa();
-
-        private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
+        static private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
                          tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
+
+        private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+        private Programa auxPrograma = new Programa();
 
         private string diaElegido;
 
@@ -22,12 +22,13 @@ namespace CadenaTv
         // Geters
         public string GetDia(){return diaElegido;}
 
-        public int GetHora(){return nPrograma.GetHInicio();}
+        public int GetHora(){return auxPrograma.GetHInicio();}
+
         public string [] GetContenido() { return tContenido; }
 
         public Programa GetPrograma()
         {
-            return nPrograma;
+            return auxPrograma;
         }
 
         // Metodos
@@ -57,7 +58,7 @@ namespace CadenaTv
             do
             {
                 Console.WriteLine("Escribe hora de inicio: (8, 10, 14, 16, 20).");
-                nPrograma.SetHInicio(Int32.Parse(Console.ReadLine()));
+                auxPrograma.SetHInicio(Int32.Parse(Console.ReadLine()));
 
                 if (comprobarHora())
                 {
@@ -76,7 +77,7 @@ namespace CadenaTv
             do
             {
                 Console.WriteLine("Contenido del programa: (Informativo, Entretenimiento, Concurso, Pelicula, Serie).");
-                nPrograma.SetContenido(ti.ToTitleCase(Console.ReadLine()));
+                auxPrograma.SetContenido(ti.ToTitleCase(Console.ReadLine()));
 
                 if (comprobarConenido())
                 {
@@ -94,8 +95,8 @@ namespace CadenaTv
 
             do
             {
-                Console.WriteLine("Duracion en minutos desde las: " + nPrograma.GetHInicio() + ":00 hasta las: " + nPrograma.GetHFin() + ":00.");
-                nPrograma.SetDuracion(Int32.Parse(Console.ReadLine()));
+                Console.WriteLine("Duracion en minutos desde las: " + auxPrograma.GetHInicio() + ":00 hasta las: " + auxPrograma.GetHFin() + ":00.");
+                auxPrograma.SetDuracion(Int32.Parse(Console.ReadLine()));
 
                 if (comprobarDuracion())
                 {
@@ -114,7 +115,7 @@ namespace CadenaTv
             do
             {
                 Console.WriteLine("Nombre del programa: ");
-                nPrograma.SetNombre(ti.ToTitleCase(Console.ReadLine()));
+                auxPrograma.SetNombre(ti.ToTitleCase(Console.ReadLine()));
 
                 if (comprobarNombre())
                 {
@@ -132,7 +133,7 @@ namespace CadenaTv
             bool resC = false;
 
             for (int i = 0; i < tContenido.Length; i++)
-                if (string.Equals(tContenido[i], nPrograma.GetContenido()))
+                if (string.Equals(tContenido[i], auxPrograma.GetContenido()))
                     resC = true;
 
             return resC;
@@ -142,7 +143,7 @@ namespace CadenaTv
         {
             bool resD = false;
 
-            if (!(nPrograma.GetNombre() == ""))
+            if (!(auxPrograma.GetNombre() == ""))
                 resD = true;
 
             return resD;
@@ -153,7 +154,7 @@ namespace CadenaTv
             bool resH = false;
 
             for (int i = 0; i < horario.Length - 1; i++)
-                if (horario[i] == nPrograma.GetHInicio())
+                if (horario[i] == auxPrograma.GetHInicio())
                     resH = true;
 
             return resH;
@@ -163,7 +164,7 @@ namespace CadenaTv
         {
             bool resD = false;
 
-            if (nPrograma.GetDuracion() > 0 && nPrograma.GetDuracion() <= nPrograma.DMaxMinutos())
+            if (auxPrograma.GetDuracion() > 0 && auxPrograma.GetDuracion() <= auxPrograma.DMaxMinutos())
                 resD = true;
 
             return resD;
@@ -183,8 +184,8 @@ namespace CadenaTv
         private void horaFin()
         {
             for (int i = 0; i < horario.Length; i++)
-                if (nPrograma.GetHInicio() == horario[i])
-                    nPrograma.SetHFin(horario[i + 1]);
+                if (auxPrograma.GetHInicio() == horario[i])
+                    auxPrograma.SetHFin(horario[i + 1]);
         }
     }
 }

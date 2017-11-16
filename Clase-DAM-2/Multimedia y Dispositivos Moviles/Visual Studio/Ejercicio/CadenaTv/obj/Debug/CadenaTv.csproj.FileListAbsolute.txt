@@ -7,3 +7,6 @@ Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Eje
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\bin\Debug\CadenaTv.exe.config
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\obj\Debug\CadenaTv.exe
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\obj\Debug\CadenaTv.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\bin\Debug\CadenaTv.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\bin\Debug\CadenaTv.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\CadenaTv\obj\Debug\CadenaTv.csprojResolveAssemblyReference.cache
