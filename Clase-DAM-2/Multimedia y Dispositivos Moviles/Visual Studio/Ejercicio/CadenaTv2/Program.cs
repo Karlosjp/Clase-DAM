@@ -21,7 +21,9 @@ namespace CadenaTv2
 
         static void Main(string[] args)
         {
+            GeneralDatos gd = new GeneralDatos();
             Semana sm = new Semana();
+
             int opcion;
             do
             {
@@ -31,22 +33,34 @@ namespace CadenaTv2
                 switch (opcion)
                 {
                     case 1:
-                        sm.NuevoPrograma();
+                        gd.IntroduceDia();
+                        gd.IntroduceHora();
+                        gd.IntroducirNombre();
+                        gd.IntroducirContenido();
+                        gd.IntroducirDuracion();
+                        sm.NuevoPrograma(gd.GetPrograma(),gd.GetDia(), gd.GetHora());
                         break;
                     case 2:
-                        sm.BorrarPrograma();
+                        gd.IntroduceDia();
+                        gd.IntroduceHora();
+                        sm.BorrarPrograma(gd.GetDia(),gd.GetHora());
                         break;
                     case 3:
-                        sm.ModDuracion();
+                        gd.IntroduceDia();
+                        gd.IntroduceHora();
+                        gd.IntroducirDuracion2();
+                        sm.CambiarDuracionPrograma(gd.GetDia(),gd.GetHora(),gd.GetDuracion());
                         break;
                     case 4:
-                        sm.MostrarProgramacion();
+                        sm.MostrarProgramacionSemanal();
                         break;
                     case 5:
-                        sm.MostrarProgDiaria();
+                        gd.IntroduceDia();
+                        sm.MostrarProgramacionDiaria(gd.GetDia());
                         break;
                     case 6:
-                        sm.MostrarContenidos();
+                        gd.IntroduceDia();
+                        sm.MostrarDuracionContenidoDiario(gd.GetDia());
                         break;
                     case 0:
                         Console.WriteLine("Adios");

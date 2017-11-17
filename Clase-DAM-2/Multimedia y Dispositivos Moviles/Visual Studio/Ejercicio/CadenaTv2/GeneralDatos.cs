@@ -7,28 +7,31 @@ using System.Globalization;
 
 namespace CadenaTv2
 {
-    class GeneralDatos
+    class GeneralDatos : Globales
     {
-        private string[] diasSemana = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" },
-                         tContenido = { "Informativo", "Entretenimiento", "Concurso", "Pelicula", "Serie" };
 
-        private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-        private Programa auxPrograma = new Programa();
+
+        private TextInfo ti;
+        private Programa auxPrograma;
 
         private string diaElegido;
-
-        private int[] horario = { 8, 10, 14, 16, 20, 24 };
+        private int hora, dia, duracion;
 
         // Geters
-        public string GetDia(){return diaElegido;}
+        public int GetDia() { return dia; }
 
-        public int GetHora(){return auxPrograma.GetHInicio();}
+        public int GetHora() { return hora; }
 
-        public string [] GetContenido() { return tContenido; }
-
-        public string GetDiasSemana(int d) { return diasSemana[d]; }
+        public int GetDuracion() { return duracion; }
 
         public Programa GetPrograma() { return auxPrograma; }
+
+        // Constructores
+        public GeneralDatos()
+        {
+            ti = CultureInfo.CurrentCulture.TextInfo;
+            auxPrograma = new Programa();
+        }
 
         // Metodos
         public void IntroduceDia()
@@ -48,6 +51,25 @@ namespace CadenaTv2
                 else
                     Console.WriteLine("Dia incorrecto.");
             } while (!aux);
+
+            switch (diaElegido)
+            {
+                case "Lunes":
+                    dia = 0;
+                    break;
+                case "Martes":
+                    dia = 1;
+                    break;
+                case "Miercoles":
+                    dia = 2;
+                    break;
+                case "Jueves":
+                    dia = 3;
+                    break;
+                case "Viernes":
+                    dia = 4;
+                    break;
+            }
         }
 
         public void IntroduceHora()
@@ -57,16 +79,35 @@ namespace CadenaTv2
             do
             {
                 Console.WriteLine("Escribe hora de inicio: (8, 10, 14, 16, 20).");
-                auxPrograma.SetHInicio(Int32.Parse(Console.ReadLine()));
+                hora = Int32.Parse(Console.ReadLine());
 
                 if (comprobarHora())
                 {
-                    horaFin();
+                    Console.WriteLine("Hora correcta.");
                     aux = true;
                 }
                 else
                     Console.WriteLine("Hora incorrecta.");
             } while (!aux);
+
+            switch (hora)
+            {
+                case 8:
+                    hora = 0;
+                    break;
+                case 10:
+                    hora = 1;
+                    break;
+                case 14:
+                    hora = 2;
+                    break;
+                case 16:
+                    hora = 3;
+                    break;
+                case 20:
+                    hora = 4;
+                    break;
+            }
         }
 
         public void IntroducirContenido()
@@ -94,12 +135,13 @@ namespace CadenaTv2
 
             do
             {
-                Console.WriteLine("Duracion en minutos desde las: " + auxPrograma.GetHInicio() + ":00 hasta las: " + auxPrograma.GetHFin() + ":00.");
-                auxPrograma.SetDuracion(Int32.Parse(Console.ReadLine()));
+                Console.WriteLine("Duracion en minutos desde las: " + horario[dia] + ":00 hasta las: " + horario[dia+1] + ":00.");
+                duracion = Int32.Parse(Console.ReadLine());
 
-                if (comprobarDuracion())
+                if (auxPrograma.GetDuracion() < maxDuracion(hora))
                 {
                     aux = true;
+                    auxPrograma.SetDuracion(duracion);
                     Console.WriteLine("Duracion correcta.");
                 }
                 else
@@ -123,6 +165,25 @@ namespace CadenaTv2
                 }
                 else
                     Console.WriteLine("Nombre incorrecto.");
+            } while (!aux);
+        }
+
+        public void IntroducirDuracion2()
+        {
+            bool aux = false;
+
+            do
+            {
+                Console.WriteLine("¿Cuanto tiempo desde las " + horario[dia] + ":00 hasta las: " + horario[dia++] + ":00 quieres descontar?.");
+                duracion = Int32.Parse(Console.ReadLine());
+
+                if (auxPrograma.GetDuracion() < maxDuracion(hora))
+                {
+                    aux = true;
+                    Console.WriteLine("Duracion correcta.");
+                }
+                else
+                    Console.WriteLine("Duracion incorrecta, el maximo es --> " + maxDuracion(hora));
             } while (!aux);
         }
 
@@ -153,20 +214,10 @@ namespace CadenaTv2
             bool resH = false;
 
             for (int i = 0; i < horario.Length - 1; i++)
-                if (horario[i] == auxPrograma.GetHInicio())
+                if (horario[i] == hora)
                     resH = true;
 
             return resH;
-        }
-
-        private bool comprobarDuracion()
-        {
-            bool resD = false;
-
-            if (auxPrograma.GetDuracion() > 0 && auxPrograma.GetDuracion() <= auxPrograma.DMaxMinutos())
-                resD = true;
-
-            return resD;
         }
 
         private bool comprobarDia()
@@ -180,12 +231,6 @@ namespace CadenaTv2
             return resD;
         }
 
-        private void horaFin()
-        {
-            for (int i = 0; i < horario.Length; i++)
-                if (auxPrograma.GetHInicio() == horario[i])
-                    auxPrograma.SetHFin(horario[i + 1]);
-        }
+        private int maxDuracion(int hora) { return (horario[hora+1] - horario[hora]) * 60; }
     }
 }
-

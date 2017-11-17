@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Dia.cs" />
     <Compile Include="GeneralDatos.cs" />
+    <Compile Include="Globales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,84 +10,80 @@ namespace CadenaTv2
     class Dia
     {
         private string nombreDia;
-
         private Programa[] programacion;
-
-        //Geters
-        public string GetDia() { return nombreDia; }
-
-        public Programa[] GetProgramas() { return programacion; }
 
         // Constructor
         public Dia()
         {
             nombreDia = "";
-            programacion = new Programa[5];
-
-            for (int i = 0; i < programacion.Length; i++)
-                programacion[i] = new Programa();
+            iniciarProgramas(5);
         }
 
         public Dia(string d)
         {
             this.nombreDia = d;
-            programacion = new Programa[5];
+            iniciarProgramas(5);
+        }
+
+        // Metodos publicos    
+        // Imprime por pantalla el contenido de cada programa    
+        public ArrayList Escribir()
+        {
+            ArrayList aux = new ArrayList();
+
+            Console.WriteLine(nombreDia);
+            foreach (Programa p in programacion)
+                aux.Add(p.Escribir());
+
+            return aux;
+        }
+        
+        // Devuelve el la duracion total de un contenido
+        public int DuracionPorContenido(string contenido)
+        {
+            int minutos= 0;
+
+            foreach (Programa p in programacion)
+                if (string.Equals(contenido, p.GetContenido()))
+                    minutos += p.GetDuracion();
+
+            return minutos;
+        }
+
+        // Crea nuevo programa
+        public void NuevoPrograma(Programa nPro, int hora)
+        {
+            programacion[hora].SetNombre(nPro.GetNombre());
+            programacion[hora].SetContenido(nPro.GetContenido());
+            programacion[hora].SetDuracion(nPro.GetDuracion());
+        }
+
+        // Elimina un programa
+        public void Borrar(int hora) { programacion[hora].Borrar(); }
+
+        // Resta duracion a un programa
+        public string CambiarDuracion(int hora, int nDuracion)
+        {
+            string aux;
+
+            if (programacion[hora].GetDuracion() - nDuracion < 0)
+            {
+                programacion[hora].SetDuracion(nDuracion);
+                aux = "Duración cambiada.";
+            }
+            else
+                aux = "Se resta demasiado.";
+
+            return aux;
+        }
+
+        // Metodos privados
+        private void iniciarProgramas(int p)
+        {
+            programacion = new Programa[p];
 
             for (int i = 0; i < programacion.Length; i++)
                 programacion[i] = new Programa();
-        }
-
-        // Metodos
-        public void CrearPrograma(Programa pro)
-        {
-            for (int i = 0; i < programacion.Length; i++)
-                if (programacion[i].GetHInicio() == pro.GetHInicio())
-                    programacion[i] = pro;
-        }
-
-        public void Borrar(int h)
-        {
-            for (int i = 0; i < programacion.Length; i++)
-                if (programacion[i].GetHInicio() == h)
-                    programacion[i].Borrar();
-        }
-
-        public void DescontarMin(int t)
-        {
-            for (int i = 0; i < programacion.Length; i++)
-                if (programacion[i].GetHInicio() == t)
-                {
-                    Console.WriteLine("Cuanto tiempo quieres descontar de " + programacion[i].GetDuracion() + ".");
-
-                    if (programacion[i].ComprobarDuracion(Int32.Parse(Console.ReadLine())))
-                        Console.WriteLine("Duracion modificada a --> " + programacion[i].GetDuracion());
-                    else
-                        Console.WriteLine("Cantidad mayor de " + programacion[i].DMaxMinutos() + " minutos.");
-                }
-        }
-
-        public void MostrarProgramacion(int dia)
-        {
-            Console.WriteLine(" Dia\t--> " + nombreDia);
-
-            for (int i = 0; i < programacion.Length; i++)
-                Console.WriteLine(programacion[i].Escribir());
-        }
-
-        public void MostrarContenidos(string[] c)
-        {
-            int minTotal = 0;
-
-            Console.WriteLine(" Dia\t--> " + nombreDia);
-            for (int j = 0; j < c.Length; j++)
-            {
-                for (int i = 0; i < programacion.Length; i++)
-                    if (c[j] == programacion[i].GetContenido())
-                        minTotal += programacion[i].GetDuracion();
-
-                Console.WriteLine(c[j] + "\t" + minTotal + " min");
-            }
-        }
+        }               
     }
 }
-

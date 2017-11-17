@@ -21,25 +21,22 @@ namespace CadenaTv
         public Dia()
         {
             nombreDia = "";
-            iniciarProgramas(5);
-        }
-
-        public Dia(string d)
-        {
-            this.nombreDia = d;
-            iniciarProgramas(5);
-        }
-
-        // Metodos
-        private void iniciarProgramas(int p)
-        {
-            programacion = new Programa[p];
+            programacion = new Programa[5];
 
             for (int i = 0; i < programacion.Length; i++)
                 programacion[i] = new Programa();
         }
 
-        /*
+        public Dia(string d)
+        {
+            this.nombreDia = d;
+            programacion = new Programa[5];
+
+            for (int i = 0; i < programacion.Length; i++)
+                programacion[i] = new Programa();
+        }
+
+        // Metodos
         public void CrearPrograma(Programa pro)
         {
             for (int i = 0; i < programacion.Length; i++)
@@ -68,7 +65,7 @@ namespace CadenaTv
                 }
         }
 
-        public void MostrarProgramacion()
+        public void MostrarProgramacion(int dia)
         {
             Console.WriteLine(" Dia\t--> " + nombreDia);
 
@@ -89,7 +86,7 @@ namespace CadenaTv
 
                 Console.WriteLine(c[j] + "\t" + minTotal + " min");
             }
-        }*/
+        }
     }
 }
 
