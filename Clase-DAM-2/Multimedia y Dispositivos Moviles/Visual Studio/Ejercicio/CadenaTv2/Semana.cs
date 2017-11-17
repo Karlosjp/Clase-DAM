@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadenaTv
+namespace CadenaTv2
 {
     class Semana
     {
@@ -15,18 +15,15 @@ namespace CadenaTv
         // Constructores
         public Semana()
         {
-            crearSemana(5);
-        }
-
-        // Metodos
-        private void crearSemana(int s)
-        {
-            semana = new Dia[s];
+            semana = new Dia[5];
             for (int i = 0; i < semana.Length; i++)
                 semana[i] = new Dia(gp.GetDiasSemana(i));
         }
 
-        /*public void NuevoPrograma()
+        public Semana(Dia[] semana) { this.semana = semana; }
+
+        // Metodos
+        public void NuevoPrograma()
         {
             gp.IntroduceDia();
             gp.IntroducirNombre();
@@ -90,6 +87,5 @@ namespace CadenaTv
             for (int i = 0; i < semana.Length; i++)
                 semana[i].MostrarProgramacion();
         }
-        */
     }
 }

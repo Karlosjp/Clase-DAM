@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadenaTv
+namespace CadenaTv2
 {
     class Programa
     {
 
         private string nombre, contenido;
-        private int duracion;
+        private int duracion, hInicio, hFin;
 
         // constructores
         public Programa()
@@ -18,15 +18,19 @@ namespace CadenaTv
             nombre = "Ninguno";
             contenido = "Ninguno";
             duracion = 0;
+            hInicio = 0;
+            hFin = 0;
         }
 
-        public Programa(string n, string c, int d)
+        public Programa(int i, int f)
         {
-            nombre = n;
-            contenido = c;
-            duracion = d;
+            hInicio = i;
+            hFin = f;
+            nombre = "Ninguno";
+            contenido = "Ninguno";
+            duracion = 0;
         }
-        /*
+
         // Seters
         public void SetNombre(string n)
         {
@@ -111,6 +115,5 @@ namespace CadenaTv
             hInicio = 0;
             hFin = 0;
         }
-        */
     }
 }
