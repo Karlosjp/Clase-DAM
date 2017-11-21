@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen", "Examen\Examen.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadenaTv2", "CadenaTv2\CadenaTv2.csproj", "{5C19E966-25DD-403A-B346-2ACF19150B0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquiposElectronicos", "EquiposElectronicos\EquiposElectronicos.csproj", "{33D89292-6599-4FCA-9C07-F21F3D94F057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5C19E966-25DD-403A-B346-2ACF19150B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C19E966-25DD-403A-B346-2ACF19150B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C19E966-25DD-403A-B346-2ACF19150B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D89292-6599-4FCA-9C07-F21F3D94F057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D89292-6599-4FCA-9C07-F21F3D94F057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D89292-6599-4FCA-9C07-F21F3D94F057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D89292-6599-4FCA-9C07-F21F3D94F057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

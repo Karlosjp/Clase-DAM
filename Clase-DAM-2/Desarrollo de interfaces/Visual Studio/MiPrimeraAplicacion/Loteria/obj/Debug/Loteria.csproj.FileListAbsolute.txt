@@ -10,3 +10,9 @@ C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visu
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\bin\Debug\Loteria.exe.config
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.exe
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\bin\Debug\Loteria.exe
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\bin\Debug\Loteria.pdb
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.fLoteria.resources
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.Properties.Resources.resources
+C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Loteria\obj\Debug\Loteria.csproj.GenerateResource.Cache

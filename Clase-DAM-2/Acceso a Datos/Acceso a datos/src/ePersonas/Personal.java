@@ -8,21 +8,28 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Metodos {
+public class Personal {
 
-	public void escribirFichero(Persona[] personal) {
+	private Persona[] personas = {new Persona("Carlos", "Jaquez", 26), new Persona("Pepe", "Jimenez", 30),
+			new Persona("Laura", "Marcos", 32), new Persona("Luisa", "Fernandez", 20),
+			new Persona("Lenna", "Brerz", 26)};
+
+	public Personal() {
+	}
+
+	public void escribirFichero() {
 		try {
 			File fichero = new File("Personal.txt");
 			if (!fichero.exists()) {
 				FileWriter escribirFichero = new FileWriter(fichero);
 				BufferedWriter escribirBuffer = new BufferedWriter(escribirFichero);
 
-				for (int i = 0; i < personal.length; i++) {
-					escribirBuffer.write(personal[i].getNombre());
+				for (int i = 0; i < personas.length; i++) {
+					escribirBuffer.write(personas[i].getNombre());
 					escribirBuffer.newLine();
-					escribirBuffer.write(personal[i].getApellido());
+					escribirBuffer.write(personas[i].getApellido());
 					escribirBuffer.newLine();
-					escribirBuffer.write(String.valueOf(personal[i].getEdad()));
+					escribirBuffer.write(String.valueOf(personas[i].getEdad()));
 					escribirBuffer.newLine();
 				}
 				escribirBuffer.close();
@@ -32,7 +39,7 @@ public class Metodos {
 		}
 	}
 
-	public void leerFichero(Persona[] personal) {
+	public void leerFichero() {
 		ArrayList<String> listaPersonal = new ArrayList<String>();
 
 		try {
@@ -51,10 +58,10 @@ public class Metodos {
 					linea = leerBuffer.readLine();
 				}
 
-				for (int i = 0; i < personal.length; i++) {
-					personal[i].setNombre(listaPersonal.get(j++));
-					personal[i].setApellido(listaPersonal.get(j++));
-					personal[i].setEdad(Integer.parseInt(listaPersonal.get(j++)));
+				for (int i = 0; i < personas.length; i++) {
+					personas[i].setNombre(listaPersonal.get(j++));
+					personas[i].setApellido(listaPersonal.get(j++));
+					personas[i].setEdad(Integer.parseInt(listaPersonal.get(j++)));
 				}
 			} else
 				System.out.println("El fichero " + fichero.getName() + " no existe.");
@@ -64,13 +71,17 @@ public class Metodos {
 		}
 	}
 
-	public void escribirPantalla(Persona[] personas) {
+	public void escribirPantalla() {
 		for (int i = 0; i < personas.length; i++)
 			System.out.println(personas[i].imprimir());
 	}
 
-	public void vaciar(Persona[] personas) {
+	public void vaciar() {
 		for (int i = 0; i < personas.length; i++)
 			personas[i].vaciar();
+	}
+
+	public void borrar() {
+
 	}
 }

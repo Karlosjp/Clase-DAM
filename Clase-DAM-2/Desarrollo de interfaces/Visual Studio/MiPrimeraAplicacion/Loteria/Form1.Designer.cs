@@ -30,14 +30,14 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bValidar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBReintegro = new System.Windows.Forms.TextBox();
             this.dTPFecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.rBAutomática = new System.Windows.Forms.RadioButton();
             this.rBManual = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pOpciones = new System.Windows.Forms.Panel();
             this.cB16 = new System.Windows.Forms.CheckBox();
             this.cB15 = new System.Windows.Forms.CheckBox();
             this.cB14 = new System.Windows.Forms.CheckBox();
@@ -57,26 +57,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cBApuesta = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gBResguardo = new System.Windows.Forms.GroupBox();
             this.bSalir = new System.Windows.Forms.Button();
             this.bApostar = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lBResguardo = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.pOpciones.SuspendLayout();
+            this.gBResguardo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pOpciones);
             this.groupBox1.Controls.Add(this.bValidar);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tBReintegro);
             this.groupBox1.Controls.Add(this.dTPFecha);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rBAutomática);
             this.groupBox1.Controls.Add(this.rBManual);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cBApuesta);
             this.groupBox1.Controls.Add(this.label1);
@@ -98,15 +98,17 @@
             this.bValidar.TabIndex = 27;
             this.bValidar.Text = "Validar apuesta >>";
             this.bValidar.UseVisualStyleBackColor = true;
+            this.bValidar.Click += new System.EventHandler(this.bValidar_Click);
             // 
-            // textBox1
+            // tBReintegro
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(309, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(43, 21);
-            this.textBox1.TabIndex = 26;
+            this.tBReintegro.Enabled = false;
+            this.tBReintegro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBReintegro.Location = new System.Drawing.Point(309, 194);
+            this.tBReintegro.Name = "tBReintegro";
+            this.tBReintegro.ReadOnly = true;
+            this.tBReintegro.Size = new System.Drawing.Size(43, 21);
+            this.tBReintegro.TabIndex = 26;
             // 
             // dTPFecha
             // 
@@ -151,6 +153,7 @@
             this.rBAutomática.TabStop = true;
             this.rBAutomática.Text = "Automática";
             this.rBAutomática.UseVisualStyleBackColor = true;
+            this.rBAutomática.CheckedChanged += new System.EventHandler(this.rBAutomática_CheckedChanged);
             // 
             // rBManual
             // 
@@ -176,30 +179,30 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Tipo:";
             // 
-            // panel1
+            // pOpciones
             // 
-            this.panel1.Controls.Add(this.cB16);
-            this.panel1.Controls.Add(this.cB15);
-            this.panel1.Controls.Add(this.cB14);
-            this.panel1.Controls.Add(this.cB13);
-            this.panel1.Controls.Add(this.cB12);
-            this.panel1.Controls.Add(this.cB11);
-            this.panel1.Controls.Add(this.cB10);
-            this.panel1.Controls.Add(this.cB09);
-            this.panel1.Controls.Add(this.cB08);
-            this.panel1.Controls.Add(this.cB07);
-            this.panel1.Controls.Add(this.cB06);
-            this.panel1.Controls.Add(this.cB05);
-            this.panel1.Controls.Add(this.cB04);
-            this.panel1.Controls.Add(this.cB03);
-            this.panel1.Controls.Add(this.cB02);
-            this.panel1.Controls.Add(this.cB01);
-            this.panel1.Enabled = false;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(176, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(182, 123);
-            this.panel1.TabIndex = 19;
+            this.pOpciones.Controls.Add(this.cB16);
+            this.pOpciones.Controls.Add(this.cB15);
+            this.pOpciones.Controls.Add(this.cB14);
+            this.pOpciones.Controls.Add(this.cB13);
+            this.pOpciones.Controls.Add(this.cB12);
+            this.pOpciones.Controls.Add(this.cB11);
+            this.pOpciones.Controls.Add(this.cB10);
+            this.pOpciones.Controls.Add(this.cB09);
+            this.pOpciones.Controls.Add(this.cB08);
+            this.pOpciones.Controls.Add(this.cB07);
+            this.pOpciones.Controls.Add(this.cB05);
+            this.pOpciones.Controls.Add(this.cB04);
+            this.pOpciones.Controls.Add(this.cB03);
+            this.pOpciones.Controls.Add(this.cB02);
+            this.pOpciones.Controls.Add(this.cB01);
+            this.pOpciones.Controls.Add(this.cB06);
+            this.pOpciones.Enabled = false;
+            this.pOpciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pOpciones.Location = new System.Drawing.Point(176, 59);
+            this.pOpciones.Name = "pOpciones";
+            this.pOpciones.Size = new System.Drawing.Size(182, 123);
+            this.pOpciones.TabIndex = 19;
             // 
             // cB16
             // 
@@ -211,6 +214,7 @@
             this.cB16.TabIndex = 15;
             this.cB16.Text = "16";
             this.cB16.UseVisualStyleBackColor = true;
+            this.cB16.CheckedChanged += new System.EventHandler(this.cB16_CheckedChanged);
             // 
             // cB15
             // 
@@ -222,6 +226,7 @@
             this.cB15.TabIndex = 14;
             this.cB15.Text = "15";
             this.cB15.UseVisualStyleBackColor = true;
+            this.cB15.CheckedChanged += new System.EventHandler(this.cB15_CheckedChanged);
             // 
             // cB14
             // 
@@ -233,6 +238,7 @@
             this.cB14.TabIndex = 13;
             this.cB14.Text = "14";
             this.cB14.UseVisualStyleBackColor = true;
+            this.cB14.CheckedChanged += new System.EventHandler(this.cB14_CheckedChanged);
             // 
             // cB13
             // 
@@ -244,6 +250,7 @@
             this.cB13.TabIndex = 12;
             this.cB13.Text = "13";
             this.cB13.UseVisualStyleBackColor = true;
+            this.cB13.CheckedChanged += new System.EventHandler(this.cB13_CheckedChanged);
             // 
             // cB12
             // 
@@ -255,6 +262,7 @@
             this.cB12.TabIndex = 11;
             this.cB12.Text = "12";
             this.cB12.UseVisualStyleBackColor = true;
+            this.cB12.CheckedChanged += new System.EventHandler(this.cB12_CheckedChanged);
             // 
             // cB11
             // 
@@ -266,6 +274,7 @@
             this.cB11.TabIndex = 10;
             this.cB11.Text = "11";
             this.cB11.UseVisualStyleBackColor = true;
+            this.cB11.CheckedChanged += new System.EventHandler(this.cB11_CheckedChanged);
             // 
             // cB10
             // 
@@ -277,6 +286,7 @@
             this.cB10.TabIndex = 9;
             this.cB10.Text = "10";
             this.cB10.UseVisualStyleBackColor = true;
+            this.cB10.CheckedChanged += new System.EventHandler(this.cB10_CheckedChanged);
             // 
             // cB09
             // 
@@ -288,6 +298,7 @@
             this.cB09.TabIndex = 8;
             this.cB09.Text = "9";
             this.cB09.UseVisualStyleBackColor = true;
+            this.cB09.CheckedChanged += new System.EventHandler(this.cB09_CheckedChanged);
             // 
             // cB08
             // 
@@ -299,6 +310,7 @@
             this.cB08.TabIndex = 7;
             this.cB08.Text = "8";
             this.cB08.UseVisualStyleBackColor = true;
+            this.cB08.CheckedChanged += new System.EventHandler(this.cB08_CheckedChanged);
             // 
             // cB07
             // 
@@ -310,6 +322,7 @@
             this.cB07.TabIndex = 6;
             this.cB07.Text = "7";
             this.cB07.UseVisualStyleBackColor = true;
+            this.cB07.CheckedChanged += new System.EventHandler(this.cB07_CheckedChanged);
             // 
             // cB06
             // 
@@ -321,6 +334,7 @@
             this.cB06.TabIndex = 5;
             this.cB06.Text = "6";
             this.cB06.UseVisualStyleBackColor = true;
+            this.cB06.CheckedChanged += new System.EventHandler(this.cB06_CheckedChanged);
             // 
             // cB05
             // 
@@ -332,6 +346,7 @@
             this.cB05.TabIndex = 4;
             this.cB05.Text = "5";
             this.cB05.UseVisualStyleBackColor = true;
+            this.cB05.CheckedChanged += new System.EventHandler(this.cB05_CheckedChanged);
             // 
             // cB04
             // 
@@ -343,6 +358,7 @@
             this.cB04.TabIndex = 3;
             this.cB04.Text = "4";
             this.cB04.UseVisualStyleBackColor = true;
+            this.cB04.CheckedChanged += new System.EventHandler(this.cB04_CheckedChanged);
             // 
             // cB03
             // 
@@ -354,6 +370,7 @@
             this.cB03.TabIndex = 2;
             this.cB03.Text = "3";
             this.cB03.UseVisualStyleBackColor = true;
+            this.cB03.CheckedChanged += new System.EventHandler(this.cB03_CheckedChanged);
             // 
             // cB02
             // 
@@ -365,6 +382,7 @@
             this.cB02.TabIndex = 1;
             this.cB02.Text = "2";
             this.cB02.UseVisualStyleBackColor = true;
+            this.cB02.CheckedChanged += new System.EventHandler(this.cB02_CheckedChanged);
             // 
             // cB01
             // 
@@ -376,6 +394,7 @@
             this.cB01.TabIndex = 0;
             this.cB01.Text = "1";
             this.cB01.UseVisualStyleBackColor = true;
+            this.cB01.CheckedChanged += new System.EventHandler(this.cB01_CheckedChanged);
             // 
             // label2
             // 
@@ -412,19 +431,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Apuesta:";
             // 
-            // groupBox2
+            // gBResguardo
             // 
-            this.groupBox2.Controls.Add(this.bSalir);
-            this.groupBox2.Controls.Add(this.bApostar);
-            this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(404, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(185, 242);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "RESGUARDO";
+            this.gBResguardo.Controls.Add(this.bSalir);
+            this.gBResguardo.Controls.Add(this.bApostar);
+            this.gBResguardo.Controls.Add(this.lBResguardo);
+            this.gBResguardo.Enabled = false;
+            this.gBResguardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBResguardo.Location = new System.Drawing.Point(404, 13);
+            this.gBResguardo.Name = "gBResguardo";
+            this.gBResguardo.Size = new System.Drawing.Size(185, 242);
+            this.gBResguardo.TabIndex = 1;
+            this.gBResguardo.TabStop = false;
+            this.gBResguardo.Text = "RESGUARDO";
             // 
             // bSalir
             // 
@@ -446,21 +465,22 @@
             this.bApostar.Text = "Apostar";
             this.bApostar.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lBResguardo
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(14, 29);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(157, 154);
-            this.listBox1.TabIndex = 0;
+            this.lBResguardo.FormattingEnabled = true;
+            this.lBResguardo.ItemHeight = 15;
+            this.lBResguardo.Location = new System.Drawing.Point(14, 29);
+            this.lBResguardo.Name = "lBResguardo";
+            this.lBResguardo.Size = new System.Drawing.Size(157, 154);
+            this.lBResguardo.TabIndex = 0;
             // 
             // fLoteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 610);
-            this.Controls.Add(this.groupBox2);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(616, 273);
+            this.Controls.Add(this.gBResguardo);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "fLoteria";
@@ -468,9 +488,9 @@
             this.Load += new System.EventHandler(this.fLoteria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.pOpciones.ResumeLayout(false);
+            this.pOpciones.PerformLayout();
+            this.gBResguardo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -481,7 +501,7 @@
         private System.Windows.Forms.ComboBox cBApuesta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pOpciones;
         private System.Windows.Forms.CheckBox cB16;
         private System.Windows.Forms.CheckBox cB15;
         private System.Windows.Forms.CheckBox cB14;
@@ -503,11 +523,11 @@
         private System.Windows.Forms.RadioButton rBManual;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBReintegro;
         private System.Windows.Forms.DateTimePicker dTPFecha;
         private System.Windows.Forms.Button bValidar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox gBResguardo;
+        private System.Windows.Forms.ListBox lBResguardo;
         private System.Windows.Forms.Button bSalir;
         private System.Windows.Forms.Button bApostar;
     }

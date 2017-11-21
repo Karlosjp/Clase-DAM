@@ -13,11 +13,8 @@ public class MainPersona {
 	}
 
 	public static void main(String[] args) {
-		Persona[] personas = {new Persona("Carlos", "Jaquez", 26), new Persona("Pepe", "Jimenez", 30),
-				new Persona("Laura", "Marcos", 32), new Persona("Luisa", "Fernandez", 20),
-				new Persona("Lenna", "Brerz", 26)};
 
-		Metodos met = new Metodos();
+		Personal met = new Personal();
 		Scanner scan = new Scanner(System.in);
 
 		int opcion = 0;
@@ -29,22 +26,21 @@ public class MainPersona {
 
 			switch (opcion) {
 				case 1 :
-					met.escribirFichero(personas);
+					met.escribirFichero();
 					break;
 				case 2 :
-					met.leerFichero(personas);
+					met.leerFichero();
 					break;
 				case 3 :
-					met.escribirPantalla(personas);
+					met.escribirPantalla();
 					break;
 				case 4 :
-					met.vaciar(personas);
+					met.vaciar();
 					break;
 				default :
 					break;
 			}
 		} while (opcion != 0);
-
 	}
 
 }
