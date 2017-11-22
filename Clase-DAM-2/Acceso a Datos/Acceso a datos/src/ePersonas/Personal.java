@@ -9,12 +9,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personal {
-
-	private Persona[] personas = {new Persona("Carlos", "Jaquez", 26), new Persona("Pepe", "Jimenez", 30),
-			new Persona("Laura", "Marcos", 32), new Persona("Luisa", "Fernandez", 20),
-			new Persona("Lenna", "Brerz", 26)};
+	ArrayList<Persona> pers = new ArrayList<Persona>();
 
 	public Personal() {
+		pers.add(new Persona("Carlos", "Jaquez", 26));
+		pers.add(new Persona("Pepe", "Jimenez", 30));
+		pers.add(new Persona("Laura", "Marcos", 32));
+		pers.add(new Persona("Luisa", "Fernandez", 20));
+		pers.add(new Persona("Lenna", "Brerz", 26));
 	}
 
 	public void escribirFichero() {
@@ -24,12 +26,12 @@ public class Personal {
 				FileWriter escribirFichero = new FileWriter(fichero);
 				BufferedWriter escribirBuffer = new BufferedWriter(escribirFichero);
 
-				for (int i = 0; i < personas.length; i++) {
-					escribirBuffer.write(personas[i].getNombre());
+				for (int i = 0; i < pers.size(); i++) {
+					escribirBuffer.write(pers.get(i).getNombre());
 					escribirBuffer.newLine();
-					escribirBuffer.write(personas[i].getApellido());
+					escribirBuffer.write(pers.get(i).getApellido());
 					escribirBuffer.newLine();
-					escribirBuffer.write(String.valueOf(personas[i].getEdad()));
+					escribirBuffer.write(String.valueOf(pers.get(i).getEdad()));
 					escribirBuffer.newLine();
 				}
 				escribirBuffer.close();
@@ -40,7 +42,7 @@ public class Personal {
 	}
 
 	public void leerFichero() {
-		ArrayList<String> listaPersonal = new ArrayList<String>();
+		String listaPersonal;
 
 		try {
 			File fichero = new File("Personal.txt");
@@ -54,14 +56,16 @@ public class Personal {
 				int j = 0;
 
 				while (linea != null) {
-					listaPersonal.add(linea);
-					linea = leerBuffer.readLine();
-				}
+					pers.add(new Persona());
 
-				for (int i = 0; i < personas.length; i++) {
-					personas[i].setNombre(listaPersonal.get(j++));
-					personas[i].setApellido(listaPersonal.get(j++));
-					personas[i].setEdad(Integer.parseInt(listaPersonal.get(j++)));
+					pers.get(j).setNombre(linea);
+					linea = leerBuffer.readLine();
+					pers.get(j).setApellido(linea);
+					linea = leerBuffer.readLine();
+					pers.get(j).setEdad(Integer.parseInt(linea));
+					linea = leerBuffer.readLine();
+
+					j++;
 				}
 			} else
 				System.out.println("El fichero " + fichero.getName() + " no existe.");
@@ -72,16 +76,19 @@ public class Personal {
 	}
 
 	public void escribirPantalla() {
-		for (int i = 0; i < personas.length; i++)
-			System.out.println(personas[i].imprimir());
+		for (int i = 0; i < pers.size(); i++)
+			System.out.println(pers.get(i).imprimir());
 	}
 
 	public void vaciar() {
-		for (int i = 0; i < personas.length; i++)
-			personas[i].vaciar();
+		pers.clear();
 	}
 
-	public void borrar() {
+	public void anhadir(Persona p) {
+		pers.add(p);
+	}
 
+	public void borrar(int p) {
+		pers.remove(p);
 	}
 }

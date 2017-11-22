@@ -43,10 +43,4 @@ public class Persona {
 	public String imprimir() {
 		return "Nombre: " + nombre + "\tApellido: " + apellido + "\tedad: " + edad;
 	}
-
-	public void vaciar() {
-		nombre = "";
-		apellido = "";
-		edad = 0;
-	}
 }

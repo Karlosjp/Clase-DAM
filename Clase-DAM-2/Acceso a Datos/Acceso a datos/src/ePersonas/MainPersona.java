@@ -10,11 +10,15 @@ public class MainPersona {
 		System.out.println("\t2. Abrir desde un fichero");
 		System.out.println("\t3. Imprimir datos");
 		System.out.println("\t4. Borrar datos");
+		System.out.println("\t5. Modificar datos");
+		System.out.println("\t6. Borrar una persona");
+		System.out.println("\t7. Añadir datos");
+
 	}
 
 	public static void main(String[] args) {
 
-		Personal met = new Personal();
+		Personal personal = new Personal();
 		Scanner scan = new Scanner(System.in);
 
 		int opcion = 0;
@@ -26,16 +30,16 @@ public class MainPersona {
 
 			switch (opcion) {
 				case 1 :
-					met.escribirFichero();
+					personal.escribirFichero();
 					break;
 				case 2 :
-					met.leerFichero();
+					personal.leerFichero();
 					break;
 				case 3 :
-					met.escribirPantalla();
+					personal.escribirPantalla();
 					break;
 				case 4 :
-					met.vaciar();
+					personal.vaciar();
 					break;
 				default :
 					break;
