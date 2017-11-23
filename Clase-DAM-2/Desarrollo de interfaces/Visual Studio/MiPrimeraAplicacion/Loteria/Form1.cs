@@ -14,7 +14,8 @@ namespace Loteria
     public partial class fLoteria : Form
     {
         Random rand = new Random();
-        int numero = 0, maxCheck = 0, max = 0;
+        ArrayList checks = new ArrayList();
+        int numero = 0, max = 0;
 
         public fLoteria()
         {
@@ -23,7 +24,9 @@ namespace Loteria
 
         private void fLoteria_Load(object sender, EventArgs e)
         {
-
+            foreach (Control c in pOpciones.Controls)
+                if (c is CheckBox)
+                    checks.Add(c);
         }
 
         private void dTPFecha_ValueChanged(object sender, EventArgs e)
@@ -48,18 +51,21 @@ namespace Loteria
                 {
                     case 0:
                         max = 4;
-                        limpiarChecks();
-                        activarApuesta();
+                        reiniciarChecks();
+                        modEstadoEleccion(true);
+                        rBManual.Checked = true;
                         break;
                     case 1:
                         max = 6;
-                        limpiarChecks();
-                        activarApuesta();
+                        reiniciarChecks();
+                        modEstadoEleccion(true);
+                        rBManual.Checked = true;
                         break;
                     case 2:
                         max = 8;
-                        limpiarChecks();
-                        activarApuesta();
+                        reiniciarChecks();
+                        modEstadoEleccion(true);
+                        rBManual.Checked = true;
                         break;
                     default: break;
                 }
@@ -71,30 +77,27 @@ namespace Loteria
 
         private int contarCheck()
         {
-            CheckBox ch;
             int numCheck = 0;
 
-            foreach (Control c in pOpciones.Controls)
-                if (c is CheckBox)
+            foreach (CheckBox c in checks)
                 {
-                    ch = (CheckBox)c;
-                    if (ch.Checked)
+                    if (c.Checked)
                         numCheck++;
                 }
 
             return numCheck;
         }
 
-        private void limpiarChecks()
+        private void reiniciarChecks()
         {
-            CheckBox ch;
+            foreach (CheckBox c in checks)
+                c.Checked = false;
+        }
 
-            foreach (Control c in pOpciones.Controls)
-                if (c is CheckBox)
-                {
-                    ch = (CheckBox)c;
-                    ch.Checked = false;
-                }
+        private void reiniciarChecks(bool opcion)
+        {
+            foreach (CheckBox c in checks)
+                c.Enabled = opcion;
         }
 
         private void contarChecks(CheckBox c)
@@ -103,30 +106,99 @@ namespace Loteria
                 c.Checked = false;
         }
 
-        private void activarApuesta()
+        private void modEstadoEleccion(bool opcion)
         {
-            pOpciones.Enabled = true;
-            rBAutomática.Enabled = true;
-            rBManual.Enabled = true;
-            dTPFecha.Enabled = true;
-            tBReintegro.Enabled = true;
-            bValidar.Enabled = true;
+            pOpciones.Enabled = opcion;
+            rBAutomática.Enabled = opcion;
+            rBManual.Enabled = opcion;
+            dTPFecha.Enabled = opcion;
+            tBReintegro.Enabled = opcion;
+            bValidar.Enabled = opcion;
         }
 
         private void bValidar_Click(object sender, EventArgs e)
         {
-            gBResguardo.Enabled = true;
+            CheckBox ch;
+            int num = 0;
+            string mensaje = "Quedan números por seleccionar";
+            string titulo = "Faltan numeros";
+            MessageBoxButtons opciones = MessageBoxButtons.OK;
+            DialogResult result;
+
+            if (contarCheck() == max)
+            {
+                gBElecion.Enabled = false;
+                gBResguardo.Enabled = true;
+
+                foreach (CheckBox c in checks)
+                {
+                    if (c.Checked)
+                    {
+                        lBResguardo.Items.Add("Numero " + num + ": " + c.Text);
+                        num++;
+                    }
+                }
+
+                lBResguardo.Items.Add("Reintegro: " + tBReintegro.Text);
+            }
+            else
+            {
+                result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
+            }
         }
+
         private void rBAutomática_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox ch;
+            int maxCheck = 0;
 
-            for (int i = 0; i < max; i++)
+            if (rBAutomática.Checked)
             {
-                numero = rand.Next(0, pOpciones.Controls.Count);
-                ch = (CheckBox)pOpciones.Controls[numero];
-                ch.Checked = true;
+                reiniciarChecks();
+                reiniciarChecks(false);
+
+                while (maxCheck <= max)
+                {
+                    numero = rand.Next(0, pOpciones.Controls.Count);
+                    ch = (CheckBox)pOpciones.Controls[numero];
+
+                    if (!ch.Checked)
+                    {
+                        maxCheck++;
+                        ch.Checked = true;
+                    }
+                }
             }
+        }
+
+        private void rBManual_CheckedChanged(object sender, EventArgs e)
+        {
+            reiniciarChecks();
+            reiniciarChecks(true);
+        }
+
+        private void bApostar_Click(object sender, EventArgs e)
+        {
+            gBResguardo.Enabled = false;
+            gBElecion.Enabled = true;
+            modEstadoEleccion(false);
+            cBApuesta.SelectedIndex = -1;
+            lBResguardo.Items.Clear();
+            rBManual.Checked = true;
+            tBReintegro.Text = "";
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            string mensaje = "¿Dsea salir?";
+            string titulo = "Salir";
+            MessageBoxButtons opciones = MessageBoxButtons.OKCancel;
+            DialogResult result;
+
+            result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Exclamation);
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+                Application.Exit();
         }
 
         #region checks

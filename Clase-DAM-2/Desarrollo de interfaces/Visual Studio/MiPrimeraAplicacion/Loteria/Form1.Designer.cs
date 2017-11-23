@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bValidar = new System.Windows.Forms.Button();
-            this.tBReintegro = new System.Windows.Forms.TextBox();
-            this.dTPFecha = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rBAutomática = new System.Windows.Forms.RadioButton();
-            this.rBManual = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.gBElecion = new System.Windows.Forms.GroupBox();
             this.pOpciones = new System.Windows.Forms.Panel();
             this.cB16 = new System.Windows.Forms.CheckBox();
             this.cB15 = new System.Windows.Forms.CheckBox();
@@ -48,12 +40,20 @@
             this.cB09 = new System.Windows.Forms.CheckBox();
             this.cB08 = new System.Windows.Forms.CheckBox();
             this.cB07 = new System.Windows.Forms.CheckBox();
-            this.cB06 = new System.Windows.Forms.CheckBox();
             this.cB05 = new System.Windows.Forms.CheckBox();
             this.cB04 = new System.Windows.Forms.CheckBox();
             this.cB03 = new System.Windows.Forms.CheckBox();
             this.cB02 = new System.Windows.Forms.CheckBox();
             this.cB01 = new System.Windows.Forms.CheckBox();
+            this.cB06 = new System.Windows.Forms.CheckBox();
+            this.bValidar = new System.Windows.Forms.Button();
+            this.tBReintegro = new System.Windows.Forms.TextBox();
+            this.dTPFecha = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rBAutomática = new System.Windows.Forms.RadioButton();
+            this.rBManual = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cBApuesta = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,123 +61,32 @@
             this.bSalir = new System.Windows.Forms.Button();
             this.bApostar = new System.Windows.Forms.Button();
             this.lBResguardo = new System.Windows.Forms.ListBox();
-            this.groupBox1.SuspendLayout();
+            this.gBElecion.SuspendLayout();
             this.pOpciones.SuspendLayout();
             this.gBResguardo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gBElecion
             // 
-            this.groupBox1.Controls.Add(this.pOpciones);
-            this.groupBox1.Controls.Add(this.bValidar);
-            this.groupBox1.Controls.Add(this.tBReintegro);
-            this.groupBox1.Controls.Add(this.dTPFecha);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.rBAutomática);
-            this.groupBox1.Controls.Add(this.rBManual);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cBApuesta);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 242);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "APUESTA DE LOTERIA";
-            // 
-            // bValidar
-            // 
-            this.bValidar.Enabled = false;
-            this.bValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bValidar.Location = new System.Drawing.Point(12, 192);
-            this.bValidar.Name = "bValidar";
-            this.bValidar.Size = new System.Drawing.Size(151, 29);
-            this.bValidar.TabIndex = 27;
-            this.bValidar.Text = "Validar apuesta >>";
-            this.bValidar.UseVisualStyleBackColor = true;
-            this.bValidar.Click += new System.EventHandler(this.bValidar_Click);
-            // 
-            // tBReintegro
-            // 
-            this.tBReintegro.Enabled = false;
-            this.tBReintegro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBReintegro.Location = new System.Drawing.Point(309, 194);
-            this.tBReintegro.Name = "tBReintegro";
-            this.tBReintegro.ReadOnly = true;
-            this.tBReintegro.Size = new System.Drawing.Size(43, 21);
-            this.tBReintegro.TabIndex = 26;
-            // 
-            // dTPFecha
-            // 
-            this.dTPFecha.Enabled = false;
-            this.dTPFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dTPFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPFecha.Location = new System.Drawing.Point(67, 148);
-            this.dTPFecha.Name = "dTPFecha";
-            this.dTPFecha.Size = new System.Drawing.Size(96, 21);
-            this.dTPFecha.TabIndex = 25;
-            this.dTPFecha.ValueChanged += new System.EventHandler(this.dTPFecha_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(186, 196);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 15);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Nº Reintegro [1 - 10]:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Sorteo:";
-            // 
-            // rBAutomática
-            // 
-            this.rBAutomática.AutoSize = true;
-            this.rBAutomática.Enabled = false;
-            this.rBAutomática.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBAutomática.Location = new System.Drawing.Point(71, 102);
-            this.rBAutomática.Name = "rBAutomática";
-            this.rBAutomática.Size = new System.Drawing.Size(86, 19);
-            this.rBAutomática.TabIndex = 22;
-            this.rBAutomática.TabStop = true;
-            this.rBAutomática.Text = "Automática";
-            this.rBAutomática.UseVisualStyleBackColor = true;
-            this.rBAutomática.CheckedChanged += new System.EventHandler(this.rBAutomática_CheckedChanged);
-            // 
-            // rBManual
-            // 
-            this.rBManual.AutoSize = true;
-            this.rBManual.Checked = true;
-            this.rBManual.Enabled = false;
-            this.rBManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBManual.Location = new System.Drawing.Point(71, 80);
-            this.rBManual.Name = "rBManual";
-            this.rBManual.Size = new System.Drawing.Size(67, 19);
-            this.rBManual.TabIndex = 21;
-            this.rBManual.TabStop = true;
-            this.rBManual.Text = "Manual";
-            this.rBManual.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 15);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Tipo:";
+            this.gBElecion.Controls.Add(this.pOpciones);
+            this.gBElecion.Controls.Add(this.bValidar);
+            this.gBElecion.Controls.Add(this.tBReintegro);
+            this.gBElecion.Controls.Add(this.dTPFecha);
+            this.gBElecion.Controls.Add(this.label5);
+            this.gBElecion.Controls.Add(this.label4);
+            this.gBElecion.Controls.Add(this.rBAutomática);
+            this.gBElecion.Controls.Add(this.rBManual);
+            this.gBElecion.Controls.Add(this.label3);
+            this.gBElecion.Controls.Add(this.label2);
+            this.gBElecion.Controls.Add(this.cBApuesta);
+            this.gBElecion.Controls.Add(this.label1);
+            this.gBElecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBElecion.Location = new System.Drawing.Point(13, 13);
+            this.gBElecion.Name = "gBElecion";
+            this.gBElecion.Size = new System.Drawing.Size(376, 242);
+            this.gBElecion.TabIndex = 0;
+            this.gBElecion.TabStop = false;
+            this.gBElecion.Text = "APUESTA DE LOTERIA";
             // 
             // pOpciones
             // 
@@ -324,18 +233,6 @@
             this.cB07.UseVisualStyleBackColor = true;
             this.cB07.CheckedChanged += new System.EventHandler(this.cB07_CheckedChanged);
             // 
-            // cB06
-            // 
-            this.cB06.AutoSize = true;
-            this.cB06.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cB06.Location = new System.Drawing.Point(54, 40);
-            this.cB06.Name = "cB06";
-            this.cB06.Size = new System.Drawing.Size(32, 19);
-            this.cB06.TabIndex = 5;
-            this.cB06.Text = "6";
-            this.cB06.UseVisualStyleBackColor = true;
-            this.cB06.CheckedChanged += new System.EventHandler(this.cB06_CheckedChanged);
-            // 
             // cB05
             // 
             this.cB05.AutoSize = true;
@@ -396,6 +293,110 @@
             this.cB01.UseVisualStyleBackColor = true;
             this.cB01.CheckedChanged += new System.EventHandler(this.cB01_CheckedChanged);
             // 
+            // cB06
+            // 
+            this.cB06.AutoSize = true;
+            this.cB06.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cB06.Location = new System.Drawing.Point(54, 40);
+            this.cB06.Name = "cB06";
+            this.cB06.Size = new System.Drawing.Size(32, 19);
+            this.cB06.TabIndex = 5;
+            this.cB06.Text = "6";
+            this.cB06.UseVisualStyleBackColor = true;
+            this.cB06.CheckedChanged += new System.EventHandler(this.cB06_CheckedChanged);
+            // 
+            // bValidar
+            // 
+            this.bValidar.Enabled = false;
+            this.bValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bValidar.Location = new System.Drawing.Point(12, 192);
+            this.bValidar.Name = "bValidar";
+            this.bValidar.Size = new System.Drawing.Size(151, 29);
+            this.bValidar.TabIndex = 27;
+            this.bValidar.Text = "Validar apuesta >>";
+            this.bValidar.UseVisualStyleBackColor = true;
+            this.bValidar.Click += new System.EventHandler(this.bValidar_Click);
+            // 
+            // tBReintegro
+            // 
+            this.tBReintegro.Enabled = false;
+            this.tBReintegro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBReintegro.Location = new System.Drawing.Point(309, 194);
+            this.tBReintegro.Name = "tBReintegro";
+            this.tBReintegro.ReadOnly = true;
+            this.tBReintegro.Size = new System.Drawing.Size(43, 21);
+            this.tBReintegro.TabIndex = 26;
+            // 
+            // dTPFecha
+            // 
+            this.dTPFecha.Enabled = false;
+            this.dTPFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTPFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dTPFecha.Location = new System.Drawing.Point(67, 148);
+            this.dTPFecha.Name = "dTPFecha";
+            this.dTPFecha.Size = new System.Drawing.Size(96, 21);
+            this.dTPFecha.TabIndex = 25;
+            this.dTPFecha.ValueChanged += new System.EventHandler(this.dTPFecha_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(186, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 15);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Nº Reintegro [1 - 10]:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Sorteo:";
+            // 
+            // rBAutomática
+            // 
+            this.rBAutomática.AutoSize = true;
+            this.rBAutomática.Enabled = false;
+            this.rBAutomática.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBAutomática.Location = new System.Drawing.Point(71, 102);
+            this.rBAutomática.Name = "rBAutomática";
+            this.rBAutomática.Size = new System.Drawing.Size(86, 19);
+            this.rBAutomática.TabIndex = 22;
+            this.rBAutomática.TabStop = true;
+            this.rBAutomática.Text = "Automática";
+            this.rBAutomática.UseVisualStyleBackColor = true;
+            this.rBAutomática.CheckedChanged += new System.EventHandler(this.rBAutomática_CheckedChanged);
+            // 
+            // rBManual
+            // 
+            this.rBManual.AutoSize = true;
+            this.rBManual.Checked = true;
+            this.rBManual.Enabled = false;
+            this.rBManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBManual.Location = new System.Drawing.Point(71, 80);
+            this.rBManual.Name = "rBManual";
+            this.rBManual.Size = new System.Drawing.Size(67, 19);
+            this.rBManual.TabIndex = 21;
+            this.rBManual.TabStop = true;
+            this.rBManual.Text = "Manual";
+            this.rBManual.UseVisualStyleBackColor = true;
+            this.rBManual.CheckedChanged += new System.EventHandler(this.rBManual_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Tipo:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -454,6 +455,7 @@
             this.bSalir.TabIndex = 2;
             this.bSalir.Text = "Salir";
             this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
             // bApostar
             // 
@@ -464,6 +466,7 @@
             this.bApostar.TabIndex = 1;
             this.bApostar.Text = "Apostar";
             this.bApostar.UseVisualStyleBackColor = true;
+            this.bApostar.Click += new System.EventHandler(this.bApostar_Click);
             // 
             // lBResguardo
             // 
@@ -481,13 +484,13 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(616, 273);
             this.Controls.Add(this.gBResguardo);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gBElecion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "fLoteria";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.fLoteria_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gBElecion.ResumeLayout(false);
+            this.gBElecion.PerformLayout();
             this.pOpciones.ResumeLayout(false);
             this.pOpciones.PerformLayout();
             this.gBResguardo.ResumeLayout(false);
@@ -497,7 +500,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gBElecion;
         private System.Windows.Forms.ComboBox cBApuesta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
