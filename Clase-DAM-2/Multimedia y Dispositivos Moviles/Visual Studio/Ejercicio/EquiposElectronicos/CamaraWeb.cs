@@ -10,8 +10,27 @@ namespace EquiposElectronicos
     {
         private double mPixeles, maxZoom;
 
+        public CamaraWeb()
+        {
+            mPixeles = 0;
+            maxZoom = 0;
+            peso = 0;
+            marca = "";
+            objetivo = "";
+        }
+
         public string Escribir()
         {
-            return mPixeles
+            return "Resolucion: " + mPixeles + " Zoom: " + maxZoom + base.Escribir();
         }
+
+        public void Vaciar()
+        {
+            mPixeles = 0;
+            maxZoom = 0;
+            peso = 0;
+            marca = "";
+            objetivo = "";
+        }
+    }
 }

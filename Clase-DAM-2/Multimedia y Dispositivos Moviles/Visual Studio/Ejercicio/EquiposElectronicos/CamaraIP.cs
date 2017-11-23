@@ -14,6 +14,9 @@ namespace EquiposElectronicos
         {
             dirMAC = "";
             iP = "";
+            peso = 0;
+            marca = "";
+            objetivo = "";
         }
 
         public string Escribir()
