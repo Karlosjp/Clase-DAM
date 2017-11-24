@@ -32,7 +32,7 @@ namespace Ejercicios_cadena
             if (frase[longitud] == null)
                 return longitud;
             else
-                return longFrase(longitud++);
+                return longFrase(++longitud);
         }
     }
 }
