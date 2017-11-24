@@ -5,7 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiPrimeraAplicacion", "MiPrimeraAplicacion\MiPrimeraAplicacion.csproj", "{ED12B814-49E6-4839-B663-1ADDCEF04A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria", "Loteria\Loteria.csproj", "{F7818BD7-F09D-4D4D-AD7A-28E3A2238764}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica Loteria", "Loteria\Practica Loteria.csproj", "{F7818BD7-F09D-4D4D-AD7A-28E3A2238764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen - Login loteria", "Examen - Login loteria\Examen - Login loteria.csproj", "{77291762-7C28-4E7B-9C9F-774846057F8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F7818BD7-F09D-4D4D-AD7A-28E3A2238764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7818BD7-F09D-4D4D-AD7A-28E3A2238764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7818BD7-F09D-4D4D-AD7A-28E3A2238764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77291762-7C28-4E7B-9C9F-774846057F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77291762-7C28-4E7B-9C9F-774846057F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77291762-7C28-4E7B-9C9F-774846057F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77291762-7C28-4E7B-9C9F-774846057F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
