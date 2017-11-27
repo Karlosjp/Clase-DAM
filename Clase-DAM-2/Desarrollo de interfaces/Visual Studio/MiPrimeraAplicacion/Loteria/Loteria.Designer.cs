@@ -487,7 +487,7 @@
             this.Controls.Add(this.gBElecion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "fLoteria";
-            this.Text = "Form1";
+            this.Text = "Loteria";
             this.Load += new System.EventHandler(this.fLoteria_Load);
             this.gBElecion.ResumeLayout(false);
             this.gBElecion.PerformLayout();
