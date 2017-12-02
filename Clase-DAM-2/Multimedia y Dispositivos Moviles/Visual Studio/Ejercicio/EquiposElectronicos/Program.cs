@@ -10,9 +10,11 @@ namespace EquiposElectronicos
     {
         static void Main(string[] args)
         {
-            CamaraIP cIP = new CamaraIP();
+            Camara c = new Camara();
+            CamaraWeb cw = new CamaraWeb();
 
-            Console.WriteLine(cIP.Escribir());
+            Console.WriteLine(c.Escribir());
+            Console.WriteLine(cw.Escribir());
             Console.ReadKey();
         }
     }

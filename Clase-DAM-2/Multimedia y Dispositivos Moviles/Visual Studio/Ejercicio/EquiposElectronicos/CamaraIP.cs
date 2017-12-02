@@ -8,15 +8,13 @@ namespace EquiposElectronicos
 {
     class CamaraIP : Camara
     {
-        private string dirMAC, iP;
+        private string dirMAC;
+        private string iP;
 
         public CamaraIP()
         {
             dirMAC = "";
             iP = "";
-            peso = 0;
-            marca = "";
-            objetivo = "";
         }
 
         public string Escribir()

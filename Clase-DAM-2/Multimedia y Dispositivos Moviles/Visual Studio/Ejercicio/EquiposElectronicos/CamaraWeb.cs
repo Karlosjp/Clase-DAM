@@ -8,29 +8,32 @@ namespace EquiposElectronicos
 {
     class CamaraWeb : Camara
     {
-        private double mPixeles, maxZoom;
+        private string pixeles;
+        private double zoom;
 
-        public CamaraWeb()
+        public CamaraWeb() : base()
         {
-            mPixeles = 0;
-            maxZoom = 0;
-            peso = 0;
-            marca = "";
-            objetivo = "";
+            pixeles = "";
+            zoom = 0;
+
         }
 
-        public string Escribir()
+        public CamaraWeb(string m, string o, double p, string mPixeles, double maxZoom) : base(m,o,p)
         {
-            return "Resolucion: " + mPixeles + " Zoom: " + maxZoom + base.Escribir();
+            this.pixeles = mPixeles;
+            this.zoom = maxZoom;
         }
 
-        public void Vaciar()
+        new public string Escribir()
         {
-            mPixeles = 0;
-            maxZoom = 0;
-            peso = 0;
-            marca = "";
-            objetivo = "";
+            return "Resolucion: " + pixeles + " Zoom: " + zoom + base.Escribir();
+        }
+
+        new public void Vaciar()
+        {
+            base.Vaciar();
+            pixeles = "";
+            zoom = 0;
         }
     }
 }

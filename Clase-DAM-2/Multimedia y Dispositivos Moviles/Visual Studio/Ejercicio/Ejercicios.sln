@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen", "Examen\Examen.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadenaTv2", "CadenaTv2\CadenaTv2.csproj", "{5C19E966-25DD-403A-B346-2ACF19150B0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquiposElectronicos", "EquiposElectronicos\EquiposElectronicos.csproj", "{33D89292-6599-4FCA-9C07-F21F3D94F057}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camaras - Herencia", "EquiposElectronicos\Camaras - Herencia.csproj", "{33D89292-6599-4FCA-9C07-F21F3D94F057}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicios cadena", "Ejercicios cadena\Ejercicios cadena.csproj", "{BCCF8E2F-7B71-4622-8A01-0BD08236A4A9}"
 EndProject

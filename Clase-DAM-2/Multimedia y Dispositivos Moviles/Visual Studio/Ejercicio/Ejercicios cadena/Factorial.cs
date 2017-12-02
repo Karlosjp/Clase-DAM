@@ -28,11 +28,11 @@ namespace Ejercicios_cadena
         private int longFrase(int l)
         {
             longitud = l;
-
-            if (frase[longitud] == null)
+            return longitud;
+            /*if (frase[longitud] == null)
                 return longitud;
             else
-                return longFrase(++longitud);
+                return longFrase(++longitud);*/
         }
     }
 }

@@ -8,16 +8,31 @@ namespace EquiposElectronicos
 {
     class Camara
     {
-        protected string marca, objetivo;
-        protected Double peso;
+        private string marca;
+        private string objetivo;
+        private double peso;
 
-        protected virtual string Escribir()
+        public Camara()
+        {
+            marca = "";
+            objetivo = "";
+            peso = 0;
+        }
+
+        public Camara(string marca, string objetivo, double peso)
+        {
+            this.marca = marca;
+            this.objetivo = objetivo;
+            this.peso = peso;
+        }
+
+        public string Escribir()
         {
             return "Marca: " + marca + " Objetivo: " + objetivo +
                 " Peso: " + peso;
         }
 
-        protected virtual void Vaciar()
+        public void Vaciar()
         {
             marca = "";
             objetivo = "";
