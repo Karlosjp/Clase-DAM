@@ -8,3 +8,13 @@ C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen___Login_loteria.Login.resources
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen - Login loteria.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Loteria.Loteria.resources
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\bin\Debug\Examen - Login loteria.exe.config
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen - Login loteria.exe
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen - Login loteria.pdb
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\bin\Debug\Examen - Login loteria.exe
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\bin\Debug\Examen - Login loteria.pdb
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen - Login loteria.csprojResolveAssemblyReference.cache
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen___Login_loteria.Login.resources
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Loteria.Loteria.resources
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen___Login_loteria.Properties.Resources.resources
+Z:\Git\Clase-DAM\Clase-DAM-2\Desarrollo de interfaces\Visual Studio\MiPrimeraAplicacion\Examen - Login loteria\obj\Debug\Examen - Login loteria.csproj.GenerateResource.Cache
