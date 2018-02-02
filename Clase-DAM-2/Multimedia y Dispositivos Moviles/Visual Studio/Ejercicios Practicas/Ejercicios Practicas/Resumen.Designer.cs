@@ -47,6 +47,7 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracionBateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,20 +66,21 @@
             this.nombre,
             this.marca,
             this.precio,
+            this.ram,
             this.so,
             this.almacenamiento,
             this.duracionBateria,
             this.resolicion,
             this.velocidad,
             this.puertos});
-            this.dgv_resumen.Location = new System.Drawing.Point(12, 96);
+            this.dgv_resumen.Location = new System.Drawing.Point(12, 27);
             this.dgv_resumen.Name = "dgv_resumen";
             this.dgv_resumen.Size = new System.Drawing.Size(593, 270);
             this.dgv_resumen.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 389);
+            this.button1.Location = new System.Drawing.Point(12, 313);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 23);
             this.button1.TabIndex = 1;
@@ -94,7 +96,7 @@
             this.mostrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(899, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(619, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -170,21 +172,21 @@
             // ordenadoresToolStripMenuItem
             // 
             this.ordenadoresToolStripMenuItem.Name = "ordenadoresToolStripMenuItem";
-            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ordenadoresToolStripMenuItem.Text = "Ordenadores";
             this.ordenadoresToolStripMenuItem.Click += new System.EventHandler(this.ordenadoresToolStripMenuItem_Click);
             // 
             // movilesToolStripMenuItem
             // 
             this.movilesToolStripMenuItem.Name = "movilesToolStripMenuItem";
-            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.movilesToolStripMenuItem.Text = "Moviles";
             this.movilesToolStripMenuItem.Click += new System.EventHandler(this.movilesToolStripMenuItem_Click);
             // 
             // tabletsToolStripMenuItem
             // 
             this.tabletsToolStripMenuItem.Name = "tabletsToolStripMenuItem";
-            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.tabletsToolStripMenuItem.Text = "Tablets";
             this.tabletsToolStripMenuItem.Click += new System.EventHandler(this.tabletsToolStripMenuItem_Click);
             // 
@@ -214,6 +216,12 @@
             this.precio.ReadOnly = true;
             this.precio.Width = 50;
             // 
+            // ram
+            // 
+            this.ram.HeaderText = "Memoria RAM";
+            this.ram.Name = "ram";
+            this.ram.ReadOnly = true;
+            // 
             // so
             // 
             this.so.HeaderText = "SO";
@@ -239,6 +247,7 @@
             // 
             this.resolicion.HeaderText = "Resolución";
             this.resolicion.Name = "resolicion";
+            this.resolicion.ReadOnly = true;
             this.resolicion.Visible = false;
             // 
             // velocidad
@@ -259,11 +268,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 629);
+            this.ClientSize = new System.Drawing.Size(619, 354);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_resumen);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Resumen";
             this.Text = "Resumen";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_resumen)).EndInit();
@@ -295,6 +307,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ram;
         private System.Windows.Forms.DataGridViewTextBoxColumn so;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacenamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn duracionBateria;

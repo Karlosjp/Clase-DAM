@@ -51,6 +51,5 @@ namespace Ejercicios_Practicas
             get { return precio; }
             set { precio += value; }
         }
-
     }
 }

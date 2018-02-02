@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class Tienda : Comunes
+    class  Tienda
     {
-        private ArrayList ordenadores, tablet, movil;
+        private ArrayList productos;
+        /*private ArrayList ordenadores;
+        private ArrayList tablet;
+        private ArrayList movil;*/
 
-             public Tienda()
+        public Tienda()
         {
-            ordenadores = new ArrayList();
-            tablet = new ArrayList();
-            movil = new ArrayList();
+            productos = new ArrayList();
+            /*tablet = new ArrayList();
+            movil = new ArrayList();*/
 
         }
 
@@ -59,14 +62,14 @@ namespace Ejercicios_Practicas
 
             switch (tipo)
             {
-                case "ordenadores":
+                case "Ordenadores":
                     lista = ordenadores;
                     break;
-                case "tablet":
-                    lista = tablet;
-                    break;
-                case "movil":
+                case "Movil":
                     lista = movil;
+                    break;
+                case "Tablet":
+                    lista = tablet;
                     break;
             }
 

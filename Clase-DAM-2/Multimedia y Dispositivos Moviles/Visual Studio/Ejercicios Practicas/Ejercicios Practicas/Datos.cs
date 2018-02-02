@@ -14,11 +14,12 @@ namespace Ejercicios_Practicas
 {
     public partial class Datos : Form
     {
-        private ArrayList campos = new ArrayList();
-        Tienda tienda = new Tienda();
+        private ArrayList campos;
 
         public Datos()
         {
+            campos = null;
+            campos = new ArrayList();
             InitializeComponent();
         }
 
@@ -26,20 +27,21 @@ namespace Ejercicios_Practicas
         {
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
 
-            campos.Add(ti.ToTitleCase(cb_tipo.SelectedItem.ToString()));
+            if (cb_tipo.SelectedItem.ToString() != null)
+            {
+                campos.Add(ti.ToTitleCase(cb_tipo.SelectedItem.ToString()));
+                campos.Add(ti.ToTitleCase(tb_marca.Text));
+                campos.Add(ti.ToTitleCase(tb_nombre.Text));
+                campos.Add(tb_ram.Text);
+                campos.Add(tb_precio.Text);
+                campos.Add(tb_opcional1.Text);
+                campos.Add(tb_opcional2.Text);
 
-            campos.Add(ti.ToTitleCase(tb_marca.Text));
-            campos.Add(ti.ToTitleCase(tb_nombre.Text));
-            campos.Add(tb_ram.Text);
-            campos.Add(tb_precio.Text);
-            campos.Add(tb_opcional1.Text);
-            campos.Add(tb_opcional2.Text);
+                if (cb_tipo.SelectedItem.ToString().Equals("Movil"))
+                    campos.Add(tb_opcional3.Text);
 
-            if (cb_tipo.SelectedItem.ToString().Equals("Movil"))
-                campos.Add(tb_opcional3.Text);
-
-            tienda.Anotar(campos);
-            this.Close();
+                this.Visible = false;
+            }
         }
 
         private void cb_tipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,6 +93,11 @@ namespace Ejercicios_Practicas
             la_opcional1.Text = "Duracion Bateria";
             la_opcional2.Text = "Resolucion";
             bt_agregar.Text = "Agregar Ordenador";
+        }
+
+        public ArrayList Campos
+        {
+            get { return campos; }
         }
     }
 }
