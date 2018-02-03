@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgv_resumen = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_eliminar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,19 +49,19 @@
             this.ordenadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabletsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgv_extras = new System.Windows.Forms.DataGridView();
             this.so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracionBateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resolicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.velocidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_resumen)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_extras)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_resumen
@@ -66,27 +72,53 @@
             this.nombre,
             this.marca,
             this.precio,
-            this.ram,
-            this.so,
-            this.almacenamiento,
-            this.duracionBateria,
-            this.resolicion,
-            this.velocidad,
-            this.puertos});
-            this.dgv_resumen.Location = new System.Drawing.Point(12, 27);
+            this.ram});
+            this.dgv_resumen.Location = new System.Drawing.Point(12, 65);
             this.dgv_resumen.Name = "dgv_resumen";
-            this.dgv_resumen.Size = new System.Drawing.Size(593, 270);
+            this.dgv_resumen.Size = new System.Drawing.Size(493, 270);
             this.dgv_resumen.TabIndex = 0;
             // 
-            // button1
+            // tipo
             // 
-            this.button1.Location = new System.Drawing.Point(12, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.FillWeight = 50F;
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 50;
+            // 
+            // ram
+            // 
+            this.ram.HeaderText = "Memoria RAM";
+            this.ram.Name = "ram";
+            this.ram.ReadOnly = true;
+            // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.Location = new System.Drawing.Point(397, 341);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(108, 23);
+            this.bt_eliminar.TabIndex = 1;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // menuStrip1
             // 
@@ -96,7 +128,7 @@
             this.mostrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(619, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(836, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,7 +143,7 @@
             // ventaToolStripMenuItem
             // 
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ventaToolStripMenuItem.Text = "Venta";
             this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
             // 
@@ -172,59 +204,65 @@
             // ordenadoresToolStripMenuItem
             // 
             this.ordenadoresToolStripMenuItem.Name = "ordenadoresToolStripMenuItem";
-            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ordenadoresToolStripMenuItem.Text = "Ordenadores";
             this.ordenadoresToolStripMenuItem.Click += new System.EventHandler(this.ordenadoresToolStripMenuItem_Click);
             // 
             // movilesToolStripMenuItem
             // 
             this.movilesToolStripMenuItem.Name = "movilesToolStripMenuItem";
-            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.movilesToolStripMenuItem.Text = "Moviles";
             this.movilesToolStripMenuItem.Click += new System.EventHandler(this.movilesToolStripMenuItem_Click);
             // 
             // tabletsToolStripMenuItem
             // 
             this.tabletsToolStripMenuItem.Name = "tabletsToolStripMenuItem";
-            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tabletsToolStripMenuItem.Text = "Tablets";
             this.tabletsToolStripMenuItem.Click += new System.EventHandler(this.tabletsToolStripMenuItem_Click);
             // 
-            // tipo
+            // contextMenuStrip1
             // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // nombre
+            // label1
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Productos de la tienda:";
             // 
-            // marca
+            // label2
             // 
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(508, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Datos Extras.";
             // 
-            // precio
+            // dgv_extras
             // 
-            this.precio.FillWeight = 50F;
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 50;
-            // 
-            // ram
-            // 
-            this.ram.HeaderText = "Memoria RAM";
-            this.ram.Name = "ram";
-            this.ram.ReadOnly = true;
+            this.dgv_extras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_extras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.so,
+            this.almacenamiento,
+            this.duracionBateria,
+            this.resolucion,
+            this.velocidad,
+            this.puertos});
+            this.dgv_extras.Location = new System.Drawing.Point(511, 65);
+            this.dgv_extras.Name = "dgv_extras";
+            this.dgv_extras.Size = new System.Drawing.Size(314, 270);
+            this.dgv_extras.TabIndex = 6;
             // 
             // so
             // 
-            this.so.HeaderText = "SO";
+            this.so.HeaderText = "S.O.";
             this.so.Name = "so";
             this.so.ReadOnly = true;
             this.so.Visible = false;
@@ -242,13 +280,15 @@
             this.duracionBateria.Name = "duracionBateria";
             this.duracionBateria.ReadOnly = true;
             this.duracionBateria.Visible = false;
+            this.duracionBateria.Width = 55;
             // 
-            // resolicion
+            // resolucion
             // 
-            this.resolicion.HeaderText = "Resolución";
-            this.resolicion.Name = "resolicion";
-            this.resolicion.ReadOnly = true;
-            this.resolicion.Visible = false;
+            this.resolucion.HeaderText = "Resolución";
+            this.resolucion.Name = "resolucion";
+            this.resolucion.ReadOnly = true;
+            this.resolucion.Visible = false;
+            this.resolucion.Width = 70;
             // 
             // velocidad
             // 
@@ -256,6 +296,7 @@
             this.velocidad.Name = "velocidad";
             this.velocidad.ReadOnly = true;
             this.velocidad.Visible = false;
+            this.velocidad.Width = 60;
             // 
             // puertos
             // 
@@ -263,13 +304,17 @@
             this.puertos.Name = "puertos";
             this.puertos.ReadOnly = true;
             this.puertos.Visible = false;
+            this.puertos.Width = 50;
             // 
             // Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 354);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(836, 378);
+            this.Controls.Add(this.dgv_extras);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.dgv_resumen);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -281,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_resumen)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_extras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +335,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_resumen;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
@@ -308,10 +354,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ram;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgv_extras;
         private System.Windows.Forms.DataGridViewTextBoxColumn so;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacenamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn duracionBateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn resolicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resolucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn velocidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn puertos;
     }

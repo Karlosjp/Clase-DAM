@@ -10,20 +10,11 @@ namespace Ejercicios_Practicas
     class  Tienda
     {
         private ArrayList productos;
-        /*private ArrayList ordenadores;
-        private ArrayList tablet;
-        private ArrayList movil;*/
 
-        public Tienda()
-        {
-            productos = new ArrayList();
-            /*tablet = new ArrayList();
-            movil = new ArrayList();*/
-
-        }
+        public Tienda(){ productos = new ArrayList(); }
 
         public void Eliminar(string tipo, int num)
-        {
+        {/*
             switch (tipo)
             {
                 case "Ordenador":
@@ -36,7 +27,7 @@ namespace Ejercicios_Practicas
                     movil.RemoveAt(num);
                     break;
 
-            }
+            }*/
         }
 
         public void Anotar(ArrayList nuevo)
@@ -60,89 +51,90 @@ namespace Ejercicios_Practicas
         {
             ArrayList lista = new ArrayList();
 
-            switch (tipo)
-            {
-                case "Ordenadores":
-                    lista = ordenadores;
-                    break;
-                case "Movil":
-                    lista = movil;
-                    break;
-                case "Tablet":
-                    lista = tablet;
-                    break;
-            }
+            foreach (Object o in productos)
+                if (o.GetType().ToString().Equals(tipo))
+                    lista.Add(o);
 
             return lista;
         }
 
+        public ArrayList Productos
+        {
+            get { return productos; }
+        }
+
         public void Modificar(int ram)
         {
-            foreach (Ordenador ord in ordenadores)
-                ord.Ram = ram;
-
-            foreach (Movil mov in movil)
-                mov.Ram = ram;
-
-            foreach (Tablet tab in tablet)
-                tab.Ram = ram;
+            for (int i = 0; i < productos.Count; i++)
+            {
+                if (productos[i].GetType().ToString().Equals("Ordenador"))
+                    ((Ordenador)productos[i]).Ram = ram;
+                else if (productos[i].GetType().ToString().Equals("Movil"))
+                    ((Movil)productos[i]).Ram = ram;
+                else if (productos[i].GetType().ToString().Equals("Tablet"))
+                    ((Tablet)productos[i]).Ram = ram;
+            }
         }
 
         public void Modificar(int ram, string tipo)
         {
             switch (tipo)
             {
-                case "ordenadores":
-                    foreach (Ordenador ord in ordenadores)
-                        ord.Ram = ram;
+                case "Ordenador":
+                    foreach (Object o in productos)
+                        if (o.GetType().ToString().Equals("Ordenador"))
+                            ((Ordenador)o).Ram = ram;
                     break;
-                case "tablet":
-                    foreach (Tablet tab in tablet)
-                        tab.Ram = ram;
+                case "Tablet":
+                    foreach (Object o in productos)
+                        if (o.GetType().ToString().Equals("Tablet"))
+                            ((Tablet)o).Ram = ram;
                     break;
-                case "movil":
-                    foreach (Movil mov in movil)
-                        mov.Ram = ram;
+                case "Movil":
+                    foreach (Object o in productos)
+                        if (o.GetType().ToString().Equals("Movil"))
+                            ((Movil)o).Ram = ram;
                     break;
             }
         }
 
-        public void Modificar(string tipo, int num, double pre)
+        public void Modificar(int num, double pre)
         {
-            switch (tipo)
+            string t = productos[num].GetType().ToString();
+
+            switch (t)
             {
-                case "ordenadores":
-                    ((Ordenador)ordenadores[num]).Precio = pre;
+                case "Ordenador":
+                    ((Ordenador)productos[num]).Precio = pre;
                     break;
-                case "tablet":
-                    ((Tablet)tablet[num]).Precio = pre;
+                case "Tablet":
+                    ((Tablet)productos[num]).Precio = pre;
                     break;
-                case "movil":
-                    ((Movil)movil[num]).Precio = pre;
+                case "Movil":
+                    ((Movil)productos[num]).Precio = pre;
                     break;
             }
-
         }
 
         private void AnotarMovil(ArrayList nMov)
         {
             Movil nMovil = new Movil((string)nMov[1], (string)nMov[2], Convert.ToInt32(nMov[3]),
                 Convert.ToDouble(nMov[4]), Convert.ToDouble(nMov[5]), Convert.ToDouble(nMov[6]), (string)nMov[7]);
-            movil.Add(nMovil);
+            productos.Add(nMovil);
         }
 
         private void AnotarOrdenadores(ArrayList nOrd)
         {
             Ordenador nOrdenador = new Ordenador((string)nOrd[1], (string)nOrd[2], Convert.ToInt32(nOrd[3]),
                 Convert.ToDouble(nOrd[4]), Convert.ToDouble(nOrd[5]), Convert.ToInt32(nOrd[6]));
-            ordenadores.Add(nOrdenador);
+            productos.Add(nOrdenador);
         }
 
         private void AnotarTablet(ArrayList nTab)
         {
             Tablet nTablet = new Tablet((string)nTab[1], (string)nTab[2], Convert.ToInt32(nTab[3]),
                 Convert.ToDouble(nTab[4]), Convert.ToDouble(nTab[5]), Convert.ToDouble(nTab[6]));
-            tablet.Add(nTablet);
+            productos.Add(nTablet);
         }
     }
 }
