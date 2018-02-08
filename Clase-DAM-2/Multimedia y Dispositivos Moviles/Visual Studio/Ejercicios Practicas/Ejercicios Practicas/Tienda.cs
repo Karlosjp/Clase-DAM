@@ -18,13 +18,13 @@ namespace Ejercicios_Practicas
             switch (tipo)
             {
                 case "Ordenador":
-                    ordenadores.RemoveAt(num);
+                    productos.RemoveAt(num);
                     break;
                 case "Tablet":
-                    tablet.RemoveAt(num);
+                    productos.RemoveAt(num);
                     break;
                 case "Movil":
-                    movil.RemoveAt(num);
+                    productos.RemoveAt(num);
                     break;
 
             }*/
@@ -52,7 +52,7 @@ namespace Ejercicios_Practicas
             ArrayList lista = new ArrayList();
 
             foreach (Object o in productos)
-                if (o.GetType().ToString().Equals(tipo))
+                if (o.GetType().Name.Equals(tipo))
                     lista.Add(o);
 
             return lista;
@@ -67,11 +67,11 @@ namespace Ejercicios_Practicas
         {
             for (int i = 0; i < productos.Count; i++)
             {
-                if (productos[i].GetType().ToString().Equals("Ordenador"))
+                if (productos[i].GetType().Name.Equals("Ordenador"))
                     ((Ordenador)productos[i]).Ram = ram;
-                else if (productos[i].GetType().ToString().Equals("Movil"))
+                else if (productos[i].GetType().Name.Equals("Movil"))
                     ((Movil)productos[i]).Ram = ram;
-                else if (productos[i].GetType().ToString().Equals("Tablet"))
+                else if (productos[i].GetType().Name.Equals("Tablet"))
                     ((Tablet)productos[i]).Ram = ram;
             }
         }
@@ -82,17 +82,17 @@ namespace Ejercicios_Practicas
             {
                 case "Ordenador":
                     foreach (Object o in productos)
-                        if (o.GetType().ToString().Equals("Ordenador"))
+                        if (o.GetType().Name.Equals("Ordenador"))
                             ((Ordenador)o).Ram = ram;
                     break;
                 case "Tablet":
                     foreach (Object o in productos)
-                        if (o.GetType().ToString().Equals("Tablet"))
+                        if (o.GetType().Name.Equals("Tablet"))
                             ((Tablet)o).Ram = ram;
                     break;
                 case "Movil":
                     foreach (Object o in productos)
-                        if (o.GetType().ToString().Equals("Movil"))
+                        if (o.GetType().Name.Equals("Movil"))
                             ((Movil)o).Ram = ram;
                     break;
             }
