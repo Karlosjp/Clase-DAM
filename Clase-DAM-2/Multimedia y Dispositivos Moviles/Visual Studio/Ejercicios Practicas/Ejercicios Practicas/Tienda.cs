@@ -66,55 +66,51 @@ namespace Ejercicios_Practicas
 
         public void Modificar(int ram)
         {
-            for (int i = 0; i < productos.Count; i++)
-            {
-                if (productos[i].GetType().Name.Equals("Ordenador"))
-                    ((Ordenador)productos[i]).Ram = ram;
-                else if (productos[i].GetType().Name.Equals("Movil"))
-                    ((Movil)productos[i]).Ram = ram;
-                else if (productos[i].GetType().Name.Equals("Tablet"))
-                    ((Tablet)productos[i]).Ram = ram;
-            }
+            foreach (Object o in productos)
+                if (o.GetType().Name.Equals("Ordenador"))
+                    ((Ordenador)o).Ram = ram;
+                else if (o.GetType().Name.Equals("Movil"))
+                    ((Movil)o).Ram = ram;
+                else if (o.GetType().Name.Equals("Tablet"))
+                    ((Tablet)o).Ram = ram;
         }
 
         public void Modificar(int ram, string tipo)
         {
-            switch (tipo)
-            {
-                case "Ordenador":
-                    foreach (Object o in productos)
-                        if (o.GetType().Name.Equals("Ordenador"))
+            foreach (Object o in productos)
+                if (o.GetType().Name.Equals("tipo"))
+                    switch (tipo)
+                    {
+                        case "Ordenador":                       
                             ((Ordenador)o).Ram = ram;
-                    break;
-                case "Tablet":
-                    foreach (Object o in productos)
-                        if (o.GetType().Name.Equals("Tablet"))
+                            break;
+                        case "Tablet":
                             ((Tablet)o).Ram = ram;
-                    break;
-                case "Movil":
-                    foreach (Object o in productos)
-                        if (o.GetType().Name.Equals("Movil"))
+                            break;
+                        case "Movil":
                             ((Movil)o).Ram = ram;
-                    break;
-            }
+                            break;
+                    }
         }
 
-        public void Modificar(int num, double pre)
+        public void Modificar(Object mod, double pre)
         {
-            string t = productos[num].GetType().ToString();
-
-            switch (t)
-            {
-                case "Ordenador":
-                    ((Ordenador)productos[num]).Precio = pre;
-                    break;
-                case "Tablet":
-                    ((Tablet)productos[num]).Precio = pre;
-                    break;
-                case "Movil":
-                    ((Movil)productos[num]).Precio = pre;
-                    break;
-            }
+            string t = mod.GetType().ToString();
+            
+            foreach (Object o in productos)
+                if(o.Equals(mod))
+                    switch (t)
+                    {
+                        case "Ordenador":
+                            ((Ordenador) o).Precio = pre;
+                            break;
+                        case "Tablet":
+                            ((Tablet) o).Precio = pre;
+                            break;
+                        case "Movil":
+                            ((Movil) o).Precio = pre;
+                            break;
+                    }
         }
 
         private void AnotarMovil(ArrayList nMov)
