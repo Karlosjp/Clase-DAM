@@ -13,22 +13,23 @@ namespace Ejercicios_Practicas
 
         public Tienda(){ productos = new ArrayList(); }
 
-        public void Eliminar(string tipo, int num)
-        {/*
-            switch (tipo)
-            {
-                case "Ordenador":
-                    productos.RemoveAt(num);
-                    break;
-                case "Tablet":
-                    productos.RemoveAt(num);
-                    break;
-                case "Movil":
-                    productos.RemoveAt(num);
-                    break;
-
-            }*/
+        public void Eliminar(Object o)
+        {
+            productos.RemoveAt(o);
         }
+            /*int aux = 0;
+            
+            for(int i=0;  i < productos.Count; i++)
+                if (productos[i].GetType().Name.Equals("tipo"))
+                {
+                    aux++;
+                    if (aux == num)
+                        productos.RemoveAt(i);
+                }
+            for(int i=0;  i < productos.Count; i++)
+                if (productos[i].Equals(o))
+                    productos.RemoveAt(i);*/
+
 
         public void Anotar(ArrayList nuevo)
         {
