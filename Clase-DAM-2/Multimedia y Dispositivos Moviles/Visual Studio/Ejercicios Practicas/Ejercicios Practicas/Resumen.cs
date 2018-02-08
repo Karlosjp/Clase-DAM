@@ -90,29 +90,36 @@ namespace Ejercicios_Practicas
 
         private void todoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgv_resumen.Columns.Count; i++)
-                dgv_resumen.Columns[i].Visible = true;
+            eliminarColumnas(true);
 
             lista = tienda.Productos;
-
-            for(int j = 0; j <lista.Count;j++)
+            
+            foreach (Object o in lista)
             {
-                if(lista[j].GetType().ToString().Equals("Ordenador"))
-                    dgv_resumen.Rows.Add("Ordenador", ((Ordenador)lista[j]).Nombre, ((Ordenador)lista[j]).Marca,
+                string t = o.GetType().Name;
+                
+                switch (t)
+                {
+                    case "Ordenador":
+                        dgv_resumen.Rows.Add(t, ((Ordenador)lista[j]).Nombre, ((Ordenador)lista[j]).Marca,
                         ((Ordenador)lista[j]).Precio, ((Ordenador)lista[j]).Ram);
-                else if (lista[j].GetType().ToString().Equals("Tablet"))
-                    dgv_resumen.Rows.Add("Tablet", ((Ordenador)lista[j]).Nombre, ((Ordenador)lista[j]).Marca,
-                        ((Tablet)lista[j]).Precio, ((Ordenador)lista[j]).Ram);
-                else if (lista[j].GetType().ToString().Equals("Movil"))
-                    dgv_resumen.Rows.Add("Movil", ((Ordenador)lista[j]).Nombre, ((Ordenador)lista[j]).Marca,
-                        ((Movil)lista[j]).Precio, ((Ordenador)lista[j]).Ram);
-            }
+                        break;
+                    case "Movil":
+                        dgv_resumen.Rows.Add(t, ((Movil)lista[j]).Nombre, ((Movil)lista[j]).Marca,
+                        ((Movil)lista[j]).Precio, ((Movil)lista[j]).Ram);
+                        break;
+                    case "Tablet":
+                        dgv_resumen.Rows.Add(t, ((Tablet)lista[j]).Nombre, ((Tablet)lista[j]).Marca,
+                        ((Tablet)lista[j]).Precio, ((Tablet)lista[j]).Ram);
+                        break;
+                }
+            }                            
         }
 
-        private void eliminarColumnas()
+        private void eliminarColumnas(bool e)
         {
             for (int i = 0; i > dgv_resumen.Columns.Count; i++)
-                dgv_extras.Columns[i].Visible = false;
+                dgv_extras.Columns[i].Visible = e;
         }
 
         private void bt_eliminar_Click(object sender, EventArgs e)
