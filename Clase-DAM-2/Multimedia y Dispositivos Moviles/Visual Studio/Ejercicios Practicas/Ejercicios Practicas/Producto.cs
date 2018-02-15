@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class Comunes
+    class Producto
     {
         protected string marca, nombre;
-        protected int ram;
+        protected int ram, id;
         protected double precio;
 
-        public Comunes()
+        public Producto()
         {
             marca = "";
             nombre = "";
@@ -20,8 +20,9 @@ namespace Ejercicios_Practicas
             precio = 0;
         }
 
-        public Comunes(string m, string n, int r, double p)
+        public Producto(int id, string m, string n, int r, double p)
         {
+            this.id = id;
             marca = m;
             nombre = n;
             ram = r;
@@ -31,13 +32,16 @@ namespace Ejercicios_Practicas
         public string Marca
         {
             get { return marca; }
-            set { marca = value; }
         }
 
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
         }
 
         public int Ram

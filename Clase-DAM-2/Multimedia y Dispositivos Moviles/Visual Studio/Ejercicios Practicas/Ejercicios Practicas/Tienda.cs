@@ -7,28 +7,29 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class  Tienda
+    class Tienda
     {
+        private int idProducto;
         private ArrayList productos;
 
-        public Tienda(){ productos = new ArrayList(); }
+        public Tienda() { idProducto = 0; productos = new ArrayList(); }
 
         public void Eliminar(Object o)
         {
-            productos.RemoveAt(o);
+            productos.Remove(o);
         }
-            /*int aux = 0;
-            
-            for(int i=0;  i < productos.Count; i++)
-                if (productos[i].GetType().Name.Equals("tipo"))
-                {
-                    aux++;
-                    if (aux == num)
-                        productos.RemoveAt(i);
-                }
-            for(int i=0;  i < productos.Count; i++)
-                if (productos[i].Equals(o))
-                    productos.RemoveAt(i);*/
+        /*int aux = 0;
+
+        for(int i=0;  i < productos.Count; i++)
+            if (productos[i].GetType().Name.Equals("tipo"))
+            {
+                aux++;
+                if (aux == num)
+                    productos.RemoveAt(i);
+            }
+        for(int i=0;  i < productos.Count; i++)
+            if (productos[i].Equals(o))
+                productos.RemoveAt(i);*/
 
 
         public void Anotar(ArrayList nuevo)
@@ -38,12 +39,15 @@ namespace Ejercicios_Practicas
             {
                 case "Ordenador":
                     AnotarOrdenadores(nuevo);
+                    idProducto++;
                     break;
                 case "Movil":
                     AnotarMovil(nuevo);
+                    idProducto++;
                     break;
                 case "Tablet":
                     AnotarTablet(nuevo);
+                    idProducto++;
                     break;
             }
         }
@@ -78,10 +82,10 @@ namespace Ejercicios_Practicas
         public void Modificar(int ram, string tipo)
         {
             foreach (Object o in productos)
-                if (o.GetType().Name.Equals("tipo"))
+                if (o.GetType().Name.Equals(tipo))
                     switch (tipo)
                     {
-                        case "Ordenador":                       
+                        case "Ordenador":
                             ((Ordenador)o).Ram = ram;
                             break;
                         case "Tablet":
@@ -96,40 +100,40 @@ namespace Ejercicios_Practicas
         public void Modificar(Object mod, double pre)
         {
             string t = mod.GetType().ToString();
-            
+
             foreach (Object o in productos)
-                if(o.Equals(mod))
+                if (o.Equals(mod))
                     switch (t)
                     {
                         case "Ordenador":
-                            ((Ordenador) o).Precio = pre;
+                            ((Ordenador)o).Precio = pre;
                             break;
                         case "Tablet":
-                            ((Tablet) o).Precio = pre;
+                            ((Tablet)o).Precio = pre;
                             break;
                         case "Movil":
-                            ((Movil) o).Precio = pre;
+                            ((Movil)o).Precio = pre;
                             break;
                     }
         }
 
         private void AnotarMovil(ArrayList nMov)
         {
-            Movil nMovil = new Movil((string)nMov[1], (string)nMov[2], Convert.ToInt32(nMov[3]),
+            Movil nMovil = new Movil(idProducto, (string)nMov[1], (string)nMov[2], Convert.ToInt32(nMov[3]),
                 Convert.ToDouble(nMov[4]), Convert.ToDouble(nMov[5]), Convert.ToDouble(nMov[6]), (string)nMov[7]);
             productos.Add(nMovil);
         }
 
         private void AnotarOrdenadores(ArrayList nOrd)
         {
-            Ordenador nOrdenador = new Ordenador((string)nOrd[1], (string)nOrd[2], Convert.ToInt32(nOrd[3]),
+            Ordenador nOrdenador = new Ordenador(idProducto, (string)nOrd[1], (string)nOrd[2], Convert.ToInt32(nOrd[3]),
                 Convert.ToDouble(nOrd[4]), Convert.ToDouble(nOrd[5]), Convert.ToInt32(nOrd[6]));
             productos.Add(nOrdenador);
         }
 
         private void AnotarTablet(ArrayList nTab)
         {
-            Tablet nTablet = new Tablet((string)nTab[1], (string)nTab[2], Convert.ToInt32(nTab[3]),
+            Tablet nTablet = new Tablet(idProducto, (string)nTab[1], (string)nTab[2], Convert.ToInt32(nTab[3]),
                 Convert.ToDouble(nTab[4]), Convert.ToDouble(nTab[5]), Convert.ToDouble(nTab[6]));
             productos.Add(nTablet);
         }

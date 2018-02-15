@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class Movil : Comunes
+    class Movil : Producto
     {
         private double duracionBateria, almacenamiento;
         private string so;
@@ -17,7 +17,7 @@ namespace Ejercicios_Practicas
             duracionBateria = 0;
         }
 
-        public Movil(string m, string n, int r, double p, double db, double al, string so) : base(m, n, r, p)
+        public Movil(int id, string m, string n, int r, double p, double db, double al, string so) : base(id, m, n, r, p)
         {
             this.so = so;
             duracionBateria = db;
@@ -27,19 +27,16 @@ namespace Ejercicios_Practicas
         public string So
         {
             get { return so; }
-            set { so = value; }
         }
 
         public double DuracionBateria
         {
             get { return duracionBateria; }
-            set { duracionBateria = value; }
         }
 
         public double Almacenamiento
         {
             get { return almacenamiento; }
-            set { almacenamiento = value; }
         }
     }
 }

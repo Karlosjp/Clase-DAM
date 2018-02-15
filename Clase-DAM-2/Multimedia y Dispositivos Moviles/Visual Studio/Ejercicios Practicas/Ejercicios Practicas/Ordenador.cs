@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class Ordenador : Comunes
+    class Ordenador : Producto
     {
         private double velocidad;
         private int puertos;
@@ -17,7 +17,7 @@ namespace Ejercicios_Practicas
             puertos = 0;
         }
 
-        public Ordenador(string m, string n, int r, double p, double ve, int pu) : base(m, n, r, p)
+        public Ordenador(int id, string m, string n, int r, double p, double ve, int pu) : base(id, m, n, r, p)
         {
             velocidad = ve;
             puertos = pu;
@@ -26,13 +26,11 @@ namespace Ejercicios_Practicas
         public double Velocidad
         {
             get { return velocidad; }
-            set { velocidad = value; }
         }
 
         public int Puertos
         {
             get { return puertos; }
-            set { puertos = value; }
         }
     }
 }

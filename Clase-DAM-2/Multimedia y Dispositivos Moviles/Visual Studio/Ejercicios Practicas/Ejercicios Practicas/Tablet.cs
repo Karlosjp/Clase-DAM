@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_Practicas
 {
-    class Tablet : Comunes
+    class Tablet : Producto
     {
         private double resolucion, duracionBateria;
 
@@ -16,7 +16,7 @@ namespace Ejercicios_Practicas
             duracionBateria = 0;
         }
 
-        public Tablet(string m, string n, int r, double p, double db, double re) : base(m, n, r, p)
+        public Tablet(int id, string m, string n, int r, double p, double db, double re) : base(id, m, n, r, p)
         {
             resolucion = re;
             duracionBateria = db;

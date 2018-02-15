@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv_resumen = new System.Windows.Forms.DataGridView();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,12 +48,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_extras = new System.Windows.Forms.DataGridView();
+            this.id_extra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracionBateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.velocidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_produc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_resumen)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extras)).BeginInit();
@@ -68,6 +70,7 @@
             // 
             this.dgv_resumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_resumen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_produc,
             this.tipo,
             this.nombre,
             this.marca,
@@ -75,44 +78,13 @@
             this.ram});
             this.dgv_resumen.Location = new System.Drawing.Point(12, 65);
             this.dgv_resumen.Name = "dgv_resumen";
-            this.dgv_resumen.Size = new System.Drawing.Size(493, 270);
+            this.dgv_resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_resumen.Size = new System.Drawing.Size(594, 270);
             this.dgv_resumen.TabIndex = 0;
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.FillWeight = 50F;
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 50;
-            // 
-            // ram
-            // 
-            this.ram.HeaderText = "Memoria RAM";
-            this.ram.Name = "ram";
-            this.ram.ReadOnly = true;
             // 
             // bt_eliminar
             // 
-            this.bt_eliminar.Location = new System.Drawing.Point(397, 341);
+            this.bt_eliminar.Location = new System.Drawing.Point(626, 65);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(108, 23);
             this.bt_eliminar.TabIndex = 1;
@@ -128,7 +100,7 @@
             this.mostrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(836, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,7 +115,7 @@
             // ventaToolStripMenuItem
             // 
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.ventaToolStripMenuItem.Text = "Venta";
             this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
             // 
@@ -204,21 +176,21 @@
             // ordenadoresToolStripMenuItem
             // 
             this.ordenadoresToolStripMenuItem.Name = "ordenadoresToolStripMenuItem";
-            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ordenadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ordenadoresToolStripMenuItem.Text = "Ordenadores";
             this.ordenadoresToolStripMenuItem.Click += new System.EventHandler(this.ordenadoresToolStripMenuItem_Click);
             // 
             // movilesToolStripMenuItem
             // 
             this.movilesToolStripMenuItem.Name = "movilesToolStripMenuItem";
-            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.movilesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.movilesToolStripMenuItem.Text = "Moviles";
             this.movilesToolStripMenuItem.Click += new System.EventHandler(this.movilesToolStripMenuItem_Click);
             // 
             // tabletsToolStripMenuItem
             // 
             this.tabletsToolStripMenuItem.Name = "tabletsToolStripMenuItem";
-            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tabletsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.tabletsToolStripMenuItem.Text = "Tablets";
             this.tabletsToolStripMenuItem.Click += new System.EventHandler(this.tabletsToolStripMenuItem_Click);
             // 
@@ -249,16 +221,24 @@
             // 
             this.dgv_extras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_extras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_extra,
             this.so,
             this.almacenamiento,
             this.duracionBateria,
             this.resolucion,
             this.velocidad,
             this.puertos});
-            this.dgv_extras.Location = new System.Drawing.Point(511, 65);
+            this.dgv_extras.Location = new System.Drawing.Point(12, 341);
             this.dgv_extras.Name = "dgv_extras";
-            this.dgv_extras.Size = new System.Drawing.Size(314, 270);
+            this.dgv_extras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_extras.Size = new System.Drawing.Size(594, 102);
             this.dgv_extras.TabIndex = 6;
+            // 
+            // id_extra
+            // 
+            this.id_extra.HeaderText = "ID";
+            this.id_extra.Name = "id_extra";
+            this.id_extra.Visible = false;
             // 
             // so
             // 
@@ -306,11 +286,48 @@
             this.puertos.Visible = false;
             this.puertos.Width = 50;
             // 
+            // id_produc
+            // 
+            this.id_produc.HeaderText = "ID";
+            this.id_produc.Name = "id_produc";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.FillWeight = 50F;
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 50;
+            // 
+            // ram
+            // 
+            this.ram.HeaderText = "Memoria RAM";
+            this.ram.Name = "ram";
+            this.ram.ReadOnly = true;
+            // 
             // Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 378);
+            this.ClientSize = new System.Drawing.Size(744, 466);
             this.Controls.Add(this.dgv_extras);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -349,21 +366,23 @@
         private System.Windows.Forms.ToolStripMenuItem ordenadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabletsToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ram;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_extras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_extra;
         private System.Windows.Forms.DataGridViewTextBoxColumn so;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacenamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn duracionBateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn resolucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn velocidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn puertos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_produc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ram;
     }
 }
 
