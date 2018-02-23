@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.CalendarLayoutChangeEvent;
+			
+			import spark.events.IndexChangeEvent;
+			import spark.events.TextOperationEvent;
+			var fecha:Date = new Date(), chbox:Array = new Array;
+						
+			protected function vacio(){
+				cbJamonYork.selected = false;
+				cbChampinones.selected = false;
+				cbAtun.selected = false;
+				cbBacon.selected = false;
+				cbPimiento.selected = false;
+				cbPeperoni.selected = false;
+				cbPollo.selected = false;
+				cbPina.selected = false;
+				cbAceitunas.selected = false;
+				cbTernera.selected = false;
+				cbBarbacoa.selected = false;
+				cbSerrano.selected = false;
+				
+				cbJamonYork.enabled = "true";
+				cbChampinones.enabled = "true";
+				cbAtun.enabled = "true";
+				cbBacon.enabled = "true";
+				cbPimiento.enabled = "true";
+				cbPeperoni.enabled = "true";
+				cbPollo.enabled = "true";
+				cbPina.enabled = "true";
+				cbAceitunas.enabled = "true";
+				cbTernera.enabled = "true";
+				cbBarbacoa.enabled = "true";
+				cbSerrano.enabled = "true";
+			}
+			protected function datefield1_changeHandler(event:CalendarLayoutChangeEvent):void
+			{
+				// &&  &&  (dfFecha.selectedDate.day < fecha.day) && dfFecha.selectedDate.day < fecha.day)
+				if((dfFecha.selectedDate.fullYear < fecha.fullYear) || 
+				  ((dfFecha.selectedDate.fullYear == fecha.fullYear) && (dfFecha.selectedDate.month < fecha.month)) || 
+				  ((dfFecha.selectedDate.fullYear == fecha.fullYear) && (dfFecha.selectedDate.month == fecha.month) && (dfFecha.selectedDate.date < fecha.date))){
+					Alert.show('La fecha no puede ser anterior a hoy','Iguales',mx.controls.Alert.OK);
+					dfFecha.text = "";
+					cbHora.enabled = "false";
+				}else
+					cbHora.enabled = "true";
+			}
+			
+			protected function tiNormal_clickHandler(event:MouseEvent):void
+			{
+				tiNormal.setStyle("contentBackgroundColor", "yellow");
+				tiGrande.setStyle("contentBackgroundColor", "white");
+			}
+			
+			protected function tiGrande_clickHandler(event:MouseEvent):void
+			{
+				tiNormal.setStyle("contentBackgroundColor", "white");
+				tiGrande.setStyle("contentBackgroundColor", "yellow");
+			}
+			
+			protected function combobox1_changeHandler(event:IndexChangeEvent):void
+			{
+				if(cbPizza.selectedItem == "NewYork(Jamón York, Champiñon)"){
+					vacio();
+					cbJamonYork.selected =true;
+					cbJamonYork.enabled = "false";
+					cbChampinones.selected = "true";
+					cbChampinones.enabled = "false";
+				}else if(cbPizza.selectedItem == "Tierraar(Bacon,Atún)"){
+					vacio();
+					cbAtun.selected = "true";
+					cbAtun.enabled = "false";
+					cbBacon.selected = "true";
+					cbBacon.enabled = "false";
+				}else if(cbPizza.selectedItem == "RHCPeppers(Pimiento,Peperoni)"){
+					vacio();
+					cbPimiento.selected = "true";
+					cbPimiento.enabled = "false";
+					cbPeperoni.selected = "true";
+					cbPeperoni.enabled = "false";
+				}else if(cbPizza.selectedItem == "Margarita(Básica, a tu gusto)")
+					vacio();
+					
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Panel id="rPedido" x="43" y="41" width="494" height="520" title="Realiza tu Pedido">
+		<s:ComboBox id="cbPizza" x="133" y="16" width="337" change="combobox1_changeHandler(event)">
+			<s:ArrayList>
+				<fx:String>NewYork(Jamón York, Champiñon)</fx:String>
+				<fx:String>Tierraar(Bacon,Atún)</fx:String>
+				<fx:String>RHCPeppers(Pimiento,Peperoni)</fx:String>
+				<fx:String>Margarita(Básica, a tu gusto)</fx:String>
+			</s:ArrayList>
+		</s:ComboBox>
+		<s:Label x="27" y="20" width="98" height="21" fontSize="20" text="Elige Pizza"/>
+		<s:Label x="27" y="63" fontSize="20" text="Añade Ingredientes (cada ingrediente extra 1€):"/>
+		<s:CheckBox id="cbJamonYork" x="27" y="95" label="Jamón York"
+					fontSize="20"/>
+		<s:CheckBox id="cbChampinones" x="27" y="125" label="Champiñones" fontSize="20"/>
+		<s:CheckBox id="cbAtun" x="27" y="155" label="Atún" fontSize="20"/>
+		<s:CheckBox id="cbBacon" x="27" y="185" label="Bacon" fontSize="20"/>
+		<s:CheckBox id="cbPimiento" x="27" y="215" label="Pimiento" fontSize="20"/>
+		<s:CheckBox id="cbPeperoni" x="27" y="245" label="Peperoni" fontSize="20"/>	
+		<s:CheckBox id="cbPollo" x="197" y="95" label="Pollo" fontSize="20"/>
+		<s:CheckBox id="cbPina" x="197" y="125" label="Piña" fontSize="20"/>
+		<s:CheckBox id="cbAceitunas" x="197" y="155" label="Aceitunas" fontSize="20"/>
+		<s:CheckBox id="cbTernera" x="197" y="185" label="Ternera" fontSize="20"/>
+		<s:CheckBox id="cbBarbacoa" x="197" y="215" label="Barbacoa" fontSize="20"/>
+		<s:CheckBox id="cbSerrano" x="197" y="245" label="Serrano" fontSize="20"/>
+		<s:Label x="27" y="287" fontSize="20" text="Tamaño de la pizza:"/>
+		<s:RadioButton id="rbMediana" x="27" y="312" label="Mediana" enabled="false" fontSize="20" groupName="tamano"
+					   selected="true"/>
+		<s:RadioButton id="rbGrande" x="128" y="312" label="Grande" enabled="false" fontSize="20" groupName="tamano"/>
+		<s:Label x="27" y="345" fontSize="20" text="Elige tipo de masa:"/>
+		<s:Label x="27" y="408" fontSize="20" text="Tipo del pedido:"/>
+		<s:RadioButton id="rbLocal" x="27" y="435" label="Local" enabled="false" fontSize="20" groupName="tPedido"
+					   selected="true"/>
+		<s:RadioButton id="rbDomicilio" x="100" y="435" label="A domicilio" enabled="false" groupName="tPedido"
+					   fontSize="20"/>
+		<s:Label x="249" y="287" fontSize="20" text="Datos de entrega pedido:"/>
+		<s:ComboBox id="cbHora" x="385" y="313" width="89" enabled="false" fontSize="20"
+					prompt="Hora">
+			<s:ArrayList>
+				<fx:String>14:00</fx:String>
+				<fx:String>15:00</fx:String>
+				<fx:String>21:00</fx:String>
+				<fx:String>22:00</fx:String>
+			</s:ArrayList>
+		</s:ComboBox>
+		<s:TextInput x="245" y="373" width="229" height="25" fontSize="20"
+					 prompt="Dirección y nº teléfono"/>
+		<mx:DateField id="dfFecha" x="249" y="313" width="128" height="27"
+					  change="datefield1_changeHandler(event)" formatString="DD-MM-YYYY"/>
+		<s:Label x="245" y="346" fontSize="20" text="Datos contacto del cliente"/>
+		<s:Button id="btImporte" x="245" y="427" height="30" label="Importe total" enabled="false"
+				  fontSize="20"/>
+		<s:TextInput id="taImporte" x="386" y="427" width="88" height="30"/>
+		<s:List id="lIngredientes" x="342" y="90" width="128" height="171">
+		</s:List>
+		<s:TextInput id="tiNormal" x="27" y="371" width="83" click="tiNormal_clickHandler(event)"
+					 editable="false" enabled="false" fontSize="20" text="Normal" textAlign="center"/>
+		<s:TextInput id="tiGrande" x="118" y="371" width="79" click="tiGrande_clickHandler(event)"
+					 editable="false" enabled="false" fontSize="20" text="Grande" textAlign="center"/>
+	</s:Panel>
+	<s:Panel id="hPedido" x="549" y="41" width="250" height="520" title="Historial de Pedidos">
+		<s:Button id="btnPedido" x="10" y="10" width="228" height="24" label="Nuevo Pedido"
+				  fontFamily="Courier New" fontSize="20"/>
+	</s:Panel>
+</s:Application>

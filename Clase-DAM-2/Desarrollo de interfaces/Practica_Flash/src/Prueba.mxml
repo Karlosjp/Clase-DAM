@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600"  pageTitle="MI PRIMER FLASH"
+			   textAlignLast="right">
+	
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.formats.BackgroundColor;
+			
+			import spark.events.IndexChangeEvent;
+			protected function combobox1_activateHandler(event:Event):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				text1.setStyle("contentBackgroundColor", "red");
+				setStyle("backgroundColor","blue");
+			}
+			
+			protected function combobox1_changeHandler(event:IndexChangeEvent):void
+			{
+				areaText.text += "\n"+comboText.selectedItem;
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Button x="442" y="204" label="Pulsa para ver tetas" click="button1_clickHandler(event)"/>
+	<s:CheckBox x="448" y="295" label="CheckBox"/>
+	<s:DataGrid x="114" y="200" requestedRowCount="4">
+		<s:columns>
+			<s:ArrayList>
+				<s:GridColumn dataField="dataField2" headerText="Column 2"></s:GridColumn>
+				<s:GridColumn dataField="dataField3" headerText="Column 3"></s:GridColumn>
+			</s:ArrayList>
+		</s:columns>
+		<s:typicalItem>
+			<fx:Object dataField1="Sample Data" dataField2="Sample Data" dataField3="Sample Data"></fx:Object>
+		</s:typicalItem>
+		<s:ArrayList>
+			<fx:Object dataField1="data1" dataField2="data1" dataField3="data1"></fx:Object>
+			<fx:Object dataField1="data2" dataField2="data2" dataField3="data2"></fx:Object>
+			<fx:Object dataField1="data3" dataField2="data3" dataField3="data3"></fx:Object>
+			<fx:Object dataField1="data4" dataField2="data4" dataField3="data4"></fx:Object>
+		</s:ArrayList>
+	</s:DataGrid>
+	<mx:DateField x="461" y="455"/>
+	<s:TextInput id="text1" x="448" y="385" prompt="text"
+				 textAlignLast="justify"/>
+	<s:TextArea id="areaText" x="650" y="200" horizontalScrollPolicy="on" text="&#xd;"/>
+	<s:ComboBox id="comboText" x="114" y="421" change="combobox1_changeHandler(event)">
+		<s:ArrayList>
+			<fx:String>Pepe</fx:String>
+			<fx:String>Lala</fx:String>
+			<fx:String>Lele</fx:String>
+			<fx:String>Papa</fx:String>
+			<fx:String>Pipi</fx:String>
+			<fx:String>Popo</fx:String>
+		</s:ArrayList>
+	</s:ComboBox>
+	<s:Image x="327" y="60"/>
+</s:Application>
