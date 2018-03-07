@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv_resumen = new System.Windows.Forms.DataGridView();
+            this.id_produc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,12 +61,6 @@
             this.resolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.velocidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_produc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_resumen)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extras)).BeginInit();
@@ -81,6 +81,43 @@
             this.dgv_resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_resumen.Size = new System.Drawing.Size(594, 270);
             this.dgv_resumen.TabIndex = 0;
+            // 
+            // id_produc
+            // 
+            this.id_produc.HeaderText = "ID";
+            this.id_produc.Name = "id_produc";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.FillWeight = 50F;
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 50;
+            // 
+            // ram
+            // 
+            this.ram.HeaderText = "Memoria RAM";
+            this.ram.Name = "ram";
+            this.ram.ReadOnly = true;
             // 
             // bt_eliminar
             // 
@@ -286,43 +323,6 @@
             this.puertos.Visible = false;
             this.puertos.Width = 50;
             // 
-            // id_produc
-            // 
-            this.id_produc.HeaderText = "ID";
-            this.id_produc.Name = "id_produc";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.FillWeight = 50F;
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 50;
-            // 
-            // ram
-            // 
-            this.ram.HeaderText = "Memoria RAM";
-            this.ram.Name = "ram";
-            this.ram.ReadOnly = true;
-            // 
             // Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,7 +334,7 @@
             this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.dgv_resumen);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
