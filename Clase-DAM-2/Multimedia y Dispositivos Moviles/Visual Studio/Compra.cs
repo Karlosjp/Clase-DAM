@@ -39,7 +39,7 @@ namespace Papeleria
             set { fecha = value; }
         }
 
-        // Cambia el importe de la compra
+        // Cambia y devuelve el importe de la compra
         public double Importe
         {
             set { importe = value; }
