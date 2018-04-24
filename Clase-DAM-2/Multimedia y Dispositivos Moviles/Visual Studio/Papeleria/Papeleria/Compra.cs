@@ -77,5 +77,10 @@ namespace Papeleria
             return pComprado.Tipo;
         }
 
+        // Devuelve los datos de la compra: Datos cliente, codigo compra, importe y datos del producto
+        public string Escribir()
+        {
+            return compraCliente.Escribir() + ":" + codigoCompra + ":" + importe + ":" + PComprado.Escribir();
+        }
     }
 }

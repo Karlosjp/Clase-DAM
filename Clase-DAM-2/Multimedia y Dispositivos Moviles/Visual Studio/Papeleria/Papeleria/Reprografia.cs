@@ -39,5 +39,12 @@ namespace Papeleria
         {
             get { return fabricante; }
         }
+
+        // Devuelve los datos del producto
+        // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante
+        public override string Escribir()
+        {
+            return base.Escribir() + ":" + material + ":" + color + ":" + fabricante;
+        }
     }
 }

@@ -37,5 +37,10 @@ namespace Papeleria
         {
             get { return dni; }
         }
+
+        public string Escribir()
+        {
+            return nombre + ":" + dni;
+        }
     }
 }

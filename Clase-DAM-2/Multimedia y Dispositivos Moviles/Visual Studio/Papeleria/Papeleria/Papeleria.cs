@@ -27,40 +27,22 @@ namespace Papeleria
         }
 
         // Guarda los datos de los productos
-        public void GuardarProductos(string carpeta, string ruta)
+        public void GuardarVentas(string carpeta, string archivo)
         {
             try
             {
                 if (!Directory.Exists(carpeta))
                     Directory.CreateDirectory(carpeta);
 
-                if (!File.Exists(carpeta + @"\" + ruta))
-                    File.Create(carpeta + @"\" + ruta);
+                if (!File.Exists(carpeta + @"\" + archivo))
+                    File.Create(carpeta + @"\" + archivo);
 
-                StreamWriter sw = File.CreateText(carpeta + @"\" + ruta);
+                StreamWriter sw = new StreamWriter(carpeta + @"\" + archivo);
 
-                    foreach (Compra c in compras)
-                    {
-                        if (c.PComprado is Consumible)
-                        {
-                            Consumible cC = (Consumible)c.PComprado;
-                            sw.WriteLine(cC.Nombre + ":" + cC.Tipo + ":" + cC.Codigo + ":" + cC.Precio + ":" +
-                                cC.Peso + ": :" + cC.FechaFabricacion + ": : ");
-                        }
+                foreach (Compra c in compras)
+                    sw.WriteLine(c.Escribir());
 
-                        if (c.PComprado is Accesorio)
-                        {
-                            Accesorio cA = (Accesorio)c.PComprado;
-                            sw.WriteLine(cA.Nombre + ":" + cA.Tipo + ":" + cA.Codigo + ":" + cA.Precio + ":" +
-                                    cA.Peso + ":" + cA.Material + ": : : ");
-                        }
-                        if (c.PComprado is Reprografia)
-                        {
-                            Reprografia cR = (Reprografia)c.PComprado;
-                            sw.WriteLine(cR.Nombre + ":" + cR.Tipo + ":" + cR.Codigo + ":" + cR.Precio + ": :"
-                                + cR.Material + ": :" + cR.Color + ":" + cR.Fabricante);
-                        }
-                    }
+                sw.Close();
             }
             catch (Exception e)
             {
@@ -68,8 +50,7 @@ namespace Papeleria
             }
         }
 
-        // Agrega los productos del archivo indicado a la lista de productos. 
-        // Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material:(6)Fabricacion:(7)Color:(8)Fabricante
+        // Agrega los productos del archivo indicado a la lista de productos.     
         public void IniciarProductos(string ruta)
         {
             string lProducto;
@@ -93,11 +74,13 @@ namespace Papeleria
                             NuevoConsumible(nProducto);
                             break;
                         case "Reprografia":
-                            Reprografia r = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[5], nProducto[7], nProducto[8]);
+                            // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante
+                            Reprografia r = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[4], nProducto[5], nProducto[6]);
                             productos.Add(r);
                             break;
                         case "Accesorio":
-                            Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[5], double.Parse(nProducto[4]));
+                            // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material
+                            Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]),nProducto[5]);
                             productos.Add(a);
                             break;
                     }
@@ -195,15 +178,21 @@ namespace Papeleria
                     clientes.Remove(cl);
         }
 
+        public List<Producto> MostrarProductos()
+        {
+            return productos;
+        }
+
         // Crea el producto consumible y lo agrega a la lista Productos Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(6)Fabricacion:
         private void NuevoConsumible(string[] nProducto)
         {
+            // Formato Consumible (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Fabricacion
             string[] f;
             string[] stringSeparators = new string[] { "/" };
             f = nProducto[5].Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
             DateTime fecha = new DateTime(Int32.Parse(f[0]), Int32.Parse(f[1]), Int32.Parse(f[2]));
-
-            Consumible c = new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), fecha, double.Parse(nProducto[4]));
+            
+            Consumible c = new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), fecha);
             productos.Add(c);
         }
 

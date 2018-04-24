@@ -47,5 +47,11 @@ namespace Papeleria
         {
             get { return precio; }
         }
+
+        // Devuelve los datos del producto
+        virtual public string Escribir()
+        {
+            return nombre + ":" + tipo + ":" + codigo + ":" + precio;
+        }
     }
 }

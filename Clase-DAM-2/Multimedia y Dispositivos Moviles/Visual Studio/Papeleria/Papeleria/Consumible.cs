@@ -18,7 +18,7 @@ namespace Papeleria
             peso = 0;
         }
 
-        public Consumible(string n, string t, int c, double p, DateTime fechaFabricacion, double peso)
+        public Consumible(string n, string t, int c, double p, double peso, DateTime fechaFabricacion)
             : base(n, t, c, p)
         {
             this.fechaFabricacion = fechaFabricacion;
@@ -33,6 +33,13 @@ namespace Papeleria
         public double Peso
         {
             get { return peso; }
+        }
+
+        // Devuelve los datos del producto
+        // Formato Consumible (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Fabricacion
+        public override string Escribir()
+        {
+            return base.Escribir() + ":" + peso + ":" + fechaFabricacion.ToString();
         }
     }
 }
