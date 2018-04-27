@@ -8,12 +8,6 @@ namespace Papeleria
 {
     class Compra
     {
-        private Producto pComprado;
-        private int codigoCompra;
-        private double importe;
-        private DateTime fecha;
-        private Cliente compraCliente;
-
         public Compra()
         {
             pComprado = new Producto();
@@ -34,35 +28,19 @@ namespace Papeleria
 
         // Get and Set
         // Cambia la fecha de la compra
-        public DateTime Fecha
-        {
-            set { fecha = value; }
-        }
+        public DateTime fecha { get; set; }
 
         // Cambia y devuelve el importe de la compra
-        public double Importe
-        {
-            set { importe = value; }
-            get { return importe; }
-        }
+        public double importe { set; get; }
 
         // Devuelve el codigo de la compra
-        public int CodigoCompra
-        {
-            get { return codigoCompra; }
-        }
+        public int codigoCompra { get; }
 
         // Devuelve el producto comprado
-        public Producto PComprado
-        {
-            get { return pComprado; }
-        }
+        public Producto pComprado { get; }
 
         // Devuelve el cliente que hizo la compra
-        public Cliente CompraCliente
-        {
-            get { return compraCliente; }
-        }
+        public Cliente compraCliente { get; }
 
         // Metodos
         // Devuelve el mes de la compra
@@ -71,16 +49,10 @@ namespace Papeleria
             return fecha.Month.ToString();
         }
 
-        // Devuelve el tipo de producto comprado
-        public string Tipo()
-        {
-            return pComprado.Tipo;
-        }
-
         // Devuelve los datos de la compra: Datos cliente, codigo compra, importe y datos del producto
         public string Escribir()
         {
-            return compraCliente.Escribir() + ":" + codigoCompra + ":" + importe + ":" + PComprado.Escribir();
+            return compraCliente.Escribir() + ":" + codigoCompra + ":" + importe + ":" + pComprado.Escribir();
         }
     }
 }

@@ -8,8 +8,6 @@ namespace Papeleria
 {
     class Cliente
     {
-        private string nombre, direccion, dni, telefono;
-
         public Cliente()
         {
             this.nombre = "";
@@ -26,17 +24,13 @@ namespace Papeleria
             this.telefono = telefono;
         }
 
-        // Devuelve el Nombre
-        public string Nombre
-        {
-            get { return nombre; }
-        }
+        public string nombre { get; }
 
-        // Devuelve el DNI
-        public string Dni
-        {
-            get { return dni; }
-        }
+        public string direccion { get; }
+
+        public string telefono { get; }
+
+        public string dni { get; }
 
         public string Escribir()
         {

@@ -9,24 +9,54 @@ namespace Papeleria
 {
     class Papeleria
     {
-        private List<Producto> productos;
-        private List<Cliente> clientes;
-        private List<Compra> compras; 
-
+        private int codCompra;
         public Papeleria()
         {
             productos = new List<Producto>();
             clientes = new List<Cliente>();
             compras = new List<Compra>();
+            codCompra = 0;
         }
 
         // Devuelve el listado completo de compras realizadas
-        public List<Compra> Compras
+        public List<Compra> compras { get; }
+        public List<Cliente> clientes { get; }
+        public List<Producto> productos { get; }
+
+        // Devuelve un producto seleccionado
+        public Producto ProductoElegido(int pe)
         {
-            get { return compras; }
+            return productos[pe];
         }
 
-        // Guarda los datos de los productos
+        // Devuelve un cliente selecionado
+        public Cliente ClienteElegido(int ce)
+        {
+            return clientes[ce];
+        }
+
+        // Devuelve una Lista string de los nombres de clientes
+        public List<string> NombreClientes()
+        {
+            List<string> nombres = new List<string>();
+            foreach (Cliente c in clientes)
+                nombres.Add(c.nombre);
+
+            return nombres;
+        }
+
+        // Devuelve una lista string de los DNI de clientes
+        public List<string> DniClientes()
+        {
+            List<string> dnis = new List<string>();
+            foreach (Cliente c in clientes)
+                dnis.Add(c.nombre);
+
+            return dnis;
+        }
+
+
+        // Guarda los datos de los productos   -------------No Completado-------------
         public void GuardarVentas(string carpeta, string archivo)
         {
             try
@@ -50,6 +80,44 @@ namespace Papeleria
             }
         }
 
+        public void IniciarClientes(string ruta)
+        {
+            string lCliente;
+            string[] nC;
+            string[] stringSeparators = new string[] { ":" };
+
+            try
+            {
+                // Abre el documento de la lista de productos en la ruta indicada
+                StreamReader sr = new StreamReader(ruta);
+                lCliente = sr.ReadLine();
+
+                // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
+                while (lCliente != null)
+                {
+                    nC = lCliente.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+
+                    // Separa los datos recogidos segun su tipo y los agrega a la lista
+                    // Formato Reprografia (0)Nombre:(1)Direccion:(2)dni:(3)telefono
+                    Cliente c = new Cliente(nC[0], nC[1], nC[2], nC[3]);
+                    clientes.Add(c);
+                    break;
+
+                }
+
+                // Lee la siguiente linea
+                lCliente = sr.ReadLine();
+
+
+                // Cierra el documento
+                sr.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+        }
+        
         // Agrega los productos del archivo indicado a la lista de productos.     
         public void IniciarProductos(string ruta)
         {
@@ -80,7 +148,7 @@ namespace Papeleria
                             break;
                         case "Accesorio":
                             // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material
-                            Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]),nProducto[5]);
+                            Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), nProducto[5]);
                             productos.Add(a);
                             break;
                     }
@@ -98,28 +166,35 @@ namespace Papeleria
             }
         }
 
-        //Recibe un codigo de compra de una compra. Busca la compra y borra el producto de la lista compras
-        public void EliminarCompra(int codigo)
+        // Registra la compra hecha por un cliente -------------No Completado-------------
+        public void HacerCompra(Producto productoComprado, Cliente clienteComprador, double importe)
+        {
+            Compra c = new Compra(codCompra, productoComprado, importe, DateTime.Today, clienteComprador);
+            compras.Add(c);
+        }
+
+        //Recibe un codigo de compra de una compra. Busca la compra y borra el producto de la lista compras -------------No Completado-------------
+        public void EliminarCompra(int codigo) 
         {
             foreach (Compra c in compras)
-                if (c.CodigoCompra == codigo)
+                if (c.codigoCompra == codigo)
                     compras.Remove(c);
         }
 
-        //Recibe un codigo de compra de una compra a modificar y cambia su fecha de compra y/o su importe al indicado.
+        //Recibe un codigo de compra de una compra a modificar y cambia su fecha de compra y/o su importe al indicado. -------------No Completado-------------
         public void ModificarCompra(int codigo, DateTime nFecha, double nImporte)
         {
             foreach (Compra c in compras)
-                if (c.CodigoCompra == codigo)
+                if (c.codigoCompra == codigo)
                 {
                     if (nFecha != null)
-                        c.Fecha = nFecha;
+                        c.fecha = nFecha;
                     if (nImporte > -1)
-                        c.Importe = nImporte;
+                        c.importe = nImporte;
                 }
         }
 
-        // Devuelve una lista con las compras realizadas en el mes indicado
+        // Devuelve una lista con las compras realizadas en el mes indicado -------------No Completado-------------
         public List<Compra> ListadoPorMes(string mes)
         {
             List<Compra> cMes = new List<Compra>();
@@ -131,56 +206,55 @@ namespace Papeleria
             return cMes;
         }
 
-        // Devuelve una lista con las compras realizadas de un tipo indicado
+        // Devuelve una lista con las compras realizadas de un tipo indicado -------------No Completado-------------
         public List<Compra> ListadoPorTipo(string tipo)
         {
             List<Compra> cTipo = new List<Compra>();
 
             foreach (Compra c in compras)
-                if (tipo.Equals(c.Tipo()))
+                if (tipo.Equals(c.pComprado.tipo))
                     cTipo.Add(c);
 
             return cTipo;
         }
 
-        // Devuelve una lista con las compras realizadas de un tipo indicado
+        // Devuelve una lista con las compras realizadas de un tipo indicado -------------No Completado-------------
         public List<Compra> ListadoPorCliente(Cliente cliente)
         {
             List<Compra> cCliente = new List<Compra>();
 
             foreach (Compra c in compras)
-                if (cliente.Equals(c.CompraCliente))
+                if (cliente.Equals(c.compraCliente))
                     cCliente.Add(c);
 
             return cCliente;
         }
 
-
-        // Devuelve la cantidad de productos de un tipo vendidas
+        // Devuelve la cantidad de productos de un tipo vendidas -------------No Completado-------------
         public double TotalImportePorTipo(List<Compra> cImporte)
         {
             double importeTotal = 0;
             foreach (Compra cI in cImporte)
-                importeTotal += cI.Importe;
+                importeTotal += cI.importe;
 
             return importeTotal;
         }
 
-        // Borra las compras y el cliente del dni indicado
+        // Borra las compras y el cliente del dni indicado -------------No Completado-------------
         public void EliminarCliente(string dni)
         {
+            List<Compra> aBorrar = new List<Compra>();
+
             foreach (Compra co in compras)
-                if (co.CompraCliente.Dni.Equals(dni))
-                    compras.Remove(co);
+                if (co.compraCliente.dni.Equals(dni))
+                    aBorrar.Add(co);
 
             foreach (Cliente cl in clientes)
-                if (cl.Dni.Equals(dni))
+                if (cl.dni.Equals(dni))
                     clientes.Remove(cl);
-        }
 
-        public List<Producto> MostrarProductos()
-        {
-            return productos;
+            foreach (Compra co2 in aBorrar)
+                compras.Remove(co2);
         }
 
         // Crea el producto consumible y lo agrega a la lista Productos Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(6)Fabricacion:
@@ -191,7 +265,7 @@ namespace Papeleria
             string[] stringSeparators = new string[] { "/" };
             f = nProducto[5].Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
             DateTime fecha = new DateTime(Int32.Parse(f[0]), Int32.Parse(f[1]), Int32.Parse(f[2]));
-            
+
             Consumible c = new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), fecha);
             productos.Add(c);
         }

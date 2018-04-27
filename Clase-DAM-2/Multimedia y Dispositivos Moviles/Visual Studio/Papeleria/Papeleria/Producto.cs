@@ -8,10 +8,6 @@ namespace Papeleria
 {
     class Producto
     {
-        private string nombre, tipo;
-        private int codigo;
-        private double precio;
-
         public Producto()
         {
             nombre = "";
@@ -28,25 +24,13 @@ namespace Papeleria
             this.precio = precio;
         }
 
-        public string Nombre
-        {
-            get { return nombre; }
-        }
+        public string nombre { get; }
 
-        public string Tipo
-        {
-            get { return tipo; }
-        }
+        public string tipo { get; }
 
-        public int Codigo
-        {
-            get { return codigo; }
-        }
+        public int codigo { get; }
 
-        public double Precio
-        {
-            get { return precio; }
-        }
+        public double precio { get; }
 
         // Devuelve los datos del producto
         virtual public string Escribir()

@@ -29,26 +29,81 @@ namespace Papeleria
         private void dgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             sele = e.RowIndex;
-            dgvPrincipal.Rows[sele].Cells[2].Value.ToString();
+            List<Producto> productos = p.productos;
+
+            dgvSecunadario.Rows.Clear();
+            VisibleNo();
+
+            foreach (Producto p in productos)
+                if (p.codigo == Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()))
+                {
+                    if (p is Consumible)
+                    {
+                        Consumible c = (Consumible)p;
+                        dgvSecunadario.Rows.Add(c.fechaFabricacion.Day.ToString(), c.peso);
+                        dgvSecunadario.Columns[0].Visible = true;
+                        dgvSecunadario.Columns[0].HeaderText = "Fecha Fabricación";
+                        dgvSecunadario.Columns[1].Visible = true;
+                        dgvSecunadario.Columns[1].HeaderText = "Peso";
+                    }
+                    else if (p is Reprografia)
+                    {
+                        Reprografia r = (Reprografia)p;
+                        dgvSecunadario.Rows.Add(r.material, r.color, r.fabricante);
+                        dgvSecunadario.Columns[0].Visible = true;
+                        dgvSecunadario.Columns[0].HeaderText = "Material";
+                        dgvSecunadario.Columns[1].Visible = true;
+                        dgvSecunadario.Columns[1].HeaderText = "Color";
+                        dgvSecunadario.Columns[2].Visible = true;
+                        dgvSecunadario.Columns[2].HeaderText = "Fabricante";                        
+                    }
+                    else if (p is Accesorio)
+                    {
+                        Accesorio a = (Accesorio)p;
+                        dgvSecunadario.Rows.Add(a.peso, a.material);
+                        dgvSecunadario.Columns[0].Visible = true;
+                        dgvSecunadario.Columns[0].HeaderText = "Peso";
+                        dgvSecunadario.Columns[1].Visible = true;
+                        dgvSecunadario.Columns[1].HeaderText = "Material";
+                    }
+                    break;
+                }
         }
 
         private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Producto pc = p.ProductoElegido(sele);
+            Cliente cc = new Cliente();
+            double importe = 0;
+            List<string> lNombre = p.NombreClientes();
+            List<string> lDni = p.DniClientes();
 
+            SeleccionClientes sc = new SeleccionClientes(lNombre,lDni);
+
+            sc.ShowDialog();
+            
+
+            p.HacerCompra(pc, cc, importe);
         }
 
         private void PrincipalPapeleria_Load(object sender, EventArgs e)
         {
             p.IniciarProductos(Path.Combine(ruta, @"Archivos\Productos.txt"));
-            List<Producto> productos = p.MostrarProductos();
+            List<Producto> productos = p.productos;
             foreach (Producto p in productos)
-                dgvPrincipal.Rows.Add(p.Nombre, p.Tipo, p.Codigo, p.Precio);
+                dgvPrincipal.Rows.Add(p.nombre, p.tipo, p.codigo, p.precio);
         }
 
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dgvPrincipal.Rows.RemoveAt(sele);
             p.EliminarCompra(Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()));
+        }
+
+        private void VisibleNo()
+        {
+            foreach (DataGridViewColumn dgvc in dgvSecunadario.Columns)
+                dgvc.Visible = false;
         }
     }
 }

@@ -8,9 +8,6 @@ namespace Papeleria
 {
     class Accesorio : Producto
     {
-        private double peso;
-        private string material;
-
         public Accesorio()
         {
             peso = 0;
@@ -23,15 +20,9 @@ namespace Papeleria
             this.peso = peso;
         }
 
-        public string Material
-        {
-            get { return material; }
-        }
+        public string material { get; }
 
-        public double Peso
-        {
-            get { return peso; }
-        }
+        public double peso { get; }
 
         // Devuelve los datos del producto
         // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material

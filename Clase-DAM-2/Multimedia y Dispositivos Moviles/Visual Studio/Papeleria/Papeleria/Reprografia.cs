@@ -8,8 +8,6 @@ namespace Papeleria
 {
     class Reprografia : Producto
     {
-        private string material, color, fabricante;
-
         public Reprografia()
         {
             this.material = "";
@@ -25,20 +23,11 @@ namespace Papeleria
             this.fabricante = fabricante;
         }
 
-        public string Material
-        {
-            get { return material; }
-        }
+        public string material { get; }
 
-        public string Color
-        {
-            get { return color; }
-        }
+        public string color { get; }
 
-        public string Fabricante
-        {
-            get { return fabricante; }
-        }
+        public string fabricante { get; }
 
         // Devuelve los datos del producto
         // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante

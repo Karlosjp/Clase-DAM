@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,10 +52,14 @@
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.papeleriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvSecunadario = new System.Windows.Forms.DataGridView();
+            this.columna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.papeleriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecunadario)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -68,9 +73,16 @@
             this.actualizarProductosToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(719, 24);
+            this.msMenu.Size = new System.Drawing.Size(480, 24);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
+            // 
+            // comprarToolStripMenuItem
+            // 
+            this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.comprarToolStripMenuItem.Text = "Comprar";
+            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
@@ -185,10 +197,10 @@
             this.Tipo,
             this.Cod,
             this.Precio});
-            this.dgvPrincipal.Location = new System.Drawing.Point(13, 28);
+            this.dgvPrincipal.Location = new System.Drawing.Point(12, 63);
             this.dgvPrincipal.Name = "dgvPrincipal";
             this.dgvPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPrincipal.Size = new System.Drawing.Size(683, 187);
+            this.dgvPrincipal.Size = new System.Drawing.Size(444, 187);
             this.dgvPrincipal.TabIndex = 1;
             this.dgvPrincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrincipal_CellClick);
             // 
@@ -216,18 +228,45 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
-            // comprarToolStripMenuItem
+            // dgvSecunadario
             // 
-            this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.comprarToolStripMenuItem.Text = "Comprar";
-            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
+            this.dgvSecunadario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecunadario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columna1,
+            this.columna2,
+            this.columna3});
+            this.dgvSecunadario.Location = new System.Drawing.Point(12, 256);
+            this.dgvSecunadario.Name = "dgvSecunadario";
+            this.dgvSecunadario.Size = new System.Drawing.Size(444, 99);
+            this.dgvSecunadario.TabIndex = 2;
+            // 
+            // columna1
+            // 
+            this.columna1.HeaderText = "Columna1";
+            this.columna1.Name = "columna1";
+            this.columna1.ReadOnly = true;
+            this.columna1.Visible = false;
+            // 
+            // columna2
+            // 
+            this.columna2.HeaderText = "Columna2";
+            this.columna2.Name = "columna2";
+            this.columna2.ReadOnly = true;
+            this.columna2.Visible = false;
+            // 
+            // columna3
+            // 
+            this.columna3.HeaderText = "Columna3";
+            this.columna3.Name = "columna3";
+            this.columna3.ReadOnly = true;
+            this.columna3.Visible = false;
             // 
             // PrincipalPapeleria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 542);
+            this.ClientSize = new System.Drawing.Size(480, 468);
+            this.Controls.Add(this.dgvSecunadario);
             this.Controls.Add(this.dgvPrincipal);
             this.Controls.Add(this.msMenu);
             this.MainMenuStrip = this.msMenu;
@@ -238,6 +277,7 @@
             this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.papeleriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecunadario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,6 +308,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvSecunadario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna3;
     }
 }
 
