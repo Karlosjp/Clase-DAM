@@ -4,11 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{7CBD5B87-33DE-4361-95DA-48791DB6BCE0}</ProjectGuid>
-=======
     <ProjectGuid>{1D240D6E-50D4-47AE-B0F3-1B8EC6810189}</ProjectGuid>
->>>>>>> 908f8694de6d25e0c8d556a1975526a148870d81
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Papeleria</RootNamespace>
@@ -50,16 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-=======
     <Compile Include="Accesorio.cs" />
     <Compile Include="Consumible.cs" />
     <Compile Include="Cliente.cs" />
@@ -78,7 +64,6 @@
     <EmbeddedResource Include="PrincipalPapeleria.resx">
       <DependentUpon>PrincipalPapeleria.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 908f8694de6d25e0c8d556a1975526a148870d81
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,10 +73,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <None Include="Properties\DataSources\Papeleria.datasource" />
->>>>>>> 908f8694de6d25e0c8d556a1975526a148870d81
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

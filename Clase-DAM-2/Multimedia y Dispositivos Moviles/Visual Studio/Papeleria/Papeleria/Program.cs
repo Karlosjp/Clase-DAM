@@ -16,11 +16,7 @@ namespace Papeleria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Form1());
-=======
             Application.Run(new PrincipalPapeleria());
->>>>>>> 908f8694de6d25e0c8d556a1975526a148870d81
         }
     }
 }
