@@ -17,7 +17,7 @@ namespace Papeleria
             compraCliente = new Cliente();
         }
 
-        public Compra(int codigoCompra, Producto pComprado, double importe, DateTime fecha, Cliente compraCliente)
+        public Compra(DateTime fecha, int codigoCompra, double importe, Cliente compraCliente, Producto pComprado)
         {
             this.pComprado = pComprado;
             this.importe = importe;
@@ -44,15 +44,18 @@ namespace Papeleria
 
         // Metodos
         // Devuelve el mes de la compra
-        public string Mes()
+        public int Mes()
         {
-            return fecha.Month.ToString();
+            return fecha.Month;
         }
 
         // Devuelve los datos de la compra: Datos cliente, codigo compra, importe y datos del producto
+        // Consumible --> (0)FechaCompra:(1)CodigoCompra:(2)Importe:(3)NombreCliente:(4)DNICliente:(5)NombreProducto:(6)Tipo:(7)Codigo:(8)Precio:(9)Peso:(10)FechaFabricacion
+        // Reprografia --> (0)FechaCompra:(1)CodigoCompra:(2)Importe:(3)NombreCliente:(4)DNICliente:(5)NombreProducto:(6)Tipo:(7)Codigo:(8)Precio:(9)Material:(10)Color:(11)Fabricante
+        // Accesorio --> (0)FechaCompra:(1)CodigoCompra:(2)Importe:(3)NombreCliente:(4)DNICliente:(5)NombreProducto:(6)Tipo:(7)Codigo:(8)Precio:(9)Peso:(10)Material
         public string Escribir()
         {
-            return compraCliente.Escribir() + ":" + codigoCompra + ":" + importe + ":" + pComprado.Escribir();
+            return fecha.ToShortDateString() + ":" + codigoCompra + ":" + importe + ":" + compraCliente.Escribir() + ":" + pComprado.Escribir();
         }
     }
 }

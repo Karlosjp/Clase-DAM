@@ -30,7 +30,7 @@ namespace Papeleria
         // Formato Consumible (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Fabricacion
         public override string Escribir()
         {
-            return base.Escribir() + ":" + peso + ":" + fechaFabricacion.ToString();
+            return base.Escribir() + ":" + peso + ":" + fechaFabricacion.ToShortDateString();
         }
     }
 }

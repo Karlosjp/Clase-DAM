@@ -9,182 +9,35 @@ namespace Papeleria
 {
     class Papeleria
     {
-        private int codCompra;
+        private static int codCompra;
         public Papeleria()
         {
-            productos = new List<Producto>();
-            clientes = new List<Cliente>();
-            compras = new List<Compra>();
             codCompra = 0;
         }
 
-        // Devuelve el listado completo de compras realizadas
-        public List<Compra> compras { get; }
-        public List<Cliente> clientes { get; }
-        public List<Producto> productos { get; }
-
-        // Devuelve un producto seleccionado
-        public Producto ProductoElegido(int pe)
+        // Registra la compra hecha por un cliente
+        public void HacerCompra( Producto productoComprado, int cliente, double importe)
         {
-            return productos[pe];
+            codCompra++;
+            Compra c = new Compra(DateTime.Today, codCompra, importe, Datos.ClienteElegido(cliente), productoComprado);
+            Datos.Compras.Add(c);
         }
 
-        // Devuelve un cliente selecionado
-        public Cliente ClienteElegido(int ce)
+        //Recibe un codigo de compra de una compra. Busca la compra y borra el producto de la lista compras
+        public void EliminarCompra(int codigo)
         {
-            return clientes[ce];
-        }
-
-        // Devuelve una Lista string de los nombres de clientes
-        public List<string> NombreClientes()
-        {
-            List<string> nombres = new List<string>();
-            foreach (Cliente c in clientes)
-                nombres.Add(c.nombre);
-
-            return nombres;
-        }
-
-        // Devuelve una lista string de los DNI de clientes
-        public List<string> DniClientes()
-        {
-            List<string> dnis = new List<string>();
-            foreach (Cliente c in clientes)
-                dnis.Add(c.nombre);
-
-            return dnis;
-        }
-
-
-        // Guarda los datos de los productos   -------------No Completado-------------
-        public void GuardarVentas(string carpeta, string archivo)
-        {
-            try
-            {
-                if (!Directory.Exists(carpeta))
-                    Directory.CreateDirectory(carpeta);
-
-                if (!File.Exists(carpeta + @"\" + archivo))
-                    File.Create(carpeta + @"\" + archivo);
-
-                StreamWriter sw = new StreamWriter(carpeta + @"\" + archivo);
-
-                foreach (Compra c in compras)
-                    sw.WriteLine(c.Escribir());
-
-                sw.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public void IniciarClientes(string ruta)
-        {
-            string lCliente;
-            string[] nC;
-            string[] stringSeparators = new string[] { ":" };
-
-            try
-            {
-                // Abre el documento de la lista de productos en la ruta indicada
-                StreamReader sr = new StreamReader(ruta);
-                lCliente = sr.ReadLine();
-
-                // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
-                while (lCliente != null)
-                {
-                    nC = lCliente.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-
-                    // Separa los datos recogidos segun su tipo y los agrega a la lista
-                    // Formato Reprografia (0)Nombre:(1)Direccion:(2)dni:(3)telefono
-                    Cliente c = new Cliente(nC[0], nC[1], nC[2], nC[3]);
-                    clientes.Add(c);
-                    break;
-
-                }
-
-                // Lee la siguiente linea
-                lCliente = sr.ReadLine();
-
-
-                // Cierra el documento
-                sr.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception: " + e.Message);
-            }
-        }
-        
-        // Agrega los productos del archivo indicado a la lista de productos.     
-        public void IniciarProductos(string ruta)
-        {
-            string lProducto;
-            string[] nProducto;
-            string[] stringSeparators = new string[] { ":" };
-
-            try
-            {
-                // Abre el documento de la lista de productos en la ruta indicada
-                StreamReader sr = new StreamReader(ruta);
-                lProducto = sr.ReadLine();
-
-                // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
-                while (lProducto != null)
-                {
-                    nProducto = lProducto.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-                    // Separa los datos recogidos segun su tipo y los agrega a la lista
-                    switch (nProducto[1])
-                    {
-                        case "Consumible":
-                            NuevoConsumible(nProducto);
-                            break;
-                        case "Reprografia":
-                            // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante
-                            Reprografia r = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[4], nProducto[5], nProducto[6]);
-                            productos.Add(r);
-                            break;
-                        case "Accesorio":
-                            // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material
-                            Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), nProducto[5]);
-                            productos.Add(a);
-                            break;
-                    }
-
-                    // Lee la siguiente linea
-                    lProducto = sr.ReadLine();
-                }
-
-                // Cierra el documento
-                sr.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception: " + e.Message);
-            }
-        }
-
-        // Registra la compra hecha por un cliente -------------No Completado-------------
-        public void HacerCompra(Producto productoComprado, Cliente clienteComprador, double importe)
-        {
-            Compra c = new Compra(codCompra, productoComprado, importe, DateTime.Today, clienteComprador);
-            compras.Add(c);
-        }
-
-        //Recibe un codigo de compra de una compra. Busca la compra y borra el producto de la lista compras -------------No Completado-------------
-        public void EliminarCompra(int codigo) 
-        {
-            foreach (Compra c in compras)
+            foreach (Compra c in Datos.Compras)
                 if (c.codigoCompra == codigo)
-                    compras.Remove(c);
+                {
+                    Datos.Compras.Remove(c);
+                    break;
+                }
         }
 
-        //Recibe un codigo de compra de una compra a modificar y cambia su fecha de compra y/o su importe al indicado. -------------No Completado-------------
+        //Recibe un codigo de compra de una compra a modificar y cambia su fecha de compra y/o su importe al indicado
         public void ModificarCompra(int codigo, DateTime nFecha, double nImporte)
         {
-            foreach (Compra c in compras)
+            foreach (Compra c in Datos.Compras)
                 if (c.codigoCompra == codigo)
                 {
                     if (nFecha != null)
@@ -194,96 +47,67 @@ namespace Papeleria
                 }
         }
 
-        // Devuelve una lista con las compras realizadas en el mes indicado -------------No Completado-------------
-        public List<Compra> ListadoPorMes(string mes)
+        // Devuelve una lista con las compras realizadas en el mes indicado
+        public List<Compra> Listado(int mes)
         {
             List<Compra> cMes = new List<Compra>();
 
-            foreach (Compra c in compras)
+            foreach (Compra c in Datos.Compras)
                 if (mes.Equals(c.Mes()))
                     cMes.Add(c);
 
             return cMes;
         }
 
-        // Devuelve una lista con las compras realizadas de un tipo indicado -------------No Completado-------------
-        public List<Compra> ListadoPorTipo(string tipo)
+        // Devuelve una lista con las compras realizadas de un tipo indicado
+        public List<Compra> Listado(string tipo)
         {
             List<Compra> cTipo = new List<Compra>();
 
-            foreach (Compra c in compras)
+            foreach (Compra c in Datos.Compras)
                 if (tipo.Equals(c.pComprado.tipo))
                     cTipo.Add(c);
 
             return cTipo;
         }
 
-        // Devuelve una lista con las compras realizadas de un tipo indicado -------------No Completado-------------
-        public List<Compra> ListadoPorCliente(Cliente cliente)
+        // Devuelve una lista con las compras realizadas de un tipo indicado 
+        public List<Compra> Listado(Cliente cliente)
         {
             List<Compra> cCliente = new List<Compra>();
 
-            foreach (Compra c in compras)
+            foreach (Compra c in Datos.Compras)
                 if (cliente.Equals(c.compraCliente))
                     cCliente.Add(c);
 
             return cCliente;
         }
 
-        // Devuelve la cantidad de productos de un tipo vendidas -------------No Completado-------------
-        public double TotalImportePorTipo(List<Compra> cImporte)
+        // Devuelve la cantidad de productos de un tipo vendidas
+        public double Listado(List<Compra> calculaImporte)
         {
             double importeTotal = 0;
-            foreach (Compra cI in cImporte)
+            foreach (Compra cI in calculaImporte)
                 importeTotal += cI.importe;
 
             return importeTotal;
         }
 
-        // Borra las compras y el cliente del dni indicado -------------No Completado-------------
+        // Borra las compras y el cliente del dni indicado
         public void EliminarCliente(string dni)
         {
             List<Compra> aBorrar = new List<Compra>();
 
-            foreach (Compra co in compras)
+            foreach (Compra co in Datos.Compras)
                 if (co.compraCliente.dni.Equals(dni))
                     aBorrar.Add(co);
 
-            foreach (Cliente cl in clientes)
+            foreach (Cliente cl in Datos.Clientes)
                 if (cl.dni.Equals(dni))
-                    clientes.Remove(cl);
+                    Datos.Clientes.Remove(cl);
 
             foreach (Compra co2 in aBorrar)
-                compras.Remove(co2);
+                Datos.Compras.Remove(co2);
         }
-
-        // Crea el producto consumible y lo agrega a la lista Productos Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(6)Fabricacion:
-        private void NuevoConsumible(string[] nProducto)
-        {
-            // Formato Consumible (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Fabricacion
-            string[] f;
-            string[] stringSeparators = new string[] { "/" };
-            f = nProducto[5].Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-            DateTime fecha = new DateTime(Int32.Parse(f[0]), Int32.Parse(f[1]), Int32.Parse(f[2]));
-
-            Consumible c = new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), fecha);
-            productos.Add(c);
-        }
-
-        // Crea el producto Reprografia y lo agrega a la lista Productos
-        // Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material:(6)Fabricacion:(7)Color:(8)Fabricante
-        /*private void NuevoReprografia(string[] nProducto)
-        {
-            Reprografia c = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]),nProducto[5],nProducto[7],nProducto[8]);
-            productos.Add(c);
-        }*/
-
-        // Crea el producto Accesorio y lo agrega a la lista Productos
-        // Formato (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material:(6)Fabricacion:(7)Color:(8)Fabricante
-        /*private void NuevoAccesorio(string[] nProducto)
-        {
-            Accesorio c = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[5], double.Parse(nProducto[4]));
-            productos.Add(c);
-        }*/
     }
 }

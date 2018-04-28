@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,9 @@ namespace Papeleria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Datos.IniciarProductos();
+            Datos.IniciarClientes();
+            Datos.IniciarVentas();
             Application.Run(new PrincipalPapeleria());
         }
     }

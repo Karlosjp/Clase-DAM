@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            Datos.GuardarVentas();
             base.Dispose(disposing);
         }
 
@@ -31,31 +32,35 @@
             this.components = new System.ComponentModel.Container();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fechaDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fechaImporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resumenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.totalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.porTipoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fechaDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fechaImporteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPrincipal = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.papeleriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvSecunadario = new System.Windows.Forms.DataGridView();
             this.columna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.papeleriaBindingSource)).BeginInit();
@@ -66,11 +71,7 @@
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comprarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.modificarToolStripMenuItem,
-            this.listarToolStripMenuItem,
-            this.resumenToolStripMenuItem,
-            this.actualizarProductosToolStripMenuItem});
+            this.eliminarToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Size = new System.Drawing.Size(480, 24);
@@ -79,154 +80,151 @@
             // 
             // comprarToolStripMenuItem
             // 
+            this.comprarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprarToolStripMenuItem1,
+            this.mostrarToolStripMenuItem});
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.comprarToolStripMenuItem.Text = "Comprar";
-            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.comprarToolStripMenuItem.Text = "Productos";
+            // 
+            // comprarToolStripMenuItem1
+            // 
+            this.comprarToolStripMenuItem1.Name = "comprarToolStripMenuItem1";
+            this.comprarToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.comprarToolStripMenuItem1.Text = "Comprar";
+            this.comprarToolStripMenuItem1.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
+            // 
+            // mostrarToolStripMenuItem
+            // 
+            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.mostrarToolStripMenuItem.Text = "Mostrar";
+            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.compraToolStripMenuItem,
-            this.clienteToolStripMenuItem1});
+            this.clienteToolStripMenuItem1,
+            this.modificarToolStripMenuItem1});
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.eliminarToolStripMenuItem.Text = "Ventas";
             // 
             // compraToolStripMenuItem
             // 
+            this.compraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.compraToolStripMenuItem1,
+            this.clienteToolStripMenuItem2});
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.compraToolStripMenuItem.Text = "Compra";
-            this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.compraToolStripMenuItem.Text = "Eliminar";
+            // 
+            // compraToolStripMenuItem1
+            // 
+            this.compraToolStripMenuItem1.Name = "compraToolStripMenuItem1";
+            this.compraToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.compraToolStripMenuItem1.Text = "Compra";
+            this.compraToolStripMenuItem1.Click += new System.EventHandler(this.compraToolStripMenuItem1_Click);
+            // 
+            // clienteToolStripMenuItem2
+            // 
+            this.clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
+            this.clienteToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.clienteToolStripMenuItem2.Text = "Cliente";
             // 
             // clienteToolStripMenuItem1
             // 
+            this.clienteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.totalToolStripMenuItem1,
+            this.porTipoToolStripMenuItem1,
+            this.porMesToolStripMenuItem1,
+            this.clienteToolStripMenuItem3,
+            this.productoToolStripMenuItem});
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
-            this.clienteToolStripMenuItem1.Text = "Cliente";
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.clienteToolStripMenuItem1.Text = "Mostrar resumen";
             // 
-            // modificarToolStripMenuItem
+            // totalToolStripMenuItem1
             // 
-            this.modificarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fechaDeCompraToolStripMenuItem,
-            this.importeToolStripMenuItem,
-            this.fechaImporteToolStripMenuItem});
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.totalToolStripMenuItem1.Name = "totalToolStripMenuItem1";
+            this.totalToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.totalToolStripMenuItem1.Text = "Total";
+            this.totalToolStripMenuItem1.Click += new System.EventHandler(this.totalToolStripMenuItem1_Click);
             // 
-            // fechaDeCompraToolStripMenuItem
+            // porTipoToolStripMenuItem1
             // 
-            this.fechaDeCompraToolStripMenuItem.Name = "fechaDeCompraToolStripMenuItem";
-            this.fechaDeCompraToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.fechaDeCompraToolStripMenuItem.Text = "Fecha de compra";
+            this.porTipoToolStripMenuItem1.Name = "porTipoToolStripMenuItem1";
+            this.porTipoToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.porTipoToolStripMenuItem1.Text = "Por tipo";
+            this.porTipoToolStripMenuItem1.Click += new System.EventHandler(this.porTipoToolStripMenuItem1_Click);
             // 
-            // importeToolStripMenuItem
+            // porMesToolStripMenuItem1
             // 
-            this.importeToolStripMenuItem.Name = "importeToolStripMenuItem";
-            this.importeToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.importeToolStripMenuItem.Text = "Importe";
+            this.porMesToolStripMenuItem1.Name = "porMesToolStripMenuItem1";
+            this.porMesToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.porMesToolStripMenuItem1.Text = "Por mes";
+            this.porMesToolStripMenuItem1.Click += new System.EventHandler(this.porMesToolStripMenuItem1_Click);
             // 
-            // fechaImporteToolStripMenuItem
+            // clienteToolStripMenuItem3
             // 
-            this.fechaImporteToolStripMenuItem.Name = "fechaImporteToolStripMenuItem";
-            this.fechaImporteToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.fechaImporteToolStripMenuItem.Text = "Fecha/Importe";
+            this.clienteToolStripMenuItem3.Name = "clienteToolStripMenuItem3";
+            this.clienteToolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
+            this.clienteToolStripMenuItem3.Text = "Por cliente";
+            this.clienteToolStripMenuItem3.Click += new System.EventHandler(this.clienteToolStripMenuItem3_Click);
             // 
-            // listarToolStripMenuItem
+            // productoToolStripMenuItem
             // 
-            this.listarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porMesToolStripMenuItem,
-            this.porTipoToolStripMenuItem,
-            this.clienteToolStripMenuItem});
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.listarToolStripMenuItem.Text = "Listar compras";
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.productoToolStripMenuItem.Text = "Por producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
-            // porMesToolStripMenuItem
+            // modificarToolStripMenuItem1
             // 
-            this.porMesToolStripMenuItem.Name = "porMesToolStripMenuItem";
-            this.porMesToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.porMesToolStripMenuItem.Text = "Mes";
+            this.modificarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fechaDeCompraToolStripMenuItem1,
+            this.importeToolStripMenuItem1,
+            this.fechaImporteToolStripMenuItem1});
+            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
-            // porTipoToolStripMenuItem
+            // fechaDeCompraToolStripMenuItem1
             // 
-            this.porTipoToolStripMenuItem.Name = "porTipoToolStripMenuItem";
-            this.porTipoToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.porTipoToolStripMenuItem.Text = "Tipo";
+            this.fechaDeCompraToolStripMenuItem1.Name = "fechaDeCompraToolStripMenuItem1";
+            this.fechaDeCompraToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.fechaDeCompraToolStripMenuItem1.Text = "Fecha de Compra";
             // 
-            // clienteToolStripMenuItem
+            // importeToolStripMenuItem1
             // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.importeToolStripMenuItem1.Name = "importeToolStripMenuItem1";
+            this.importeToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.importeToolStripMenuItem1.Text = "Importe";
             // 
-            // resumenToolStripMenuItem
+            // fechaImporteToolStripMenuItem1
             // 
-            this.resumenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porProductoToolStripMenuItem,
-            this.totalToolStripMenuItem});
-            this.resumenToolStripMenuItem.Name = "resumenToolStripMenuItem";
-            this.resumenToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.resumenToolStripMenuItem.Text = "Resumen";
-            // 
-            // porProductoToolStripMenuItem
-            // 
-            this.porProductoToolStripMenuItem.Name = "porProductoToolStripMenuItem";
-            this.porProductoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.porProductoToolStripMenuItem.Text = "Producto";
-            // 
-            // totalToolStripMenuItem
-            // 
-            this.totalToolStripMenuItem.Name = "totalToolStripMenuItem";
-            this.totalToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.totalToolStripMenuItem.Text = "Total";
-            // 
-            // actualizarProductosToolStripMenuItem
-            // 
-            this.actualizarProductosToolStripMenuItem.Name = "actualizarProductosToolStripMenuItem";
-            this.actualizarProductosToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            this.actualizarProductosToolStripMenuItem.Text = "Guardar Compras";
+            this.fechaImporteToolStripMenuItem1.Name = "fechaImporteToolStripMenuItem1";
+            this.fechaImporteToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.fechaImporteToolStripMenuItem1.Text = "Fecha/Importe";
             // 
             // dgvPrincipal
             // 
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrincipal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Tipo,
-            this.Cod,
-            this.Precio});
+            this.pColumna1,
+            this.pColumna2,
+            this.pColumna3,
+            this.pColumna4,
+            this.pColumna5,
+            this.pColumna6,
+            this.pColumna7});
             this.dgvPrincipal.Location = new System.Drawing.Point(12, 63);
             this.dgvPrincipal.Name = "dgvPrincipal";
             this.dgvPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPrincipal.Size = new System.Drawing.Size(444, 187);
             this.dgvPrincipal.TabIndex = 1;
             this.dgvPrincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrincipal_CellClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Cod
-            // 
-            this.Cod.HeaderText = "Cod";
-            this.Cod.Name = "Cod";
-            this.Cod.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // dgvSecunadario
             // 
@@ -261,6 +259,51 @@
             this.columna3.ReadOnly = true;
             this.columna3.Visible = false;
             // 
+            // pColumna1
+            // 
+            this.pColumna1.HeaderText = "Columna1";
+            this.pColumna1.Name = "pColumna1";
+            this.pColumna1.ReadOnly = true;
+            // 
+            // pColumna2
+            // 
+            this.pColumna2.HeaderText = "Columna2";
+            this.pColumna2.Name = "pColumna2";
+            this.pColumna2.ReadOnly = true;
+            // 
+            // pColumna3
+            // 
+            this.pColumna3.HeaderText = "Columna3";
+            this.pColumna3.Name = "pColumna3";
+            this.pColumna3.ReadOnly = true;
+            // 
+            // pColumna4
+            // 
+            this.pColumna4.HeaderText = "Columna4";
+            this.pColumna4.Name = "pColumna4";
+            this.pColumna4.ReadOnly = true;
+            // 
+            // pColumna5
+            // 
+            this.pColumna5.HeaderText = "Columna5";
+            this.pColumna5.Name = "pColumna5";
+            this.pColumna5.ReadOnly = true;
+            this.pColumna5.Visible = false;
+            // 
+            // pColumna6
+            // 
+            this.pColumna6.HeaderText = "Columna6";
+            this.pColumna6.Name = "pColumna6";
+            this.pColumna6.ReadOnly = true;
+            this.pColumna6.Visible = false;
+            // 
+            // pColumna7
+            // 
+            this.pColumna7.HeaderText = "Columna7";
+            this.pColumna7.Name = "pColumna7";
+            this.pColumna7.ReadOnly = true;
+            this.pColumna7.Visible = false;
+            // 
             // PrincipalPapeleria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,31 +330,35 @@
 
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fechaDeCompraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fechaImporteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porMesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porTipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resumenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porProductoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem totalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarProductosToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvPrincipal;
         private System.Windows.Forms.BindingSource papeleriaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvSecunadario;
         private System.Windows.Forms.DataGridViewTextBoxColumn columna1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columna2;
         private System.Windows.Forms.DataGridViewTextBoxColumn columna3;
+        private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem totalToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem porTipoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem porMesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fechaDeCompraToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem importeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fechaImporteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna7;
     }
 }
 

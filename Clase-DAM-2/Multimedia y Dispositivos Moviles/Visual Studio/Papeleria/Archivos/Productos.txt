@@ -1,8 +1,8 @@
-Consumible1:Consumible:0001:50:15:2018/03/20
-Consumible2:Consumible:0002:10:4:2008/07/11
-Consumible3:Consumible:0003:100:2:2009/10/21
-Consumible4:Consumible:0004:150:5:2007/02/15
-Consumible5:Consumible:0005:5:1:2000/11/10
+Consumible1:Consumible:0001:50:15:20/03/2018
+Consumible2:Consumible:0002:10:4:11/07/2008
+Consumible3:Consumible:0003:100:2:21/10/2009
+Consumible4:Consumible:0004:150:5:15/02/2007
+Consumible5:Consumible:0005:5:1:10/11/2000
 Reprografia1:Reprografia:0006:20:Metal:Rojo:Fabricante1
 Reprografia2:Reprografia:0007:10:Aluminio:Verde:Fabricante2
 Reprografia3:Reprografia:0008:55:Plastico:Morado:Fabricante3

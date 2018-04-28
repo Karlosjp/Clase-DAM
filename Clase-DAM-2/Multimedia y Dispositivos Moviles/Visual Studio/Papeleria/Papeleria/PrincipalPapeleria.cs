@@ -14,96 +14,160 @@ namespace Papeleria
     public partial class PrincipalPapeleria : Form
     {
         private Papeleria p;
-        private string ruta;
         private int sele;
-        //No se puede encontrar una parte de la ruta de acceso 'Z:\\Git\\Clase-DAM\\Clase-DAM-2\\Multimedia y Dispositivos Moviles\\Visual Studio\\Papeleria\\Papeleria\\bin\\Debug\\Productos\\Productos.txt'."}	System.Exception {System.IO.DirectoryNotFoundException
+        private string mostrar;
 
         public PrincipalPapeleria()
         {
             InitializeComponent();
             p = new Papeleria();
-            ruta = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             sele = 0;
+            mostrar = "Productos";
         }
 
+        // Muestra los atributos propios de cada producto en el grid secundario
         private void dgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             sele = e.RowIndex;
-            List<Producto> productos = p.productos;
 
-            dgvSecunadario.Rows.Clear();
-            VisibleNo();
+            if (sele > -1)
+            {
+                dgvSecunadario.Rows.Clear();
+                VisibleNo(dgvSecunadario.Columns);
 
-            foreach (Producto p in productos)
-                if (p.codigo == Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()))
-                {
-                    if (p is Consumible)
+                foreach (Producto p in Datos.Productos)
+                    if (p.codigo == Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()))
                     {
-                        Consumible c = (Consumible)p;
-                        dgvSecunadario.Rows.Add(c.fechaFabricacion.Day.ToString(), c.peso);
-                        dgvSecunadario.Columns[0].Visible = true;
-                        dgvSecunadario.Columns[0].HeaderText = "Fecha Fabricación";
-                        dgvSecunadario.Columns[1].Visible = true;
-                        dgvSecunadario.Columns[1].HeaderText = "Peso";
+                        if (p is Consumible)
+                        {
+                            Consumible c = (Consumible)p;
+                            dgvSecunadario.Rows.Add(c.fechaFabricacion.Day.ToString(), c.peso);
+                            dgvSecunadario.Columns[0].Visible = true;
+                            dgvSecunadario.Columns[0].HeaderText = "Fecha Fabricación";
+                            dgvSecunadario.Columns[1].Visible = true;
+                            dgvSecunadario.Columns[1].HeaderText = "Peso";
+                        }
+                        else if (p is Reprografia)
+                        {
+                            Reprografia r = (Reprografia)p;
+                            dgvSecunadario.Rows.Add(r.material, r.color, r.fabricante);
+                            dgvSecunadario.Columns[0].Visible = true;
+                            dgvSecunadario.Columns[0].HeaderText = "Material";
+                            dgvSecunadario.Columns[1].Visible = true;
+                            dgvSecunadario.Columns[1].HeaderText = "Color";
+                            dgvSecunadario.Columns[2].Visible = true;
+                            dgvSecunadario.Columns[2].HeaderText = "Fabricante";
+                        }
+                        else if (p is Accesorio)
+                        {
+                            Accesorio a = (Accesorio)p;
+                            dgvSecunadario.Rows.Add(a.peso, a.material);
+                            dgvSecunadario.Columns[0].Visible = true;
+                            dgvSecunadario.Columns[0].HeaderText = "Peso";
+                            dgvSecunadario.Columns[1].Visible = true;
+                            dgvSecunadario.Columns[1].HeaderText = "Material";
+                        }
+                        break;
                     }
-                    else if (p is Reprografia)
-                    {
-                        Reprografia r = (Reprografia)p;
-                        dgvSecunadario.Rows.Add(r.material, r.color, r.fabricante);
-                        dgvSecunadario.Columns[0].Visible = true;
-                        dgvSecunadario.Columns[0].HeaderText = "Material";
-                        dgvSecunadario.Columns[1].Visible = true;
-                        dgvSecunadario.Columns[1].HeaderText = "Color";
-                        dgvSecunadario.Columns[2].Visible = true;
-                        dgvSecunadario.Columns[2].HeaderText = "Fabricante";                        
-                    }
-                    else if (p is Accesorio)
-                    {
-                        Accesorio a = (Accesorio)p;
-                        dgvSecunadario.Rows.Add(a.peso, a.material);
-                        dgvSecunadario.Columns[0].Visible = true;
-                        dgvSecunadario.Columns[0].HeaderText = "Peso";
-                        dgvSecunadario.Columns[1].Visible = true;
-                        dgvSecunadario.Columns[1].HeaderText = "Material";
-                    }
-                    break;
-                }
+            }
         }
 
+        // Registra una compra con sus correspondientes datos
         private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Producto pc = p.ProductoElegido(sele);
-            Cliente cc = new Cliente();
-            double importe = 0;
-            List<string> lNombre = p.NombreClientes();
-            List<string> lDni = p.DniClientes();
+            if (mostrar.Equals("Productos"))
+            {
+                double importe = Datos.Productos[sele].precio;
 
-            SeleccionClientes sc = new SeleccionClientes(lNombre,lDni);
+                Seleccion sc = new Seleccion();
 
-            sc.ShowDialog();
-            
+                if (dgvPrincipal.SelectedRows.Count == 1)
+                {
+                    sc.ShowDialog();
 
-            p.HacerCompra(pc, cc, importe);
+                    if (!(sc.Cliente == -1))
+                    {
+                        p.HacerCompra(Datos.ProductoElegido(sele), sc.Cliente, importe);
+                        MessageBox.Show("Compra registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                        MessageBox.Show("No se ha escogido cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                    MessageBox.Show("Solo 1 producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+                MessageBox.Show("Para realizar compra muestre los productos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        // Carga la lista de productos al grid principal
         private void PrincipalPapeleria_Load(object sender, EventArgs e)
         {
-            p.IniciarProductos(Path.Combine(ruta, @"Archivos\Productos.txt"));
-            List<Producto> productos = p.productos;
-            foreach (Producto p in productos)
+            foreach (Producto p in Datos.Productos)
                 dgvPrincipal.Rows.Add(p.nombre, p.tipo, p.codigo, p.precio);
         }
 
-        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        // Elimina una compra seleccionada del grid principal
+        private void compraToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            dgvPrincipal.Rows.RemoveAt(sele);
-            p.EliminarCompra(Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()));
+            if (mostrar.Equals("Ventas"))
+            {
+                dgvPrincipal.Rows.RemoveAt(sele);
+                p.EliminarCompra(Int32.Parse(dgvPrincipal.Rows[sele].Cells[2].Value.ToString()));
+            }
+            else
+                MessageBox.Show("Para realizar compra muestre los productos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        private void VisibleNo()
+        // Pone en visible falce las columnas del grid secundario
+        private void VisibleNo(DataGridViewColumnCollection columnas)
         {
-            foreach (DataGridViewColumn dgvc in dgvSecunadario.Columns)
+            foreach (DataGridViewColumn dgvc in columnas)
                 dgvc.Visible = false;
+        }
+
+        // Muestra los productos en el grid
+        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgvPrincipal.Rows.Clear();
+
+            foreach (Producto p in Datos.Productos)
+                dgvPrincipal.Rows.Add(p.nombre, p.tipo, p.codigo, p.precio);
+        }
+
+        // Muestra ista de ventas total en el grid
+        private void totalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dgvPrincipal.Rows.Clear();
+
+            foreach (Compra compra in Datos.Compras)
+                dgvPrincipal.Rows.Add(compra.fecha.ToShortDateString(),compra.codigoCompra,compra.compraCliente.dni,
+                    compra.compraCliente.nombre, compra.pComprado.codigo, compra.pComprado.tipo, compra.pComprado.nombre );
+                //dgvPrincipal.Rows.Add(p.nombre, p.tipo, p.codigo, p.precio);
+        }
+
+        // Muestra ista de ventas tipo en el grid
+        private void porTipoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Muestra ista de ventas por mes en el grid
+        private void porMesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Muestra ista de ventas por cliente en el grid
+        private void clienteToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Muestra ista de ventas por producto en el grid
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

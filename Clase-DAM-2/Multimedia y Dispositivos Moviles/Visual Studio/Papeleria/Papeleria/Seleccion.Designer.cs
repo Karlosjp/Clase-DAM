@@ -1,6 +1,6 @@
 ﻿namespace Papeleria
 {
-    partial class SeleccionClientes
+    partial class Seleccion
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@
             this.nombreCliente});
             this.dgvSeleccionCliente.Location = new System.Drawing.Point(13, 13);
             this.dgvSeleccionCliente.Name = "dgvSeleccionCliente";
+            this.dgvSeleccionCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeleccionCliente.Size = new System.Drawing.Size(244, 236);
             this.dgvSeleccionCliente.TabIndex = 0;
             this.dgvSeleccionCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionCliente_CellClick);
