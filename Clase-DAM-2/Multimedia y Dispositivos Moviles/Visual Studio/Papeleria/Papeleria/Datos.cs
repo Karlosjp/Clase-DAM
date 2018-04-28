@@ -13,6 +13,9 @@ namespace Papeleria
         private static List<Cliente> clientes = new List<Cliente>();
         private static List<Producto> productos = new List<Producto>();
         private static List<Compra> compras = new List<Compra>();
+        public const string consumible = "Consumible";
+        public const string reprografia = "Reprografia";
+        public const string accesorio = "Accesorio";
 
         // Devuelve el listado completo de clientes
         public static List<Cliente> Clientes { get { return clientes; } }
@@ -20,15 +23,21 @@ namespace Papeleria
         public static List<Producto> Productos { get { return productos; } }
         // Devuelve el listado completo de compras realizadas    
         public static List<Compra> Compras { get { return compras; } }
-
+                
         // Devuelve un producto seleccionado
         public static Producto ProductoElegido(int pe)
         {
             return productos[pe];
         }
 
+        // Devuelve un cliente selecionado
+        public static Cliente ClienteElegido(int ce)
+        {
+            return clientes[ce];
+        }
+
         // Agrega del documento indicado los clientes a la lista de la tienda
-        public static void IniciarClientes()
+        public static void CargarClientes()
         {
             string lCliente, ruta = Path.Combine(carpetaPadre, @"Archivos\Clientes.txt");
             string[] nC;
@@ -67,7 +76,7 @@ namespace Papeleria
         }
 
         // Agrega los productos del archivo indicado a la lista de la tienda   
-        public static void IniciarProductos()
+        public static void CargarProductos()
         {
             string lProducto, ruta = Path.Combine(carpetaPadre, @"Archivos\Productos.txt");
             string[] nProducto;
@@ -88,16 +97,16 @@ namespace Papeleria
                         // Separa los datos recogidos segun su tipo y los agrega a la lista
                         switch (nProducto[1])
                         {
-                            case "Consumible":
+                            case consumible:
                                 // Formato Consumible (0)Nombre: (1)Tipo: (2)Codigo: (3)Precio: (4)Peso: (6)Fabricacion
                                 productos.Add(new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), OrdenarFecha(nProducto[5])));
                                 break;
-                            case "Reprografia":
+                            case reprografia:
                                 // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante
                                 Reprografia r = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[4], nProducto[5], nProducto[6]);
                                 productos.Add(r);
                                 break;
-                            case "Accesorio":
+                            case accesorio:
                                 // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material
                                 Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), nProducto[5]);
                                 productos.Add(a);
@@ -119,7 +128,7 @@ namespace Papeleria
         }
 
         // Agrega del documento indicado las ventas a la lista de la tienda
-        public static void IniciarVentas()
+        public static void CargarVentas()
         {
             string lVenta, ruta = Path.Combine(carpetaPadre, @"Archivos\Ventas.txt");
             string[] nVenta;
@@ -139,7 +148,7 @@ namespace Papeleria
                         nVenta = lVenta.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
 
                         compras.Add(new Compra(OrdenarFecha(nVenta[0]), Int32.Parse(nVenta[1]), Convert.ToDouble(nVenta[2]),
-                                    BuscarCliente(Int32.Parse(nVenta[4])), BuscarProducto(Int32.Parse(nVenta[7]))));
+                                    Buscar(nVenta[4]), Buscar(Int32.Parse(nVenta[7]))));
 
                         // Lee la siguiente linea
                         lVenta = sr.ReadLine();
@@ -182,7 +191,7 @@ namespace Papeleria
         }
 
         // Devuelve los datos de un cliente de la lista
-        private static Cliente BuscarCliente(int dni)
+        private static Cliente Buscar(string dni)
         {
             Cliente cliente = new Cliente();
             foreach (Cliente c in clientes)
@@ -196,11 +205,11 @@ namespace Papeleria
         }
 
         // Devuelve los datos de un producto de la lista
-        private static Producto BuscarProducto(int codigo)
+        private static Producto Buscar(int codigo)
         {
             Producto producto = new Producto();
             foreach (Producto p in productos)
-                if (p.tipo.Equals(codigo))
+                if (p.codigo.Equals(codigo))
                 {
                     producto = p;
                     break;
@@ -241,10 +250,73 @@ namespace Papeleria
             return dni;
         }
 
-        // Devuelve un cliente selecionado
-        public static Cliente ClienteElegido(int ce)
+        // Devuelve una lista con las compras realizadas en el mes indicado
+        public static List<Compra> Listado(int mes)
         {
-            return clientes[ce];
+            List<Compra> cMes = new List<Compra>();
+
+            foreach (Compra c in Datos.Compras)
+                if (mes.Equals(c.Mes()))
+                    cMes.Add(c);
+
+            return cMes;
+        }
+
+        // Devuelve una lista con las compras realizadas de un tipo indicado
+        public static List<Compra> Listado(string tipo)
+        {
+            List<Compra> cTipo = new List<Compra>();
+
+            foreach (Compra c in Datos.Compras)
+                if (tipo.Equals(c.pComprado.tipo))
+                    cTipo.Add(c);
+
+            return cTipo;
+        }
+
+        // Devuelve una lista con las compras realizadas de un tipo indicado 
+        public static List<Compra> Listado(Cliente cliente)
+        {
+            List<Compra> cCliente = new List<Compra>();
+
+            foreach (Compra c in Datos.Compras)
+                if (cliente.Equals(c.compraCliente))
+                    cCliente.Add(c);
+
+            return cCliente;
+        }
+
+        // Devuelve el importe total de un tipo de producto vendido
+        public static double ImporteTotal(string tipo)
+        {
+            double importeTotal = 0;
+            foreach (Compra c in Listado(tipo))
+                importeTotal += c.importe;
+
+            return importeTotal;
+        }
+
+        // Devuelve la cantidad total por tipo de productos vendidos
+        public static int CantidadTipoProducto(string tipo)
+        {
+            return Listado(tipo).Count;
+        }
+
+        // Borra las compras y el cliente del dni indicado
+        public static void EliminarCliente(string dni)
+        {
+            List<Compra> aBorrar = new List<Compra>();
+
+            foreach (Compra co in Datos.Compras)
+                if (co.compraCliente.dni.Equals(dni))
+                    aBorrar.Add(co);
+
+            foreach (Cliente cl in Datos.Clientes)
+                if (cl.dni.Equals(dni))
+                    Datos.Clientes.Remove(cl);
+
+            foreach (Compra co2 in aBorrar)
+                Datos.Compras.Remove(co2);
         }
     }
 }

@@ -17,9 +17,9 @@ namespace Papeleria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Datos.IniciarProductos();
-            Datos.IniciarClientes();
-            Datos.IniciarVentas();
+            Datos.CargarProductos();
+            Datos.CargarClientes();
+            Datos.CargarVentas();
             Application.Run(new PrincipalPapeleria());
         }
     }
