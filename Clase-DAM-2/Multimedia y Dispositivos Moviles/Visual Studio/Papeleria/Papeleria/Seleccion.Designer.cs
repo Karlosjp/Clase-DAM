@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvSeleccionCliente = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sColumna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sColumna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,8 +38,8 @@
             // 
             this.dgvSeleccionCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeleccionCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.nombreCliente});
+            this.sColumna1,
+            this.sColumna2});
             this.dgvSeleccionCliente.Location = new System.Drawing.Point(13, 13);
             this.dgvSeleccionCliente.Name = "dgvSeleccionCliente";
             this.dgvSeleccionCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -47,26 +47,26 @@
             this.dgvSeleccionCliente.TabIndex = 0;
             this.dgvSeleccionCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionCliente_CellClick);
             // 
-            // codigo
+            // sColumna1
             // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
+            this.sColumna1.HeaderText = "Columna1";
+            this.sColumna1.Name = "sColumna1";
+            this.sColumna1.ReadOnly = true;
             // 
-            // nombreCliente
+            // sColumna2
             // 
-            this.nombreCliente.HeaderText = "Nombre Cliente";
-            this.nombreCliente.Name = "nombreCliente";
-            this.nombreCliente.ReadOnly = true;
+            this.sColumna2.HeaderText = "Columna2";
+            this.sColumna2.Name = "sColumna2";
+            this.sColumna2.ReadOnly = true;
             // 
-            // SeleccionClientes
+            // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 261);
             this.Controls.Add(this.dgvSeleccionCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "SeleccionClientes";
+            this.Name = "Seleccion";
             this.Text = "SeleccionClientes";
             this.Load += new System.EventHandler(this.SeleccionClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionCliente)).EndInit();
@@ -77,7 +77,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSeleccionCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sColumna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sColumna2;
     }
 }

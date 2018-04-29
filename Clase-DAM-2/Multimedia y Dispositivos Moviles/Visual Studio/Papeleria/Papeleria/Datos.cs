@@ -13,9 +13,17 @@ namespace Papeleria
         private static List<Cliente> clientes = new List<Cliente>();
         private static List<Producto> productos = new List<Producto>();
         private static List<Compra> compras = new List<Compra>();
-        public const string consumible = "Consumible";
-        public const string reprografia = "Reprografia";
-        public const string accesorio = "Accesorio";
+        private static string[] separador = new string[] { ":" };
+
+        public const string CONSUMIBLE = "Consumible";
+        public const string REPROGRAFIA = "Reprografia";
+        public const string ACCESORIO = "Accesorio";
+        public const string VENTAS = "Ventas";        
+        public const string PRODUCTO = "Producto";
+        public const string CLIENTE = "Cliente";
+        public const string MES = "Mes";
+        public static readonly string[] meses = new string[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Nobiembre", "Diciembre"};
+
 
         // Devuelve el listado completo de clientes
         public static List<Cliente> Clientes { get { return clientes; } }
@@ -23,7 +31,8 @@ namespace Papeleria
         public static List<Producto> Productos { get { return productos; } }
         // Devuelve el listado completo de compras realizadas    
         public static List<Compra> Compras { get { return compras; } }
-                
+        public static string[] Separador { get { return separador; } }
+
         // Devuelve un producto seleccionado
         public static Producto ProductoElegido(int pe)
         {
@@ -41,7 +50,7 @@ namespace Papeleria
         {
             string lCliente, ruta = Path.Combine(carpetaPadre, @"Archivos\Clientes.txt");
             string[] nC;
-            string[] stringSeparators = new string[] { ":" };
+            
 
             try
             {
@@ -54,7 +63,7 @@ namespace Papeleria
                     // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
                     while (lCliente != null)
                     {
-                        nC = lCliente.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        nC = lCliente.Split(Separador, StringSplitOptions.RemoveEmptyEntries);
 
                         // Separa los datos recogidos segun su tipo y los agrega a la lista
                         // Formato Reprografia (0)Nombre:(1)Direccion:(2)dni:(3)telefono
@@ -80,7 +89,6 @@ namespace Papeleria
         {
             string lProducto, ruta = Path.Combine(carpetaPadre, @"Archivos\Productos.txt");
             string[] nProducto;
-            string[] stringSeparators = new string[] { ":" };
 
             try
             {
@@ -93,20 +101,20 @@ namespace Papeleria
                     // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
                     while (lProducto != null)
                     {
-                        nProducto = lProducto.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        nProducto = lProducto.Split(separador, StringSplitOptions.RemoveEmptyEntries);
                         // Separa los datos recogidos segun su tipo y los agrega a la lista
                         switch (nProducto[1])
                         {
-                            case consumible:
+                            case CONSUMIBLE:
                                 // Formato Consumible (0)Nombre: (1)Tipo: (2)Codigo: (3)Precio: (4)Peso: (6)Fabricacion
                                 productos.Add(new Consumible(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), OrdenarFecha(nProducto[5])));
                                 break;
-                            case reprografia:
+                            case REPROGRAFIA:
                                 // Formato Reprografia (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Material:(5)Color:(6)Fabricante
                                 Reprografia r = new Reprografia(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), nProducto[4], nProducto[5], nProducto[6]);
                                 productos.Add(r);
                                 break;
-                            case accesorio:
+                            case ACCESORIO:
                                 // Formato Accesorio (0)Nombre:(1)Tipo:(2)Codigo:(3)Precio:(4)Peso:(5)Material
                                 Accesorio a = new Accesorio(nProducto[0], nProducto[1], Int32.Parse(nProducto[2]), double.Parse(nProducto[3]), double.Parse(nProducto[4]), nProducto[5]);
                                 productos.Add(a);
@@ -132,7 +140,6 @@ namespace Papeleria
         {
             string lVenta, ruta = Path.Combine(carpetaPadre, @"Archivos\Ventas.txt");
             string[] nVenta;
-            string[] stringSeparators = new string[] { ":" };
 
             try
             {
@@ -145,7 +152,7 @@ namespace Papeleria
                     // Lee una linea e introduce el producto en la lista  hasta llegar a la ultimo
                     while (lVenta != null)
                     {
-                        nVenta = lVenta.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        nVenta = lVenta.Split(separador, StringSplitOptions.RemoveEmptyEntries);
 
                         compras.Add(new Compra(OrdenarFecha(nVenta[0]), Int32.Parse(nVenta[1]), Convert.ToDouble(nVenta[2]),
                                     Buscar(nVenta[4]), Buscar(Int32.Parse(nVenta[7]))));
@@ -231,23 +238,13 @@ namespace Papeleria
         }
 
         // Devuelve una Lista string de los nombres de clientes
-        public static List<string> ListaNombresClientes()
+        public static List<string> ListaDatosClientes()
         {
-            List<string> nombres = new List<string>();
+            List<string> listaDatos = new List<string>();
             foreach (Cliente c in clientes)
-                nombres.Add(c.nombre);
+                listaDatos.Add(c.dni+separador[0]+c.nombre);
 
-            return nombres;
-        }
-
-        // Devuelve una Lista string de los DNI de clientes
-        public static List<string> ListaDNIClientes()
-        {
-            List<string> dni = new List<string>();
-            foreach (Cliente c in clientes)
-                dni.Add(c.dni);
-
-            return dni;
+            return listaDatos;
         }
 
         // Devuelve una lista con las compras realizadas en el mes indicado

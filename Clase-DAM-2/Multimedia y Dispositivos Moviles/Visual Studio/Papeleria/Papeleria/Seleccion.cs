@@ -12,26 +12,25 @@ namespace Papeleria
 {
     public partial class Seleccion : Form
     {
-        private int cliente;
-        private List<string> nClientes;
-        private List<string> dClientes;
+        private int eleccion;
+        private string datos;
 
-        public Seleccion()
+
+        public Seleccion(string datos)
         {
             InitializeComponent();
-            cliente = -1;
-            this.nClientes = Datos.ListaNombresClientes();
-            this.dClientes = Datos.ListaDNIClientes();
+            eleccion = -1;
+            this.datos = datos;
         }
 
-        public int Cliente { get { return cliente; } }
+        public int Eleccion { get { return eleccion; } }
 
         // Registra el cliente que hace la compra 
         private void dgvSeleccionCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSeleccionCliente.SelectedRows.Count > 0)
             {
-                cliente = e.RowIndex;
+                eleccion = e.RowIndex;
                 this.Visible = false;
             }
         }
@@ -39,8 +38,37 @@ namespace Papeleria
         // Carga los DNI y Nombres de los clientes
         private void SeleccionClientes_Load(object sender, EventArgs e)
         {
-            for (int i =0; i<nClientes.Count();i++)
-                dgvSeleccionCliente.Rows.Add(dClientes[i], nClientes[i]);
+
+            if (datos.Equals(Datos.CLIENTE))
+            {
+                dgvSeleccionCliente.Columns[0].HeaderText = "Codigo";
+                dgvSeleccionCliente.Columns[1].HeaderText = "Cliente";
+                dgvSeleccionCliente.Columns[1].Visible = true;
+                string[] datosMostrar;
+
+                foreach (string s in Datos.ListaDatosClientes())
+                {
+                    datosMostrar = s.Split(Datos.Separador, StringSplitOptions.RemoveEmptyEntries);
+                    dgvSeleccionCliente.Rows.Add(datosMostrar[0], datosMostrar[1]);
+                }
+            }
+            else if (datos.Equals(Datos.PRODUCTO))
+            {
+                dgvSeleccionCliente.Columns[0].HeaderText = "Codigo";
+                dgvSeleccionCliente.Columns[1].HeaderText = "Producto";
+                dgvSeleccionCliente.Columns[1].Visible = true;
+                foreach (Producto p in Datos.Productos)
+                    dgvSeleccionCliente.Rows.Add(p.codigo, p.nombre);
+            }
+            else if (datos.Equals(Datos.MES))
+            {
+                dgvSeleccionCliente.Columns[0].HeaderText = "Mes";
+                dgvSeleccionCliente.Columns[1].Visible = false;
+
+                foreach (string s in Datos.meses)
+                    dgvSeleccionCliente.Rows.Add(s);
+            }
+                
         }
     }
 }

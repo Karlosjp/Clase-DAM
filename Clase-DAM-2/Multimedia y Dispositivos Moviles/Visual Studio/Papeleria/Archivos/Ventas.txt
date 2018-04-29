@@ -2,3 +2,5 @@
 28/04/2018:2:5:Cliente2:26345678:Consumible5:Consumible:5:5:1:10/11/2000
 28/04/2018:3:10:Cliente6:62345678:Reprografia2:Reprografia:7:10:Aluminio:Verde:Fabricante2
 28/04/2018:4:4:Cliente5:53345678:Accesorio4:Accesorio:14:4:1:Algodon
+29/04/2018:1:50:Cliente2:26345678:Consumible1:Consumible:1:50:15:20/03/2018
+29/04/2018:1:10:Cliente7:71345678:Consumible2:Consumible:2:10:4:11/07/2008
