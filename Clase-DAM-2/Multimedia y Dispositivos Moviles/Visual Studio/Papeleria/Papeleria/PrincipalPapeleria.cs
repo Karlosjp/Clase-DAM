@@ -43,7 +43,7 @@ namespace Papeleria
 
             foreach (Compra compra in lista)
                 dgvPrincipal.Rows.Add(compra.fecha.ToShortDateString(), compra.codigoCompra, compra.compraCliente.dni,
-                    compra.compraCliente.nombre, compra.pComprado.codigo, compra.pComprado.tipo, compra.pComprado.nombre, compra.pComprado.precio);
+                    compra.compraCliente.nombre, compra.pComprado.codigo, compra.pComprado.tipo, compra.pComprado.nombre, compra.importe);
         }
 
         private void gridPrincipal(List<Producto> lista, string[] nombreCabecera, string modo)
@@ -63,6 +63,8 @@ namespace Papeleria
         // Muestra datos en el grid secunadrio
         private void gridSecundario()
         {
+            dgvSecunadario.Visible = true;
+
             if (sele > -1 && face.Equals(Datos.PRODUCTO))
             {
                 mostrar(dgvSecunadario, false, dgvSecunadario.ColumnCount);
@@ -198,6 +200,7 @@ namespace Papeleria
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gridPrincipal(Datos.Productos, Datos.producto, Datos.PRODUCTO);
+            gridSecundario();
             if (dgvPrincipal.Rows.Count == 1)
                 MessageBox.Show("No se encontraron productos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
@@ -323,8 +326,7 @@ namespace Papeleria
             if (!(sc.Eleccion == -1))
             {
                 p.EliminarCliente(Datos.Clientes[sc.Eleccion].dni);
-                dgvPrincipal.Rows.Clear();
-                dgvSecunadario.Rows.Clear();
+                mostrar();
             }
             else
                 MessageBox.Show("No se ha escogido cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -347,7 +349,7 @@ namespace Papeleria
                 if (sc.Modificacion(ref importe, ref fecha))
                 {
                     p.ModificarCompra(Convert.ToInt32(dgvPrincipal.Rows[sele].Cells[1].Value.ToString()), fecha, Convert.ToDouble(importe));
-                    MessageBox.Show("Operacion realizada con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Operacion realizada con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                     mostrar();
                 }

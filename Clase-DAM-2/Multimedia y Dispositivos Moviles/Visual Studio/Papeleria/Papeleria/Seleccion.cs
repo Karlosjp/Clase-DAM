@@ -109,6 +109,7 @@ namespace Papeleria
         // Carga los DNI y Nombres de los clientes
         private void SeleccionClientes_Load(object sender, EventArgs e)
         {
+            btSalir.Visible = false;
             dgvSeleccionCliente.Visible = false;
             tbImporte.Visible = false;
             lbFecha.Visible = false;
@@ -130,6 +131,7 @@ namespace Papeleria
         // Hace visible los campos para las modificaciones
         private void Modificacion()
         {
+            btSalir.Visible = true;
             tbImporte.Visible = true;
             lbFecha.Visible = true;
             lbImporte.Visible = true;
