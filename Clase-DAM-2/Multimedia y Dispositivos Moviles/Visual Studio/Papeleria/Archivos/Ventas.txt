@@ -1,5 +1,5 @@
 8
 29/04/2018:5:50:Cliente5:53345678:Consumible1:Consumible:1:50:15:20/03/2018
 29/04/2018:6:50:Cliente6:62345678:Consumible1:Consumible:1:50:15:20/03/2018
-29/04/2018:7:50:Cliente5:53345678:Consumible1:Consumible:1:50:15:20/03/2018
-29/04/2018:8:50:Cliente4:44345678:Consumible1:Consumible:1:50:15:20/03/2018
+22/04/2018:7:50:Cliente5:53345678:Consumible1:Consumible:1:50:15:20/03/2018
+29/04/2018:8:25:Cliente4:44345678:Consumible1:Consumible:1:50:15:20/03/2018

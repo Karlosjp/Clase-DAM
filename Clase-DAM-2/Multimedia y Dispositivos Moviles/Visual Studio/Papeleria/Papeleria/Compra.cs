@@ -8,6 +8,8 @@ namespace Papeleria
 {
     class Compra
     {
+        public double importe;
+
         public Compra()
         {
             pComprado = new Producto();
@@ -31,7 +33,11 @@ namespace Papeleria
         public DateTime fecha { get; set; }
 
         // Cambia y devuelve el importe de la compra
-        public double importe { set; get; }
+        public double Importe
+        {
+            get { return importe; }
+            set { importe = value; }
+        }
 
         // Devuelve el codigo de la compra
         public int codigoCompra { get; }

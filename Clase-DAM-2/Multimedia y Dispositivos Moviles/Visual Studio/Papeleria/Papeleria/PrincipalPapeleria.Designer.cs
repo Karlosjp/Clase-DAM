@@ -48,9 +48,6 @@
             this.clienteToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fechaDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fechaImporteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPrincipal = new System.Windows.Forms.DataGridView();
             this.pColumna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pColumna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -211,32 +208,10 @@
             // 
             // modificarToolStripMenuItem1
             // 
-            this.modificarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fechaDeCompraToolStripMenuItem1,
-            this.importeToolStripMenuItem1,
-            this.fechaImporteToolStripMenuItem1});
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
             this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
-            // 
-            // fechaDeCompraToolStripMenuItem1
-            // 
-            this.fechaDeCompraToolStripMenuItem1.Name = "fechaDeCompraToolStripMenuItem1";
-            this.fechaDeCompraToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.fechaDeCompraToolStripMenuItem1.Text = "Fecha de Compra";
-            // 
-            // importeToolStripMenuItem1
-            // 
-            this.importeToolStripMenuItem1.Name = "importeToolStripMenuItem1";
-            this.importeToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.importeToolStripMenuItem1.Text = "Importe";
-            // 
-            // fechaImporteToolStripMenuItem1
-            // 
-            this.fechaImporteToolStripMenuItem1.Name = "fechaImporteToolStripMenuItem1";
-            this.fechaImporteToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.fechaImporteToolStripMenuItem1.Text = "Fecha/Importe";
             // 
             // dgvPrincipal
             // 
@@ -386,9 +361,6 @@
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fechaDeCompraToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem importeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fechaImporteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consumibleToolStripMenuItem;

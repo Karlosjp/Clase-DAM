@@ -22,6 +22,7 @@ namespace Papeleria
         public const string PRODUCTO = "Producto";
         public const string CLIENTE = "Cliente";
         public const string MES = "Mes";
+        public const string MODIFICACION = "Modificacion";
         public static readonly string[] meses = new string[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Nobiembre", "Diciembre"};
         public static readonly string[] producto = new string[] { "Nombre", "Tipo", "Código", "Precio" };
         public static readonly string[] consumible = new string[] { "Fecha Fabricación", "Peso" };

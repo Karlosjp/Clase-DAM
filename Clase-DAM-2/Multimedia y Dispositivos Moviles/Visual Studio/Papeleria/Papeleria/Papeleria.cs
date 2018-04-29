@@ -84,10 +84,12 @@ namespace Papeleria
             foreach (Compra c in Datos.Compras)
                 if (c.codigoCompra == codigo)
                 {
-                    if (nFecha != null)
-                        c.fecha = nFecha;
+                    c.fecha = nFecha;
+
                     if (nImporte > -1)
                         c.importe = nImporte;
+
+                    break;
                 }
         }
 

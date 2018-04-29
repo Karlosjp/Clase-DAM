@@ -191,7 +191,7 @@ namespace Papeleria
                 else
                     MessageBox.Show("No hay productos para borrar ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
-                    MessageBox.Show("Para eliminar primero muestre las compras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Para eliminar primero muestre las compras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         // Muestra los productos en el grid
@@ -333,18 +333,27 @@ namespace Papeleria
         // Modifica fecha y/o importe de una compra seleccionada
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Selecciona un cliente ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            sc.datos = Datos.CLIENTE;
-            sc.ShowDialog();
-
-            if (!(sc.Eleccion == -1))
+            if (face == Datos.VENTAS)
             {
-                p.EliminarCliente(Datos.Clientes[sc.Eleccion].dni);
-                dgvPrincipal.Rows.Clear();
-                dgvSecunadario.Rows.Clear();
+                string importe = dgvPrincipal.Rows[sele].Cells[7].Value.ToString();
+                DateTime fecha = Datos.OrdenarFecha(dgvPrincipal.Rows[sele].Cells[0].Value.ToString());
+                MessageBox.Show("Indique nueva fecha y/o importe para la compra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                sc.datos = Datos.MODIFICACION;
+                sc.Modificacion(importe, fecha);
+
+                sc.ShowDialog();
+
+                if (sc.Modificacion(ref importe, ref fecha))
+                {
+                    p.ModificarCompra(Convert.ToInt32(dgvPrincipal.Rows[sele].Cells[1].Value.ToString()), fecha, Convert.ToDouble(importe));
+                    MessageBox.Show("Operacion realizada con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    mostrar();
+                }
+                else
+                    MessageBox.Show("No hay cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            else
-                MessageBox.Show("No se ha escogido cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }
