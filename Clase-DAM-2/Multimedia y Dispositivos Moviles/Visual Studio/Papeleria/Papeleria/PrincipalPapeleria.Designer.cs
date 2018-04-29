@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            Datos.GuardarVentas();
+            Datos.GuardarVentas(p.CodCompra);
             base.Dispose(disposing);
         }
 
@@ -41,6 +41,9 @@
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.totalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.porTipoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consumibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprografiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accesorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +59,12 @@
             this.pColumna5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pColumna6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pColumna7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pColumna8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.papeleriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvSecunadario = new System.Windows.Forms.DataGridView();
             this.columna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consumibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reprografiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accesorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.papeleriaBindingSource)).BeginInit();
@@ -126,15 +127,16 @@
             // compraToolStripMenuItem1
             // 
             this.compraToolStripMenuItem1.Name = "compraToolStripMenuItem1";
-            this.compraToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem1.Text = "Compra";
             this.compraToolStripMenuItem1.Click += new System.EventHandler(this.compraToolStripMenuItem1_Click);
             // 
             // clienteToolStripMenuItem2
             // 
             this.clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-            this.clienteToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.clienteToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.clienteToolStripMenuItem2.Text = "Cliente";
+            this.clienteToolStripMenuItem2.Click += new System.EventHandler(this.clienteToolStripMenuItem2_Click);
             // 
             // clienteToolStripMenuItem1
             // 
@@ -164,6 +166,27 @@
             this.porTipoToolStripMenuItem1.Name = "porTipoToolStripMenuItem1";
             this.porTipoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.porTipoToolStripMenuItem1.Text = "Por tipo";
+            // 
+            // consumibleToolStripMenuItem
+            // 
+            this.consumibleToolStripMenuItem.Name = "consumibleToolStripMenuItem";
+            this.consumibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consumibleToolStripMenuItem.Text = "Consumible";
+            this.consumibleToolStripMenuItem.Click += new System.EventHandler(this.consumibleToolStripMenuItem_Click);
+            // 
+            // reprografiaToolStripMenuItem
+            // 
+            this.reprografiaToolStripMenuItem.Name = "reprografiaToolStripMenuItem";
+            this.reprografiaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reprografiaToolStripMenuItem.Text = "Reprografia";
+            this.reprografiaToolStripMenuItem.Click += new System.EventHandler(this.reprografiaToolStripMenuItem_Click);
+            // 
+            // accesorioToolStripMenuItem
+            // 
+            this.accesorioToolStripMenuItem.Name = "accesorioToolStripMenuItem";
+            this.accesorioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accesorioToolStripMenuItem.Text = "Accesorio";
+            this.accesorioToolStripMenuItem.Click += new System.EventHandler(this.accesorioToolStripMenuItem_Click);
             // 
             // porMesToolStripMenuItem1
             // 
@@ -195,6 +218,7 @@
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
             this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
+            this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
             // fechaDeCompraToolStripMenuItem1
             // 
@@ -224,7 +248,8 @@
             this.pColumna4,
             this.pColumna5,
             this.pColumna6,
-            this.pColumna7});
+            this.pColumna7,
+            this.pColumna8});
             this.dgvPrincipal.Location = new System.Drawing.Point(12, 63);
             this.dgvPrincipal.Name = "dgvPrincipal";
             this.dgvPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -277,6 +302,13 @@
             this.pColumna7.ReadOnly = true;
             this.pColumna7.Visible = false;
             // 
+            // pColumna8
+            // 
+            this.pColumna8.HeaderText = "Columna8";
+            this.pColumna8.Name = "pColumna8";
+            this.pColumna8.ReadOnly = true;
+            this.pColumna8.Visible = false;
+            // 
             // dgvSecunadario
             // 
             this.dgvSecunadario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -309,27 +341,6 @@
             this.columna3.Name = "columna3";
             this.columna3.ReadOnly = true;
             this.columna3.Visible = false;
-            // 
-            // consumibleToolStripMenuItem
-            // 
-            this.consumibleToolStripMenuItem.Name = "consumibleToolStripMenuItem";
-            this.consumibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.consumibleToolStripMenuItem.Text = "Consumible";
-            this.consumibleToolStripMenuItem.Click += new System.EventHandler(this.consumibleToolStripMenuItem_Click);
-            // 
-            // reprografiaToolStripMenuItem
-            // 
-            this.reprografiaToolStripMenuItem.Name = "reprografiaToolStripMenuItem";
-            this.reprografiaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.reprografiaToolStripMenuItem.Text = "Reprografia";
-            this.reprografiaToolStripMenuItem.Click += new System.EventHandler(this.reprografiaToolStripMenuItem_Click);
-            // 
-            // accesorioToolStripMenuItem
-            // 
-            this.accesorioToolStripMenuItem.Name = "accesorioToolStripMenuItem";
-            this.accesorioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.accesorioToolStripMenuItem.Text = "Accesorio";
-            this.accesorioToolStripMenuItem.Click += new System.EventHandler(this.accesorioToolStripMenuItem_Click);
             // 
             // PrincipalPapeleria
             // 
@@ -380,6 +391,9 @@
         private System.Windows.Forms.ToolStripMenuItem fechaImporteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consumibleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reprografiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accesorioToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna1;
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna2;
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna3;
@@ -387,9 +401,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna5;
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna6;
         private System.Windows.Forms.DataGridViewTextBoxColumn pColumna7;
-        private System.Windows.Forms.ToolStripMenuItem consumibleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reprografiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accesorioToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pColumna8;
     }
 }
 

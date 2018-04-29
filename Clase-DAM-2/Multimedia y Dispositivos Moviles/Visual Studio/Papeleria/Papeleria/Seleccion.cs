@@ -13,17 +13,18 @@ namespace Papeleria
     public partial class Seleccion : Form
     {
         private int eleccion;
-        private string datos;
+        Papeleria p;
 
-
-        public Seleccion(string datos)
+        public Seleccion()
         {
             InitializeComponent();
+            p = new Papeleria();
             eleccion = -1;
-            this.datos = datos;
+            this.datos = "";
         }
 
         public int Eleccion { get { return eleccion; } }
+        public string datos { get; set; }
 
         // Registra el cliente que hace la compra 
         private void dgvSeleccionCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -38,6 +39,7 @@ namespace Papeleria
         // Carga los DNI y Nombres de los clientes
         private void SeleccionClientes_Load(object sender, EventArgs e)
         {
+            dgvSeleccionCliente.Rows.Clear();
 
             if (datos.Equals(Datos.CLIENTE))
             {
@@ -46,7 +48,7 @@ namespace Papeleria
                 dgvSeleccionCliente.Columns[1].Visible = true;
                 string[] datosMostrar;
 
-                foreach (string s in Datos.ListaDatosClientes())
+                foreach (string s in p.ListaDatosClientes())
                 {
                     datosMostrar = s.Split(Datos.Separador, StringSplitOptions.RemoveEmptyEntries);
                     dgvSeleccionCliente.Rows.Add(datosMostrar[0], datosMostrar[1]);
