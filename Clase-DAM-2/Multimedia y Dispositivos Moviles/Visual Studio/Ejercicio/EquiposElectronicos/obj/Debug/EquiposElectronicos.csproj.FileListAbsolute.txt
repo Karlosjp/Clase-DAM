@@ -1,6 +1,0 @@
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\bin\Debug\EquiposElectronicos.exe.config
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\bin\Debug\EquiposElectronicos.exe
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\bin\Debug\EquiposElectronicos.pdb
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\obj\Debug\EquiposElectronicos.csprojResolveAssemblyReference.cache
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\obj\Debug\EquiposElectronicos.exe
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\EquiposElectronicos\obj\Debug\EquiposElectronicos.pdb

@@ -1,9 +1,0 @@
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\bin\Debug\Ejercicios cadena.exe.config
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\bin\Debug\Ejercicios cadena.exe
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\bin\Debug\Ejercicios cadena.pdb
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\obj\Debug\Ejercicios cadena.exe
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\obj\Debug\Ejercicios cadena.pdb
-C:\Users\Carlos\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\obj\Debug\Ejercicios cadena.csprojResolveAssemblyReference.cache
-Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\bin\Debug\Ejercicios cadena.exe.config
-Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\obj\Debug\Ejercicios cadena.exe
-Z:\Git\Clase-DAM\Clase-DAM-2\Multimedia y Dispositivos Moviles\Visual Studio\Ejercicio\Ejercicios cadena\obj\Debug\Ejercicios cadena.pdb
