@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clasificacion-seres-vivos>
+    <animales>
+        <vertebrados>
+            <nombre>Mamiferos</nombre>
+            <nombre>Reptiles</nombre>
+            <nombre>Peces</nombre>
+            <nombre>Pajaros</nombre>
+            <nombre>Anfibios</nombre>
+        </vertebrados>
+        <invertebrados>
+            <nombre>Moluscos</nombre>
+            <nombre>Celetéreos</nombre>
+            <nombre>Poríferos</nombre>
+            <nombre>Equinodermos</nombre>
+            <nombre>Antrópodo</nombre>
+            <nombre>Anélidos</nombre>
+        </invertebrados>
+    </animales>
+    <plantas>
+        <consemillas>
+            <nombre>Plantas con flor</nombre>
+            <nombre>Coniferas</nombre>
+        </consemillas>
+        <sinsemillas>
+            <nombre>Helechos</nombre>
+            <nombre>Musgos</nombre>
+        </sinsemillas>
+    </plantas>
+    <otros>
+        <nombre>Reino de las moneras</nombre>
+        <nombre>Reino de los hongos</nombre>
+        <nombre>Reino de los protistas</nombre>
+    </otros>
+</clasificacion-seres-vivos>
