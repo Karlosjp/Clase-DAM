@@ -12,14 +12,30 @@ li{
   list-style: none;
 }
 
+ul{
+  display: flex;
+  justify-content: space-around;
+}
+
 /*poner color azul al cuerpo */
 body {
-  background-color: blue;
+  color: blue;
+}
+main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.lateral{
+  width: 10%;
+}
+.principal{
+  width: 85%;
 }
 
 /*poner la cabecera a rojo y texto justificado al centro */
 header{
-  background-color: red;
+  color: red;
   text-align: center;
 }
 
