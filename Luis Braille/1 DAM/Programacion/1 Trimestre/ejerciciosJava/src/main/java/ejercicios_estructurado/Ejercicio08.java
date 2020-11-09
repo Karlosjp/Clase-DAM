@@ -1,5 +1,9 @@
+package ejercicios_estructurado;
 
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,11 +15,10 @@ import java.io.IOException;
  *
  * @author Carlos Jaquez
  */
-public class Ejercicio11 {
+public class Ejercicio08 {
     public static void main(String[] args) throws IOException {
-        
-        for (int i = 1; i <= 10; i++) 
-            for (int j = 0; j <= 10; j++) 
-                System.out.println( i +" x " + j + " = " + i*j);
+        for (int i = 100; i > 0; i -=5) {
+            System.out.println("Numero: " + i);
+        }
     }
 }

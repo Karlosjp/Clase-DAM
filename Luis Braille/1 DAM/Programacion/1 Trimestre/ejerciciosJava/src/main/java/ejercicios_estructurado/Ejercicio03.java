@@ -1,8 +1,21 @@
+package ejercicios_estructurado;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ejercicio3 {
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Carlos Jaquez
+ */
+public class Ejercicio03 {
     public static void main(String[] args) throws IOException {
         int num = 0, inverso = 0, resto = 0;
         BufferedReader bufLectura = new BufferedReader(new InputStreamReader(System.in));
