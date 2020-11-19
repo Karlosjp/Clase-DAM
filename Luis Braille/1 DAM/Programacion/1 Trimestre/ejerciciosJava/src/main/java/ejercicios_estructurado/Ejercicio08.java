@@ -1,9 +1,7 @@
 package ejercicios_estructurado;
 
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

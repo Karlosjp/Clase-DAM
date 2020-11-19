@@ -1,10 +1,9 @@
-import java.io.BufferedReader;
+package ejercicios_diagramas;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Ejercicio9 {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufLectura = new BufferedReader(new InputStreamReader(System.in));
         int seg = 0, min = 0, hora=0;
         boolean nDia = false;
 

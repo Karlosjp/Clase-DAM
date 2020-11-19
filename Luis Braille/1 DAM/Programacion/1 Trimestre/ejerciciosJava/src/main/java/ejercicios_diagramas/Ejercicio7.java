@@ -1,6 +1,6 @@
-import java.io.BufferedReader;
+package ejercicios_diagramas;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Ejercicio7 {
     public static void main(String[] args) throws IOException {
