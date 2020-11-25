@@ -1,0 +1,121 @@
+body{
+    background-image: url("../img/Fondo2.png");
+    background-size: 100%;
+    background-color: lightblue;
+}
+
+footer{
+    justify-content: flex-end;
+    text-align: right;
+    margin-top: 2.5em;
+}
+
+footer p{
+    margin: auto;
+}
+
+div.title{
+    background-color: #fff;
+    width: 100%;
+    opacity: 0.6;
+}
+
+div.title p{
+    color: #005900;
+    font-size: 2.6em;
+    text-align: center;
+    margin: auto;
+}
+
+nav{
+    padding: 0.2em 1em 0 2em;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li{
+    list-style: none;
+    font-size: 2em;
+}
+
+article div.img{
+    display: flex;
+    justify-content: center;
+}
+
+section img{
+    width: 80%;
+}
+
+.gb{
+    height: 10em;
+    padding-bottom: 1em;
+}
+
+.cs{
+    height: 15em;
+}
+
+.aside-box{
+    box-shadow: 5px 10px 8px grey;
+    border-radius: 1em;
+    align-self: flex-end;
+    border: 0.12em groove black;
+    background-color: #fff;
+}
+
+aside{
+    width: 23em;
+    margin-bottom: 2em;
+}
+
+aside p {
+    margin: 0.5em;
+}
+
+.aside-bs{
+    color: darkviolet;
+    display: flex;
+    flex-direction: column;
+}
+
+audio{
+    height: 2em;
+}
+
+.contact{
+    align-self: flex-end;
+    padding: 0 0.5em 1em 0;
+
+}
+
+.flex{
+    display: flex;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.fsize5{
+    font-size: 1.3em;
+}
+
+.fsize3{
+    font-size: 1em;
+}
+
+.fsize0{
+    font-size: 0.9em;
+}
+
+.logo{
+    width: 15em;
+    height: 6em;
+}
