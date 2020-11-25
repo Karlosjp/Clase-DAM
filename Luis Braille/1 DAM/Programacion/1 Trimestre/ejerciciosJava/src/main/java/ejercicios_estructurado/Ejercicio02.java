@@ -24,10 +24,9 @@ public class Ejercicio02 {
 
         if(num > 0 && num < 9999){
             while(num != 0){
-                resto = num % 10;
+                resto = num % 10; 
                 inverso = inverso * 10 + resto;
                 num /= 10;
-                System.out.println("El resultado es  " + resto);
             }
             System.out.println("El resultado es  " + inverso);
         }
