@@ -9,7 +9,7 @@ public class Linea {
 		this.p2 = p2;
 	}
 	
-	public String getLinea(){
-		return "Línea formada por los puntos " + p1.getPunto() + " y " + p2.getPunto();
+	public String toString(){
+		return "Línea formada por los puntos " + p1.toString() + " y " + p2.toString();
 	}
 }

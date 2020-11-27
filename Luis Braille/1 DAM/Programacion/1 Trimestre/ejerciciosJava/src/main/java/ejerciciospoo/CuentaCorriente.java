@@ -27,7 +27,7 @@ public class CuentaCorriente {
 	/*
 	 * Devuelve los datos de la cuenta
 	 */
-	public String datos() {return "Número de cta: " + numCuenta + " Saldo: " + saldo + " €";}
+	public String toString() {return "Número de cta: " + numCuenta + " Saldo: " + saldo + " €";}
 	public void cargo(double cargo) {this.saldo -= cargo;}
 	public void ingreso(double ingreso) {this.saldo += ingreso;}
 	

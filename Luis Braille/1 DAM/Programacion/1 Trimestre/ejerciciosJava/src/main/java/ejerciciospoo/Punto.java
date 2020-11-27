@@ -10,7 +10,7 @@ public class Punto {
 		this.coordenadaY = coordenadaY;
 	}
 	
-	public String getPunto() {
+	public String toString() {
 		return "(" + coordenadaX + ", " + coordenadaY + ")";
 	}
 }

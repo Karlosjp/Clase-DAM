@@ -50,7 +50,7 @@ public class Main {
 	
 	private static void ImprimeDatosCompletos(ArrayList<CuentaCorriente> cuentas){
 		for (CuentaCorriente cuentaCorriente : cuentas) {
-			System.out.println(cuentaCorriente.datos());
+			System.out.println(cuentaCorriente.toString());
 		}
 	}
 	// Fin de Ejercicio 1
@@ -63,7 +63,7 @@ public class Main {
 		Punto p2 = new Punto(-2, 1.66);
 		Linea l = new Linea(p1, p2);
 		
-		System.out.println(l.getLinea());
+		System.out.println(l.toString());
 	}
 	// Fin ejercicio 2
 	
