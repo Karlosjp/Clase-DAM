@@ -27,7 +27,9 @@ public class Main {
 		}
 	}
 	
-	
+	/* 
+	 * Inicio Ejercicio 1
+	 */
 	private static void Ejercicio1() {
 		ArrayList<CuentaCorriente> cuentas = new ArrayList();
 		
@@ -45,6 +47,17 @@ public class Main {
 		cuentas.get(1).transferencia(cuentas.get(2), 100);
 		ImprimeDatosCompletos(cuentas);		
 	}
+	
+	private static void ImprimeDatosCompletos(ArrayList<CuentaCorriente> cuentas){
+		for (CuentaCorriente cuentaCorriente : cuentas) {
+			System.out.println(cuentaCorriente.datos());
+		}
+	}
+	// Fin de Ejercicio 1
+	
+	/*
+	 * Inicio Ejercicio 2
+	 */
 	private static void Ejercicio2() {
 		Punto p1 = new Punto(4.21, 7.3);
 		Punto p2 = new Punto(-2, 1.66);
@@ -52,10 +65,7 @@ public class Main {
 		
 		System.out.println(l.getLinea());
 	}
+	// Fin ejercicio 2
 	
-	private static void ImprimeDatosCompletos(ArrayList<CuentaCorriente> cuentas){
-		for (CuentaCorriente cuentaCorriente : cuentas) {
-			System.out.println(cuentaCorriente.datos());
-		}
-	}
+	
 }
