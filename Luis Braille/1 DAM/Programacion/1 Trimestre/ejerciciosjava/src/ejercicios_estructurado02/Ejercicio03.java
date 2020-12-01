@@ -1,4 +1,4 @@
-package ejercicios_estructurado2;
+package ejercicios_estructurado02;
 
 import java.io.IOException;
 

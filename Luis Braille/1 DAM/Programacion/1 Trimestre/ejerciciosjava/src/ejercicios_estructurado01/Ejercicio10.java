@@ -1,4 +1,4 @@
-package ejercicios_estructurado;
+package ejercicios_estructurado01;
 
 
 import java.io.BufferedReader;
