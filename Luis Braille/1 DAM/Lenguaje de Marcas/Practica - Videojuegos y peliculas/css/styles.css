@@ -87,6 +87,25 @@ nav li {
     height: 2em;
 }
 
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list p {
+    margin: auto;
+}
+
+.list li {
+    height: 8em;
+    margin: 1em;
+}
+
+.list img {
+    width: 15em;
+    height: 6em;
+}
+
 .contact {
     align-self: flex-end;
     padding: 0 0.5em 2em 0;
