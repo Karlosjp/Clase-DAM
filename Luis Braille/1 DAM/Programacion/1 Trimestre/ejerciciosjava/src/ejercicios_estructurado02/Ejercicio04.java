@@ -7,7 +7,7 @@ public class Ejercicio04 {
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
 		int datos, tipo;
-		double b, kb, mb, gb, tb;
+		double kb, mb, gb, tb;
 		
 		System.out.println("Escribe cantidad de datos:");
 		datos = scn.nextInt();
