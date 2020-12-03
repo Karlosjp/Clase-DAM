@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojeugos y Peliculas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <base target="_self" rel="noopener noreferrer">
+</head>
+
+<body>
+    <header>
+        <a href="../Index.html">
+            <img src="../img/Logo.jpg" alt="Logo">
+        </a>
+        <div>
+            <div>
+                <p>Videojeugos y Películas</p>
+                <p>Presentación</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../Index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="videojuegosSobrePelis.html">Videojuegos</a>
+                </li>
+                <li>
+                    <a href="busqueda.html">Búsqueda</a>
+                </li>
+                <li>
+                    <a href="planificacion.html">Planitifación</a>
+                </li>
+                <li>
+                    <a href="reseña.html">Reseña</a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <p>Añade reseña de una película o un videojuego</p>
+                <div>
+                    <form>
+                        <div>
+                            <label for="commentator">NOMBRE DEL COMENTARISTA:</label>
+                            <input type="text" name="commentator" id="commentator">
+                        </div>
+                        <div>
+                            <label for="comment">¿QUÉ SE COMENTA?:</label>
+                            <input list="comments" name="comment" id="comment" placeholder="SELECCIONAR:">
+                            <datalist id="comments">
+                                <option value="Película">
+                                <option value="Videojeugo">
+                            </datalist>
+                        </div>
+                        <div>
+                            <label for="nmoviegame">NOMBRE DE LA PELÍCULA O VIDEOJUEGO:</label>
+                            <input type="text" name="nmoviegame" id="nmoviegame">
+                        </div>
+                        <div>
+                            <label for="review">COMENTARIO/RESEÑA</label>
+                            <textarea name="review" id="review" cols="80" rows="7" placeholder="AÑADIR RESEÑA"></textarea>
+                        </div>
+                        <div>
+                            <label for="color">COLOR QUE ASOCIAS:</label>
+                            <input type="color" name="color" id="color">
+                        </div>
+                        <div>
+                            <label for="value">VALOR QUE LE DAS (ENTRE 0 Y 10):</label>
+                            <input type="range" name="0" id="10">
+                        </div>
+                        <div>
+                            <label for="attached">ADJUNTAR UN ARCHIVO:</label>
+                            <input type="file" name="attached" id="attached">
+                        </div>
+                        <div>
+                            <label for="reference">ENLACE DE REFERENCIA:</label>
+                            <input type="url" name="reference" id="reference">
+                        </div>
+                        <div>
+                            <input type="button" value="Enviar">
+                            <input type="button" value="Limpiar">
+                            <input type="button" value="Vista Previa">
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
