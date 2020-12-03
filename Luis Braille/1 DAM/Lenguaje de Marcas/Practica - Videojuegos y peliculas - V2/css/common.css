@@ -6,6 +6,10 @@
     display: flex;
 }
 
+main {
+    margin: 0 2em 2em 2em;
+}
+
 
 /* Titulo de la pagina */
 
@@ -46,11 +50,16 @@ nav li {
     list-style: none;
 }
 
+nav ul {
+    padding: 0;
+}
+
 
 /* Footer de la pagina */
 
 footer {
     text-align: right;
+    margin-bottom: 2em;
 }
 
 footer p {
