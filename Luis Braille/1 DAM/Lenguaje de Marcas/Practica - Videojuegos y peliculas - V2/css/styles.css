@@ -116,3 +116,23 @@ section img {
     margin: auto;
     font-size: 0.8em;
 }
+
+/* Main adaptaciones */
+.description{
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+.list img{
+    width: 15em;
+    height: 6em;
+}
+
+.list ol{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list li {
+    margin: 1em;
+}

@@ -10,6 +10,23 @@ main {
     margin: 0 2em 2em 2em;
 }
 
+.red-link{
+    color: #f00;
+}
+
+.title-sub{
+    color: darkslategrey;
+    font-family: fantasy;
+    margin: auto;
+}
+
+.marginp0 p{
+    margin: auto;
+}
+
+.margintop{
+    margin-top: 3em;
+}
 
 /* Titulo de la pagina */
 
@@ -25,10 +42,6 @@ main {
     font-weight: bold;
     font-family: fantasy;
     flex-grow: 2;
-}
-
-.title p {
-    margin: auto;
 }
 
 .logo {
