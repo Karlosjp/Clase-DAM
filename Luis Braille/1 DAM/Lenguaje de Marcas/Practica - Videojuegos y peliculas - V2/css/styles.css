@@ -136,3 +136,45 @@ section img {
 .list li {
     margin: 1em;
 }
+
+/* Main videojuegosSobrePelis*/
+.container-grid6 {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-gap: 10px;
+}
+
+.item iframe{
+    width: 10em;
+}
+
+.list-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.list-bs{
+    box-shadow: 5px 10px 8px grey;
+    border-radius: 1em;
+    border: 0.12em groove grey;
+    background-color: #fff;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    color: purple;
+    width: 20em;
+    height: 26em;
+    margin-top: 15em;
+}
+
+.list-bs li {
+    font-family: 'Showcard Gothic';
+    text-align: right;
+    list-style: none;
+    margin-right: 0.5em;
+    background-color: aqua;
+}
+
+.list-bs li:first-child {
+    background-color: greenyellow;
+}
