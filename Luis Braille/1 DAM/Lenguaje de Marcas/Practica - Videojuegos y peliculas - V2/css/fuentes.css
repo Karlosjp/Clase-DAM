@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Showcard Gothic";
+    src: url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.eot");
+    src: url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.woff") format("woff"), url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.svg#Showcard Gothic") format("svg");
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.eot");
+    src: url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.woff") format("woff"), url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1e4cd3b720ccabd5a5de545481339e3b.svg#Merriweather") format("svg");
+}
+
+@font-face {
+    font-family: "Palatino Linotype";
+    src: url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.eot");
+    src: url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.woff") format("woff"), url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6a0482275e06b01d85575eb3b9894566.svg#Palatino Linotype") format("svg");
+}
