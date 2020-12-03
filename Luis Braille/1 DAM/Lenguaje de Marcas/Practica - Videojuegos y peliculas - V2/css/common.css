@@ -1,0 +1,63 @@
+@import 'fuentes.css';
+
+/* General */
+
+.container-flex {
+    display: flex;
+}
+
+
+/* Titulo de la pagina */
+
+.title {
+    height: 7em;
+    background-image: url("../img/Fondo1.png");
+}
+
+.title-text {
+    color: darkslategrey;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    font-family: fantasy;
+    flex-grow: 2;
+}
+
+.title p {
+    margin: auto;
+}
+
+.logo {
+    width: 20em;
+    height: 100%;
+}
+
+
+/* Menu lateral */
+
+nav {
+    font-family: fantasy;
+    font-weight: 500;
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+nav li {
+    list-style: none;
+}
+
+
+/* Footer de la pagina */
+
+footer {
+    text-align: right;
+}
+
+footer p {
+    margin: auto;
+    margin-right: 1em;
+}
+
+.italic {
+    font-style: italic;
+}

@@ -3,10 +3,7 @@ body {
     background-image: url("../img/Fondo2.png");
     background-size: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-nav {
-    font-family: fantasy;
+    margin: auto;
 }
 
 .card-title {
@@ -29,6 +26,77 @@ nav {
     font-family: "Palatino Linotype";
 }
 
-.title {
-    color: darkslategrey;
+
+/* Main index */
+
+.resume {
+    border-bottom: 2px inset gainsboro;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+section img {
+    width: 80%;
+}
+
+.gb {
+    height: 15em;
+    padding-bottom: 1em;
+}
+
+.cs {
+    height: 20em;
+}
+
+
+/** Aside (Bandas Sonoras) **/
+
+.box {
+    box-shadow: 5px 10px 8px grey;
+    border-radius: 1em;
+    border: 0.12em groove grey;
+    background-color: #fff;
+    align-self: flex-end;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    color: purple;
+}
+
+.box-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.box-text {
+    margin: 0.5em;
+    font-size: 0.9em;
+}
+
+.box audio {
+    height: 2.5em;
+}
+
+.networks {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 0.5em 2em 0;
+}
+
+.networks img {
+    width: 1.2em;
+    padding: 0 0.3em 0.3em 0;
+    background-color: aqua;
+    margin: auto;
+}
+
+
+/* Main peliSobreVideojuegos */
+
+.container-grid3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }

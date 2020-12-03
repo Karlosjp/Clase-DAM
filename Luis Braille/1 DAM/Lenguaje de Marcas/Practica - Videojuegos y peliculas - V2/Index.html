@@ -6,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videojeugos y Peliculas</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/common.css">
     <base target="_self" rel="noopener noreferrer">
 </head>
 
 <body>
-    <header>
+    <header class="container-flex title">
         <a href="Index.html">
-            <img src="img/Logo.jpg" alt="Logo">
+            <img src="img/Logo.jpg" alt="Logo" class="logo">
         </a>
-        <div>
-            <div>
-                <p>Videojeugos y Películas</p>
-                <p>Presentación</p>
-            </div>
+        <div class="title-text">
+            <p>Vídeojeugos y Películas</p>
+            <p>Presentación</p>
         </div>
     </header>
-    <main>
+    <main class="container-flex">
         <nav>
             <ul>
                 <li>
@@ -43,24 +42,22 @@
         </nav>
         <section>
             <article>
-                <div>
-                    <p>El cine y los vídeojuegos han estado unidos desde el principio de los tiempos como forma de ampliar las historias de las películas y, al mismo tiempo, hacer caja.</p>
-                    <p>Este site vamos a veremos un listado de las mejores vídeojuegos basados en películas obtenido de la referencia <a href="https://www.hobbyconsolas.com/reportajes/mejores-videojuegos-basados-peliculas-171082">Hobbyconsolas</a>.</p>
-                </div>
-                <div>
+                <p class="resume">
+                    El <strong>cine</strong> y los <strong>vídeojuegos</strong> han estado unidos desde el principio de los tiempos como forma de ampliar las historias de las películas y, al mismo tiempo, hacer caja.
+                </p>
+                <p>Este site vamos a veremos un listado de las mejores vídeojuegos basados en películas obtenido de la referencia <a href="https://www.hobbyconsolas.com/reportajes/mejores-videojuegos-basados-peliculas-171082" target="_blank">Hobbyconsolas</a>.</p>
+                <div class="img gb">
                     <img src="img/Juegos 1.jpg" alt="Mejores juegos basados en peliculas">
                 </div>
-                <div>
-                    <p>Y por otra parte las mejores películas sobre vídeojuegos de la referencia <a href="https://www.elcineenlasombra.com/mejores-peliculas-sobre-videojuegos/">Cine en la sombra</a>.</p>
-                </div>
-                <div>
+                <p>Y por otra parte las mejores películas sobre vídeojuegos de la referencia <a href="https://www.elcineenlasombra.com/mejores-peliculas-sobre-videojuegos/" target="_self">Cine en la sombra</a>.</p>
+                <div class="img cs">
                     <img src="img/Juegos 2.jpg" alt="Mejores juegos basados en peliculas">
                 </div>
             </article>
         </section>
-        <aside>
-            <p>Bandas Sonoras</p>
-            <ul>
+        <aside class="box">
+            <p class="box-title">Bandas Sonoras</p>
+            <ul class="box-text">
                 <li>
                     <p>007: Desde Rusia con Amor</p>
                     <audio controls>
@@ -92,20 +89,26 @@
                     </audio>
                 </li>
             </ul>
-            <div>
-                <p>Siguenos en</p>
-                <a href="http://youtube.com"><img src="img/Ico- Youtube.png" alt="Youtube"></a>
-                <a href="http://Twitter.com"><img src="img/Ico - Twitter.png" alt="Twitter"></a>
-                <a href="http://Facebook.com"><img src="img/Ico - Facebook.png" alt="Facebook"></a>
+            <div class="networks">
+                <p>Siguenos en </p>
+                <div class="social">
+                    <a target="_self" href="http://youtube.com">
+                        <img src="img/Ico- Youtube.png" alt="Youtube">
+                    </a>
+                    <a target="_self" href="http://Twitter.com">
+                        <img src="img/Ico - Twitter.png" alt="Twitter">
+                    </a>
+                    <a target="_self" href="http://Facebook.com">
+                        <img src="img/Ico - Facebook.png" alt="Facebook">
+                    </a>
+                </div>
             </div>
         </aside>
     </main>
     <footer>
-        <div>
-            <p>&copy; Propiedad de Carlos Jaquez</p>
-            <p class="italic"><a href="#">IES Luis Braille</a></p>
-            <p><a href="mailto:8260@iesluisbraille.es">8260@iesluisbraille.es</a></p>
-        </div>
+        <p>&copy; Propiedad de Carlos Jaquez</p>
+        <p class="italic"><a href="#">IES Luis Braille</a></p>
+        <p><a href="mailto:8260@iesluisbraille.es">Contacto</a></p>
     </footer>
 </body>
 
