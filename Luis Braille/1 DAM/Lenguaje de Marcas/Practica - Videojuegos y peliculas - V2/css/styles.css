@@ -178,3 +178,12 @@ section img {
 .list-bs li:first-child {
     background-color: greenyellow;
 }
+
+/* Main busqueda */
+.form{
+    background-color: red;
+}
+
+.form-container{
+    background-color: beige;
+}

@@ -17,7 +17,6 @@ main {
 .title-sub{
     color: darkslategrey;
     font-family: fantasy;
-    margin: auto;
 }
 
 .marginp0 p{
@@ -26,6 +25,10 @@ main {
 
 .margintop{
     margin-top: 3em;
+}
+
+.grow{
+    flex-grow: 3;
 }
 
 /* Titulo de la pagina */
