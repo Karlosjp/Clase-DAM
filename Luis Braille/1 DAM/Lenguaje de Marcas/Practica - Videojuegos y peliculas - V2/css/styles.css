@@ -193,10 +193,42 @@ section img {
 
 /* Main busqueda */
 
-.form {
-    background-color: red;
+.finder {
+    display: flex;
+    justify-content: center;
 }
 
 .form-container {
-    background-color: beige;
+    width: 35em;
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 0.5em;
+}
+
+.item-input {
+    background-color: lightgray;
+    border: 2px solid blue;
+    height: 1.3em;
+}
+
+.item-label {
+    background-color: lightgray;
+    border: 2px solid blue;
+    height: 1.3em;
+}
+
+.form-button {
+    grid-column: 2;
+    margin: 1em 0 0 5em;
+}
+
+.form-button a {
+    color: black;
+    text-decoration: none;
+    border: 1px solid blue;
+    background-color: lightgray;
+    padding: 0 0.2em;
+    border-radius: 1em;
+    font-weight: 600;
 }
