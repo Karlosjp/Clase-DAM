@@ -10,26 +10,27 @@ main {
     margin: 0 2em 2em 2em;
 }
 
-.red-link{
+.red-link {
     color: #f00;
 }
 
-.title-sub{
+.title-sub {
     color: darkslategrey;
     font-family: fantasy;
 }
 
-.marginp0 p{
+.marginp0 p {
     margin: auto;
 }
 
-.margintop{
+.margintop {
     margin-top: 3em;
 }
 
-.grow{
+.grow {
     flex-grow: 3;
 }
+
 
 /* Titulo de la pagina */
 
@@ -49,7 +50,7 @@ main {
 
 .logo {
     width: 20em;
-    height: 100%;
+    height: 7em;
 }
 
 
