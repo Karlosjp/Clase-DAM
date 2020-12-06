@@ -191,7 +191,7 @@ section img {
 }
 
 
-/* Main busqueda */
+/* Main busqueda y planificacion*/
 
 .finder {
     display: flex;
@@ -212,12 +212,6 @@ section img {
     height: 1.3em;
 }
 
-.item-label {
-    background-color: lightgray;
-    border: 2px solid blue;
-    height: 1.3em;
-}
-
 .form-button {
     grid-column: 2;
     margin: 1em 0 0 5em;
@@ -231,4 +225,105 @@ section img {
     padding: 0 0.2em;
     border-radius: 1em;
     font-weight: 600;
+}
+
+.plan {
+    background-color: darkslateblue;
+    display: flex;
+}
+
+.plan-form {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    box-shadow: 5px 10px 8px grey;
+    background-color: rgb(165, 112, 129);
+    border-radius: 1em;
+    padding: 0 0.3em 2em;
+    margin-top: 2.5em;
+    font-family: 'Showcard Gothic';
+}
+
+.plan-datalist {
+    margin: 1em;
+    justify-self: center;
+}
+
+.plan-button {
+    justify-self: center;
+    border: 1px solid whitesmoke;
+    background-color: rgb(231, 154, 124);
+    padding: 0.1em 0.8em;
+}
+
+.plan-button a {
+    text-decoration: none;
+    color: red;
+}
+
+.plan-button:hover {
+    background-color: rgb(236, 199, 185);
+}
+
+.datalist-input {
+    width: 2.5em;
+    height: 2em;
+    background-color: lightgray;
+    font-family: 'Showcard Gothic';
+    text-align: right;
+}
+
+.plan-ver {
+    margin-top: 2.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plan-ver a {
+    text-decoration: none;
+    color: rgb(224, 44, 44);
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.plan-ver a:hover {
+    background-color: rgb(231, 154, 124);
+    box-shadow: 2px 1px 2px blue;
+    color: purple;
+}
+
+.plan-text {
+    color: white;
+}
+
+
+/* Main planificacion */
+
+.table {
+    border-collapse: collapse;
+    background-color: lightgray;
+    font-weight: 900;
+}
+
+.table td,
+.table th {
+    border: 1px solid blue;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.table th {
+    width: 8em;
+    color: blue;
+    background-color: grey;
+}
+
+.green {
+    background-color: greenyellow;
+    color: white;
+}
+
+.dark {
+    background-color: #000;
+    color: #fff;
 }

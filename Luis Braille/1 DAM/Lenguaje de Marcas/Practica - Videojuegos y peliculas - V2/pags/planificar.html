@@ -40,19 +40,31 @@
                 </li>
             </ul>
         </nav>
-        <section>
-            <p>Planificar dias de la semana</p>
-            <form>
-                <label>SELECCIONE EL NÚMERO DE DÍAS QUE DESEA PLANIFICAR</label>
-                <input list="ndia" name="ndias" id="ndias">
-                <datalist id="ndia">
-                    <option value="1">
-                    <option value="2">
-                    <option value="3">
-                </datalist>
-                <p><a href="./planificacion.html">Aceptar</a></p>
-            </form>
-            <p><a href="./planificacion.html">Ver Planificación</a></p>
+        <section class="grow">
+            <p class="title-sub margintop">Planificar dias de la semana</p>
+            <div class="finder ">
+                <form class="plan-form">
+                    <label class="plan-text">SELECCIONE EL NÚMERO DE DÍAS QUE DESEA PLANIFICAR</label>
+                    <div class="plan-datalist">
+                        <input list="ndia" name="ndias" id="ndias" class="datalist-input">
+                        <datalist id="ndia">
+                                <option value="1">
+                                    <option value="2">
+                                    <option value="3">
+                            </datalist>
+                    </div>
+                    <div class="plan-button">
+                        <a href="./planificacion.html">
+                            Aceptar
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="plan-ver">
+                <a href="./planificacion.html">
+                    Ver Planificación
+                </a>
+            </div>
         </section>
     </main>
     <footer>
