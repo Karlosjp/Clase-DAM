@@ -327,3 +327,60 @@ section img {
     background-color: #000;
     color: #fff;
 }
+
+
+/* Main Reseña*/
+
+.form-review {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 10em auto;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.form-review input,
+.form-review textarea {
+    border: 1px dashed darkslategrey;
+    font-family: 'Showcard Gothic';
+    color: gray;
+}
+
+.form-review .button {
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: black;
+}
+
+.form-review .file {
+    font-size: 1.5em;
+    border: none;
+}
+
+.review {
+    display: flex;
+    justify-content: center;
+}
+
+.form-review input {
+    height: 1.3em;
+}
+
+.form-review .comments {
+    width: 8em;
+}
+
+.form-review .min-width {
+    width: 10em;
+}
+
+.review label {
+    color: darkslategrey;
+    font-family: 'Showcard Gothic';
+}
+
+.item-review {
+    margin-left: 2.5em;
+    grid-column: 2;
+}

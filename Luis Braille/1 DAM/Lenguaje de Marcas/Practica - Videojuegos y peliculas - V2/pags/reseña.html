@@ -40,51 +40,40 @@
                 </li>
             </ul>
         </nav>
-        <section>
+        <section class="grow">
             <article>
-                <p>Añade reseña de una película o un videojuego</p>
-                <div>
-                    <form>
+                <div class="title-sub">
+                    <p>Añade reseña de una película o un videojuego</p>
+
+                </div>
+                <div class="review">
+                    <form class="form-review">
+                        <label for="commentator">NOMBRE DEL COMENTARISTA:</label>
+                        <input type="text" name="commentator" id="commentator">
+                        <label for="comment">¿QUÉ SE COMENTA?:</label>
                         <div>
-                            <label for="commentator">NOMBRE DEL COMENTARISTA:</label>
-                            <input type="text" name="commentator" id="commentator">
-                        </div>
-                        <div>
-                            <label for="comment">¿QUÉ SE COMENTA?:</label>
-                            <input list="comments" name="comment" id="comment" placeholder="SELECCIONAR:">
+                            <input list="comments" name="comment" id="comment" placeholder="SELECCIONAR:" class="comments">
                             <datalist id="comments">
                                 <option value="Película">
                                 <option value="Videojeugo">
                             </datalist>
                         </div>
-                        <div>
-                            <label for="nmoviegame">NOMBRE DE LA PELÍCULA O VIDEOJUEGO:</label>
-                            <input type="text" name="nmoviegame" id="nmoviegame">
-                        </div>
-                        <div>
-                            <label for="review">COMENTARIO/RESEÑA</label>
-                            <textarea name="review" id="review" cols="80" rows="7" placeholder="AÑADIR RESEÑA"></textarea>
-                        </div>
-                        <div>
-                            <label for="color">COLOR QUE ASOCIAS:</label>
-                            <input type="color" name="color" id="color">
-                        </div>
-                        <div>
-                            <label for="value">VALOR QUE LE DAS (ENTRE 0 Y 10):</label>
-                            <input type="range" name="0" id="10">
-                        </div>
-                        <div>
-                            <label for="attached">ADJUNTAR UN ARCHIVO:</label>
-                            <input type="file" name="attached" id="attached">
-                        </div>
-                        <div>
-                            <label for="reference">ENLACE DE REFERENCIA:</label>
-                            <input type="url" name="reference" id="reference">
-                        </div>
-                        <div>
-                            <input type="button" value="Enviar">
-                            <input type="button" value="Limpiar">
-                            <input type="button" value="Vista Previa">
+                        <label for="nmoviegame">NOMBRE DE LA PELÍCULA O VIDEOJUEGO:</label>
+                        <input type="text" name="nmoviegame" id="nmoviegame">
+                        <label for="review">COMENTARIO/RESEÑA</label>
+                        <textarea name="review" id="review" cols="80" rows="7" placeholder="AÑADIR RESEÑA"></textarea>
+                        <label for="color">COLOR QUE ASOCIAS:</label>
+                        <input type="color" name="color" id="color">
+                        <label for="value">VALOR QUE LE DAS (ENTRE 0 Y 10):</label>
+                        <input type="range" name="0" id="10" class="min-width">
+                        <label for="attached">ADJUNTAR UN ARCHIVO:</label>
+                        <input type="file" name="attached" id="attached" class="file">
+                        <label for="reference">ENLACE DE REFERENCIA:</label>
+                        <input type="url" name="reference" id="reference">
+                        <div class="item-review">
+                            <input type="button" value="Enviar" class="button">
+                            <input type="reset" value="Limpiar" class="button">
+                            <input type="button" value="Vista Previa" class="button">
                         </div>
                     </form>
                 </div>
