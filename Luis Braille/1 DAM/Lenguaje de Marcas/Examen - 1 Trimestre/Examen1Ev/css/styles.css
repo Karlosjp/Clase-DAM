@@ -1,0 +1,109 @@
+.logo{
+    width: 5em;
+    height: 3em;
+}
+.img-centro{
+    width: 50em;
+    height: 20em;
+}
+
+nav li {
+    list-style: none;
+    margin: 1em;
+}
+
+.titulo{
+    color: red;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.img-tristeza{
+    width: 20em;
+    height: 10em;
+    float: left;
+    margin-right:1em ;
+}
+
+.titulo-form{
+    color: blueviolet;
+    text-align: center;
+}
+
+.body-form{
+    background-color: beige;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form{
+    background-color: gainsboro;
+    border: 1px solid black;
+}
+
+.form .check{
+    margin-left: 3em;
+}
+.form .radios{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+textarea{
+    background-color: aquamarine;
+}
+
+.button{
+    background-color: blueviolet;
+    color: white;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.form-body div{
+    margin-bottom: 1em;
+}
+
+.beige{
+    background-color: beige;
+}
+
+.big{
+    width: 40em;
+}
+
+.form-link{
+    font-style: italic;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.form-footer{
+    display: flex;
+    justify-content: right;
+}
+
+.table{
+ background-color: white;
+}
+.table th{
+    background-color: gray;
+    color: white;
+}
+.table-title{
+    font-size: 3em;
+}
+.special{
+    background-image: url("../img/fondo.jpg");
+    height: 3em;
+    color: white;
+}

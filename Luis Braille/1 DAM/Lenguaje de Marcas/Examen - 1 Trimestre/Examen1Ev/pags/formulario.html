@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Formulario</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="body-form">
+    <header>
+        <h1 class="titulo-form">Ejercicio de Formulario</h1>
+    </header>
+    <main>
+        <form class="form">
+            <div class="form-body">
+                <label for="dpersonal">Datos Personales</label>
+            <div>
+                <label for="nomape">Nombre y apellidos</label>
+                <input type="text" name="nomape" class="beige big" size="30" required>
+            </div>
+            <div>
+                <label for="email">Correo electrónico</label>
+                <input type="text" name="email" class="beige big" size="30" required>
+            </div>
+            <div>
+                <label for="idioma">Idiomas que hablas:</label>
+                <select name="idioma" id="idioma" multiple>
+                    <option value="castellano">Castellano</option>
+                    <option value="ingles">Inglés</option>
+                    <option value="aleman" selected>Aleman</option>
+                    <option value="frances">Frances</option>
+                    <option value="arabe">Árabe</option>
+                    <option value="chino">Chino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div>
+                <label for="url">URL:</label>
+                <input type="url" name="url" id="url" class="big">
+            </div>
+            <div>
+                <label for="nacimiento">Fecha de nacimiento:</label>
+                <input type="date" name="nacimiento" id="nacimiento">
+            </div>
+            <div>
+                <label for="tlf">Teléfono de contacto:</label>
+                <input type="tel" name="tlf" id="tlf" class="beige">
+            </div>
+            <div>
+                <label for="descripcion">Descripción personal:</label>
+                <textarea name="descripcion" id="descripcion" cols="60" rows="5"></textarea>
+            </div>
+            <div>
+                <label for="conocimiento">Conocimientos de HTML5 y CSS3 (min-10, max 10)</label>
+                <input type="range" name="-10" id="10">
+            </div>
+            <div>
+                <label for="color">Color que te identifica:</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div class="check">
+                <input type="checkbox" name="viajar" id="viajar">
+                <label for="viajar">Dispuesto a viajar portrabajo</label>
+                <div class="radios">
+                    <div>
+                        <input type="radio" name="dentro" id="dentro">
+                        <label for="dentro">Dentro de la Comunidad de Madrid</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="otra" id="otra" >
+                        <label for="otra">A otra provincia</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="otro" id="otro">
+                        <label for="otro">A país europeo</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="estados" id="estados">
+                        <label for="estados">A Estados Unidos</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="latina" id="latina">
+                        <label for="latina">A América latina</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="china" id="china">
+                        <label for="china">A China</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="rusia" id="rusia">
+                        <label for="rusia">A Rusia</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="saudi" id="saudi">
+                        <label for="saudi">A Arabia Saudi</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="cualquier" id="cualquier">
+                        <label for="cualquier">A cualquier sitio</label>
+                    </div>
+                </div>
+            </div>
+            <div class="check">
+                <input type="checkbox" name="mudarte" id="mudarte">
+                <label for="mudarte">Dispuesto a mudarte por trabajo</label>
+                <div class="radios">
+                    <div>
+                        <input type="radio" name="comunidad" id="comunidad">
+                        <label for="comunidad">Dentro de la Comunidad de Madrid</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="provincia" id="provincia">
+                        <label for="privincia">A otra provincia</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="pais" id="pais">
+                        <label for="pais">A otro pais</label>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="button" value="Enviar" class="button">
+                <input type="reset" value="Limpiar" class="button">
+            </div>
+            </div>
+        </form>
+    </main>
+    <footer class="form-footer">
+        <a class="form-link" href="https://www.educa2.madrid.org/web/centro.ies.luisbraille.coslada">IES Luis Braille</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿Ejercicio de Listas, Imágenes...
+Ejercicio Formulario
+Ejercicio Tabla
+Ejercicio Varios
+Texto base de derecha a izquierda
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ratione asperiores aut minima ullam perspiciatis tempora culpa libero pariatur similique, doloribus, aliquid est debitis beatae minus neque eum totam! Voluptate.
+Texto base de derecha a izquierda con parte tachada
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut ratione asperiores aut minima ullam perspiciatis tempora culpa libero pariatur similique, doloribus, aliquid est debitis beatae minus neque eum totam! Voluptate.
+Imagen centrada
+Todo el equipo del revés
+Imagen a la izquierda del texto
+Tristeza a la izquierda
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea autem fugit dolores quos possimus debitis accusamus. Magni voluptates modi possimus, dolor ad maxime sapiente optio harum earum, vel, blanditiis error!
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas at laudantium laborum nihil? Dolores culpa aperiam laborum tempora exercitationem quae nostrum inventore magnam quis! Corrupti ipsa praesentium unde fuga?
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusamus quas tempore accusantium, vitae amet nobis? Molestiae non earum ducimus? Asperiores, minus in. Explicabo aperiam dolore veritatis labore voluptate voluptatibus.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure temporibus illo minima omnis impedit ex veniam accusamus dolores dolor aliquid assumenda sit, magnam repudiandae tempore quia distinctio non debitis rem!
+
+Imágenes con enlaces en una lista de definiciones
+
+HTML es un lenguaje que describe la estructura de un documento web.
+
+Ejemplo:
+
+                                
+                        <section>
+                            <h1>Forest elephants</h1>
+                        </section>
+                        <section>
+                            <h1>Introduction</h1>
+                            <p>In this section, we discuss the lesser known forest elephants. </p>
+                        </section>
+                        <section>
+                            <h1>Habitat</h1>
+                            <p>Forest elephants do not live in trees but among them. </p>
+                        </section>
+                        <aside>
+                            <p>advertising block</p>
+                        </aside>
+                        <footer>
+                            <p>© 2010 The Example company</p>
+                        </footer>
+                                
+                            
+
+CSS es un lenguaje que describe el estilo de un documento HTML.
+
+Ejemplo:
+
+                        h1 {
+                            color:blue;
+                            background-color: white;
+                            text-align: center;
+                          }
+                    
+
+Javascript es un lenguaje de programación del lado cliente.
+
+Ejemplo:
+
+                    
+                        function cambiarColor() {                       
+                            document.body.style.backgroundColor = "#0000FF"; 
+                            }
+                        document.addEventListener("click", cambiarColor);
+                    
+                
