@@ -34,7 +34,7 @@ main {
 
 /* Titulo de la pagina */
 
-.title {
+body header {
     height: 7em;
     background-image: url("../img/Fondo1.png");
 }
