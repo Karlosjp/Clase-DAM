@@ -6,4 +6,5 @@
  *
  */
 module vacacionesnavidad {
+	requires jdk.compiler;
 }
