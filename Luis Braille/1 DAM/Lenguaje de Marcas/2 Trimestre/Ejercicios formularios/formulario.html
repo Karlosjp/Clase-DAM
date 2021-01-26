@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+
+<body>
+    <header></header>
+    <main class="cuerpo">
+        <section>
+            <article class="formulario">
+                <h1>Un formulario en HTML 5</h1>
+                <p>- Ahora con el nuevo estandar HTML 5 validamos sin javascript</p>
+                <p>- HTML 5 incluye nuevas etiquetas para el uso de Formularios</p>
+                <form action="">
+                    <div class="tabla">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="nombre">Nombre:</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">Correo Electrónico</label>
+                                </td>
+                                <td>
+                                    <input type="email" name="email" id="email" placeholder="User@dominio.com" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="url">URL:</label>
+                                </td>
+                                <td>
+                                    <input type="url" name="url" id="url" placeholder="Escribe la URL de tu Web" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fecha">Fecha:</label>
+                                </td>
+                                <td>
+                                    <input type="date" name="fecha" id="fecha">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="tiempo">Tiempo:</label>
+                                </td>
+                                <td>
+                                    <input type="time" name="tiempo" id="tiempo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fechayhora">Fecha y hora Nacto:</label>
+                                </td>
+                                <td>
+                                    <input type="datetime" name="fechayhora" id="fechayhora">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="mes">Mes</label>
+                                </td>
+                                <td>
+                                    <input type="month" name="mes" id="mes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="semana">Semana</label>
+                                </td>
+                                <td>
+                                    <input type="week" name="semana" id="semana">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="num">Num(min -10, max 10):</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="num" id="num" min="-10" max="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="rango">Int (min 0, max 10):</label>
+                                </td>
+                                <td>
+                                    <input type="range" name="rango" id="rango" min="0" max="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="telefono">Teléfono</label>
+                                </td>
+                                <td>
+                                    <input type="tel" name="telefono" id="telefono" pattern="^8|9{9}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="busqueda">Término de búsqueda</label>
+                                </td>
+                                <td>
+                                    <input type="search" name="busqueda" id="busqueda">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="color">Color Favorito:</label>
+                                </td>
+                                <td>
+                                    <input type="color" name="color" id="color">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="botones">
+                        <input type="button" value="enviar">
+                        <input type="reset" value="limpiar">
+                        <input type="button" value="Cerrar">
+                        <input type="submit" value=">>formulario">
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

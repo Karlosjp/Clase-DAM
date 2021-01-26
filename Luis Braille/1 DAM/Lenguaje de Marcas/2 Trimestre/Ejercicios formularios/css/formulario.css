@@ -1,0 +1,36 @@
+article {
+    background-color: burlywood;
+}
+
+table {
+    background-color: rgba(228, 110, 13, 0.582);
+    border: 10px solid darkgoldenrod;
+}
+
+.botones {
+    text-align: center;
+}
+
+.formulario {
+    width: 26em;
+}
+
+.tabla {
+    display: flex;
+    justify-content: center;
+}
+
+.cuerpo {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+article p {
+    font-weight: bold;
+}

@@ -1,0 +1,3 @@
+module pruebastest {
+	requires junit;
+}

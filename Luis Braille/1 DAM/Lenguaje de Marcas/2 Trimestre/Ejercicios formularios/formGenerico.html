@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section>
+            <form action="">
+                <fieldset>
+                    <legend>Inputs básicos</legend>
+                    <h1>CAMPOS DE ENTRADA (INPUT):</h1>
+                    <div>
+                        <label for="ciclo">Ciclo Formativo type="text" (Patrón 3 Letras):</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="oculto">Oculto (type="text"):</label>
+                        <input type="hidden">
+                    </div>
+                    <div>
+                        <label for="clave">Clave (type="password"):</label>
+                        <input type="password">
+                    </div>
+                    <div>
+                        <label for="color">Color (type="color"):</label>
+                        <input type="color">
+                    </div>
+                    <div>
+                        <label for="fecha">Fecha (type="date"):</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label for="fh">Fecha Hora (type="datetime"):</label>
+                        <input type="datetime">
+                    </div>
+                    <div>
+                        <label for="hora">Hora (type="time"):</label>
+                        <input type="time">
+                    </div>
+                    <div>
+                        <label for="mes">Mes (type="mount"):</label>
+                        <input type="mount">
+                    </div>
+                    <div>
+                        <label for="semana">Semana (type="week"):</label>
+                        <input type="week">
+                    </div>
+                    <div>
+                        <label for="email">Correo electrónico (type="email"):</label>
+                        <input type="email">
+                    </div>
+                    <div>
+                        <label for="numero">Número (type="number"):</label>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <label for="rango">Rango (type="range"):</label>
+                        <input type="range" max="20" min="0">
+                    </div>
+                    <div>
+                        <label for="telf">Teléfono (type="tel"):</label>
+                        <input type="tel">
+                    </div>
+                    <div>
+                        <label for="url">Dirección web (type="url"):</label>
+                        <input type="url">
+                    </div>
+                    <div>
+                        <label for="file">Archivo (type="file"):</label>
+                        <input type="file">
+                    </div>
+                    <div>
+                        <label for="image">Imagen (type="image" src="..."):</label>
+                        <input type="image" src="image/libros.gif">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <form action="">
+                <h1>OTROS</h1>
+                <p>
+                    Entrada a partir de datos de una lista, para este control utilizados dos elementos input list="relacion" para recopilar el dato y datalist para indicar posibles valores
+                </p>
+                <div>
+                    <label for="web">Página web (input name="web" list="webs" datalist id="webs"):</label>
+                    <input name="web" list="webs" datalist id="webs" placeholder="Selecciona Uno (Posibles)">
+                </div>
+                <div>
+                    <label for="lista">Elegir de una lista de opciones las provincias</label>
+                    <select name="lista" id="lista">
+                        <option value="madrid">Madrid</option>
+                        <option value="guadalajara">Guadalajara</option>
+                    </select>
+                    <select name="modulos" id="modulos" multiple>
+                        <option value="Apliciones Web">Apliciones Web</option>
+                        <option value="Servicios en Red">Servicios en Red</option>
+                        <option value="Seguridad">Seguridad</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="texto">Área de Texto de 60 de ancho y 10 de alto</label>
+                    <textarea name="texto" id="texto" cols="60" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="check">Casilla de verificación (type="checkbox");</label>
+                    <input type="checkbox" name="check" id="check" checked>
+                </div>
+                <div>
+                    <label for="radio">Radio (type="radio"):</label>
+                    <input type="radio" name="radio" id="radio1">
+                    <label for="1">1</label>
+                    <input type="radio" name="radio" id="radio2">
+                    <label for="1">2</label>
+                    <input type="radio" name="radio" id="radio3">
+                    <label for="1">3</label>
+                </div>
+                <h1>Botones:</h1>
+                <div>
+                    <label for="boton">Botón (type="button"): </label>
+                    <input type="button" value="Pulsar">
+                </div>
+                <div>
+                    <label for="reset">Borrado (type="reset"): </label>
+                    <input type="reset" value="Restablecer">
+                </div>
+                <div>
+                    <label for="enviar">Envio (type="submit"): </label>
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
