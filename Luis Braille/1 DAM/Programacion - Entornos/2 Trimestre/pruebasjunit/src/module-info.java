@@ -1,2 +1,3 @@
 module pruebasjunit {
+	requires junit;
 }
