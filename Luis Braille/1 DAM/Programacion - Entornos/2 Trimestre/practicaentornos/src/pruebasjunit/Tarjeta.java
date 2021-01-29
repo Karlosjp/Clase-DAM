@@ -1,4 +1,4 @@
-package banco;
+package pruebasjunit;
 
 import java.util.Date;
 public abstract class Tarjeta

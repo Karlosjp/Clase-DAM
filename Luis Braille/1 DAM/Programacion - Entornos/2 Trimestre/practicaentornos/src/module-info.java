@@ -1,3 +1,0 @@
-module practicaentornos {
-	requires junit;
-}
