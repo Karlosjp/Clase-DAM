@@ -1,0 +1,108 @@
+p {
+    margin: 0;
+}
+
+form {
+    width: 35em;
+    display: grid;
+    grid-template-columns: auto;
+    background-color: lightgrey;
+    padding: 1em 0 1em 1em;
+    border-bottom: 1px solid lightgray;
+}
+
+select {
+    width: 6em;
+    border: none;
+    background-color: lightgrey;
+    font-weight: bold;
+    color: blue;
+}
+
+.grid-container-11 {
+    width: 36em;
+    display: grid;
+    grid-template-columns: 1.4em 3em 15em 1.4em 1.4em 1.4em 1.4em 1.4em 1.4em 1.4em 1.4em;
+    column-gap: 0.5em;
+    border-bottom: 1px solid gray;
+    align-items: center;
+}
+
+.tabla {
+    width: 36em;
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.1em;
+    border-left: 1px solid lightgray;
+}
+
+.item {
+    text-align: center;
+}
+
+.item2 {
+    grid-column: 1/ 4;
+}
+
+.item2:first-child {
+    margin-left: 1em;
+}
+
+.item:nth-child(3) {
+    text-align: left;
+}
+
+.datos:nth-child(even) {
+    background-color: lightgray;
+}
+
+.datos:nth-child(odd) {
+    background-color: brown;
+}
+
+.datos:nth-child(1) {
+    background-color: transparent;
+    color: black;
+}
+
+.datos:nth-child(3)::first-letter {
+    font-size: 1.5em;
+}
+
+.datos:nth-child(3)::selection {
+    background-color: pink;
+    color: red;
+}
+
+.grid-container-11:nth-child(-n+5) {
+    background-color: blue;
+    color: white;
+}
+
+.grid-container-11:nth-last-child(-n+3) {
+    background-color: red;
+}
+
+.grid-container-11:nth-child(6) {
+    color: orange;
+}
+
+.grid-container-11:nth-child(3n+7) {
+    font-style: italic;
+}
+
+.grid-container-11:nth-child(1) {
+    background-color: white;
+    color: gray;
+    border: 0;
+    height: 2em;
+}
+
+.grid-container-11:nth-child(n+2):hover {
+    font-size: 1.5em
+}
+
+img {
+    width: 2.5em;
+    height: 2.5em;
+}

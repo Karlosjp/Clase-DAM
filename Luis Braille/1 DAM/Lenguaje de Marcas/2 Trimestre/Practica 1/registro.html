@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/registro.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section>
+            <article>
+                <form action="mailto:elmister@elmejor.es">
+                    <fieldset class="grid-container">
+                        <legend>Datos de registro</legend>
+                        <label class="item" for="nombre">Nombre:</label>
+                        <input class="item" type="text" name="username" minlength="3" maxlength="25" pattern="^[A-ZñÑ][a-zñÑ]( ?[a-zñÑ])*" title="Debe compenzar con mayusculas" required>
+                        <label class="item" for="usuario">Usuario:</label>
+                        <input class="item" type="text" name="usuario" id="usuario" required minlength="5" maxlength="10" pattern="^[A-Za-zñÑ][A-Za-z_$0-9ñÑ]" title="Entre 5 y 10 caracteres, sin acentos ni guiones ni empezar por numeros. Se pueden usar Mayusculas, guion bajo (_) y numeros">
+                        <label class="item" for="clave">Clave:</label>
+                        <input class="item" type="password" name="clave" id="clave" required maxlength="10" pattern="[A-Za-z0-9ñÑ][^@_€\$\-]" title="Maximo 10 caracteres, se permiten numeros, letras mayusculas y minusculas, letras no acentuadas y los simbolos (@,_,-,€,$)">
+                        <label class="item" for="dninif">DNI/NIF:</label>
+                        <input class="item" type="" name="dninif" id="dninif" required pattern="([0-9][A-Za-z]$)|(^[KLMXYZ][0-9][A-Z]$){9}" title="DNI:8 numeros + 1 letra, NIF: empiezan por las letras K,L,M,X,Y,Z seguido de 7 numeros y finaliza en 1 letra">
+                        <label class="item" for="telefono">Telefono:</label>
+                        <input class="item opcional" type="tel" name="telefono" id="telefono" pattern="^(34|0034|+34)*(6|7|8|9)[0-9][^\-]{8-12}" title="Solo validos en españa, empiezan por 6 o 7 o 8 o 9. Maximo 9 caracteres. Puedes agregar +34,0034 o 34 al inicio">
+                        <label class="item" for="cp">Codigo Postal:</label>
+                        <input class="item opcional" type="text" name="cp" id="cp" pattern="^(28)[0-9]{5}" title="Solo CP de madrid 28XXX">
+                        <label class="item" for="email">Correo electrónico:</label>
+                        <input class="item opcional" type="email" name="email" id="email" pattern="([A-Za-z][A-Za-z][A-Za-z][A-Za-z]?[0-9]@fcelmejor.es)$" title="Solo correos de @fcelmejor.es. Ejemplo: abcd12@fcelmejor.es">
+                        <label class="item" for="sexo">Sexo:</label>
+                        <div class="item">
+                            <label class="item" for="h">Hombre</label>
+                            <input class="item" type="radio" name="sexo" id="h" checked>
+                            <label class="item" for="m">Mujer</label>
+                            <input class="item" type="radio" name="sexo" id="m">
+                        </div>
+                        <label class="item" for="edad">Edad</label>
+                        <div class="item">
+                            <input type="range" list="edades" max="21" min="7" title="Desde 7 a 21 años">
+                            <datalist id="edades">
+                            <option value="7" label="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                            <option value="11">
+                            <option value="12">
+                            <option value="13">
+                            <option value="14" label="14">
+                            <option value="15">
+                            <option value="16">
+                            <option value="17">
+                            <option value="18">
+                            <option value="19">
+                            <option value="20">
+                            <option value="21" label="21">
+                            </datalist>
+                        </div>
+                        <label class="item" for="categoria">Categoria:</label>
+                        <input class="item opcional" type="text" name="categoria" id="categoria" pattern="(([pP][rR][eE])?[bB][eE][nN][jJ][aA][mM][iíIÍ][nN]|[aA][lL][eE][vV][iíIÍ][nN]|[iI][nN][fF][aA][nN][tT][iI][lL]|[cC][aA][dD][eE][tT][eE]|[jJ][uU][vV][eE][nN][iI][lL])" title="Categoria no existe o esta mal escrita"
+                            placeholder="Por ejemplo: alevín, cadete, etc." title="Solo probejamín, benjamín, alevín, cadete, juvenil">
+                        <label class="item" for="foto">Subir una foto</label>
+                        <input class="item" type="file" name="foto" id="foto" accept=".png, .jpeg" title="Solo fotos en formato .png y .jpeg">
+                        <label class="item" for="club">Nombre del club</label>
+                        <input class="item opcional" type="text" name="club" id="club" readonly value="ANCARES">
+                        <div class="item2">
+                            <input type="checkbox" name="condiciones" id="condiciones" checked title="Acepto terminos y condiciones del club">
+                            <label for="condiciones">Acepta las condiciones del club</label>
+                        </div>
+                        <div class="item2 botones">
+                            <input type="button" value="Enviar formulario">
+                            <input type="reset" value="Limpiar formulario">
+                        </div>
+                    </fieldset>
+                </form>
+                <p>
+                    <a href="https://ancares.info/web/index.asp">Visitar Ancares.info</a>
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

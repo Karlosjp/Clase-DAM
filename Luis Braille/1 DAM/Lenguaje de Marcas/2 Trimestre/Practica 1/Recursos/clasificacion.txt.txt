@@ -1,0 +1,31 @@
+Temporada 2020-21
+Club
+PJ = Partidos Jugados
+G = Partidos Ganados
+E = Partidos Empatados
+D = Partidos Derrotados
+GF = Goles Favor
+GC = Goles Contras
+DG = Diferencias de Goles
+PTS = Puntos
+
+Atlético de Madrid 	50
+FC Barcelona		40
+Real Madrid CF		40
+Sevilla			39
+Villarreal 		35
+Real Sociedad		32
+Granada			29
+Real Betis		27
+Levante 		26
+RC Celta de Vigo	25	
+Athletic de Bilbao	24
+Getafe CF		24
+Cádiz			24
+Valencia CF		23
+Eibar			20
+Valladolid		20
+Osasuna			19	
+Alavés			19
+Elche CF		17	 
+SD Huelva		16

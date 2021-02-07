@@ -69,8 +69,8 @@ public class BancoTest {
 		
 		objCredito.pagoEnEstablecimiento("Pago 1", 100);
 		objCredito.pagoEnEstablecimiento("Pago 2", 200);
-		objCredito.liquidar(3,2021);
+		objCredito.liquidar(2,2021);
 		
-		assertEquals(200, objCredito.getSaldo());
+		assertEquals(200, objCuenta.getSaldo());
 	}
 }
