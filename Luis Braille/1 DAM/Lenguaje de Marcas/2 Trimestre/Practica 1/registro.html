@@ -23,13 +23,13 @@
                         <label class="item" for="clave">Clave:</label>
                         <input class="item" type="password" name="clave" id="clave" required maxlength="10" pattern="[A-Za-z0-9ñÑ][^@_€\$\-]" title="Maximo 10 caracteres, se permiten numeros, letras mayusculas y minusculas, letras no acentuadas y los simbolos (@,_,-,€,$)">
                         <label class="item" for="dninif">DNI/NIF:</label>
-                        <input class="item" type="" name="dninif" id="dninif" required pattern="([0-9][A-Za-z]$)|(^[KLMXYZ][0-9][A-Z]$){9}" title="DNI:8 numeros + 1 letra, NIF: empiezan por las letras K,L,M,X,Y,Z seguido de 7 numeros y finaliza en 1 letra">
+                        <input class="item" type="" name="dninif" id="dninif" required pattern="([0-9]{8}[A-Za-z]$)|(^[KLMXYZ][0-9]{7}[A-Z]$)" title="DNI:8 numeros + 1 letra, NIF: empiezan por las letras K,L,M,X,Y,Z seguido de 7 numeros y finaliza en 1 letra">
                         <label class="item" for="telefono">Telefono:</label>
                         <input class="item opcional" type="tel" name="telefono" id="telefono" pattern="^(34|0034|+34)*(6|7|8|9)[0-9][^\-]{8-12}" title="Solo validos en españa, empiezan por 6 o 7 o 8 o 9. Maximo 9 caracteres. Puedes agregar +34,0034 o 34 al inicio">
                         <label class="item" for="cp">Codigo Postal:</label>
                         <input class="item opcional" type="text" name="cp" id="cp" pattern="^(28)[0-9]{5}" title="Solo CP de madrid 28XXX">
                         <label class="item" for="email">Correo electrónico:</label>
-                        <input class="item opcional" type="email" name="email" id="email" pattern="([A-Za-z][A-Za-z][A-Za-z][A-Za-z]?[0-9]@fcelmejor.es)$" title="Solo correos de @fcelmejor.es. Ejemplo: abcd12@fcelmejor.es">
+                        <input class="item opcional" type="email" name="email" id="email" pattern="[A-Za-z]{3,4}[0-9]{2}(@fcelmejor.es)$" title="Solo correos de @fcelmejor.es. Ejemplo: abcd12@fcelmejor.es">
                         <label class="item" for="sexo">Sexo:</label>
                         <div class="item">
                             <label class="item" for="h">Hombre</label>

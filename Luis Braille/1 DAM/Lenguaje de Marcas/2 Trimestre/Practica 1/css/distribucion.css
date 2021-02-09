@@ -1,6 +1,10 @@
-article {
+.principal {
     background-image: url("../image/pistaAltetismo.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 p {
@@ -16,9 +20,19 @@ p {
     height: 39em;
 }
 
-section {
-    display: flex;
+.normas {
+    display: grid;
+    grid-template-columns: auto;
     justify-content: center;
+}
+
+.horario,
+.normas {
+    margin-top: 2em;
+}
+
+.horario p {
+    text-align: left;
 }
 
 .item1,
@@ -30,22 +44,12 @@ section {
 
 .item1,
 .item2 {
+    margin-top: 15em;
     align-self: flex-end;
-    margin-bottom: 5em;
 }
 
 .item4,
 .item3 {
-    align-self: flex-start;
-    margin-top: -2em;
-}
-
-.item1,
-.item3 {
-    margin-left: 8em;
-}
-
-.item2,
-.item4 {
-    margin-right: 8em;
+    margin-top: 10em;
+    align-self: center;
 }
