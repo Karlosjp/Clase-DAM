@@ -10,6 +10,10 @@ form {
     color: white;
 }
 
+fieldset {
+    background-color: pink;
+}
+
 .grid-container {
     width: 20em;
     display: grid;

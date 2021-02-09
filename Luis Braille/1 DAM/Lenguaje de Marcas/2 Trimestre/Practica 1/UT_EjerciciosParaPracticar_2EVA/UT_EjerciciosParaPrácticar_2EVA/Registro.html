@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/RegistroCss.css">
+    <title>Registro</title>
+</head>
+<body>
+
+    <form method="GET" action="mailto:elmister@elmejor.es">
+        <fieldset>
+            <legend>Datos de Registro</legend>
+            <br>
+            <label for="Nombre" id="Nombre">Nombre:</label>
+            <input type="text"name="Nombre" id="Nombre" required pattern="[A-Z][a-zA-Z-ñÑáéíóúÁÉÍÓÚ]{3,25}"
+            title="tamaño mínimo de 3 y máximo de 25, debe comenzar con
+            mayúsculas y se admiten nombre compuestos, se admite el abecedario castellano y las vocales
+            acentuadas."> 
+            <br><br>
+            <label for="Usuario" id="Usuario">Usuario:</label>
+            <input type="text" name="Usuario" id="Usuario" required pattern="[A-Za-z][a-z0-9_$][^ñÑáéíóúÁÉÍÓÚ-]{3,8}"
+            title=" tamaño mínimo de 5 y máximo de 10, admite letras mayúsculas y
+            minúsculas (no vocales acentuadas), sí admitirá el subrayado (_), pero no los guiones, sí el símbolo
+            dólar ($) y también admitirá números, pero NO debe comenzar por números">
+            <br><br>
+            <label for="Clave" id="Clave">Clave:</label>
+            <input type="password" name="Clave" id="Clave" required pattern="[0-9A-Za-z@_\-€$][0-9A-Za-z@_\-€$][^ñÑáéíóúÁÉÍÓÚ]{0,8}"
+            title="tamaño máximo 10, en esta clave se permiten números, letras
+            mayúsculas o minúsculas del alfabeto castellano, no letras acentuadas y los símbolos siguientes: @, _, -, € y $.">
+            <br><br>
+            <label for="DNI" id="DNI">DNI/NIF:</label>
+            <input type="text" name="DNI" id="DNI" maxlength="9" required pattern="[0-9]{8}[A-Z]|[K|L|M|X|Y|Z]{1}[0-9]{7}[A-Z]"
+            title="validar que se ha introducido un DNI o un NIF con formato correcto">
+            <br><br>
+            <label for="Teléfono" id="Teléfono"><i>Teléfono:</i></label>
+            <input type="text" name="Teléfono" id="Teléfono" maxlength="13" pattern="^[+34|0034|34]{0,4}[6|7|8|9]{1}[0-9]{7}[^-]"
+            title=". Puede comenzar por +34, 0034, 34 o nada, luego comenzarán por 6, 7, 8
+            y 9 y luego, estará formado por 8 números. No se admiten guiones. ">
+            <br><br>
+            <label for="Codigo Postal" id="Código"><i>Código Postal:</i></label>
+            <input type="text" name="Código Postal" id="Código" maxlength="5" pattern="28[0-9]{3}"
+            title="sólo se permite códigos postales de Madrid: 28###.">
+            <br><br>
+            <label for="Correo"><i>Correo electrónico:</i></label>
+            <input type="email" name="Correo" id="Correo" maxlength="19" pattern="[A-Za-z]{3,4}[0-9]{2}@fcelmejor.es"
+            title="sólo se admiten que sean del club “@fcelmejor.es” cuyo formato para jugadores
+            está formado primero con 3 o 4 letras (iniciales) y 2 dígitos">
+            <br><br>
+            <label for="Sexo">Sexo:</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="Varón" id="Varón"><label for="Varón">Varón</label>
+            <input type="radio" name="Hembra" id="Hembra"><label for="Hembra">Hembra</label>
+            <br><br>
+            <label for="Edad">Edad:</label>
+            <input type="number" name="Edad" id="Edad" min="7" max="21" required
+            title="Para jugar el rango de edad es 7 a 21." >
+            <br><br>
+            <label for="Categoria"><i>Categoria:</i></label>
+            <input type="text" name="Categoria" id="Categoria" title="Introducir categoria" placeholder="Por ejemplo: alevín, cadete, etc" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]{0,11}"> <!--NO ES EXACTAMENTE LO QUE PIDE (pofe esto era mucho curro :( )-->
+            <br><br>
+            <label for="Foto"><i>Fichero con foto:</i></label>
+            <input type="file" name="Foto" id="Foto" title="Introducir foto" accept="image/jpeg" accept="image/png">
+            <br><br>
+            <label for="Nombre del club"><i>Nombre del club:</i></label>
+            <input type="text" name="Club" id="Club" value="ANCARES" title="Introducir nombre del club" pattern="ANCARES">
+            <br><br>
+            <label for="Aceptas">¿Aceptas las condiciones del club?</label>
+            <input type="checkbox" name="Si" id="Si" checked><label for="Si">Si</label> 
+            <input type="checkbox" name="No" id="No"><label for="No">No</label>
+            <br><br>
+            <a href="https://ancares.info/web/index.asp">AncaresWeb</a>
+            <br><br>
+            <!--BOTONES-->
+            <input type="submit" name="Enviar" id="Enviar" value="Enviar">
+            <input type="reset" name="Limpiar" id="Limpiar" value="Limpiar">
+            <!--Logo-->
+            <img src="Recursos/img/ANCARES.png" alt="Ancares" id="Logo">
+            
+        </fieldset>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+main{
+    width: 50%;
+    margin:auto;
+}
+
+
+/* Cada vez que se pase por un elemento se amplíe el tamaño de toda la información relacionada con ese equipo. */
+tr:hover{
+    font-size: 2em;
+}
+
+/* Los 4 primeros tendrán fondo de azul y letras blancas. */
+tr:nth-child(-n+4){
+    background-color: blue;
+    color: white !;
+}
+
+/* El 5º tendrá letra naranja. */
+tr:nth-child(5){
+    background-color: orange;
+}
+
+/* Los 3 últimos deben tener fondo rojo.*/
+tr:nth-last-child(-n+3){
+    background-color: red;
+}
+
+th{
+    background-color:white;
+    color: black;
+}
+
+/* Las columnas pares deben estar en gris y las columnas impares en marrón claro, la columna de Puntos tiene que tener un tamaño mayor que el resto y resaltada como importante.*/
+td:nth-child(even){
+    color: grey;
+}
+td:nth-child(odd){
+    color: brown;
+}
+
+td:last-child{
+    font-size: 2em;
+}
+
+/* A partir de la posición 6, marcar cada 3 con letras en cursiva.*/
+tr:nth-child(3n+6){
+    font-style: italic;
+}
+
+/* Las primeras letras de cada equipo de fútbol deben tener el doble del tamaño que el resto de letras.*/
+li:first-letter{
+    font-size: 2em;
+}
+
+/* Si se selecciona algún nombre de equipo deben resaltarse en rosa con letras rojas.*/
+li::selection{
+    color:red;
+    background-color: pink;
+}
+
+/* Las imágenes de los escudos deben tener la ayuda (alt) de a qué equipo corresponden.*/

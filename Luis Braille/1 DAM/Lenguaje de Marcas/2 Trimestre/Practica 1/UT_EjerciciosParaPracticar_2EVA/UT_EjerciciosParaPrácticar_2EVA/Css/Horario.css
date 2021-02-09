@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+    background-image: url(../Recursos/img/pistaAltetismo.jpg);
+    background-position:initial;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#Titulo{
+    color: white;
+    margin-left: 37%;
+    font-size: 40px;
+}
+
+#Categoria{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20%;
+}
+
+#Categoria2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 27%;
+}
+
+#Pista1{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 110px;
+}
+#Pista2{
+    position: absolute;
+    margin-left: 850px;
+    margin-top: 110px;
+}
+#Pista3{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 330px;
+}
+#Pista4{
+    position: absolute;
+    margin-left: 850px;
+    margin-top: 330px;
+} 
+
+
+#Normas{
+    margin-top: 53%;
+    text-align: center;
+
+}
+
+.Equipos{
+    color: white;
+    text-align: center;
+}

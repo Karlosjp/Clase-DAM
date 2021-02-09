@@ -1,0 +1,51 @@
+article {
+    background-image: url("../image/pistaAltetismo.jpg");
+    background-size: 100%;
+}
+
+p {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 70em;
+    height: 39em;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.item1,
+.item2,
+.item3,
+.item4 {
+    justify-self: center;
+}
+
+.item1,
+.item2 {
+    align-self: flex-end;
+    margin-bottom: 5em;
+}
+
+.item4,
+.item3 {
+    align-self: flex-start;
+    margin-top: -2em;
+}
+
+.item1,
+.item3 {
+    margin-left: 8em;
+}
+
+.item2,
+.item4 {
+    margin-right: 8em;
+}

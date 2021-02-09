@@ -1,0 +1,72 @@
+body{
+    background-image: url(../Recursos/img/ANCARES.png);
+}
+
+fieldset{
+    margin-left: 20%;
+    margin-top: 5%;
+    width: 700px;
+    color: green;
+    background-color: black;
+    border-color: green;
+}
+
+#Enviar{
+    margin-left: 80%;
+}
+
+#Logo{
+    position: absolute;
+    left: 850px;
+    top: 150px;
+    width: 100px;
+}
+
+label{
+    color: white;
+}
+
+input{
+    color: white;
+}
+
+label:hover{
+    background-color: white;
+    color: black;
+}
+
+input:invalid{
+    background-color: purple;
+}
+
+input:valid{
+    background-color: green;
+}
+
+#Edad:invalid{
+    background-color: yellow;
+    color: red;
+}
+
+#Enviar{
+    background-color: white;
+    color: black;
+}
+
+#Limpiar{
+    background-color: white;
+    color: black;
+}
+
+a{
+    margin-left: 45%;
+    color: white;
+}
+
+a:visited{
+    color: green;
+}
+
+a:hover{
+    background-color: grey;
+}
