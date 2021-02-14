@@ -5,7 +5,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 15vh auto 9vh;
+    grid-template-rows: 15vh 75vh 6vh;
     row-gap: 1.2em;
     margin: auto;
 }

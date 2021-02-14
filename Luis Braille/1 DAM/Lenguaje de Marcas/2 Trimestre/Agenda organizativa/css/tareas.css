@@ -1,0 +1,81 @@
+.grid-container-tarea {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2em auto;
+    height: 100%;
+}
+
+.tareas {
+    overflow-y: scroll;
+}
+
+.tarea,
+.encabezado {
+    display: grid;
+    grid-template-columns: 2em auto 8em 5em 5em;
+    column-gap: 1em;
+    margin: 0 1em;
+    border-radius: 1em;
+    padding: 0 1em;
+}
+
+.encabezado {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.tarea:hover {
+    background-color: lightblue;
+}
+
+.tarea p {
+    margin: 0;
+}
+
+.tarea-campo:nth-child(n) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+.tarea-campo:nth-child(n) p:nth-child(1) {
+    margin-left: 0.5em;
+}
+
+.tarea-campo:nth-child(n+2) {
+    border-bottom: 1px groove #C0C6CC;
+    border-left: 1px groove #C0C6CC;
+    border-bottom-left-radius: 1em;
+}
+
+.tarea-campo:nth-child(3) {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.tarea-campo:nth-child(3) div {
+    display: grid;
+    grid-template-columns: 1em auto;
+    column-gap: 1em;
+}
+
+.tarea-campo:nth-child(3) img {
+    width: 1em;
+    height: 1em;
+}
+
+.tarea-campo:nth-child(3) p,
+.tarea-campo:nth-child(3) img {
+    margin: auto;
+}
+
+.tarea-campo:nth-last-child(1) {
+    padding: 0.5em;
+}
+
+.tarea-campo:nth-last-child(1) img {
+    width: 4em;
+    height: 4em;
+    border-radius: 1em;
+}

@@ -1,0 +1,47 @@
+main {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.bitacora {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 1em;
+    justify-content: center;
+}
+
+.datos form {
+    display: grid;
+    grid-template-columns: auto 4em;
+    column-gap: 1em;
+    width: 70em;
+}
+
+.grid-container-form {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.5em;
+}
+
+.grid-container-form label {
+    border-bottom: 1px groove #2B5880;
+    font-size: 1.5em;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.botones input {
+    height: 2em;
+    align-self: center;
+}
+
+textarea {
+    width: 99%;
+    border-bottom-right-radius: 1.5em;
+    border-top: none;
+    border-left: none;
+}
