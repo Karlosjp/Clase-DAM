@@ -9,30 +9,121 @@
     <link rel="stylesheet" href="css/comun.css">
 </head>
 
-<body>
+<body class="grid-container">
     <header>
+        <div class="grid-container-2h">
+            <a href="index.html">
+                <img src="./image/logo.png" alt="Logo" class="logo">
+            </a>
+            <h1>Agenda Organizativa</h1>
+        </div>
         <nav>
             <ul>
-                <li>
-                    <a href="index.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="pags/calendario.html">Calendario</a>
-                </li>
-                <li>
-                    <a href="pags/planificacion.html">Planificacion</a>
-                </li>
-                <li>
-                    <a href="pags/tareas.html">Tareas</a>
-                </li>
-                <li>
-                    <a href="pags/bitacora.html">Bitacora</a>
-                </li>
+                <a href="index.html">
+                    <li>
+                        <p>Inicio</p>
+                    </li>
+                </a>
+                <a href="pags/calendario.html">
+                    <li>
+                        Calendario
+                    </li>
+                </a>
+                <a href="pags/planificacion.html">
+                    <li>
+                        <p>Planificación</p>
+                    </li>
+                </a>
+                <a href="pags/tareas.html">
+                    <li>
+                        <p>Tareas</p>
+                    </li>
+                </a>
+                <a href="pags/bitacora.html">
+                    <li>
+                        <p>Bitacora</p>
+                    </li>
+                </a>
             </ul>
         </nav>
     </header>
     <main>
-
+        <section>
+            <article class="grid-container-form">
+                <form action="mailto:registro@agenda.es">
+                    <fieldset class="formulario">
+                        <legend class="item-form-double">Registro</legend>
+                        <div class="item-form">
+                            <label for="nombre">Nombre de usuario:</label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </div>
+                        <div class="item-form">
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="item-form">
+                            <label for="estadocivil">Estado civil:</label>
+                            <div class="item-form-2">
+                                <input type="radio" name="estadocivil" id="casado" checked>
+                                <label for="casado">Casado</label>
+                                <input type="radio" name="estadocivil" id="soltero">
+                                <label for="soltero">Soltero</label>
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <label for="clave">Clave:</label>
+                            <input type="password" name="clave" id="clave" required>
+                        </div>
+                        <div class="item-form">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" name="telefono" id="telefono">
+                        </div>
+                        <div class="item-form">
+                            <label for="horaacceso">Hora acceso:</label>
+                            <div class="item-form-3">
+                                <label for="8.5">8:30</label>
+                                <input type="range" list="horas" max="14.34" min="8.5" name="horaacceso" id="horaacceso" title="Desde las 8:30 a 14:20" step="any">
+                                <datalist id="horas">
+                                    <option value="8.5" label="8:30">
+                                    <option value="11.16" label="11:10">
+                                    <option value="14.33" label="14:20">
+                                </datalist>
+                                <label for="14.33">14:20</label>
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <label for="mes">Mes de acceso:</label>
+                            <input type="text" name="mes" id="mes" title="Puedes escribir uno de los 12 meses completo(Enero/enero) o como abreviatura(Ene/ene)" pattern="([Ee]ne(ro)?|[Ff]eb(rero)?|[Mm]ar(zo)?|[Aa]br(il)?|[Mm]ay(o)?|[Jj]u[nl](io)?|[Aa]g(osto)?|[Ss]ep(tiembre)?|[Oo]ct(ubre)?|[Nn]ov(iembre)?|[Dd]ic(iembre)?)">
+                        </div>
+                        <div class="item-form">
+                            <label for="motivo">Motivo de acceso:</label>
+                            <select name="motivo" id="motivo" multiple>
+                                <option value="registrar">Registrar cita en calendario</option>
+                                <option value="pendiente">Anotar tarea pendiente</option>
+                                <option value="semanal">Anotar en planificación semanal</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="item-form">
+                            <label for="observaciones">Observaciones:</label>
+                            <textarea name="observaciones" id="observaciones" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="item-form">
+                            <label for="url">Url:</label>
+                            <input type="url" name="url" id="url" pattern=".+\.(com|es|edu)" title="Invalid email address">
+                        </div>
+                        <div class="item-form-double">
+                            <input type="checkbox" name="condiciones" id="condiciones" checked required>
+                            <label for="condiciones">Acepta las condiciones de acceso al site:</label>
+                        </div>
+                        <div class="item-form-double botones">
+                            <input type="button" value="Entrada">
+                            <input type="reset" value="Reinicio">
+                        </div>
+                    </fieldset>
+                </form>
+            </article>
+        </section>
     </main>
     <footer>
         <p>&copy; Propiedad de Carlos Jaquez</p>
@@ -41,7 +132,9 @@
                 IES Luis Braille
             </a>
         </p>
-        <p><a href="mailto:8260@iesluisbraille.es">Contacto</a></p>
+        <p>
+            <a href="mailto:8260@iesluisbraille.es">Contacto</a>
+        </p>
     </footer>
 </body>
 

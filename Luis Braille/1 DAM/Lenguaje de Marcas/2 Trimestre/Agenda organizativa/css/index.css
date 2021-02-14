@@ -1,0 +1,65 @@
+form {
+    width: 35em;
+    margin-top: 5em;
+}
+
+fieldset {
+    padding-bottom: 2em;
+    border-radius: 1em;
+    background-color: #E3E3FF;
+    color: #535399;
+}
+
+.grid-container-form {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    row-gap: 0.5em;
+}
+
+.item-form:nth-child(n+1) {
+    display: grid;
+    grid-template-columns: 9em 20em;
+    column-gap: 1em;
+    justify-content: left;
+}
+
+.item-form-2 {
+    display: grid;
+    grid-template-columns: 1.5em auto 1.5em auto;
+}
+
+.item-form-3 {
+    display: flex;
+    align-items: center;
+}
+
+.item-form-double {
+    grid-column: 0 / span 1;
+}
+
+input,
+textarea,
+select {
+    background-color: #CCB6AB;
+    color: #3C3E40;
+}
+
+textarea {
+    resize: none;
+}
+
+.item-form input:invalid {
+    border: 1px dashed red;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+}

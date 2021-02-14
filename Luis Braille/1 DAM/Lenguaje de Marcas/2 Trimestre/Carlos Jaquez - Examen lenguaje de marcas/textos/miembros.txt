@@ -1,0 +1,56 @@
+
+Miembros de equipos
+
+    Equipo 1
+        Entrenador 1
+        Jugadora 1
+        Portera 1
+    Equipo 2
+        Entrenador 2
+        Jugadora 2
+        Portera 2
+    Equipo 3
+        Entrenador 3
+        Jugadora 3
+        Portera 4
+    Equipo 4
+        Entrenadora 4
+        Jugadora 4
+        Portera 4
+    Registro Clubs
+    Wikipedia
+
+
+Entrenador
+Jugadora
+Portera
+Entrenadora
+
+Equipo 1 ...
+Equipo 2 ...
+Equipo 3 ...
+Equipo 4 ...
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque dolor iure nisi a, doloremque aut distinctio placeat quas totam architecto laborum quae veritatis? Aspernatur, itaque animi quos odio earum vitae.
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, voluptatibus tempora. Id adipisci nesciunt sequi facere, corrupti veritatis, iure libero nemo minus tempora dolore dicta ipsam! Inventore quasi consectetur accusamus!
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam saepe velit repellat doloremque porro ex, perspiciatis, impedit doloribus, quidem consectetur quo est ullam. Doloremque eligendi molestias libero quae non quo!
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam architecto non esse laboriosam quisquam ut culpa tempora quaerat porro inventore rem voluptate perspiciatis praesentium, dolor distinctio libero odio magni quibusdam.
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda culpa, ipsum, quis ipsam incidunt voluptatem quos voluptate fugit minus provident repellendus minima autem. Animi nulla deleniti corporis repudiandae impedit reprehenderit!
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia cupiditate, quisquam fuga debitis corrupti autem officia, rem maxime facilis modi quibusdam quo molestiae tenetur blanditiis laboriosam hic impedit! Accusamus, minima?
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iusto minima laborum magnam aspernatur? Eaque sunt earum perspiciatis animi dolorem accusamus aliquam. Modi quaerat dolore obcaecati, inventore illo fugiat magni.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor, esse molestias nobis beatae, vel laudantium voluptatum dolores, voluptatem dolore veniam doloremque repellat nisi distinctio sapiente excepturi. Rerum, ad sit!
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque, neque fuga ad quae, facere deleniti fugiat dignissimos, eos maxime ducimus nemo voluptas. Veritatis magni numquam repellat magnam reiciendis necessitatibus!
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, iure incidunt et asperiores recusandae similique, cumque repudiandae dolores consequuntur facilis iste. Quo beatae vitae molestias, veniam iusto laudantium illum atque.
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas porro accusantium est nobis animi corporis ex illo mollitia dolorem aliquam, quibusdam fugiat. Aliquid quo expedita quos accusantium iste cum esse.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, itaque repellendus. Voluptatum ducimus a ea voluptatibus perferendis quibusdam cumque! Fugit distinctio optio tempore repellendus eos? Repellendus libero deleniti sunt asperiores!

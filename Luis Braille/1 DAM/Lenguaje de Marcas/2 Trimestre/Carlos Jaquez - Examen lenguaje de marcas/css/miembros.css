@@ -1,0 +1,106 @@
+header section{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    border-bottom: 1px solid gray;
+    margin-bottom: 1em;
+}
+
+h1{
+    font-size: 2em;
+    color: blue;
+}
+
+.logo1{
+    width: 75px;
+    height: 90px;
+}
+
+.logo2{
+    width: 40px;
+    height: 60px;
+}
+
+.grid-container-3{
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 15em auto auto auto;
+}
+
+.grid-container-2{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.grid-container-1{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.grid-container-1, .grid-container-2{
+    grid-template-rows: 25em 25em 25em 25em ;
+    gap: 1em;
+}
+
+.menu-miembros{
+    margin-left: 2em;
+}
+
+.menu-miembros:nth-child(odd){
+    background-color: grey;
+    color: beige;
+}
+
+.menu-miembros div p:nth-child(1){
+    font-size: 1.5em;
+}
+
+.menu-miembros div p:nth-child(3){
+    font-style: italic;
+}
+
+.menu-miembros:nth-child(even){
+    background-color: yellow;
+    color: black;
+}
+
+.menu-miembros p{
+    margin: auto;
+}
+
+.menu-miembros div{
+    margin-left: 2em;
+}
+
+.miembros1 article:nth-child(n+1){
+    background-color: purple;
+    color: white;
+}
+.miembros1 article:nth-child(n+1):nth-child(n+1), .miembros2 article:nth-child(n+1):nth-child(n+1){
+    padding: 1em;
+}
+.miembros2 article:nth-child(n+1){
+    background-color: yellow;
+}
+
+article div:nth-child(2) p::first-letter{
+    font-size: 5em;
+}
+
+div article{
+    width: 22vw;
+    border-radius: 1em;
+}
+
+img{
+    width: 75px;
+    height: 100px;
+}
+
+a:active{
+    color: purple;
+}
+
+a{
+    color: green;
+}
