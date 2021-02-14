@@ -1,0 +1,89 @@
+main {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.grid-container-ang {
+    display: grid;
+    grid-template-columns: 40em 40em;
+    column-gap: 1em;
+    justify-content: center;
+    padding: 1em;
+    border: 1px groove #88AED5;
+    border-radius: 1em;
+}
+
+.tarea {
+    width: 1em;
+    height: 1em;
+    justify-self: right;
+    margin-right: 2em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 4em;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.botones input {
+    height: 2em;
+    align-self: center;
+}
+
+.finde {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1em;
+}
+
+.sabado {
+    background-color: rgb(210, 231, 231);
+}
+
+.domingo {
+    background-color: rgb(238, 163, 163);
+}
+
+.mes {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.mes p {
+    margin: 0;
+}
+
+.dia {
+    display: grid;
+    grid-template-columns: 3em 10em auto;
+    align-items: baseline;
+    border-bottom: 1px groove red;
+    margin-bottom: 0.5em;
+}
+
+.dia p:nth-child(1) {
+    font-size: 2em;
+}
+
+.dia p {
+    margin: 0;
+}
+
+.dia p:nth-child(2)::first-letter {
+    font-size: 2em;
+}
+
+textarea {
+    width: 99%;
+    border-bottom-right-radius: 1.5em;
+    border-top: none;
+    border-left: none;
+}

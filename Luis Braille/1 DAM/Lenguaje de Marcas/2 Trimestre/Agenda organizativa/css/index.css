@@ -51,10 +51,6 @@ select {
     color: #3C3E40;
 }
 
-textarea {
-    resize: none;
-}
-
 .item-form input:invalid {
     border: 1px dashed red;
 }

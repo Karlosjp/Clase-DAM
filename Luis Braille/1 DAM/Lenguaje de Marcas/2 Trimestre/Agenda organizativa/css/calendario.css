@@ -1,6 +1,7 @@
 .grid-container-cal aside img {
     width: 5em;
     height: 5em;
+    border-radius: 1em;
 }
 
 .dia:nth-child(n) {
@@ -71,4 +72,12 @@
 
 .dia:nth-child(7n+6) {
     background-color: rgb(210, 231, 231);
+}
+
+.mes {
+    text-align: center;
+    font-size: 3em;
+    color: #2B5880;
+    margin: auto;
+    margin-bottom: 0.2em;
 }

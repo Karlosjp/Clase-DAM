@@ -5,7 +5,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 15vh 72vh 9vh;
+    grid-template-rows: 15vh auto 9vh;
     row-gap: 1.2em;
     margin: auto;
 }
@@ -70,4 +70,8 @@ footer {
 
 footer p {
     margin: auto;
+}
+
+textarea {
+    resize: none;
 }
