@@ -1,3 +1,4 @@
+command=C\:\\Program Files\\Java\\jdk-14.0.2\\bin\\javadoc.exe
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="ejercicio14.Alumno"><rhs name\="ejercicio14.Alumno"/></lhs><lhs name\="herencia.ejercicio01.Punto"><rhs name\="herencia.ejercicio01.Punto"/></lhs><lhs name\="herencia.ejercicio02.Prestable"><rhs name\="herencia.ejercicio02.Libro"/></lhs><lhs name\="herencia.ejercicio02.Publicacion"><rhs name\="herencia.ejercicio02.Libro"/><rhs name\="herencia.ejercicio02.Revista"/></lhs><lhs name\="herencia.ejercicio02.Libro"><rhs name\="herencia.ejercicio02.Libro"/></lhs><lhs name\="herencia.ejercicio02.Revista"><rhs name\="herencia.ejercicio02.Revista"/></lhs></history>
 content_assist_number_of_computers=12
 eclipse.preferences.version=1

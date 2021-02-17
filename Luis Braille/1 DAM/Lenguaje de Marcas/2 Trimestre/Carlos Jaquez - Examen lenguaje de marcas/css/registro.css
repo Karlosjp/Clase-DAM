@@ -1,0 +1,72 @@
+input:invalid {
+    background-color: red;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: grey;
+    font-size: 2em;
+}
+
+h1:hover {
+    background-color: grey;
+    color: yellow;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container-2 {
+    display: flex;
+    justify-content: center;
+}
+
+legend {
+    font-size: 2em;
+}
+
+label,
+legend {
+    color: white;
+}
+
+fieldset {
+    border-color: white;
+}
+
+form {
+    background-color: grey;
+    width: 50em;
+}
+
+.campo {
+    margin: 0.5em 0;
+}
+
+.campo:nth-child(-n+5) label::after {
+    content: "*";
+}
+
+label {
+    font-weight: bold;
+}
+
+input:invalid {
+    background-color: purple;
+}
+
+input:valid {
+    background-color: green;
+}

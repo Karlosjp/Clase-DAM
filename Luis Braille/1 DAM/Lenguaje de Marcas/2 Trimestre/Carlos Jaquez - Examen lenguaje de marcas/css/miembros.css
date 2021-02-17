@@ -1,106 +1,129 @@
-header section{
+header section {
     display: flex;
     justify-content: space-between;
 }
-header{
+
+header {
     border-bottom: 1px solid gray;
     margin-bottom: 1em;
 }
 
-h1{
+h1 {
     font-size: 2em;
     color: blue;
 }
 
-.logo1{
+.logo1 {
     width: 75px;
     height: 90px;
 }
 
-.logo2{
+.logo2 {
     width: 40px;
     height: 60px;
 }
 
-.grid-container-3{
-    display: grid;
-    width: 100vw;
-    grid-template-columns: 15em auto auto auto;
+ul {
+    padding-left: 2.5em;
 }
 
-.grid-container-2{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-.grid-container-1{
-    display: grid;
-    grid-template-columns: auto;
+ul p {
+    margin: auto;
 }
 
-.grid-container-1, .grid-container-2{
-    grid-template-rows: 25em 25em 25em 25em ;
-    gap: 1em;
+nav ul a:visited {
+    color: purple;
 }
 
-.menu-miembros{
-    margin-left: 2em;
+nav ul a {
+    color: green;
 }
 
-.menu-miembros:nth-child(odd){
-    background-color: grey;
+aside nav li {
+    list-style: none;
+}
+
+.wikipedia {
+    background-color: orange;
+    font-size: 2em;
+}
+
+.equipo:nth-child(odd) {
+    background-color: gray;
     color: beige;
 }
 
-.menu-miembros div p:nth-child(1){
+.equipo li:nth-child(1) {
     font-size: 1.5em;
 }
 
-.menu-miembros div p:nth-child(3){
+.equipo li:nth-last-child(1) {
     font-style: italic;
 }
 
-.menu-miembros:nth-child(even){
+.equipo:nth-child(even) {
     background-color: yellow;
     color: black;
 }
 
-.menu-miembros p{
-    margin: auto;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.1fr 4fr 2fr 2fr;
+    column-gap: 1em;
 }
 
-.menu-miembros div{
-    margin-left: 2em;
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
 }
 
-.miembros1 article:nth-child(n+1){
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1em;
+}
+
+.grid-container-2,
+.grid-container-1 {
+    grid-template-rows: 25em 25em 25em 25em;
+    row-gap: 1em;
+}
+
+.grid-container-1:nth-child(3) article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.grid-container-2:nth-child(2) article {
     background-color: purple;
     color: white;
+    border: 1px groove purple;
 }
-.miembros1 article:nth-child(n+1):nth-child(n+1), .miembros2 article:nth-child(n+1):nth-child(n+1){
+
+.grid-container-1:nth-child(4) article {
+    background-color: yellow;
+    color: black;
+    border: 1px groove yellow;
+}
+
+.grid-container-2:nth-child(2) article,
+.grid-container-1:nth-child(4) article {
+    border-radius: 20px;
     padding: 1em;
 }
-.miembros2 article:nth-child(n+1){
-    background-color: yellow;
-}
 
-article div:nth-child(2) p::first-letter{
-    font-size: 5em;
-}
-
-div article{
-    width: 22vw;
-    border-radius: 1em;
-}
-
-img{
+article img {
     width: 75px;
     height: 100px;
 }
 
-a:active{
-    color: purple;
+article div:nth-child(2) p::first-letter {
+    font-size: 4em;
 }
 
-a{
-    color: green;
+article div:nth-child(3) p::first-line {
+    color: aqua;
 }
