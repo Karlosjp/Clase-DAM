@@ -1,4 +1,4 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
 import java.util.Date;
 
@@ -11,6 +11,12 @@ public class Parado extends Persona {
 		this.intDuracion = Integer.parseInt(strDuracion);
 	}
 
+	@Override
+	public void imprimir() {
+		super.imprimir();
+		System.out.println("Duracion" + intDuracion);
+	}
+	
 	@Override
 	public String toString() {
 		return super.toString() + " Parado [intDuracion=" + intDuracion + "]";

@@ -1,4 +1,4 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
 import java.util.Date;
 
@@ -9,6 +9,12 @@ public class Estudiante extends Persona {
 	public Estudiante(String strNombre, String strSexo, String strDireccion, Date objFechaNacimiento, String strCurso) {
 		super(strNombre, strSexo, strDireccion, objFechaNacimiento);
 		this.strCurso = strCurso;
+	}
+	
+	@Override
+	public void imprimir() {
+		super.imprimir();
+		System.out.println("Curso: " + strCurso);
 	}
 
 	@Override

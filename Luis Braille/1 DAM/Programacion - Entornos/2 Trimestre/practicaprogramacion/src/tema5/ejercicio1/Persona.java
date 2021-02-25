@@ -1,5 +1,7 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Persona {
@@ -14,6 +16,14 @@ public class Persona {
 		this.objFechaNacimiento = objFechaNacimiento;
 	}
 
+	public void imprimir() {
+		System.out.println("Nombre: " + strNombre);
+		System.out.println("Nombre: " + strSexo);
+		System.out.println("Nombre: " + strDireccion);
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+		System.out.println("Nombre: " + dateFormat.format(objFechaNacimiento));
+	}
+	
 	@Override
 	public String toString() {
 		return "Persona = [ Nombre: " + strNombre + ", Sexo:" + strSexo + ", Direccion: " + strDireccion

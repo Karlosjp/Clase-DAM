@@ -1,4 +1,4 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
 import java.util.Date;
 
@@ -12,6 +12,13 @@ public class Trabajador extends Persona {
 		this.strPuesto = strPuesto;
 	}
 
+	@Override
+	public void imprimir() {
+		super.imprimir();
+		System.out.println("Puesto" + strPuesto);
+	}
+	
+	
 	@Override
 	public String toString() {
 		return super.toString() + "Trabajador [Puesto=" + strPuesto + "]";

@@ -13,6 +13,9 @@ public class Credito extends Tarjeta {
 		movimientos = new Vector();
 	}
 
+	/**
+	 * @param x
+	 */
 	public void retirar(double x) throws Exception {
 		Movimiento m = new Movimiento();
 		m.setConcepto("Retirada en cajero autom·tico");

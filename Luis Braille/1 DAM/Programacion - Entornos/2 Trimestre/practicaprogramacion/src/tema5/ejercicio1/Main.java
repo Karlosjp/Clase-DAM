@@ -1,7 +1,8 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -21,35 +22,43 @@ public class Main {
 			System.out.println("4. Parado");
 			System.out.println("5. Estudiante");
 
-			try {
-				objPersonas[intTotal++] = crearNuevo(snc.nextInt());
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			objPersonas[intTotal++] = crearNuevo(snc.nextInt());
 
 			System.out.println("¿Terminar? Si = 1, No = 0");
 			intContinuar = snc.nextInt();
 
 		} while (intContinuar == 0 | intTotal == 5);
 
+		for (Persona persona : objPersonas) {
+			persona.imprimir();
+		}
+
 	}
 
-	private static Persona crearNuevo(int intIndice) throws ParseException {
+	private static Persona crearNuevo(int intIndice) {
 		String strDatos[] = solicitarDatos(intIndice);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date fechaNacim = new Date();
+		
+		try {
+			fechaNacim = sdf.parse(strDatos[3]);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Formato de fecha incorrecto");
+			e.printStackTrace();
+		}
 
 		switch (intIndice) {
 		case 1:
-			return new Persona(strDatos[0], strDatos[1], strDatos[2], sdf.parse(strDatos[3]));
+			return new Persona(strDatos[0], strDatos[1], strDatos[2], fechaNacim);
 		case 2:
-			return new Autonomo(strDatos[0], strDatos[1], strDatos[2], sdf.parse(strDatos[3]), strDatos[4]);
+			return new Autonomo(strDatos[0], strDatos[1], strDatos[2], fechaNacim, strDatos[4]);
 		case 3:
-			return new Trabajador(strDatos[0], strDatos[1], strDatos[2], sdf.parse(strDatos[3]), strDatos[4]);
+			return new Trabajador(strDatos[0], strDatos[1], strDatos[2], fechaNacim, strDatos[4]);
 		case 4:
-			return new Parado(strDatos[0], strDatos[1], strDatos[2], sdf.parse(strDatos[3]), strDatos[3]);
+			return new Parado(strDatos[0], strDatos[1], strDatos[2], fechaNacim, strDatos[3]);
 		case 5:
-			return new Estudiante(strDatos[0], strDatos[1], strDatos[2], sdf.parse(strDatos[3]), strDatos[4]);
+			return new Estudiante(strDatos[0], strDatos[1], strDatos[2], fechaNacim, strDatos[4]);
 		}
 
 		return null;

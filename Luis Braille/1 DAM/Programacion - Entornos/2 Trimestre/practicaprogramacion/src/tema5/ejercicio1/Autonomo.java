@@ -1,4 +1,4 @@
-package exepciones.ejercicio1;
+package tema5.ejercicio1;
 
 import java.util.Date;
 
@@ -11,6 +11,12 @@ public class Autonomo extends Persona {
 		this.strEmpresa = strEmpresa;
 	}
 
+	@Override
+	public void imprimir() {
+		super.imprimir();
+		System.out.println("Empresa: " + strEmpresa);
+	}
+	
 	@Override
 	public String toString() {
 		return super.toString() + " Autonomo [strEmpresa=" + strEmpresa + "]";
