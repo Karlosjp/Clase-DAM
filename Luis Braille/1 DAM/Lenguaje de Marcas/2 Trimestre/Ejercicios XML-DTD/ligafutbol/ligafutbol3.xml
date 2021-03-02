@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ligafutbol SYSTEM "./ligafutbol3.dtd">
+<ligafutbol>
+    <partido>
+        <equipo tipo="Local" nombre="Nottingham Presa" goles="0"/>
+        <equipo tipo="Visitante" nombre="Inter de Mitente" goles="1"/>
+    </partido>
+    <partido>
+        <equipo tipo="Local" nombre="Vodka Juniors" goles="3"/>
+        <equipo tipo="Visitante" nombre="Sparta da Risa" goles="3"/>
+    </partido>
+    <partido>
+        <equipo tipo="Local" nombre="Water de Múnich" goles="4"/>
+        <equipo tipo="Visitante" nombre="Esteaua es del grifo" goles="2"/>
+    </partido>
+</ligafutbol>

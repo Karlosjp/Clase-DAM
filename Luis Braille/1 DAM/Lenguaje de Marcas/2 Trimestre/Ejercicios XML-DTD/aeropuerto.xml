@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aeropuerto SYSTEM "aeropuerto.dtd">
+<aeropuerto>
+    <nombre>JKF</nombre>
+    <vuelo codigo="V22" estado="R">
+        <diario/>
+        <origen>New York</origen>
+        <destino>Chigago</destino>
+        <horaSalida>9:30</horaSalida>
+        <horaLlegada>11:30</horaLlegada>
+    </vuelo>
+    <vuelo codigo="V23" estado="C">
+        <diario/>
+        <origen>New York</origen>
+        <destino>Miami</destino>
+        <horaSalida>10:15</horaSalida>
+        <horaLlegada>11:15</horaLlegada>
+    </vuelo>
+    <fecha>20/12/2013</fecha>
+</aeropuerto>

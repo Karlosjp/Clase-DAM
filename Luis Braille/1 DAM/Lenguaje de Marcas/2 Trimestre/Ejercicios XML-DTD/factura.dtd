@@ -1,0 +1,17 @@
+<!ELEMENT factura (datos+, detallefactura)>
+    <!ATTLIST factura numero CDATA #REQUIRED>
+    <!ATTLIST factura fecha CDATA #REQUIRED>
+    <!ELEMENT datos (nombre, cif, telefono)>
+        <!ATTLIST datos tipo (Emisor|Cliente) #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT cif (#PCDATA)>
+        <!ELEMENT telefono (#PCDATA)>
+    <!ELEMENT detallefactura (linea+)>
+        <!ATTLIST detallefactura importe CDATA #REQUIRED>
+        <!ELEMENT linea (descripcion, cantidad, oferta?, pvp)>
+            <!ATTLIST linea codigoarticulo ID #REQUIRED>
+            <!ATTLIST linea tipo (Libro|PDF|Varios) #IMPLIED>
+            <!ELEMENT descripcion (#PCDATA)>
+            <!ELEMENT cantidad (#PCDATA)>
+            <!ELEMENT oferta EMPTY>
+            <!ELEMENT pvp (#PCDATA)>

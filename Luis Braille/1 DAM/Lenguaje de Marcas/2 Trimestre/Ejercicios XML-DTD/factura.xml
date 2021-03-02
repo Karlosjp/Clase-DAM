@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE factura SYSTEM "factura.dtd">
+<factura numero="19" fecha="23/02/2021">
+    <datos tipo="Emisor">
+        <nombre>Libreria Coslada</nombre>
+        <cif>CIF: 12345678B</cif>
+        <telefono>666000000</telefono>
+    </datos>
+    <datos tipo="Cliente">
+        <nombre>IES Luis Braille</nombre>
+        <cif>CIF: 87654321A</cif>
+        <telefono>606066666</telefono>
+    </datos>
+    <detallefactura importe="85">
+        <linea codigoarticulo="AW7" tipo="Libro">
+            <descripcion>Aplicaciones Web</descripcion>
+            <cantidad>2</cantidad>
+            <oferta/>
+            <pvp>25€</pvp>
+        </linea>
+        <linea codigoarticulo="LM5" tipo="PDF">
+            <descripcion>Lenguaje de Marcas</descripcion>
+            <cantidad>1</cantidad>
+            <pvp>30€</pvp>
+        </linea>
+    </detallefactura>
+</factura>

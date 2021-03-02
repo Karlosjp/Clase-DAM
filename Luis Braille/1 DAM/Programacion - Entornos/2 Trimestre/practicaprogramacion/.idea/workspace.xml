@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83763fbb-b262-49a6-938e-f987c5397a25" name="Default Changelist" comment="" />
+    <list default="true" id="83763fbb-b262-49a6-938e-f987c5397a25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Bases de datos/2 Trimestre/BBDD - Practica 1 - Gestion de envios 1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Bases de datos/2 Trimestre/BBDD - Practica 1 - Gestion de envios.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Bases de datos/2 Trimestre/BBDD - Practica 1 - Gestion de envios.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Bases de datos/2 Trimestre/BBDD - Practica 1 - Gestion de envios.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Bases de datos/2 Trimestre/BBDD - Practica 1 - Gestion de envios.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entornos - Practica tema 4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
