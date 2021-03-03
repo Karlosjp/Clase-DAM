@@ -1,0 +1,21 @@
+<!ELEMENT pedido (sucursalexposicion, sucursalgestion)>
+    <!ELEMENT sucursalexposicion (nsucursalexposicion, ubicacionexposicion, detalles)>
+        <!ELEMENT nsucursalexposicion (#PCDATA)>
+        <!ELEMENT ubicacionexposicion (#PCDATA)>
+        <!ELEMENT detalles (trabajador, fecha, plazorevision, articulos)>
+            <!ATTLIST detalles codigo ID #REQUIRED>
+            <!ATTLIST detalles observaciones (urgente|incompleto) #REQUIRED>
+            <!ELEMENT trabajador (#PCDATA)>
+            <!ELEMENT fecha (#PCDATA)>
+            <!ELEMENT plazorevision (#PCDATA)>
+            <!ELEMENT articulos (articulo+)>
+                <!ELEMENT articulo (cantidad, precio, observaciones)>
+                    <!ATTLIST articulo codigo ID #REQUIRED>
+                    <!ELEMENT cantidad (#PCDATA)>
+                    <!ELEMENT precio (#PCDATA)>
+                    <!ELEMENT observaciones (#PCDATA)>
+    <!ELEMENT sucursalgestion (nsucursalgestion, ubicaciongestion?, albaran, pago)>
+        <!ELEMENT nsucursalgestion (#PCDATA)>
+        <!ELEMENT ubicaciongestion (#PCDATA)>
+        <!ELEMENT albaran (#PCDATA)>
+        <!ELEMENT pago (#PCDATA)>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datos SYSTEM "./ej8-alumnos.dtd">
+<datos>
+    <alumno codigo="n12344345">
+        <nombre>Luis alcalde García</nombre>
+        <direccion>Las manos, 24</direccion>
+        <ciudad>Madrid</ciudad>
+        <telefono>942756645</telefono>
+    </alumno>
+    <alumno codigo="n43483437">
+        <nombre>González Pérez, Orga</nombre>
+        <direccion>Miraflor 28 - 3º</direccion>
+        <poblacion>Torres</poblacion>
+        <telefono>942564355</telefono>
+    </alumno>
+    <alumno codigo="n88234942">
+        <nombre>Fernández Diez, María</nombre>
+        <direccion>Luisa Fernanda 53</direccion>
+        <poblacion>Miera</poblacion>
+        <telefono>942346945</telefono>
+    </alumno>
+    <asignatura codigo="a1">
+        <nasignatura>FH</nasignatura>
+    </asignatura>
+    <asignatura codigo="a2">
+        <nasignatura>FOL</nasignatura>
+    </asignatura>
+    <asignatura codigo="a3">
+        <nasignatura>ISO</nasignatura>
+    </asignatura>
+    <asignatura codigo="a4">
+        <nasignatura>LMSGI</nasignatura>
+    </asignatura>
+    <asignatura codigo="a5">
+        <nasignatura>PAR</nasignatura>
+    </asignatura>
+    <asignatura codigo="a6">
+        <nasignatura>GBD</nasignatura>
+    </asignatura>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a1</codigoasignatura>
+        <clasificacion>4</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n43483437</codigoalumno>
+        <codigoasignatura>a1</codigoasignatura>
+        <clasificacion>5</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n88234942</codigoalumno>
+        <codigoasignatura>a1</codigoasignatura>
+        <clasificacion>8</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a2</codigoasignatura>
+        <clasificacion>10</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n43483437</codigoalumno>
+        <codigoasignatura>a2</codigoasignatura>
+        <clasificacion>7</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n88234942</codigoalumno>
+        <codigoasignatura>a2</codigoasignatura>
+        <clasificacion>6</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a3</codigoasignatura>
+        <clasificacion>3</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n88234942</codigoalumno>
+        <codigoasignatura>a3</codigoasignatura>
+        <clasificacion>6</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a4</codigoasignatura>
+        <clasificacion>8</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n43483437</codigoalumno>
+        <codigoasignatura>a4</codigoasignatura>
+        <clasificacion>4</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a5</codigoasignatura>
+        <clasificacion>6</clasificacion>
+    </nota>
+    <nota>
+        <codigoalumno>n12344345</codigoalumno>
+        <codigoasignatura>a6</codigoasignatura>
+        <clasificacion>9</clasificacion>
+    </nota>
+</datos>

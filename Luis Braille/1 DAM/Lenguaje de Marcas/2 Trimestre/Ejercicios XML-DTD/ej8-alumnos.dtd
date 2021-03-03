@@ -1,0 +1,15 @@
+<!ELEMENT datos (alumno+, asignatura+, nota+)>
+    <!ELEMENT alumno (nombre, direccion, ciudad?, poblacion?, telefono)>
+        <!ATTLIST alumno codigo CDATA #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT direccion (#PCDATA)>
+        <!ELEMENT ciudad (#PCDATA)>
+        <!ELEMENT poblacion (#PCDATA)>
+        <!ELEMENT telefono (#PCDATA)>
+    <!ELEMENT asignatura (nasignatura)>
+        <!ATTLIST asignatura codigo CDATA #REQUIRED>
+        <!ELEMENT nasignatura (#PCDATA)>
+    <!ELEMENT nota (codigoalumno, codigoasignatura, clasificacion)>
+        <!ELEMENT codigoalumno (#PCDATA)>
+        <!ELEMENT codigoasignatura (#PCDATA)>
+        <!ELEMENT clasificacion (#PCDATA)>

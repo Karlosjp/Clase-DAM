@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE modulo SYSTEM "./ej7-mayorista.dtd">
+<modulo>
+    <nombremodulo>SSOO</nombremodulo>
+    <alumno matricula="x501">
+        <nombre>Dario bueno Gutiérrez</nombre>
+        <notas>
+            <notateoria>5</notateoria>
+            <notapractica>4.5</notapractica>
+        </notas>
+    </alumno>
+    <alumno matricula="x502">
+        <nombre>Rodrigo Vaquero Gutiérrez</nombre>
+        <notas>
+            <notateoria>9</notateoria>
+            <notapractica>7</notapractica>
+        </notas>
+    </alumno>
+    <alumno matricula="x503">
+        <nombre>Inés Bueno Gutiérrez</nombre>
+        <notas>
+            <notateoria>8</notateoria>
+            <notapractica>9</notapractica>
+        </notas>
+    </alumno>
+    <alumno matricula="x504">
+        <nombre>Violeta Duro Gutiérrez</nombre>
+        <notas>
+            <notateoria>4.5</notateoria>
+            <notapractica>7</notapractica>
+        </notas>
+    </alumno>
+</modulo>

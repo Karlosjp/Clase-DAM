@@ -1,0 +1,26 @@
+<!ELEMENT factura (datoslocalizacion+, datosfactura, totalfactura)>
+    <!ATTLIST factura npedido CDATA #REQUIRED>
+    <!ATTLIST factura forpapago CDATA #REQUIRED>
+    <!ATTLIST factura fecha CDATA #REQUIRED>
+    <!ELEMENT datoslocalizacion (nombre, direccion, poblacion, cp, telefono?, provincia?, fax?)>
+        <!ATTLIST datoslocalizacion clave CDATA #REQUIRED>
+        <!ATTLIST datoslocalizacion tipo (cliente|empresa) #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT direccion (#PCDATA)>
+        <!ELEMENT poblacion (#PCDATA)>
+        <!ELEMENT cp (#PCDATA)>
+        <!ELEMENT telefono (#PCDATA)>
+        <!ELEMENT provincia (#PCDATA)>
+        <!ELEMENT fax (#PCDATA)>
+    <!ELEMENT datosfactura (articulo+)>
+        <!ATTLIST datosfactura baseimponible CDATA #REQUIRED>
+        <!ATTLIST datosfactura porcentajeiva CDATA #REQUIRED>
+        <!ATTLIST datosfactura cuotaiva CDATA #REQUIRED>
+        <!ELEMENT articulo (descripcion, cant, precio, importe)>
+            <!ATTLIST articulo ref CDATA #REQUIRED>
+            <!ATTLIST articulo iva CDATA #REQUIRED>
+            <!ELEMENT descripcion (#PCDATA)>
+            <!ELEMENT cant (#PCDATA)>
+            <!ELEMENT precio (#PCDATA)>
+            <!ELEMENT importe (#PCDATA)>
+    <!ELEMENT totalfactura (#PCDATA)>

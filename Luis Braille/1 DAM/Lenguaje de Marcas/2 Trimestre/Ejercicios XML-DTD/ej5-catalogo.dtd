@@ -1,0 +1,7 @@
+<!ELEMENT catalogo (libro+)>
+    <!ELEMENT libro (titulo, autor, paginas, editorial)>
+        <!ATTLIST libro isbn CDATA #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT autor (#PCDATA)>
+        <!ELEMENT paginas (#PCDATA)>
+        <!ELEMENT editorial (#PCDATA)>

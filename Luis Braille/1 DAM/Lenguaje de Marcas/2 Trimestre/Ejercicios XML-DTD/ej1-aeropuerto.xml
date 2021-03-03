@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE aeropuerto SYSTEM "aeropuerto.dtd">
+<!DOCTYPE aeropuerto SYSTEM "./ej1-aeropuerto.dtd">
 <aeropuerto>
     <nombre>JKF</nombre>
     <vuelo codigo="V22" estado="R">

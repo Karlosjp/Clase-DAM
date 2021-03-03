@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE factura SYSTEM "factura.dtd">
+<!DOCTYPE factura SYSTEM "ej2-factura.dtd">
 <factura numero="19" fecha="23/02/2021">
     <datos tipo="Emisor">
         <nombre>Libreria Coslada</nombre>

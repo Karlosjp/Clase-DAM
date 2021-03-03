@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo SYSTEM "./ej5-catalogo.dtd">
+<catalogo>
+    <libro isbn="9788441526143">
+        <titulo>Manual imprescindible de C/C++</titulo>
+        <autor>Miguel Ángel</autor>
+        <paginas>416</paginas>
+        <editorial>Anaya Multimedia</editorial>
+    </libro>
+    <libro isbn="9788441519800">
+        <titulo>Redes locales</titulo>
+        <autor>Neil Anderson</autor>
+        <paginas>544</paginas>
+        <editorial>Rama</editorial>
+    </libro>
+    <libro isbn="9788441529301">
+        <titulo>XML Edición 2012</titulo>
+        <autor>Miguel Ángel Acera</autor>
+        <paginas>400</paginas>
+        <editorial>Anaya</editorial>
+    </libro>
+</catalogo>

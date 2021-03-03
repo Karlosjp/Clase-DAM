@@ -1,0 +1,8 @@
+<!ELEMENT modulo (nombremodulo, alumno+)>
+    <!ELEMENT nombremodulo (#PCDATA)>
+    <!ELEMENT alumno (nombre, notas)>
+        <!ATTLIST alumno matricula ID #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT notas (notateoria, notapractica)>
+            <!ELEMENT notateoria (#PCDATA)>
+            <!ELEMENT notapractica (#PCDATA)>

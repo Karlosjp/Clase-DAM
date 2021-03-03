@@ -1,0 +1,11 @@
+<!ELEMENT empleados (area+)>
+    <!ELEMENT area (empleado+)>
+        <!ATTLIST area area (administración|informática|diseño) #REQUIRED>
+        <!ELEMENT empleado (apellido, nombre, cargo?, salario?)>
+            <!ATTLIST empleado idempleado CDATA #REQUIRED>
+            <!ATTLIST empleado fechainicio CDATA #REQUIRED>
+            <!ATTLIST empleado fechanacimiento CDATA #REQUIRED>
+            <!ELEMENT apellido (#PCDATA)>
+            <!ELEMENT nombre (#PCDATA)>
+            <!ELEMENT cargo (#PCDATA)>
+            <!ELEMENT salario (#PCDATA)>

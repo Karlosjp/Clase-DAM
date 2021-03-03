@@ -1,0 +1,6 @@
+<!ELEMENT menu (desayuno+)>
+    <!ELEMENT desayuno (nombre, descripcion)>
+        <!ATTLIST desayuno calorias CDATA #REQUIRED>
+        <!ATTLIST desayuno precio CDATA #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT descripcion (#PCDATA)>
