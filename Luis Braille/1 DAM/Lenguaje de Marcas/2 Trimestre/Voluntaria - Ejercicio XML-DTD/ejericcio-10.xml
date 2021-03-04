@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido>
+    <sucursalexposicion>
+        <nsucursalexposicion>Exposicion 1</nsucursalexposicion>
+        <ubicacionexposicion>Ubicacion 1</ubicacionexposicion>
+        <detalles codigo="n54215784" observaciones="urgente">
+            <trabajador>Trabajador1</trabajador>
+            <fecha>03/03/2021</fecha>
+            <plazorevision>7d</plazorevision>
+            <articulos>
+                <articulo codigo="aaa-333">
+                    <cantidad>5</cantidad>
+                    <precio>50€</precio>
+                    <observaciones>Observacion 1</observaciones>
+                </articulo>
+            </articulos>
+        </detalles>
+    </sucursalexposicion>
+    <sucursalgestion>
+        <nsucursalgestion>Gestion 1</nsucursalgestion>
+        <albaran>asdfadsfasdf</albaran>
+        <pago>545€</pago>
+    </sucursalgestion>
+</pedido>
