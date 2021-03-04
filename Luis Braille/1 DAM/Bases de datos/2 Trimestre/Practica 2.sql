@@ -38,3 +38,22 @@ INSERT into suministrador VALUES
 
 INSERT into articulo VALUES
     ('A1','Vaso','Rojo','12','Londres'),
+    ('A2','Plato','Verde','17','Paris'),
+    ('A3','Sopera','Azul','30','Roma'),
+    ('A4','Fuente','Rojo','25','Londres'),
+    ('A5','Copa','Azul','14','Paris'),
+    ('A6','Jarra','Rojo','35','Londres');
+
+INSERT into sum_art VALUES 
+    ("S1", "A1", 300),
+    ("S1", "A2", 200),
+    ("S1", "A3", 400),
+    ("S1", "A4", 200),
+    ("S1", "A5", 100),
+    ("S1", "A6", 100),
+    ("S2", "A1", 300),
+    ("S2", "A2", 400),
+    ("S3", "A2", 200),
+    ("S4", "A2", 200),
+    ("S4", "A4", 300),
+    ("S4", "A5", 400);
