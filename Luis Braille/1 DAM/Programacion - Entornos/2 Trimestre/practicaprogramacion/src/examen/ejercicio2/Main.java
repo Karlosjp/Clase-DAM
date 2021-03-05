@@ -6,9 +6,7 @@ public class Main {
 		try {
 			Persona objPersona = new Persona("5214598E");
 		} catch (DNIExepcion e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println( "DNI 9 dígitos");
 		}
 	}
-
 }
