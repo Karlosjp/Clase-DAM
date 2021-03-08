@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lista dni="50988654">
+    <nombreduenno>Ricardo Tapia</nombreduenno>
+    <productos>
+        <producto>
+            <prodnombre>ternera</prodnombre>
+            <peso>3kg</peso>
+            <distrubuidor nif="Q458722671">Distribuciones Cárnicas S.L.</distrubuidor>
+        </producto>
+        <producto>
+            <prodnombre>Jamón cocido</prodnombre>
+            <peso>500gr</peso>
+        </producto>
+        <producto caducidad="01/12/00">
+            <prodnombre>Judias verdes</prodnombre>
+            <peso>2kg</peso>
+        </producto>
+    </productos>
+</lista>

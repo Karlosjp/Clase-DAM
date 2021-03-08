@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+    <contacto telefono="618452215">
+        <nombre>Carlos</nombre>
+        <apellidos>Jaquez Payamps</apellidos>
+        <direccion>Calle patata</direccion>
+    </contacto>
+    <contacto telefono="618452215">
+        <nombre>Nombre 1</nombre>
+        <apellidos>Apellidos 1</apellidos>
+        <direccion>Direccion 1</direccion>
+    </contacto>
+    <contacto telefono="618452215">
+        <nombre>Nombre 2</nombre>
+        <apellidos>Apellidos 2</apellidos>
+        <direccion>Direccion 2</direccion>
+    </contacto>
+    <contacto telefono="618452215">
+        <nombre>Nombre 3</nombre>
+        <apellidos>Apellidos 3</apellidos>
+        <direccion>Direccion 3</direccion>
+    </contacto>
+    <contacto telefono="618452215">
+        <nombre>Nombre 4</nombre>
+        <apellidos>Apellidos 4</apellidos>
+        <direccion>Direccion 4</direccion>
+    </contacto>
+</agenda>

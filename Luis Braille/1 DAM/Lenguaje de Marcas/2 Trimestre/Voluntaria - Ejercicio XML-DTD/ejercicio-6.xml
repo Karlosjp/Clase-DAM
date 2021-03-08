@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operaciones>
+    <venta>
+        <libros cantidad="2">
+            <nombrelib>Libro1</nombrelib>
+            <nombrelib>Libro2</nombrelib>
+        </libros>
+        <importe moneda="€">50</importe>
+    </venta>
+    <compra>
+        <libros cantidad="2">
+            <nombrelib>Libro1</nombrelib>
+            <nombrelib>Libro2</nombrelib>
+        </libros>
+        <proveedor>Proveedor 1</proveedor>
+        <dia>1</dia>
+        <mes>2</mes>
+        <anno>2020</anno>
+    </compra>
+</operaciones>

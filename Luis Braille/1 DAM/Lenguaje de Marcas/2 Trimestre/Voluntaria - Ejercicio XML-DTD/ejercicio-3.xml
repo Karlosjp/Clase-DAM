@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ciclo fp="asir">
+    <alumnos>
+        <alumno nif="16965696L">
+            <nombrealumno>Ana</nombrealumno>
+            <apellidoalumno>Fernández Gutiérrez</apellidoalumno>
+            <telefono>789654321</telefono>
+            <email>ana.fdezgtrrez@hotmail.com</email>
+            <direccion>C/ El percebe, 13 de Santander</direccion>
+            <cp>39302</cp>
+            <modulos>
+                <modulo fechainicio="15/09/2010" fechafin="30/06/2011">
+                    <nombre>Lenguajes de Marcas</nombre>
+                    <horas_semanales>4</horas_semanales>
+                </modulo>
+                <modulo fechainicio="15/09/2010" fechafin="30/06/2011">
+                    <nombre>Sistemas de Gestión de Información</nombre>
+                    <horas_semanales>4</horas_semanales>
+                </modulo>
+            </modulos>
+        </alumno>
+        <alumno nif="98765432H">
+            <nombrealumno>Pepito</nombrealumno>
+            <apellidoalumno>Grillo</apellidoalumno>
+            <telefono>656566555</telefono>
+            <email>yhyh@yahoo.com</email>
+            <direccion>Avd. El Pez, 5 de Suances</direccion>
+            <cp>39401</cp>
+            <nota>apto</nota>
+            <faltasasistencia>0</faltasasistencia>
+            <modulos>
+                <modulo fechainicio="15/09/2010" fechafin="30/06/2011">
+                    <nombre>Lenguajes de Marcas</nombre>
+                    <horas_semanales>4</horas_semanales>
+                </modulo>
+                <modulo fechainicio="15/09/2010" fechafin="30/06/2011">
+                    <nombre>Sistemas de Gestión de Información</nombre>
+                    <horas_semanales>4</horas_semanales>
+                </modulo>
+            </modulos>
+        </alumno>
+    </alumnos>
+</ciclo>
