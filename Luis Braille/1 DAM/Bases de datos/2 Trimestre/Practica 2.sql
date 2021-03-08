@@ -1,17 +1,17 @@
-DROP DATABASE IF EXISTS VENTAS;
+DROP DATABASE IF EXISTS Almacen;
 
 CREATE DATABASE Almacen;
 
 USE Almacen;
 
-CREATE TABLA suministrador (
+CREATE TABLE suministrador (
     n_sum CHAR(2) PRIMARY KEY,
     nombre VARCHAR(10) NOT NULL UNIQUE,
     categoria SMALLINT,
     ciudad VARCHAR(10)
 );
 
-CREATE TABLA articulo (
+CREATE TABLE articulo (
     n_art CHAR(2) PRIMARY KEY,
     nombre VARCHAR(10) NOT NULL UNIQUE,
     color VARCHAR(10),
@@ -19,13 +19,13 @@ CREATE TABLA articulo (
     ciudad VARCHAR(10)
 );
 
-CREATE TABLA sum_art (
+CREATE TABLE sum_art (
     n_sum CHAR(2) NOT NULL,
     n_art CHAR(2) NOT NULL,
     cantidad INTEGER NOT NULL,
     PRIMARY KEY(n_sum, n_art),
-    FOREING KEY(n_sum) REFERENCES suministrador (n_sum),
-    FOREING KEY(n_art) REFERENCES articulo (n_art),
+    CONSTRAINT fk_n_sum FOREIGN KEY(n_sum) REFERENCES suministrador (n_sum),
+    CONSTRAINT fk_n_art FOREIGN KEY(n_art) REFERENCES articulo (n_art)
 );
 
 INSERT into suministrador VALUES
