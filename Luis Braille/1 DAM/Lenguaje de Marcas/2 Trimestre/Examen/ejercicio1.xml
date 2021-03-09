@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bloques SYSTEM "./ejercicio1.dtd">
+<bloques>
+    <bloque nombrebloque="Computadoras" numero="C1G">
+        <generacion fechainicio="1941">
+            <nombre>Inicios.</nombre>
+            <hechosdestacables>
+                <hecho>construcción de ENIAC (Electronic Numerical Integrator and Computer)</hecho>
+                <hecho>Draft de arquitectura Von Neumann y programas almacenados.</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>Ada Lovelace</personajedestacado>
+                <personajedestacado>Charles Babbage</personajedestacado>
+                <personajedestacado>Alan Turing.</personajedestacado>
+                <personajedestacado>John Von Neumann</personajedestacado>
+            </personajesdestacado>
+            <fracaso />
+        </generacion>
+        <generacion fechainicio="1946">
+            <hechosdestacables>
+                <hecho>Construcción de EDSAC basado en arquitectura Von Neumann.</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>John Von Neumann</personajedestacado>
+            </personajesdestacado>
+        </generacion>
+        <generacion fechainicio="1958">
+            <hechosdestacables>
+                <hecho>Invención del transistor</hecho>
+                <hecho>Comunicación vía lenguajes de programación</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>Maurice Wilkes</personajedestacado>
+            </personajesdestacado>
+        </generacion>
+        <generacion fechainicio="1964">
+            <nombre> Tercera generación</nombre>
+            <hechosdestacables>
+                <hecho>Aparición de los circuitos integrados</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>Jack S. Kilby</personajedestacado>
+                <personajedestacado>Robert Noyce</personajedestacado>
+            </personajesdestacado>
+        </generacion>
+        <generacion fechainicio="1971">
+            <nombre>Chip</nombre>
+            <hechosdestacables>
+                <hecho>Aparición del microprocesador.</hecho>
+                <hecho>Aparición de pastillas de memorias de semiconductor</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>Desconocido</personajedestacado>
+            </personajesdestacado>
+        </generacion>
+        <generacion fechainicio="2000">
+            <hechosdestacables>
+                <hecho>Microelectroónica.</hecho>
+                <hecho>Very Large Scale Integration</hecho>
+            </hechosdestacables>
+            <personajesdestacado>
+                <personajedestacado>Desconocido</personajedestacado>
+            </personajesdestacado>
+            <fracaso />
+        </generacion>
+    </bloque>
+</bloques>

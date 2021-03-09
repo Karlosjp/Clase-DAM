@@ -1,0 +1,12 @@
+<!ELEMENT bloques (bloque+)>
+    <!ELEMENT bloque (generacion+)>
+        <!ATTLIST bloque nombrebloque (Computadoras|Programacion|Web|SO) "Computadoras">
+        <!ATTLIST bloque numero ID #REQUIRED>
+        <!ELEMENT generacion (nombre?, hechosdestacables, personajesdestacado, fracaso?)>
+            <!ATTLIST generacion fechainicio CDATA #REQUIRED>
+            <!ELEMENT nombre (#PCDATA)>
+            <!ELEMENT hechosdestacables (hecho+)>
+                <!ELEMENT hecho (#PCDATA)>
+            <!ELEMENT personajesdestacado (personajedestacado+)>
+                <!ELEMENT personajedestacado (#PCDATA)>
+            <!ELEMENT fracaso EMPTY>

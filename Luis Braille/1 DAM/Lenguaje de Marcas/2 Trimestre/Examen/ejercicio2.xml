@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libros SYSTEM "./ejercicio2.dtd">
+<libros>
+    <libro rama="Programacion" id="p01" estado="R">
+        <autores>
+            <autor>Roger S. Pressman</autor>
+        </autores>
+        <titulo>Ingeniería del software. Un enfoque práctico</titulo>
+        <edicion>7</edicion>
+        <fecha>2017</fecha>
+        <editorial>McGrawHill</editorial>
+    </libro>
+    <libro rama="Redes" id="r01" estado="R">
+        <autores>
+            <autor>Tanenbaum A.S.</autor>
+        </autores>
+        <titulo>Redes de computadoras</titulo>
+        <edicion>5</edicion>
+        <fecha>2013</fecha>
+        <editorial>Pearson</editorial>
+    </libro>
+    <libro rama="FundamentosHardware" id="f01" estado="R">
+        <autores>
+            <autor>A.S. Tanenbaum</autor>
+        </autores>
+        <titulo>Structered Computer Organization</titulo>
+        <edicion>Kindle</edicion>
+        <fecha>2013</fecha>
+        <editorial>Prentice Hall</editorial>
+    </libro>
+    <libro rama="SistemasOperativos" id="s01" estado="E">
+        <autores>
+            <autor>Tanenbaum A.S</autor>
+        </autores>
+        <titulo>Sistemas operativos modernos</titulo>
+        <edicion>3</edicion>
+        <fecha>2009</fecha>
+        <editorial>Prentice-Hall</editorial>
+    </libro>
+    <libro rama="SistemasOperativos" id="s02" estado="E">
+        <autores>
+            <autor>Stallings W.</autor>
+        </autores>
+        <titulo>Sistemas operativos</titulo>
+        <edicion>5</edicion>
+        <fecha>2005</fecha>
+        <editorial>Prentice Hall,</editorial>
+    </libro>
+</libros>

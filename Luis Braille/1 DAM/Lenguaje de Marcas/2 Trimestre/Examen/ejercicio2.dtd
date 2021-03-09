@@ -1,0 +1,11 @@
+<!ELEMENT libros (libro+)>
+    <!ELEMENT libro (autores,titulo,edicion?,fecha?,editorial?)>
+        <!ATTLIST libro rama (Programacion|SistemasOperativos|Redes|FundamentosHardware|BBDD) #REQUIRED>
+        <!ATTLIST libro id ID #REQUIRED>
+        <!ATTLIST libro estado (E|O|R) "E">
+        <!ELEMENT autores (autor+)>
+            <!ELEMENT autor (#PCDATA)>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT edicion (#PCDATA)>
+        <!ELEMENT editorial (#PCDATA)>
+        <!ELEMENT fecha (#PCDATA)>
