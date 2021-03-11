@@ -1,0 +1,10 @@
+1.- Dada una cadena mostrar por pantalla la cantidad de vocales que tiene. Ejemplo:
+     Entrada: cad = "Hola tu"
+     Salida: La cantidad de vocales es 3.
+
+2.- Dada una cadena invertir la misma y mostrar por pantalla. Ejemplo:
+     Entrada: "casa blanca"
+     Salida: "acnalb asac".
+3.- Dada una cadena cad, y un caracter car, verificar cuántas veces se repite el carácter car en la cadena cad, por ejemplo:
+      Entrada: cad = "casa blanca", car = 'a'
+      Salida: El caracter 'a' se repite 4 veces
