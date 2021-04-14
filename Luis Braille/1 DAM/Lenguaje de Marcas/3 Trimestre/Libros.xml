@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Libros>
+	<Libro ISBN="8495618826">
+		<Titulo>La Conspiracion</Titulo>
+			<Autores>
+				<Autor>
+					<Nombre>Dan</Nombre>
+					<Apellido>Brown</Apellido>
+				</Autor>
+			</Autores>
+			<Editorial>Umbriel</Editorial>
+			<Publicacion>2005</Publicacion>
+			<Paginas>610</Paginas>
+			<Precio moneda="pesos argentinos">48</Precio>
+	</Libro>
+	<Libro ISBN="8495618605">
+		<Titulo>El Código Da Vinci</Titulo>
+		<Autores>
+			<Autor>
+				<Nombre>Dan</Nombre>
+				<Apellido>Brown</Apellido>
+			</Autor>
+		</Autores>
+		<Editorial>Umbriel</Editorial>
+		<Publicacion>2003</Publicacion>
+		<Paginas>562</Paginas>
+		<Precio moneda="pesos argentinos">42</Precio>
+	</Libro>
+	<Libro ISBN="9506410615">
+		<Titulo>Seis sombreros para pensar</Titulo>
+		<Autores>
+			<Autor>
+				<Nombre>Edward</Nombre>
+				<Apellido>De Bono</Apellido>
+			</Autor>
+		</Autores>
+		<Editorial>Granica</Editorial>
+		<Publicacion>2003</Publicacion>
+		<Paginas>208</Paginas>
+		<Precio moneda="pesos argentinos">29</Precio>
+	</Libro>
+	<Libro ISBN="9500726297">
+		<Titulo>El Zorro</Titulo>
+		<Autores>
+			<Autor>
+				<Nombre>Isabel</Nombre>
+				<Apellido>Allende</Apellido>
+			</Autor>
+		</Autores>
+		<Editorial>Sudamericana</Editorial>
+		<Publicacion>2005</Publicacion>
+		<Paginas>384</Paginas>
+		<Precio moneda="pesos argentinos">34.9</Precio>
+		</Libro>
+	<Libro ISBN="8441514844">
+		<Titulo>La Biblia C#</Titulo>
+		<Autores>
+			<Autor>
+				<Nombre>Jeff</Nombre>
+				<Apellido>Ferguson</Apellido>
+			</Autor>
+			<Autor>
+				<Nombre>Jason</Nombre>
+				<Apellido>Beres</Apellido>
+			</Autor>
+			<Autor>
+				<Nombre>Brian</Nombre>
+				<Apellido>Patterson</Apellido>
+			</Autor>
+		</Autores>
+		<Editorial>Anaya Multimedia</Editorial>
+		<Publicacion>2003</Publicacion>
+		<Paginas>862</Paginas>
+		<Precio moneda="dolares">66</Precio>
+	</Libro>
+	<Libro ISBN="8495318687">
+		<Titulo>Iniciación a Xml</Titulo>
+		<Autores>
+			<Autor>
+				<Nombre>David</Nombre>
+				<Apellido>Hunter</Apellido>
+			</Autor>
+		</Autores>
+		<Editorial>Inforbooks</Editorial>
+		<Publicacion>2001</Publicacion>
+		<Paginas>836</Paginas>
+		<Precio moneda="dolares">66.5</Precio>
+	</Libro>
+</Libros>
