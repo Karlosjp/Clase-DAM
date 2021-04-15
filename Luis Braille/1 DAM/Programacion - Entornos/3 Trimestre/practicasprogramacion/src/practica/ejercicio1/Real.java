@@ -1,28 +1,27 @@
 package practica.ejercicio1;
 
-public class Real {
+public class Real implements Mayor<Real> {
 	private double douReal;
 
 	public Real(double douReal) {
 		this.douReal = douReal;
 	}
 
-	@Override
-	public String toString() {
-		return "Real [douReal=" + douReal + "]";
-	}
-
 	public double getDouReal() {
 		return douReal;
 	}
 
-	public int comparar(Real objReal) {
-		if (douReal > objReal.douReal)
-			return 1;
-		else if (douReal < objReal.douReal)
-			return -1;
+	@Override
+	public boolean mayor(Real ojbComparar) {
+		if (douReal > ojbComparar.douReal)
+			return true;
 		else
-			return 0;
+			return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Real [douReal=" + douReal + "]";
 	}
 
 }
