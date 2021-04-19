@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Music xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="music.xsd">
+<Artists>
+      <Artist artistID="BO">Bono</Artist>
+      <Artist artistID="BM">Bob Marley</Artist>
+</Artists>
+<Songs>
+        <Song artist="BO">With Or Without You</Song>
+        <Song artist="BO">Sunday Bloody Sunday</Song>
+        <Song artist="BM">No Woman, No Cry</Song>
+</Songs>
+</Music>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="person16.xsd">
+          <Title>Copia este libro</Title>
+          <Author>
+              <Name>David Bravo</Name>
+              <Awards>15m</Awards>
+          </Author>
+          <Illustrator>
+                  <Name>Pablo Soto</Name>
+                  <Company>Una</Company>
+          </Illustrator>
+</Book>

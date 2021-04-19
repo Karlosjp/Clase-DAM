@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:simpleType name="DateList">
+    <xs:list itemType="xs:date"/>
+</xs:simpleType>
+<xs:element name="Employee">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="VacationDays" type="DateList"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

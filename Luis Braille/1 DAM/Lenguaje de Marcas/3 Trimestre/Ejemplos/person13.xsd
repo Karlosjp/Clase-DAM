@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Person">
+          <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="Name">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                            <xs:element name="FirstName" type="xs:string"/>
+                                            <xs:element name="LastName" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="Pseudonym" type="xs:boolean"/>
+                                </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+          </xs:complexType>
+</xs:element>
+</xs:schema>

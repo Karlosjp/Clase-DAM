@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Person3.xsd">
+<Name>Adolfo</Name>
+<LastNames>Sanz</LastNames>
+<LastNames>De Diego</LastNames>
+</Person>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colegio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Ejercicio5.xsd">
+    <alumno codigo="A100" nombre="Miguel" apellido1="Alcantara" apellido2="Alejo">
+        <padre>P100</padre>
+        <madre>M100</madre>
+        <hermano>A125</hermano>
+        <hermano>A232</hermano>
+        <curso>C01</curso>
+        <nacimiento>2010-04-10</nacimiento>
+    </alumno>
+    <alumno codigo="A125" nombre="Eduardo" apellido1="Alcantara" apellido2="Alejo">
+        <padre>P100</padre>
+        <madre>M100</madre>
+        <hermano>A100</hermano>
+        <hermano>A232</hermano>
+        <curso>C03</curso>
+        <nacimiento>2008-05-11</nacimiento>
+    </alumno>
+    <alumno codigo="A232" nombre="Sonia" apellido1="Alcantara" apellido2="Alejo">
+        <padre>P100</padre>
+        <madre>M100</madre>
+        <hermano>A100</hermano>
+        <hermano>A125</hermano>
+        <curso>C05</curso>
+        <nacimiento>2006-08-11</nacimiento>
+    </alumno>
+    <alumno codigo="A101" nombre="Alicia" apellido1="Pérez" apellido2="López">
+        <madre>M101</madre>
+        <curso>C01</curso>
+        <nacimiento>2010-10-12</nacimiento>
+    </alumno>
+    <padre>
+        <codigo>P100</codigo>
+        <nombre>"Miguel"</nombre>
+        <apellido1>"Alcantara"</apellido1>
+        <apellido2>"García"</apellido2>
+        <telefono>654786675</telefono>
+    </padre>
+    <madre>
+        <codigo>M100</codigo>
+        <nombre>"Sara"</nombre>
+        <apellido1>"Alejo"</apellido1>
+        <apellido2>"Hernández"</apellido2>
+        <telefono>655211123</telefono>
+    </madre>
+    <madre>
+        <codigo>M101</codigo>
+        <nombre>"María Teresa"</nombre>
+        <apellido1>"Pérez"</apellido1>
+        <apellido2>"Padrones"</apellido2>
+        <telefono>623141455</telefono>
+    </madre>
+    <curso>
+        <codigo>C01</codigo>
+        <descripcion>Primero de Infantil</descripcion>
+    </curso>
+    <curso>
+        <codigo>C03</codigo>
+        <descripcion>Primero</descripcion>
+    </curso>
+    <curso>
+        <codigo>C05</codigo>
+        <descripcion>Tercero</descripcion>
+    </curso>
+</colegio>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="personal">
+    <xs:complexType>
+    <!--Dos  elementos desde la raíz "personal" -->
+    <!--Los elementos datos-generales y datos-departamentos pueden aparecer indistintamente uno antes que el otro.-->
+      <xs:all>
+        <xs:element name="datos-generales" type="tipoDatosGenerales"/>
+        <!--No hay que definir en el schema más tipos de datos que los indicados en el ejercicio: 
+        tipoDatosGenerales, tipoDepartamento, tipoEmpleado, tipoJefe, tipoTexto y tipoClave.-->
+        <!-- No definir fuera el tipoDatosDepartamentos.  NO type="tipoDatosDepartamentos" -->
+        <xs:element name="datos-departamentos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="departamento" maxOccurs="unbounded">
+                <xs:complexType>
+                <!--De cada departamento (pueden haber de 1 a ilimitados), primero debe escribirse el jefe y, después, los empleados que hubiese.-->
+                  <xs:sequence>
+                  <!---Por otro lado, jefe (obligatoriamente habrá 1 por departamento)-->
+                    <xs:element name="jefe" type="tipoJefe" />
+                    <!--Empleado (en cada departamento puede haber de 0 a 3) debe ser de un tipo definido por nosotros al que llamaremos tipoEmpleado, ....-->
+                    <xs:element name="empleado" type="tipoEmpleado" minOccurs="0" maxOccurs="3" />
+                  </xs:sequence>
+                  <xs:attributeGroup ref="atributos_departamento" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+      <!--3  atributos en la  raíz -->
+      <xs:attributeGroup  ref="atributos_personal"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--Excepto para los hijos directos de los elementos personal, datos-generales y departamento, siempre que sea posible agrupar al menos dos elementos o dos atributos, se debe utilizar group o attributeGroup-->
+<xs:attributeGroup  name="atributos_personal">
+  <xs:attribute name="fecha" type="xs:date" use="required"/> <!--El atributo fecha debe definirse del tipo que se considere más apropiado, de entre los proporcionados por XML Schema.-->
+  <xs:attribute name="multinacional" type="xs:boolean" use="required"/> <!--El atributo multinacional indica si la empresa lo es, o no, con un valor lógico.-->
+  <xs:attribute name="moneda" fixed="Euro" /> <!--El atributo moneda debe indicarse que es un valor fijo. Pero no es obligatorio.-->
+</xs:attributeGroup>  
+
+
+<!--Los datos generales de la empresa deben ser de un tipo definido por nosotros al que llamaremos tipoDatosGenerales, donde hay que definir los elementos nombre-empresa, número-trabajadores (que debe ser un valor entero mayor que 0) y sector. Estos elementos deben escribirse en dicho orden en el documento XML.-->
+  <xs:complexType name="tipoDatosGenerales">
+    <xs:sequence>
+      <xs:element name="nombre-empresa" type="tipoTexto"  />
+      <xs:element name="número-trabajadores" type="xs:positiveInteger" />  <!-- O añadir restricción de número entero mayor que 0-->
+      <xs:element name="sector">
+        <xs:complexType>
+          <xs:sequence>
+                  <!-- referencia a grupo --> 
+                  <xs:group ref="sectores"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+<!-- El elemento nombre-empresa y el elemento nombre-y-apellidos de los trabajadores, deben ser del mismo tipo, al que llamaremos tipoTexto, 
+y donde debe indicarse que los valores admitidos para dichos elementos pueden ser cadenas de un mínimo de 1 carácter y un máximo de 40.-->
+<xs:simpleType name="tipoTexto">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="1" />
+    <xs:maxLength value="40" />
+  </xs:restriction>
+</xs:simpleType>
+
+
+    <!--Los posibles sectores son educación, finanzas o tecnología. 
+    De tal forma que, sólo uno de ellos debe escribirse en el archivo XML mediante un elemento vacío, como en este caso se ha escrito <tecnología />.-->
+  <xs:group name="sectores">
+      <xs:choice>
+        <xs:element name="educación" />
+        <xs:element name="finanzas" />
+        <xs:element name="tecnología" />
+      </xs:choice>
+  </xs:group>
+
+<xs:attributeGroup  name="atributos_departamento">
+  <xs:attribute name="código" type="xs:ID" use="required"/> <!--Se tiene que indicar que el código de cada departamento ha de ser único. .-->
+  <xs:attribute name="nombre-departamento" type="tipoDepartamento" use="required"/>
+</xs:attributeGroup>  
+
+<!--Sin hacer uso pattern indicar que los posibles nombres de departamento son Administración, Informática, Marketing o Recursos humanos, 
+no permitiéndose otro valor. 
+Para ello, se debe definir un tipo de dato llamado tipoDepartamento, que debe poder ser utilizado por otros atributos o elementos. -->
+<xs:simpleType name="tipoDepartamento">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="Administración" />
+    <xs:enumeration value="Informática" />
+    <xs:enumeration value="Marketing" />
+    <xs:enumeration value="Recursos humanos" />
+  </xs:restriction>
+</xs:simpleType>
+
+<!--al que llamaremos tipoEmpleado, ....donde hay que definir los posibles valores que pueden tener los elementos nombre-y-apellidos, baja y salario 
+(que deberán escribirse en ese orden en el documento XML). -->
+<xs:complexType name="tipoEmpleado" >
+  <xs:sequence>
+    <xs:group ref="datosEmpleado" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:group name="datosEmpleado">
+  <xs:sequence>
+    <xs:element name="nombre-y-apellidos" type="tipoTexto" />
+    <xs:element name="baja" minOccurs="0" />
+    <xs:element name="salario">
+    <!--Sin hacer de uso pattern hay que indicar que el valor del salario debe ser un número decimal mayor que 1000, 
+    pero no mayor que 9999. 
+    Además, dicho valor podrá contener 6 dígitos como máximo y, de ellos, sólo dos podrán ser decimales.-->
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:minExclusive value="1000" />
+          <xs:maxInclusive value="9999" />
+          <xs:totalDigits value="6" />
+          <xs:fractionDigits value="2" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+  </xs:sequence>
+</xs:group>
+
+<!--Por otro lado, jefe (obligatoriamente habrá 1 por departamento) ha de ser de otro tipo llamado tipoJefe, 
+definido como una extensión de tipoEmpleado añadiéndole el elemento clave. -->
+<xs:complexType name="tipoJefe">
+  <xs:complexContent>
+    <xs:extension base="tipoEmpleado">
+      <xs:sequence>
+      <!--La clave debe ser de un tipo definido por nosotros al que llamaremos tipoClave,   y donde debe indicarse, ..-->
+        <xs:element name="clave">
+          <xs:complexType>
+              <xs:simpleContent>
+                <xs:extension base="tipoClave">
+                <!--Usuario no es un atributo obligatorio. 
+                Ahora bien, si se escribe, debe estar formado por un mínimo de 6 caracteres y un máximo de 8 
+                (hay que escribir esta restricción sin hacer uso de pattern). Por otro lado, se debe indicar “invitado” como su valor por defecto.-->
+                  <xs:attribute name="usuario" default="invitado">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="6" />
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:extension>
+              </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+
+  <!--La clave debe ser de un tipo definido por nosotros al que llamaremos tipoClave, 
+  y donde debe indicarse, que los valores admitidos por este tipo pueden ser cadenas de ocho caracteres donde el primero debe ser un dígito del 0 al 9; 
+  el segundo debe ser un carácter distinto a un dígito; después, pueden aparecer de 2 a 4 letras de la “a” a la “z”; 
+  posteriormente, podrá aparecer, o no, una letra de la “A” a la “Z”; 
+  a continuación, tendrá que estar una de estas tres letras mayúsculas (K, Y, H); y finalmente, podrá aparecer de 0 a 3 caracteres cualesquiera.-->
+<xs:simpleType name="tipoClave">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1}[^0-9]{1}[a-z]{2,4}[A-Z]?[KYH].{0,3}"/>
+      <xs:length value="8"/>
+  </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

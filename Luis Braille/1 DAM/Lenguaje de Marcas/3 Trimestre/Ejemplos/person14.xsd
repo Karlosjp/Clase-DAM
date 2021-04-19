@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Person">
+      <xs:complexType>
+              <xs:sequence>
+                    <xs:element name="Name">
+                    <xs:complexType>
+                          <xs:sequence>
+                              <xs:element name="FirstName" type="xs:string"/>
+                              <xs:element name="LastName" type="xs:string"/>
+                           </xs:sequence>
+                          <xs:attribute name="PersonTitle">
+                              <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Mr."/>
+                                        <xs:enumeration value="Ms."/>
+                                        <xs:enumeration value="Dr."/>
+                                    </xs:restriction>
+                              </xs:simpleType>
+                          </xs:attribute>
+                    </xs:complexType>
+              </xs:element>
+              </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+</xs:schema>

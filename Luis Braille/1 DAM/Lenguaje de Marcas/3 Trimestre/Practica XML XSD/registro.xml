@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./registro.xsd">
+    <usuarios>
+        <usuario identificador="U123">
+            <apellidos-y-nombre>Sanz Tapia, Ana</apellidos-y-nombre>
+            <email>asanz@jimail.com</email>
+            <conexiones>
+                <conexion>
+                    <fecha>2014-02-23</fecha>
+                    <hora>19:15:40</hora>
+                    <segundos>122</segundos>
+                </conexion>
+                <conexion>
+                    <fecha>2014-02-23</fecha>
+                    <hora>20:30:22</hora>
+                    <segundos>617</segundos>
+                </conexion>
+                <conexion>
+                    <fecha>2014-02-24</fecha>
+                    <hora>11:18:31</hora>
+                    <segundos>25</segundos>
+                </conexion>
+            </conexiones>
+        </usuario>
+        <usuario identificador="U96">
+            <apellidos-y-nombre>Ruiz Hierro, Pedro</apellidos-y-nombre>
+            <email>pruiz@jotmail.com</email>
+            <conexiones>
+                <conexion>
+                    <fecha>2014-02-25</fecha>
+                    <hora>20:33:55</hora>
+                    <segundos>390</segundos>
+                </conexion>
+            </conexiones>
+        </usuario>
+    </usuarios>
+    <empleados>
+        <empleado identificador="E4">
+            <apellidos-y-nombre>Vera Gil, Marta</apellidos-y-nombre>
+            <email>mvera@yajoo.es</email>
+            <conexiones></conexiones>
+            <departamento>
+                <Marketing></Marketing>
+            </departamento>
+        </empleado>
+    </empleados>
+</registros>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+      <xs:complexType name="PersonType" abstract="true">
+            <xs:sequence>
+                  <xs:element name="Name" type="xs:string" />
+            </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Author">
+            <xs:complexContent>
+                  <xs:extension base="PersonType" />
+            </xs:complexContent>
+      </xs:complexType>
+
+      <xs:complexType name="Ilustrator">
+            <xs:complexContent>
+                  <xs:extension base="PersonType">
+                        <xs:sequence>
+                              <xs:element name="Awards" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                  </xs:extension>
+            </xs:complexContent>
+      </xs:complexType>
+
+      <xs:group name="Person">
+            <xs:choice>
+                  <xs:element name="Author" type="Author" />
+                  <xs:element name="Ilustrator" type="Ilustrator" />
+            </xs:choice>
+      </xs:group>
+
+      <xs:element name="Book">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="Title" type="xs:string" />
+                        <xs:group ref="Person" maxOccurs="3" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+</xs:schema>

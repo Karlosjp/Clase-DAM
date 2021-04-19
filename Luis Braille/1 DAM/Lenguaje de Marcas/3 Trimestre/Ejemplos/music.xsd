@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Music">
+    <xs:complexType>
+          <xs:sequence>
+                <xs:element name="Artists">
+                  <xs:complexType>
+                      <xs:sequence>
+                          <xs:element name="Artist" maxOccurs="unbounded">
+                              <xs:complexType>
+                                  <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                          <xs:attribute name="artistID" type="xs:string"  use="required"/>
+                                      </xs:extension>
+                                  </xs:simpleContent>
+                              </xs:complexType>
+                          </xs:element>
+                      </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="Songs">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Song" maxOccurs="unbounded">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="artist" type="xs:string" use="required"/>
+                            </xs:extension>
+                          </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                   </xs:complexType>
+                </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:key name="ArtistKey">
+        <xs:selector xpath="Artists/Artist"/>
+        <xs:field xpath="@artistID"/>
+      </xs:key>
+      <xs:keyref name="ArtistKeyRef" refer="ArtistKey">
+        <xs:selector xpath="Songs/Song"/>
+        <xs:field xpath="@artist"/>
+      </xs:keyref>
+</xs:element>
+</xs:schema>

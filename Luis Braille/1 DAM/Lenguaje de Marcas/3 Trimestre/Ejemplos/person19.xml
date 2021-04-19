@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="person19.xsd">
+        <Blog URL="http://mia.com" Description="my blog"/>
+        <Twitter URL="http://dos.com" />
+</Person>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="tipoPrecio">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0" />
+            <xs:maxInclusive value="999" />
+            <xs:totalDigits value="5" />
+            <xs:fractionDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoArticulo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DVD" />
+            <xs:enumeration value="Libro" />
+            <xs:enumeration value="Varios" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5" />
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:group name="datos">
+        <xs:sequence>
+            <xs:element name="nombre" type="tipoTexto" />
+            <xs:element name="cif">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{8}\-[A-Z]" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="telefono">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{9}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:element name="factura">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="datos_emisor">
+                    <xs:complexType>
+                        <xs:group ref="datos" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="datos_cliente">
+                    <xs:complexType>
+                        <xs:group ref="datos" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="detalle_factura">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="articulo" maxOccurs="15">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="tipo" type="tipoArticulo" />
+                                        <xs:element name="descripcion" type="tipoTexto" />
+                                        <xs:element name="cantidad">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minExclusive value="0" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="oferta" minOccurs="0" />
+                                        <xs:element name="pvp" type="tipoPrecio" />
+                                    </xs:sequence>
+                                    <xs:attribute name="codigo" type="xs:ID" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="importe" type="tipoPrecio" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+            <xs:attribute name="numero" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minExclusive value="0" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="fecha" type="xs:date" use="required" />
+            <xs:attribute name="moneda" fixed="€" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
