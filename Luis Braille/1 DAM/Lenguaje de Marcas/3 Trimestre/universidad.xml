@@ -5,7 +5,7 @@
     <nombre>Universidad de Victoria</nombre>
     <pais>España</pais>
 
-<!-- CARRERAS -->
+    <!-- CARRERAS -->
 
     <carreras>
 
@@ -53,7 +53,7 @@
         </carrera>
 
     </carreras>
-<!-- ASIGNATURAS -->
+    <!-- ASIGNATURAS -->
 
     <asignaturas>
 
@@ -122,7 +122,7 @@
 
     </asignaturas>
 
-<!-- ALUMNOS -->
+    <!-- ALUMNOS -->
 
     <alumnos>
 
@@ -132,12 +132,12 @@
             <nombre>Víctor Manuel</nombre>
             <sexo>Hombre</sexo>
             <estudios>
-                <carrera codigo="c01"/>
+                <carrera codigo="c01" />
                 <asignaturas>
-                    <asignatura codigo="a01"/>
-                    <asignatura codigo="a03"/>
-                    <asignatura codigo="a05"/>
-                    <asignatura codigo="a09"/>
+                    <asignatura codigo="a01" />
+                    <asignatura codigo="a03" />
+                    <asignatura codigo="a05" />
+                    <asignatura codigo="a09" />
                 </asignaturas>
             </estudios>
         </alumno>
@@ -148,10 +148,10 @@
             <nombre>Luisa</nombre>
             <sexo>Mujer</sexo>
             <estudios>
-                <carrera codigo="c02"/>
+                <carrera codigo="c02" />
                 <asignaturas>
-                    <asignatura codigo="a02"/>
-                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a02" />
+                    <asignatura codigo="a01" />
                 </asignaturas>
                 <proyecto>Web de IBM.com</proyecto>
             </estudios>
@@ -164,12 +164,12 @@
             <nombre>Fernando</nombre>
             <sexo>Hombre</sexo>
             <estudios>
-                <carrera codigo="c02"/>
+                <carrera codigo="c02" />
                 <asignaturas>
-                    <asignatura codigo="a02"/>
-                    <asignatura codigo="a01"/>
-                    <asignatura codigo="a04"/>
-                    <asignatura codigo="a09"/>
+                    <asignatura codigo="a02" />
+                    <asignatura codigo="a01" />
+                    <asignatura codigo="a04" />
+                    <asignatura codigo="a09" />
                 </asignaturas>
             </estudios>
         </alumno>
@@ -180,11 +180,11 @@
             <nombre>María</nombre>
             <sexo>Mujer</sexo>
             <estudios>
-                <carrera codigo="c01"/>
+                <carrera codigo="c01" />
                 <asignaturas>
-                    <asignatura codigo="a02"/>
-                    <asignatura codigo="a01"/>
-                    <asignatura codigo="a07"/>
+                    <asignatura codigo="a02" />
+                    <asignatura codigo="a01" />
+                    <asignatura codigo="a07" />
                 </asignaturas>
                 <proyecto>Estudio de Salinidad del Pantano Iris</proyecto>
             </estudios>

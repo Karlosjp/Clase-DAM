@@ -1,0 +1,36 @@
+private static File desplazar(Scanner scnLeer, File fichero) {
+			String[] arrStrListaArchivos = fichero.list();
+	  		String strUbicaionAct=(new File(fichero.getAbsolutePath())).getAbsolutePath();
+	  		if(strUbicaionAct.charAt(strUbicaionAct.length()-1)=='.')
+	  			strUbicaionAct=strUbicaionAct.substring(0,strUbicaionAct.lastIndexOf(File.separatorChar));
+	  		ArrayList <String> alDirectorios = new ArrayList();
+	  		int intOpc;
+	  		System.out.println("Se encuentra en " + strUbicaionAct);
+	  		//inserto el diectorio raiz del actual
+	  		alDirectorios.add(new File(strUbicaionAct).getParent());
+	  		System.out.println("padre "+ alDirectorios.get(0));
+/*$$			System.out.println("0.- " + alDirectorios.get(0));
+			int intDirectorios=1;*/
+	  		//paso por los subdirectorios
+			for(int intCont=0;intCont<arrStrListaArchivos.length;intCont++) { 
+	  			//si es un subdirectorio lo muestro y añado al arraylist
+				if((new File(strUbicaionAct,arrStrListaArchivos[intCont])).isDirectory()==true) {
+/*$$		  			System.out.println(intDirectorios + ".- "+ arrStrListaArchivos[intCont]);
+		  			intDirectorios++;*/
+		  			alDirectorios.add(arrStrListaArchivos[intCont]);
+	  			}
+	  		}
+			for(int intCont=0; intCont<alDirectorios.size();intCont++)
+				System.out.println(intCont + ".- "+ alDirectorios.get(intCont)); //imprimo las opciones
+			do {
+				System.out.println("Elija el directorio al que quiere ir ente 0 y "+ (alDirectorios.size()-1));/*$$(intDirectorios-1));*/
+				intOpc = Integer.parseInt(scnLeer.nextLine());
+			}while(intOpc<0 || intOpc>alDirectorios.size());/*$$intDirectorios);*/
+			if(intOpc==0)
+				fichero = new File(alDirectorios.get(0));
+			else
+				fichero = new File(strUbicaionAct + File.separatorChar + alDirectorios.get(intOpc));
+			
+			System.out.println("Ubicación actual: " + fichero.getAbsolutePath());
+	return fichero;
+  }
