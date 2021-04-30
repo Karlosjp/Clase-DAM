@@ -61,8 +61,9 @@ public class Diccionario {
 		for (Map.Entry<String, Palabra> entry : hmPalabras.entrySet())
 			for (Palabra objSignificado : objPalabra.getLiSignificados()) {
 				auxPalabra = null;
-				if (entry.getKey() != objPalabra.getStrPalabra())
-					auxPalabra = entry.getValue().sinonimos(objPalabra.getStrPalabra());
+				if (entry.getKey() != objPalabra.getStrPalabra()
+						&& entry.getValue().getStrIdioma().equals(objPalabra.getStrIdioma()))
+					auxPalabra = entry.getValue().sinonimos(objSignificado.getStrPalabra());
 
 				if (auxPalabra != null)
 					liPalabras.add(auxPalabra.getStrPalabra());
@@ -81,7 +82,7 @@ public class Diccionario {
 		hmPalabras.get(strPalabra).agregarSignificado(objSignificado);
 	}
 
-	public void agregarSignificados(List<Palabra> objSignificados, String strPalabra) {
+	public void agregarSignificado(List<Palabra> objSignificados, String strPalabra) {
 		hmPalabras.get(strPalabra).agregarSignificado(objSignificados);
 	}
 

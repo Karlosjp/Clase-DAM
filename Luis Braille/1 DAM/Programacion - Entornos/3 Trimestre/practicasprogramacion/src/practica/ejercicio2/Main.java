@@ -48,7 +48,20 @@ public class Main {
 			System.out.println("Escribe una palabra:");
 			strRespuesta = snc.nextLine();
 
-			mostrarPalabra(objDiccionario, strRespuesta);
+			Palabra objPalabra = mostrarPalabra(objDiccionario, strRespuesta);
+
+			if (objPalabra == null) {
+				if (agregarPalabra(objDiccionario, strRespuesta))
+					System.out.println("La palabra ha sido agregada");
+			} else {
+				List<String> liSinonimos = buscarSinonimos(objPalabra, objDiccionario);
+
+				if (liSinonimos.size() == 0)
+					agregarSinonimos(objPalabra, objDiccionario);
+				else
+					for (String strSinonimo : liSinonimos)
+						mostrarPalabra(objDiccionario, strSinonimo);
+			}
 
 			System.out.println("Quieres terminar?");
 			strRespuesta = snc.nextLine();
@@ -60,21 +73,58 @@ public class Main {
 		System.out.println("Programa terminado");
 	}
 
-	public static void mostrarPalabra(Diccionario objDiccionario, String strPalabra) {
+	public static Palabra mostrarPalabra(Diccionario objDiccionario, String strPalabra) {
 		Palabra objPalabra = objDiccionario.existePalabra(strPalabra);
 		List<String> liSinonimos = new ArrayList<String>();
 
 		if (objPalabra != null) {
 			liSinonimos = buscarSinonimos(objPalabra, objDiccionario);
-			
+
 			System.out.println(objPalabra);
 			System.err.print("Sinonimos: ");
-			for (String strSinonimo : liSinonimos) 
+			for (String strSinonimo : liSinonimos)
 				System.out.print(strSinonimo + "\t");
-			
-		} else
+			System.out.println();
+		} else {
 			System.out.println("La palabra no existe");
-		System.out.println();
+			return null;
+		}
+		return objPalabra;
+	}
+
+	public static boolean agregarPalabra(Diccionario objDiccionario, String strNuevaPalabra) {
+		Scanner snc = new Scanner(System.in);
+		String strRespuesta = "no";
+
+		System.out.println("¿Quieres agregar la palabra? " + strNuevaPalabra);
+		strRespuesta = snc.nextLine();
+
+		if (strRespuesta.equals("si")) {
+			String strIdioma, strSignificado;
+			List<Palabra> liSignificados = new ArrayList<Palabra>();
+
+			System.out.println("En que idioma esta? (es/en)");
+			strIdioma = snc.nextLine();
+
+			do {
+				System.out.println("Que significado tiene?");
+				strSignificado = snc.nextLine();
+
+				if (strIdioma.equals("es"))
+					liSignificados.add(new Palabra(strSignificado, "en"));
+				else
+					liSignificados.add(new Palabra(strSignificado, "es"));
+
+				System.out.println("Tiene alguno mas?");
+				strRespuesta = snc.nextLine();
+			} while (strRespuesta.equals("si"));
+
+			objDiccionario.annadirPalabra(new Palabra(strNuevaPalabra, strIdioma, liSignificados));
+
+			return true;
+		}
+
+		return false;
 	}
 
 	public static List<String> agregarSignificados() {
@@ -98,48 +148,38 @@ public class Main {
 	}
 
 	public static void agregarSinonimos(Palabra objPalabra, Diccionario objDiccionario) {
-		boolean booTerminar = false;
 		Scanner scn = new Scanner(System.in);
 		String strRespuesta = "";
 		List<Palabra> liPalabras = new ArrayList<Palabra>();
-		Palabra objSignificado = new Palabra();
+		Palabra objSinonimo;
 
 		System.out.println("significados de la palabra " + objPalabra.getStrPalabra());
-		System.out.println("¿Escribe el significado?");
 		for (Palabra objSig : objPalabra.getLiSignificados())
 			System.out.println("Significado: " + objSig.getStrPalabra());
+
+		System.out.println("Escribe un sinonimo");
 		strRespuesta = scn.nextLine();
 
-		objSignificado = objDiccionario.existePalabra(strRespuesta);
-		if (objSignificado == null) {
+		objSinonimo = objDiccionario.existePalabra(strRespuesta);
+
+		if (objSinonimo == null) {
 			if (objPalabra.getStrIdioma().equals("es"))
-				objSignificado = new Palabra(strRespuesta, "en", objPalabra);
+				objSinonimo = new Palabra(strRespuesta, "en", objPalabra);
 			else
-				objSignificado = new Palabra(strRespuesta, "es", objPalabra);
+				objSinonimo = new Palabra(strRespuesta, "es", objPalabra);
 
-			objDiccionario.annadirPalabra(objSignificado);
-			objDiccionario.agregarSignificado(objSignificado, objPalabra.getStrPalabra());
+			objDiccionario.annadirPalabra(objSinonimo);
+			objDiccionario.agregarSignificado(objPalabra.getLiSignificados(), objSinonimo.getStrPalabra());
+		} else {
+			if (objPalabra.getStrIdioma().equals("es"))
+				System.out.println("Cual es su significado en español?");
+			else
+				System.out.println("Cual es su significado en ingles?");
+
+			strRespuesta = scn.nextLine();
+			objDiccionario.agregarSignificado(objSinonimo, strRespuesta);
+			objDiccionario.agregarSignificado(objPalabra, strRespuesta);
 		}
-
-		do {
-			System.out.println(
-					"Escribe un sinonimo para " + objPalabra.getStrPalabra() + ": " + objSignificado.getStrPalabra());
-			strRespuesta = scn.nextLine();
-
-			Palabra existePalabra = objDiccionario.existePalabra(strRespuesta);
-
-			if (existePalabra != null)
-				liPalabras.add(existePalabra);
-
-			System.out.println("¿Agregar mas sinonimos? Si/No");
-			strRespuesta = scn.nextLine();
-
-			if (strRespuesta.equals("Si"))
-				booTerminar = true;
-
-		} while (booTerminar);
-
-//		objDiccionario.agregarSinonimo(liPalabras, objPalabra.getStrPalabra());
 	}
 
 	/**
