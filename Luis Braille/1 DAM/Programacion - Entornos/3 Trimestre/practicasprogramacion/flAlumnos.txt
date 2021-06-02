@@ -1,0 +1,5 @@
+CodExpediente:251x4/Nombre:Josue/Apellidos:Jaquez/Ciclo:1DAM/ListaAsignaturas:[Nombre:FOL-Nota:5.0, Nombre:Entornos-Nota:0.0, Nombre:BBDD-Nota:8.0, Nombre:Marcas-Nota:0.0, Nombre:Sistemas-Nota:0.0, Nombre:Programacion-Nota:5.0]
+CodExpediente:254x4/Nombre:CarlosJ/Apellidos:Jaquez/Ciclo:1DAM/ListaAsignaturas:[Nombre:FOL-Nota:5.0, Nombre:Entornos-Nota:0.0, Nombre:BBDD-Nota:8.0, Nombre:Marcas-Nota:0.0, Nombre:Sistemas-Nota:0.0, Nombre:Programacion-Nota:5.0]
+CodExpediente:256x4/Nombre:Carlos/Apellidos:Jaquez/Ciclo:1DAM/ListaAsignaturas:[Nombre:FOL-Nota:5.0, Nombre:Entornos-Nota:0.0, Nombre:BBDD-Nota:8.0, Nombre:Marcas-Nota:0.0, Nombre:Sistemas-Nota:0.0, Nombre:Programacion-Nota:5.0]
+CodExpediente:246x4/Nombre:Mario/Apellidos:Jaquez/Ciclo:1DAM/ListaAsignaturas:[Nombre:FOL-Nota:5.0, Nombre:Entornos-Nota:0.0, Nombre:BBDD-Nota:8.0, Nombre:Marcas-Nota:0.0, Nombre:Sistemas-Nota:0.0, Nombre:Programacion-Nota:5.0]
+CodExpediente:226x4/Nombre:Anny/Apellidos:Jaquez/Ciclo:1DAM/ListaAsignaturas:[Nombre:FOL-Nota:5.0, Nombre:Entornos-Nota:0.0, Nombre:BBDD-Nota:8.0, Nombre:Marcas-Nota:0.0, Nombre:Sistemas-Nota:0.0, Nombre:Programacion-Nota:5.0]
