@@ -1,0 +1,3 @@
+A;B;C;B;B;B;
+W;X;Y;Z;A;B;
+W;W;W;Z;Z;B;
