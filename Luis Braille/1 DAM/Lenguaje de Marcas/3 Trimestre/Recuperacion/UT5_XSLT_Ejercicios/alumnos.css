@@ -1,0 +1,28 @@
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid black;
+    text-align: center;
+    background-color: darkblue;
+    color:white;
+    padding:5px 10px;
+}
+
+td {
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+   padding:5px 10px;
+}
+.centrado{
+    text-align: center;
+}
+
+.suspenso{
+  color:red;
+  text-align:center;
+  font-size: 2em;
+}

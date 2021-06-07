@@ -1,0 +1,20 @@
+Almaceno en una lista las letras disponibles en el tablero
+
+Por cada letra
+	busco la posicion de la letra "?" donde esta la 1º empezando de 0 0,
+	una vez encontrado, busco coincidencias hacia el + hasta encontrar algo diferente.
+		Por cada coincidencia sumo 1.
+	Vuelvo a la primera posicion y busco 1 hacia abajo. {
+	Si la letra coincide cambio posicion inicial a la actual.
+		busco coincidencias hacia - hasta encontrar algo diferente.
+			por cada coincidencia sumo 1
+		busco coincidencias hacia + hasta encontrar algo diferente.
+			por cada coincidencia sumo 1.
+		Vuelvo a la primera posicion y busco 1 hacia abajo. 
+		Si la letra coincide cambio posicion inicial a la actual.
+			busco coincidencias hacia - hasta encontrar algo diferente.
+				por cada coincidencia sumo 1
+			busco coincidencias hacia + hasta encontrar algo diferente.
+				por cada coincidencia sumo 1
+	}
+	Una vez no hay mas coincidencias, calculo la puntuacion y paso a la siguiente letra.

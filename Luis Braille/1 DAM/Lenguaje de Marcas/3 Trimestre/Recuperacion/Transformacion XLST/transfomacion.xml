@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="transformacion.xsl" type="text/xsl"?>
+<ranking>
+    <juego id="ns-smm2">
+        <nombre>Super Mario Maker 2</nombre>
+        <copias_vendidas>07.15</copias_vendidas>
+        <fecha_lanzamiento>28/6/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Plataformas</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-mhr">
+        <nombre>Monster Hunter Rise</nombre>
+        <copias_vendidas>06.00</copias_vendidas>
+        <fecha_lanzamiento>26/3/2021</fecha_lanzamiento>
+        <actualizacion_datos>3/4/2021</actualizacion_datos>
+        <generos>
+            <genero>Acción</genero>
+            <genero>Rol</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Capcom</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Capcom</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-spl2">
+        <nombre>Splatoon 2</nombre>
+        <copias_vendidas>12.21</copias_vendidas>
+        <fecha_lanzamiento>21/7/2017</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Disparos en tercera persona</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-smp">
+        <nombre>Super Mario Party</nombre>
+        <copias_vendidas>14.79</copias_vendidas>
+        <fecha_lanzamiento>5/10/2018</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Socialización</genero>
+            <genero>Party</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nd Cube</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-ssbu">
+        <nombre>Super Smash Bros. Ultimate</nombre>
+        <copias_vendidas>23.84</copias_vendidas>
+        <fecha_lanzamiento>7/12/2018</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Lucha</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Bandai Namco Studios</desarrollador>
+            <desarrollador>Sora Ltd.</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-tlozbotw">
+        <nombre>The Legend of Zelda: Breath of the Wild</nombre>
+        <copias_vendidas>22.28</copias_vendidas>
+        <fecha_lanzamiento>3/3/2017</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>AccionAventura</genero>
+            <genero>Aventura</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-pkepec">
+        <nombre>Pokémon Espada y Escudo</nombre>
+        <copias_vendidas>21.10</copias_vendidas>
+        <fecha_lanzamiento>15/11/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>RPG</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Game Freak</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>The Pokémon Company</distribuidor>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-acnh">
+        <nombre>Animal Crossing: New Horizons</nombre>
+        <copias_vendidas>32.63</copias_vendidas>
+        <fecha_lanzamiento>20/3/2020</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Simulación social</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-smo">
+        <nombre>Super Mario Odyssey</nombre>
+        <copias_vendidas>20.83</copias_vendidas>
+        <fecha_lanzamiento>27/10/2017</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Plataformas</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-mk8">
+        <nombre>Mario Kart 8 Deluxe</nombre>
+        <copias_vendidas>35.39</copias_vendidas>
+        <fecha_lanzamiento>28/4/2017</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Carreras de karts</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-pklple">
+        <nombre>Pokémon Let's Go. Pikachu! y Let's Go. Eevee!</nombre>
+        <copias_vendidas>13.28</copias_vendidas>
+        <fecha_lanzamiento>16/11/2018</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>RPG</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Game Freak</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>The Pokémon Company</distribuidor>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-nsmbud">
+        <nombre>New Super Mario Bros. U Deluxe</nombre>
+        <copias_vendidas>10.44</copias_vendidas>
+        <fecha_lanzamiento>11/1/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Plataformas</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-lm3">
+        <nombre>Luigi's Mansion 3</nombre>
+        <copias_vendidas>09.01</copias_vendidas>
+        <fecha_lanzamiento>31/10/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Acion</genero>
+            <genero>Aventura</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Next Level Games</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-sm3as">
+        <nombre>Super Mario 3D All-Stars</nombre>
+        <copias_vendidas>09.01</copias_vendidas>
+        <fecha_lanzamiento>31/10/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Plataformas</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+    <juego id="ns-rfa">
+        <nombre>Ring Fit Adventure</nombre>
+        <copias_vendidas>10.11</copias_vendidas>
+        <fecha_lanzamiento>18/10/2019</fecha_lanzamiento>
+        <actualizacion_datos>31/3/2021</actualizacion_datos>
+        <generos>
+            <genero>Exergame</genero>
+        </generos>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <distribuidores>
+            <distribuidor>Nintendo</distribuidor>
+        </distribuidores>
+    </juego>
+</ranking>

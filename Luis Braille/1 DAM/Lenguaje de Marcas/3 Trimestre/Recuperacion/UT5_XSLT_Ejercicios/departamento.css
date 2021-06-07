@@ -1,0 +1,22 @@
+table{
+    margin: 0 auto;
+    font-size: 11px;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 3px;
+    background-color: blanchedalmond;
+}
+th{
+    background-color: blueviolet;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2 em;
+    text-align: center;
+}
+
+td{
+    border: 2px solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
