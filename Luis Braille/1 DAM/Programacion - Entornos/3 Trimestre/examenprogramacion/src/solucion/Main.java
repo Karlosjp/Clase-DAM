@@ -27,7 +27,7 @@ public class Main {
 		// Ejercicio 2
 		System.out.println("\nimprimo el fichero cargado");
 		char[][] miMatriz = tableroToMatriz("miTablero.txt");
-		
+
 		imprimeArray(miMatriz);
 
 		// Ejercicio 3
@@ -80,7 +80,9 @@ public class Main {
 			}
 		} catch (SQLException e) {
 			System.out.println("Error en la conexión con la BD");
+			System.out.println(e);
 		}
+
 	}
 
 	private static char[][] tableroToMatriz(String strFichero) {

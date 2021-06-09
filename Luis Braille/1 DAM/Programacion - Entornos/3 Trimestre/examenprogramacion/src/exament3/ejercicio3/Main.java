@@ -23,6 +23,7 @@ public class Main {
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "java", "clave");// se establece
 																										// la conexión
 			Statement instruccion = conexion.createStatement();
+			
 			ResultSet rs = instruccion.executeQuery("Select count(*) from examen");
 
 			if (rs.next())// guardo cuantos registros hay en la tabla
@@ -59,6 +60,7 @@ public class Main {
 			}
 		} catch (SQLException e) {
 			System.out.println("Error en la conexión con la BD");
+			System.out.println(e);
 		}
 	}
 }

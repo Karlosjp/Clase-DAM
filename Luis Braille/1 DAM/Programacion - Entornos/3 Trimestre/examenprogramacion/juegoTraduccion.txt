@@ -1,0 +1,8 @@
+Texto1Español;Texto1Ingles;Texto1Frances;Texto1Aleman;
+Texto2Español;Texto2Ingles;Texto2Frances;Texto2Aleman;
+Texto3Español;Texto3Ingles;Texto3Frances;Texto3Aleman;
+Texto4Español;Texto4Ingles;Texto4Frances;Texto4Aleman;
+Texto5Español;Texto5Ingles;Texto5Frances;Texto5Aleman;
+Texto6Español;Texto6Ingles;Texto6Frances;Texto6Aleman;
+Texto7Español;Texto7Ingles;Texto7Frances;Texto7Aleman;
+Texto8Español;Texto8Ingles;Texto8Frances;Texto8Aleman;
