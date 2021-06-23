@@ -1,0 +1,195 @@
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>extern</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>register</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>struct</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>auto</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>signed</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>typedef</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>union</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Dennis Ritchie" nombre="C">
+  <token_exclusivo>unsigned</token_exclusivo>
+</lenguaje>
+<token_exclusivo valor="package">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="synchronized">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="boolean">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="this">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="byte">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="throws">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="transient">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="long">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<token_exclusivo valor="super">
+  <lenguaje>Java</lenguaje>
+</token_exclusivo>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>foreach</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>echo</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>endif</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>endfor</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>endwhile</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>endswitch</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>enddeclare</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>include</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>include_once</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Ramus Lerdorf" nombre="PHP">
+  <token_exclusivo>elseif</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>def</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>del</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>elif</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>except</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>exec</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>global</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>in</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>lambda</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>not</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>pass</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>print</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>raise</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>with</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Guido van Rossum" nombre="Python">
+  <token_exclusivo>yield</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>BEGIN</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>END</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>EXCEPTION</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>REPLACE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>PROCEDURE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>FUNCTION</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>TRIGGER</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>SELECT</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>INTO</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>WHERE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>INSERT</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>DELETE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>UPDATE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>DECLARE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>THEN</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>IS</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>LOOP</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>TYPE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>TABLE</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>INDEX</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>ORDER</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>BY</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>COMMIT</token_exclusivo>
+</lenguaje>
+<lenguaje autor="Donald D. Chamberlin" nombre="SQL">
+  <token_exclusivo>ROLLBACK</token_exclusivo>
+</lenguaje>

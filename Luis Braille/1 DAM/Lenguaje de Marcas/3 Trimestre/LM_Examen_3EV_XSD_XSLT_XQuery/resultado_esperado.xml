@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<modulos_programacion>
+  <modulos>
+    <modulo>
+      <nombre horas="8">Programacion</nombre>
+      <lenguaje>Java</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="6">Bases de Datos</nombre>
+      <lenguaje>SQL</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="6">Gestion de Bases de Datos</nombre>
+      <lenguaje>SQL</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="6">Acceso a Bases de Datos</nombre>
+      <lenguaje>PHP</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="6">Administración de Sistemas Operativos</nombre>
+      <lenguaje>Python</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="5">Desarrollo de Procesos y Servicios</nombre>
+      <lenguaje>C</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="5">Implatación de Aplicaciones Web</nombre>
+      <lenguaje>PHP</lenguaje>
+    </modulo>
+    <modulo>
+      <nombre horas="3">Sistemas Empresariales</nombre>
+      <lenguaje>Python</lenguaje>
+    </modulo>
+  </modulos>
+  <lenguajes>
+    <lenguaje>
+      <nombre version="C99">C</nombre>
+      <veces>6</veces>
+      <palabras_reservadas>30</palabras_reservadas>
+    </lenguaje>
+    <lenguaje>
+      <nombre version="Versión 8 Update 291">Java</nombre>
+      <veces>6</veces>
+      <palabras_reservadas>48</palabras_reservadas>
+    </lenguaje>
+    <lenguaje>
+      <nombre version="SQL2016">SQL</nombre>
+      <veces>2</veces>
+      <palabras_reservadas>35</palabras_reservadas>
+    </lenguaje>
+    <lenguaje>
+      <nombre version="8.0.6">PHP</nombre>
+      <veces>6</veces>
+      <palabras_reservadas>44</palabras_reservadas>
+    </lenguaje>
+    <lenguaje>
+      <nombre version="3.9.5">Python</nombre>
+      <veces>6</veces>
+      <palabras_reservadas>30</palabras_reservadas>
+    </lenguaje>
+  </lenguajes>
+  <palabras_reservadas>
+    <token uso="Popular">AND</token>
+    <token uso="Popular">AS</token>
+    <token uso="Exclusivo de un lenguaje">BEGIN</token>
+    <token uso="Exclusivo de un lenguaje">BY</token>
+    <token uso="Exclusivo de un lenguaje">COMMIT</token>
+    <token uso="Conocido">DECLARE</token>
+    <token uso="Exclusivo de un lenguaje">DECLARE</token>
+    <token uso="Exclusivo de un lenguaje">DELETE</token>
+    <token uso="Conocido">ELSIF</token>
+    <token uso="Exclusivo de un lenguaje">END</token>
+    <token uso="Exclusivo de un lenguaje">EXCEPTION</token>
+    <token uso="Conocido">FROM</token>
+    <token uso="Exclusivo de un lenguaje">FUNCTION</token>
+    <token uso="Exclusivo de un lenguaje">INDEX</token>
+    <token uso="Exclusivo de un lenguaje">INSERT</token>
+    <token uso="Exclusivo de un lenguaje">INTO</token>
+    <token uso="Exclusivo de un lenguaje">IS</token>
+    <token uso="Exclusivo de un lenguaje">LOOP</token>
+    <token uso="Popular">OR</token>
+    <token uso="Exclusivo de un lenguaje">ORDER</token>
+    <token uso="Exclusivo de un lenguaje">PROCEDURE</token>
+    <token uso="Exclusivo de un lenguaje">REPLACE</token>
+    <token uso="Exclusivo de un lenguaje">ROLLBACK</token>
+    <token uso="Exclusivo de un lenguaje">SELECT</token>
+    <token uso="Exclusivo de un lenguaje">TABLE</token>
+    <token uso="Exclusivo de un lenguaje">THEN</token>
+    <token uso="Exclusivo de un lenguaje">TRIGGER</token>
+    <token uso="Exclusivo de un lenguaje">TYPE</token>
+    <token uso="Exclusivo de un lenguaje">UPDATE</token>
+    <token uso="Exclusivo de un lenguaje">WHERE</token>
+    <token uso="Conocido">abstract</token>
+    <token uso="Conocido">assert</token>
+    <token uso="Exclusivo de un lenguaje">auto</token>
+    <token uso="Exclusivo de un lenguaje">boolean</token>
+    <token uso="Popular">break</token>
+    <token uso="Exclusivo de un lenguaje">byte</token>
+    <token uso="Popular">case</token>
+    <token uso="Conocido">catch</token>
+    <token uso="Conocido">char</token>
+    <token uso="Popular">class</token>
+    <token uso="Popular">const</token>
+    <token uso="Popular">continue</token>
+    <token uso="Exclusivo de un lenguaje">def</token>
+    <token uso="Popular">default</token>
+    <token uso="Exclusivo de un lenguaje">del</token>
+    <token uso="Popular">do</token>
+    <token uso="Conocido">double</token>
+    <token uso="Exclusivo de un lenguaje">echo</token>
+    <token uso="Exclusivo de un lenguaje">elif</token>
+    <token uso="Muy popular">else</token>
+    <token uso="Exclusivo de un lenguaje">elseif</token>
+    <token uso="Exclusivo de un lenguaje">enddeclare</token>
+    <token uso="Exclusivo de un lenguaje">endfor</token>
+    <token uso="Exclusivo de un lenguaje">endif</token>
+    <token uso="Exclusivo de un lenguaje">endswitch</token>
+    <token uso="Exclusivo de un lenguaje">endwhile</token>
+    <token uso="Conocido">enum</token>
+    <token uso="Exclusivo de un lenguaje">except</token>
+    <token uso="Exclusivo de un lenguaje">exec</token>
+    <token uso="Conocido">extends</token>
+    <token uso="Exclusivo de un lenguaje">extern</token>
+    <token uso="Conocido">final</token>
+    <token uso="Popular">finally</token>
+    <token uso="Conocido">float</token>
+    <token uso="Muy popular">for</token>
+    <token uso="Exclusivo de un lenguaje">foreach</token>
+    <token uso="Exclusivo de un lenguaje">global</token>
+    <token uso="Popular">goto</token>
+    <token uso="Muy popular">if</token>
+    <token uso="Conocido">implements</token>
+    <token uso="Conocido">import</token>
+    <token uso="Exclusivo de un lenguaje">in</token>
+    <token uso="Exclusivo de un lenguaje">include</token>
+    <token uso="Exclusivo de un lenguaje">include_once</token>
+    <token uso="Conocido">instanceof</token>
+    <token uso="Conocido">int</token>
+    <token uso="Conocido">interface</token>
+    <token uso="Exclusivo de un lenguaje">lambda</token>
+    <token uso="Exclusivo de un lenguaje">long</token>
+    <token uso="Conocido">new</token>
+    <token uso="Exclusivo de un lenguaje">not</token>
+    <token uso="Exclusivo de un lenguaje">package</token>
+    <token uso="Exclusivo de un lenguaje">pass</token>
+    <token uso="Exclusivo de un lenguaje">print</token>
+    <token uso="Conocido">private</token>
+    <token uso="Conocido">protected</token>
+    <token uso="Conocido">public</token>
+    <token uso="Exclusivo de un lenguaje">raise</token>
+    <token uso="Exclusivo de un lenguaje">register</token>
+    <token uso="Popular">return</token>
+    <token uso="Conocido">short</token>
+    <token uso="Exclusivo de un lenguaje">signed</token>
+    <token uso="Popular">static</token>
+    <token uso="Exclusivo de un lenguaje">struct</token>
+    <token uso="Exclusivo de un lenguaje">super</token>
+    <token uso="Popular">switch</token>
+    <token uso="Exclusivo de un lenguaje">synchronized</token>
+    <token uso="Exclusivo de un lenguaje">this</token>
+    <token uso="Conocido">throw</token>
+    <token uso="Exclusivo de un lenguaje">throws</token>
+    <token uso="Exclusivo de un lenguaje">transient</token>
+    <token uso="Popular">try</token>
+    <token uso="Exclusivo de un lenguaje">typedef</token>
+    <token uso="Exclusivo de un lenguaje">union</token>
+    <token uso="Exclusivo de un lenguaje">unsigned</token>
+    <token uso="Conocido">void</token>
+    <token uso="Conocido">volatile</token>
+    <token uso="Muy popular">while</token>
+    <token uso="Exclusivo de un lenguaje">with</token>
+    <token uso="Exclusivo de un lenguaje">yield</token>
+  </palabras_reservadas>
+</modulos_programacion>

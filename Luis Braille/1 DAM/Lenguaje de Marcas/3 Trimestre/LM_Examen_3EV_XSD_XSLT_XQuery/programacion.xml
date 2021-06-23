@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<programacion>
+  <lenguajes>
+      <lenguaje>
+        <nombre>C</nombre>
+        <autor>Dennis Ritchie</autor>
+        <fecha_creacion>1969</fecha_creacion>
+        <ultima_version>C99</ultima_version>
+        <tiobe>
+          <posicion mes="mayo2021">1</posicion>
+          <posicion anyo="2021">1</posicion>
+          <posicion anyo="2016">2</posicion>
+          <posicion anyo="2011">2</posicion>
+          <posicion anyo="2006">2</posicion>
+          <posicion anyo="2001">1</posicion>
+         </tiobe>
+      </lenguaje>  
+      <lenguaje>
+        <nombre>Java</nombre>
+        <tiobe>
+          <posicion mes="mayo2021">3</posicion>
+          <posicion anyo="2021">2</posicion>
+          <posicion anyo="2016">1</posicion>
+          <posicion anyo="2011">1</posicion>
+          <posicion anyo="2006">1</posicion>
+          <posicion anyo="2001">3</posicion>
+         </tiobe>
+         <fecha_creacion>1995</fecha_creacion>
+        <ultima_version>Versión 8 Update 291</ultima_version>
+      </lenguaje>
+      <lenguaje>
+        <nombre>SQL</nombre>
+        <autor>Donald D. Chamberlin</autor>
+        <fecha_creacion>1986</fecha_creacion>
+        <ultima_version>SQL2016</ultima_version>
+        <tiobe>
+          <posicion mes="mayo2021">10</posicion>
+          <posicion anyo="2021">9</posicion>
+         </tiobe>
+      </lenguaje>
+      <lenguaje>
+        <nombre>PHP</nombre>
+        <tiobe>
+          <posicion mes="mayo2021">9</posicion>
+          <posicion anyo="2021">8</posicion>
+          <posicion anyo="2016">6</posicion>
+          <posicion anyo="2011">4</posicion>
+          <posicion anyo="2006">4</posicion>
+          <posicion anyo="2001">11</posicion>
+         </tiobe>
+        <autor>Ramus Lerdorf</autor>
+        <fecha_creacion>1994</fecha_creacion>
+        <ultima_version>8.0.6</ultima_version>
+
+      </lenguaje>
+      <lenguaje>
+        <nombre>Python</nombre>
+        <fecha_creacion>1991</fecha_creacion>
+        <ultima_version>3.9.5</ultima_version>
+        <tiobe>
+          <posicion mes="mayo2021">2</posicion>
+          <posicion anyo="2021">3</posicion>
+          <posicion anyo="2016">5</posicion>
+          <posicion anyo="2011">6</posicion>
+          <posicion anyo="2006">8</posicion>
+          <posicion anyo="2001">27</posicion>
+         </tiobe>
+         <autor>Guido van Rossum</autor>
+      </lenguaje>
+  </lenguajes>
+  
+  <modulos>
+    <modulo lenguaje="C"> 
+      <titulo acronimo="DPS">Desarrollo de Procesos y Servicios</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataformas</ciclo>
+      <curso>2</curso>
+      <horas_semanales>5</horas_semanales>
+    </modulo>
+    <modulo lenguaje="Java"> 
+      <titulo acronimo="P">Programacion</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataformas</ciclo>
+      <curso>1</curso>
+      <horas_semanales>8</horas_semanales>
+   </modulo>
+    <modulo lenguaje="SQL"> 
+      <titulo acronimo="BD">Bases de Datos</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataformas</ciclo>
+      <curso>1</curso>
+      <horas_semanales>6</horas_semanales>
+    </modulo>
+    <modulo lenguaje="SQL"> 
+      <titulo acronimo="GBD">Gestion de Bases de Datos</titulo>
+      <ciclo>Administración de Sistemas Informáticos en Red</ciclo>
+      <curso>1</curso>
+      <horas_semanales>6</horas_semanales>
+    </modulo>
+    <modulo>
+      <titulo acronimo="FH">Fundamentos Hardware</titulo>
+      <ciclo>Administración de Sistemas Informáticos en Red</ciclo>
+      <curso>1</curso>
+      <horas_semanales>3.5</horas_semanales>
+    </modulo>
+    <modulo>
+      <titulo acronimo="SI">Sistemas Informáticos</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataforma</ciclo>
+      <curso>1</curso>
+      <horas_semanales>5.5</horas_semanales>
+    </modulo>
+    <modulo lenguaje="PHP"> 
+      <titulo acronimo="ABD">Acceso a Bases de Datos</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataformas</ciclo>
+      <curso>2</curso>
+      <horas_semanales>6</horas_semanales>
+    </modulo>
+    <modulo lenguaje="PHP"> 
+      <titulo acronimo="IAW">Implatación de Aplicaciones Web</titulo>
+      <ciclo>Administración de Sistemas Informáticos en Red</ciclo>
+      <curso>2</curso>
+      <horas_semanales>5</horas_semanales>
+    </modulo>
+    <modulo lenguaje="Python"> 
+      <titulo acronimo="SE">Sistemas Empresariales</titulo>
+      <ciclo>Desarrollo de Aplicaciones Multiplataformas</ciclo>
+      <curso>2</curso>
+      <horas_semanales>3</horas_semanales>
+    </modulo>  
+    <modulo lenguaje="Python"> 
+      <titulo acronimo="ASO">Administración de Sistemas Operativos</titulo>
+      <ciclo>Administración de Sistemas Informáticos en Red</ciclo>
+      <curso>2</curso>
+      <horas_semanales>6</horas_semanales>
+    </modulo>
+    <modulo>
+      <titulo acronimo="ASI">Administración de Sistemas Informáticos</titulo>
+      <ciclo>Administración de Sistemas Informáticos en Red</ciclo>
+      <curso>1</curso>
+      <horas_semanales>8.5</horas_semanales>
+    </modulo>
+  </modulos>  
+  
+  <reservadas>
+    <palabra>
+        <token>char</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>int</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>float</token>
+        <lenguajes>
+          <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>double</token>
+        <lenguajes>
+          <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>if</token>
+        <lenguajes>
+          <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>else</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>    
+    <palabra>
+        <token>do</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>while</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>for</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>  
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>switch</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>short</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>extern</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>static</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>default</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>continue</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>break</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>register</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>struct</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>auto</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>case</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>    
+    <palabra>
+        <token>const</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>enum</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>goto</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>return</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>signed</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>typedef</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>union</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>unsigned</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>void</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>volatile</token>
+        <lenguajes>
+           <lenguaje valor="C"/>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>abstract</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>new</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>assert</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>package</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>synchronized</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>boolean</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>private</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>this</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>implements</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>protected</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>throw</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>byte</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>import</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>public</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>throws</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>instanceof</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>transient</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>catch</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>extends</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>try</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>final</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>interface</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>class</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>finally</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>long</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>super</token>
+        <lenguajes>
+           <lenguaje valor="Java"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>DECLARE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>BEGIN</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>    
+    <palabra>
+        <token>END</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>EXCEPTION</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>AND</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>OR</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>REPLACE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>PROCEDURE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>FUNCTION</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>TRIGGER</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>SELECT</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>FROM</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>INTO</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>WHERE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>INSERT</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>DELETE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>UPDATE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>DECLARE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>ELSIF</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>THEN</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>AS</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+           <lenguaje valor="PHP"/>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>IS</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>LOOP</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>TYPE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>TABLE</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>INDEX</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>ORDER</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+        <palabra>
+        <token>BY</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>COMMIT</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>ROLLBACK</token>
+        <lenguajes>
+           <lenguaje valor="SQL"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>foreach</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>echo</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>endif</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>endfor</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>endwhile</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>endswitch</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>enddeclare</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>include</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>include_once</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>elseif</token>
+        <lenguajes>
+           <lenguaje valor="PHP"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>def</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>del</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>elif</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>except</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>exec</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>global</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>in</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>lambda</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>not</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>pass</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>print</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>raise</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>with</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+    <palabra>
+        <token>yield</token>
+        <lenguajes>
+           <lenguaje valor="Python"/>
+        </lenguajes>
+    </palabra>
+ </reservadas>
+  
+
+</programacion>
