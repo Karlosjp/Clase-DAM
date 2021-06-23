@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="shiporder">
+    <xs:complexType>
+    <!--tiene 3 elementos:nombre del cliente, la dirección de envío y los artículos que viajan en el envío.-->
+      <xs:sequence>
+         <xs:element name="orderperson" type="xs:string" />
+         <xs:element name="shipto">
+         <!--La dirección estará compuesta por el nombre de la persona 
+         a la que se entregará el pedido, la dirección, la localidad y el país.-->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="address" type="xs:string" />
+              <xs:element name="city" type="xs:string" />
+              <xs:element name="country"  type="xs:string" />
+            </xs:sequence>
+            </xs:complexType>     
+         </xs:element>
+         <!--Se podrán enviar varios libros en cada pedido indicando la cantidad -->
+         <xs:element name="item" type="tipoItem" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <!--Cada pedido se identifica por un id único llamado orderId -->
+      <xs:attribute name="orderid" type="xs:ID" use="required" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="tipoItem">
+  <!--Se podrán enviar varios libros en cada pedido indicando la cantidad 
+         y el precio incluido en el envío. 
+         Opcionalmente se podrá incluir una nota en cada uno de los libros enviados-->
+          <xs:all>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="note" type="xs:string" minOccurs="0" />
+            <xs:element name="quantity" type="xs:positiveInteger" />
+            <xs:element name="price" type="tipoPrecio" />
+          </xs:all>
+  </xs:complexType>
+  
+  <xs:simpleType name="tipoPrecio">
+    <xs:restriction base="xs:decimal">
+          <xs:totalDigits value="3" />
+          <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

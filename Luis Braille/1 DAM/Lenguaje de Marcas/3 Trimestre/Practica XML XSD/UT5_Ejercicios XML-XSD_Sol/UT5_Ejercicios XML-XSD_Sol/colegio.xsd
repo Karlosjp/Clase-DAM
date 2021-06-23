@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="colegio">
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element ref="alumno" minOccurs="1" maxOccurs="unbounded"/>
+              <xs:element name="padre" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="madre" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="curso" minOccurs="1" maxOccurs="unbounded"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+  <!--IMPORTANTE: Al referenciar los elementos, si solo son mas elementos se pone name,
+   si este elemento ya tiene algo referenciado con ref-->
+   
+  <xs:element name="alumno">
+      <xs:complexType>
+          <xs:sequence>
+               <xs:element name="padre" type="xs:string" minOccurs="0"/>
+               <xs:element name="madre" type="xs:string" minOccurs="0"/>
+               <xs:element name="hermano" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+               <xs:element name="curso" type="xs:string" />
+               <xs:element name="nacimiento" type="xs:string" />
+          </xs:sequence>
+       <xs:attributeGroup ref="atributosAlumno"/>
+       </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="padre">
+      <xs:complexType>
+          <xs:sequence>
+               <xs:element name="codigo" type="tipoCodigo"/>
+               <xs:element name="nombre" type="xs:string"/>
+               <xs:element name="apellido1" type="xs:string"/>
+               <xs:element name="apellido2" type="xs:string"/>
+               <xs:element name="telefono" type="xs:string"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="madre">
+       <xs:complexType>
+          <xs:sequence>
+               <xs:element name="codigo" type="tipoCodigo"/>
+               <xs:element name="nombre" type="xs:string"/>
+               <xs:element name="apellido1" type="xs:string"/>
+               <xs:element name="apellido2" type="xs:string"/>
+               <xs:element name="telefono" type="xs:string"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+   
+    <xs:element name="curso">
+        <xs:complexType>
+          <xs:sequence>
+               <xs:element name="codigo" type="tipoCodigo"/>
+               <xs:element name="descripcion" type="xs:string"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+<xs:simpleType name="tipoCodigo">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z]{1}[0-9]{1,3}" />
+    </xs:restriction>
+</xs:simpleType>
+
+  <xs:attributeGroup name="atributosAlumno">
+       <xs:attribute name="codigo" use="required"/>
+       <xs:attribute name="nombre" type="xs:string" use="required" />
+       <xs:attribute name="apellido1" type="xs:string" use="required" />
+       <xs:attribute name="apellido2" type="xs:string" use="required" />
+  </xs:attributeGroup>
+  
+</xs:schema>

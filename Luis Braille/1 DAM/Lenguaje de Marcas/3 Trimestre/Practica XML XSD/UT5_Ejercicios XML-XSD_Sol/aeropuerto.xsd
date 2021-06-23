@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--No debe utilizarse ni group ni attributeGroup-->
+<!--El nombre del aeropuerto, los vuelos y la fecha pueden aparecer en distinto orden-->
+<!-- Respecto a los elementos nombre, origen, destino, hora-llegada, hora-salida y fecha,
+   cada uno de ellos debe definirse del tipo
+   que se considere más apropiado, de entre los proporcionados por XML Schema-->
+  <xs:element name="aeropuerto">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="vuelos">
+           <xs:complexType>
+              <xs:sequence>
+                <xs:element name="vuelo" type="tipoVuelo" maxOccurs="unbounded" />
+               </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="fecha" type="xs:date" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="tipoVuelo">
+      <xs:sequence>
+     <!-- Para indicar si un vuelo es diario, se debe utilizar un elemento vacío que, respecto a
+       cada vuelo, podrá aparecer (en el caso de sí ser diario)
+        o no aparecer (en el caso contrario) -->
+          <xs:element name="diario" minOccurs="0" />
+          <xs:element name="origen" type="xs:string"/>
+          <xs:element name="destino" type="xs:string"/>
+          <xs:element name="hora-salida" type="xs:time"/>
+          <xs:element name="hora-llegada" type="xs:time"/>
+      </xs:sequence>
+      <!--Se tiene que indicar que el código ha de ser único (esto se puede hacer 
+     definiéndolo de tipo xs:ID) y obligatorio para cada vuelo.-->
+      <xs:attribute name="codigo" type="xs:ID" use="required" />
+      <xs:attribute name="estado" type="tipoEstado" default="E" />
+  </xs:complexType>
+  <!-- Haciendo uso pattern indicar que los posibles estados de un vuelo son
+    C (Cancelado), E (En hora), R (Retrasado). Dicha 
+   restricción sólo debe poder ser utilizada por el atributo estado.
+    El valor por defecto debe ser E-->
+   <xs:simpleType name="tipoEstado">
+       <xs:restriction base="xs:string">
+          <xs:pattern value="C|E|R" />
+       </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

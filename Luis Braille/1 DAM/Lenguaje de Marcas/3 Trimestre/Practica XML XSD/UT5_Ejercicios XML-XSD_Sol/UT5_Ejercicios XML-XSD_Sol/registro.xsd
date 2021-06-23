@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="registro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="usuarios" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="usuario" type="tipoPersona" maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="empleados" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="empleado" type="tipoPersonaAmpliado" maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <!--Usuario debe ser de un tipo definido por nosotros al que llamaremos tipoPersona, 
+    donde hay que definir los elementos apellidos-y-nombre, email y conexiones.-->
+     <xs:complexType name="tipoPersona">
+       <xs:sequence>
+         <xs:element name="apellidos-y-nombre" type="xs:string"/>
+         <xs:element name="email" type="xs:string"/>
+         <xs:element name="conexiones"/>
+       </xs:sequence>
+       <xs:attribute name="identificador" type="xs:ID"/>
+     </xs:complexType>
+    <!--empleado ha de ser de otro tipo llamado tipoPersonaAmpliado, definido como una 
+    extensión de tipoPersona añadiéndosele el elemento departamento.-->
+    <xs:complexType name="tipoPersonaAmpliado">
+        <xs:complexContent>
+          <xs:extension base="tipoPersona">
+              <xs:sequence>
+                <xs:element name="departamento">
+           <xs:complexType>
+             <xs:sequence>
+                <xs:group ref="departamentos"/>
+             </xs:sequence>
+             </xs:complexType>
+                  </xs:element>
+              </xs:sequence>
+          </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <!--El valor del identificador debe ser una cadena formada por una letra "U" o "E" 
+    mayúscula, seguida de uno a cinco dígitos del 0 al 9.-->
+  <xs:attribute name="identificador">
+     <xs:simpleType>
+       <xs:restriction base="xs:string">
+           <xs:pattern value="[U|E][0-9]{1,5}"/>
+       </xs:restriction>
+     </xs:simpleType>
+  </xs:attribute>
+    <!--El valor del elemento apellidos-y-nombre debe ser una cadena de entre 1 a 30 
+  caracteres (de la "a" a la "z", mayúsculas o minúsculas, o el carácter espacio en 
+  blanco) para los apellidos, seguida del carácter coma "," y de entre 1 a otras 20 letras
+  (de la "a" a la "z", también mayúsculas o minúsculas, o el carácter espacio en blanco)
+   para el nombre.-->
+    <xs:element name="apellidos-y-nombre">
+       <xs:simpleType>
+         <xs:restriction base="xs:string">
+             <xs:pattern value="[A-Za-z]{1,30}[,][a-z]{1,20}" />
+             <xs:whiteSpace value="preserve" />
+         </xs:restriction>
+       </xs:simpleType>
+    </xs:element>
+    <!--El valor del email puede ser una cadena formada por 1 a 15 caracteres de la "a" 
+    a la "z", seguida del carácter "@", seguido de entre 1 a otras 25 letras de la "a" a la 
+    "z", seguidas del carácter punto "." y de entre otras 2 a 4 letras de la "a" a la "z".-->
+  <xs:element name="email">
+       <xs:simpleType>
+         <xs:restriction base="xs:string">
+           <xs:pattern value="[a-z]{1,15}[@][a-z]{1,25}[.][a-z]{2,4}"/>
+         </xs:restriction>
+       </xs:simpleType>
+  </xs:element>
+    <!--De cada usuario y empleado se reflejan sus conexiones, indicando para cada 
+    conexión la cantidad de segundos que duró, que debe ser un número entero mayor 
+    que cero.-->
+    <xs:element name="conexiones">
+       <xs:complexType>
+         <xs:sequence>
+           <xs:element name="conexion" maxOccurs="unbounded">
+             <xs:complexType>
+               <xs:sequence>
+                 <xs:element name="tiempo">
+                     <xs:simpleType>
+                       <xs:restriction base="xs:integer">
+                         <xs:minExclusive value="0"/>
+                       </xs:restriction>
+                     </xs:simpleType>
+                 </xs:element>
+               </xs:sequence>
+               <xs:attributeGroup ref="atributosConexiones"/>
+             </xs:complexType>
+           </xs:element>
+         </xs:sequence>
+       </xs:complexType>
+    </xs:element>
+    <!--Respecto a los atributos fecha y hora, cada uno de ellos debe definirse del tipo 
+    que se considere más apropiado, de entre los proporcionados por XML Schema.-->
+    <xs:attributeGroup name="atributosConexiones">
+       <xs:attribute name="fecha" type="xs:date" use="required" />
+       <xs:attribute name="hora" type="xs:time" use="required" />
+    </xs:attributeGroup>
+    <!--Los posibles departamentos de la empresa a los que puede pertenecer un 
+    empleado son administración, informática o marketing. De tal forma que, para cada 
+    empleado, sólo uno de ellos debe escribirse en el documento XML mediante un 
+    elemento vacío, como en este caso se ha escrito <marketing />.-->
+  <xs:group name="departamentos">
+        <xs:choice>
+          <xs:element name="administracion" />
+          <xs:element name="informatica" />
+          <xs:element name="marketing" />
+        </xs:choice>
+  </xs:group>
+</xs:schema>
+
